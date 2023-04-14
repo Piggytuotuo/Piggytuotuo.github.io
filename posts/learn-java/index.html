@@ -11,7 +11,7 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en"
   
-    data-mode="dark"
+    data-mode="light | dark"
   
 >
 
@@ -416,6 +416,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -594,11 +606,15 @@ Math.min((int)a,(int)b);
 </pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="排序">排序</h1>
-<p>Arrays.sort()对数组排序，重载了四类方法
-● sort(T[] a)：对指定T型数组按数字升序排序。
-● sort(T[] a,int formIndex, int toIndex)：对指定T型数组的指定范围按数字升序排序。
-● sort(T[] a, Comparator&lt;? supre T&gt; c): 根据指定比较器产生的顺序对指定对象数组进行排序。
-● sort(T[] a, int formIndex, int toIndex, Comparator&lt;? supre T&gt; c): 根据指定比较器产生的顺序对指定对象数组的指定对象数组进行排序。</p>
+<p>Arrays.sort()对数组排序，重载了四类方法</p>
+
+<p>● sort(T[] a)：对指定T型数组按数字升序排序。</p>
+
+<p>● sort(T[] a,int formIndex, int toIndex)：对指定T型数组的指定范围按数字升序排序。</p>
+
+<p>● sort(T[] a, Comparator&lt;? supre T&gt; c): 根据指定比较器产生的顺序对指定对象数组进行排序。</p>
+
+<p>● sort(T[] a, int formIndex, int toIndex, Comparator&lt;? supre T&gt; c): 根据指定比较器产生的顺序对指定对象数组的指定对象数组进行排序。</p>
 
 <p>Comparator的compare方法默认从小到大（o1的优先级高于o2）：
 若参数o1&lt;参数o2,返回负值，o1=o2返回0，o1&gt;o2返回正值。</p>
@@ -689,30 +705,6 @@ Arrays.sort(a, (n1,n2)-&gt;{
 34
 35
 36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
 </pre></td><td class="rouge-code"><pre>int a = Integer.parseInt(string);
 long la = Long.parseLong(string); # Int转String
 String s = String.valueOf(a);
@@ -748,9 +740,42 @@ boolean equal=s1.equals(s2);
 String a=String.format("%6d",Integer.valueof("123"))//输出000123
 
 //字典顺序比较两个String
-int res = a.compareTo(b);//a&lt;b,res&lt;0;a&gt;b,res&gt;0  ## StringBuilder &amp; StringBuffer 速度：StringBuilder &gt; StringBuffer &gt; String 
-      线程不安全       线程安全         常量
-      
+int res = a.compareTo(b);//a&lt;b,res&lt;0;a&gt;b,res&gt;0 
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="stringbuilder--stringbuffer"><span class="mr-2">StringBuilder &amp; StringBuffer</span><a href="#stringbuilder--stringbuffer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>速度：StringBuilder &gt; StringBuffer &gt; String</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre>    线程不安全     线程安全   常量
+
+
 StringBuilder sb = new StringBuilder("String");
 sb.append("");
 sb.reverse();
@@ -914,10 +939,13 @@ for(int i = 0; i &lt; n; i++) {
 </pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="-map接口二维集合"># Map接口（二维集合）</h1>
-<p>HashTable，此类实现一个哈希表，该哈希表将键映射到相应的值。任何非 null 对象都可以用作键或值。
-HashMap,基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）
-LinkedHashMap，Map 接口的哈希表和链接列表实现，具有可预知的迭代顺序，为插入顺序。
-TreeMap，基于红黑树，该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。</p>
+<p>HashTable，此类实现一个哈希表，该哈希表将键映射到相应的值。任何非 null 对象都可以用作键或值。</p>
+
+<p>HashMap,基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）</p>
+
+<p>LinkedHashMap，Map 接口的哈希表和链接列表实现，具有可预知的迭代顺序，为插入顺序。</p>
+
+<p>TreeMap，基于红黑树，该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
