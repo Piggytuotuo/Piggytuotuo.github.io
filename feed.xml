@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-04-13T15:40:48+08:00</updated>
+  <updated>2023-04-14T17:54:30+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -117,6 +117,124 @@ leetcode 78
 class Solution {
     List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new LinkedList&amp;lt;&amp;gt;();
     Linke...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>wsl创建ubuntu+mysql安装+redis安装</title>
+    <link href="http://localhost:4000/posts/wsl/" rel="alternate" type="text/html" title="wsl创建ubuntu+mysql安装+redis安装" />
+    <published>2023-03-15T14:10:00+08:00</published>
+  
+    <updated>2023-03-15T14:10:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/wsl/</id>
+    <content src="http://localhost:4000/posts/wsl/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Java基础" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+方式一 vmware安装
+
+安装vmware,下载ubuntu的iso文件
+
+ubuntu-releases安装包下载_开源镜像站-阿里云
+
+i386是32位 amd64是64位
+
+
+
+方式二 wsl安装
+
+1. 在启动或关闭Windows功能中，打开以下两项，重启
+
+
+
+ 2. powershell以管理员身份打开
+
+
+
+在mic store安装分发版也可
+
+查看已经安装的分发版
+
+
+
+打开Ubuntu报错：WslRegisterDistribution failed with error: 0x800701bc
+
+原因是：wsl1升级到wsl2之后，内核没有升级。
+
+解决方法：
+
+
+  下载最新的wsl安装包，
+  安装包下载后，直接运行安装。
+
+
+ 下载地址：
+
+https://wslstorestorage.blob.core.windows.net/wslblob/ws...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</title>
+    <link href="http://localhost:4000/posts/swin/" rel="alternate" type="text/html" title="跑Swin-Transformer-Object-Detection过程中遇到的坑及解决" />
+    <published>2021-12-26T14:10:00+08:00</published>
+  
+    <updated>2021-12-26T14:10:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/swin/</id>
+    <content src="http://localhost:4000/posts/swin/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="深度学习" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.
+
+BUG1:
+
+安装mmcv报了undefined symbol的错，大概如下
+
+undefined symbol: _ZN3c105ErrorC1ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+
+
+根据mmcv文档Frequently Ask...
     </summary>
   
 
