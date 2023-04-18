@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-04-14T18:30:52+08:00</updated>
+  <updated>2023-04-18T17:21:08+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,168 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>DP-背包问题</title>
+    <link href="http://localhost:4000/posts/leetcode-dp-bag/" rel="alternate" type="text/html" title="DP-背包问题" />
+    <published>2023-04-18T15:00:00+08:00</published>
+  
+    <updated>2023-04-18T15:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-dp-bag/</id>
+    <content src="http://localhost:4000/posts/leetcode-dp-bag/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      背包问题
+
+属于动态规划的一类问题，需要明确状态和选择。
+
+状态：背包的容量 和 可选择的物品；选择：装 和 不装
+
+01背包：
+
+每个物品只能装一次，选择装/不装。
+
+定义状态转移方程dp[i][w]：
+
+对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
+
+int[][] dp = new int[N+1][M+1]
+//base case
+dp[0][...] = 0
+dp[...][0] = 0
+//使用wt[i-1]表示第i个物品的重量 val[i-1]表示第i个物品的价值
+for i in [1...N]:
+    for w in [1...M]:
+        //考虑                 不装入     装入
+        dp[i][w] = Math.max(dp[i-1][w],  dp[i-1][w-wt[i-1]]...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP</title>
+    <link href="http://localhost:4000/posts/leetcode-dp/" rel="alternate" type="text/html" title="DP" />
+    <published>2023-04-14T20:40:00+08:00</published>
+  
+    <updated>2023-04-14T20:40:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-dp/</id>
+    <content src="http://localhost:4000/posts/leetcode-dp/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      引言
+跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
+
+重叠子问题
+计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
+
+若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
+
+为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)$。
+
+状态转移方程
+受备忘录启发，引入DP table，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。
+如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &amp;gt; 1。
+
+更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。
+
+写状态转移方程的思路：base case -&amp;gt; 状态 -...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>回溯</title>
+    <link href="http://localhost:4000/posts/leetcode-backtrack/" rel="alternate" type="text/html" title="回溯" />
+    <published>2023-04-13T14:10:00+08:00</published>
+  
+    <updated>2023-04-13T14:10:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-backtrack/</id>
+    <content src="http://localhost:4000/posts/leetcode-backtrack/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      引言
+跟着labuladong刷回溯题的记录。
+
+使用【回溯法】解决【子集、排列】问题：
+分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
+子集 无重
+leetcode 78
+
+给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
+解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
+示例 1：
+输入：nums = [1,2,3]
+输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+示例 2：
+输入：nums = [0]
+输出：[[],[0]]
+
+
+在回溯时传递i：
+
+class Solution {
+    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new LinkedList&amp;lt;&amp;gt;();
+    Linke...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -61,62 +223,6 @@ HashMap&amp;lt;String,Integer&amp;gt; mymap=new HashMap&amp;lt;String,Integer&am
 
 System.out.println(m.peekFirst()==q.peek()); //not always true
 System.out.println(m.peekFirst(...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Leetcode回溯</title>
-    <link href="http://localhost:4000/posts/learn-backtrack/" rel="alternate" type="text/html" title="Leetcode回溯" />
-    <published>2023-04-13T14:10:00+08:00</published>
-  
-    <updated>2023-04-13T14:10:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/learn-backtrack/</id>
-    <content src="http://localhost:4000/posts/learn-backtrack/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Leetcode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      引言
-跟着labuladong刷回溯题的记录。
-
-使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
-子集 无重
-leetcode 78
-
-给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
-示例 1：
-输入：nums = [1,2,3]
-输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
-示例 2：
-输入：nums = [0]
-输出：[[],[0]]
-
-
-在回溯时传递i：
-
-class Solution {
-    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new LinkedList&amp;lt;&amp;gt;();
-    Linke...
     </summary>
   
 
@@ -192,49 +298,6 @@ i386是32位 amd64是64位
  下载地址：
 
 https://wslstorestorage.blob.core.windows.net/wslblob/ws...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</title>
-    <link href="http://localhost:4000/posts/swin/" rel="alternate" type="text/html" title="跑Swin-Transformer-Object-Detection过程中遇到的坑及解决" />
-    <published>2021-12-26T14:10:00+08:00</published>
-  
-    <updated>2021-12-26T14:10:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/swin/</id>
-    <content src="http://localhost:4000/posts/swin/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="深度学习" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.
-
-BUG1:
-
-安装mmcv报了undefined symbol的错，大概如下
-
-undefined symbol: _ZN3c105ErrorC1ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-
-
-根据mmcv文档Frequently Ask...
     </summary>
   
 

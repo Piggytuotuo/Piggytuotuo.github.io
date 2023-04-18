@@ -1191,7 +1191,7 @@ String b=a.toString(8);
     <i class="fa fa-tags fa-fw mr-1"></i>
       
       <a href="/tags/java/"
-          class="post-tag no-text-decoration" >java</a>
+          class="post-tag no-text-decoration" >Java</a>
       
   </div>
   
@@ -1307,15 +1307,6 @@ String b=a.toString(8);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1330,12 +1321,19 @@ String b=a.toString(8);
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1354,13 +1352,13 @@ String b=a.toString(8);
 
     
       
-      <a class="post-tag" href="/tags/java/">java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">leetcode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/python/">python</a>
+      <a class="post-tag" href="/tags/python/">Python</a>
     
 
     </div>
@@ -1418,20 +1416,46 @@ String b=a.toString(8);
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -1471,20 +1495,11 @@ String b=a.toString(8);
   
     
     
-  
-    
-    
       
       
         
         
         
-      
-    
-  
-    
-    
-      
       
     
   
@@ -1571,7 +1586,7 @@ i386是32位 amd64是64位
       
       
       <div class="card">
-        <a href="/posts/learn-backtrack/">
+        <a href="/posts/leetcode-dp-bag/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1583,13 +1598,13 @@ i386是32位 amd64是64位
 
 
 <em class="small"
-    data-ts="1681366200"
+    data-ts="1681801200"
     data-df="ll"
     >
-  Apr 13, 2023
+  Apr 18, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Leetcode回溯</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1598,18 +1613,32 @@ i386是32位 amd64是64位
 
 
 
-                引言
-跟着labuladong刷回溯题的记录。
+                背包问题
 
-使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
-子集 无重
-leetcode 78
+属于动态规划的一类问题，需要明确状态和选择。
 
-给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
-示例 1：
-输入...
+状态：背包的容量 和 可选择的物品；选择：装 和 不装
+
+01背包：
+
+每个物品只能装一次，选择装/不装。
+
+定义状态转移方程dp[i][w]：
+
+对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+int[][] dp = new int[N+1][M+1]
+/...
               </p>
             </div>
           </div>
@@ -1619,7 +1648,7 @@ leetcode 78
       
       
       <div class="card">
-        <a href="/posts/swin/">
+        <a href="/posts/leetcode-dp/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1631,13 +1660,13 @@ leetcode 78
 
 
 <em class="small"
-    data-ts="1640499000"
+    data-ts="1681476000"
     data-df="ll"
     >
-  Dec 26, 2021
+  Apr 14, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1646,7 +1675,15 @@ leetcode 78
 
 
 
-                代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection...
+                引言
+跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
+
+重叠子问题
+计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
+
+若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
+
+为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
               </p>
             </div>
           </div>
@@ -1665,17 +1702,17 @@ leetcode 78
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/learn-backtrack/" class="btn btn-outline-primary"
+  <a href="/posts/wsl/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Leetcode回溯</p>
+    <p>wsl创建ubuntu+mysql安装+redis安装</p>
   </a>
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/leetcode-backtrack/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </div>
+    <p>回溯</p>
+  </a>
   
 
 </div>
@@ -1719,15 +1756,6 @@ leetcode 78
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1742,12 +1770,19 @@ leetcode 78
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1766,13 +1801,13 @@ leetcode 78
 
     
       
-      <a class="post-tag" href="/tags/java/">java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">leetcode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/python/">python</a>
+      <a class="post-tag" href="/tags/python/">Python</a>
     
 
     </div>
