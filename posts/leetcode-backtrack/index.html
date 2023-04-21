@@ -1055,6 +1055,25 @@ class Solution {
 
 
 
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">Recently Updated</div>
+    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
+      
+    </ul>
+  </div> <!-- #access-lastmod -->
+
+
+
       
 
 
@@ -1211,6 +1230,45 @@ class Solution {
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1260,31 +1318,6 @@ class Solution {
 <!-- Fill with the other newlest posts  -->
 
 
-
-  
-    
-    
-      
-      
-    
-  
-    
-    
-      
-      
-    
-  
-    
-    
-  
-    
-    
-      
-      
-        
-        
-        
-          
 
 
 
@@ -1403,7 +1436,7 @@ int[][] dp = new int[N+1][M+1]
       
       
       <div class="card">
-        <a href="/posts/learn-java/">
+        <a href="/posts/leetcode-dp-tree/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1415,13 +1448,13 @@ int[][] dp = new int[N+1][M+1]
 
 
 <em class="small"
-    data-ts="1681366200"
+    data-ts="1681812000"
     data-df="ll"
     >
-  Apr 13, 2023
+  Apr 18, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java常用代码</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-树形DP</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1430,18 +1463,24 @@ int[][] dp = new int[N+1][M+1]
 
 
 
-                在线文档
-https://www.matools.com/api/java8
-从键盘输入
-Scanner sc =new Scanner(System.in);
-Integer a=sc.nextInt();
+                树形DP
 
+数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
 
-int、Integer、Double
-int为基本数据类型，Integer为int对应的包装类。
-在范型中使用Integer
+框架：
 
-HashMap&amp;lt;String,Integer&amp;...
+1
+2
+3
+4
+5
+6
+7
+void dfs(int v){
+    dp[v] = ...;
+    for(int u: G[v]){//遍历v的所有子节点
+        dfs(u); //确保子节点的值已经更新好
+        update(u, v);//用子节点的dp值对当前节点的dp值铏更...
               </p>
             </div>
           </div>

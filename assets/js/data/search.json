@@ -1,6 +1,57 @@
 [
   
   {
+    "title": "二分",
+    "url": "/posts/leetcode-bs/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-21 10:05:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "搜索一个数搜索区间为 [left, right)left = 0, right = nums.length;while(left &lt; right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        return mid;    }else if(nums[mid] &lt; targe...",
+    "content": "搜索一个数搜索区间为 [left, right)left = 0, right = nums.length;while(left &lt; right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        return mid;    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid;    }}搜索区间为 [left, right] √left = 0, right = nums.length - 1;while(left &lt;= right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        return mid;    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid - 1;    }}搜左侧边界left = 0, right = nums.length - 1;while(left &lt;= right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        right = mid - 1;//当搜到第一个答案后，继续收缩右边界    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid - 1;    }}//搜索区间[left, right], 结束条件为left = right + 1, 则left的范围[0, nums.length]；//若left == nums.length,越界;//否则结束循环时,left = mid, 指向区间的左边界, 因为nums[mid] == target，right会再次收缩。if(left ==  nums.length) return -1;//判断最左边界元素是不是target。return nums[left] == target ? left : -1;搜右侧边界left = 0, right = nums.length - 1;while(left &lt;= right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        left = mid + 1;//当搜到第一个答案后，继续收缩左边界    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid - 1;    }}//搜索区间[left, right], 结束条件为left = right + 1；//若右边界一直收缩, left = 0, right = -1, 越界;if(right == -1) return -1;//否则结束循环时, mid = right, 指向区间的右边界, 因为nums[mid] == target，left会再次收缩left = right + 1。//判断最右边界元素是不是target。return nums[right] == target ? right : -1;总结统一搜索区间[left, right], 设置left = 0 , right = nums.length - 1;搜索数：找到就返回搜索左侧边界：找到满足的继续收缩右边界搜索右侧边界：找到满足的继续收缩左边界查找元素的第一个和最后一个位置leetcode 34给你一个按照非递减顺序排列的整数数组 nums，和一个目标值 target。请你找出给定目标值在数组中的开始位置和结束位置。如果数组中不存在目标值 target，返回 [-1, -1]。你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。示例 1：输入：nums = [5,7,7,8,8,10], target = 8输出：[3,4]示例 2：输入：nums = [5,7,7,8,8,10], target = 6输出：[-1,-1]示例 3：输入：nums = [], target = 0输出：[-1,-1]搜索target的左右边界class Solution {    public int[] searchRange(int[] nums, int target) {        int[] res = new int[]{-1, -1};        if(nums == null || nums.length == 0) return res;        int left = 0, right = nums.length - 1;        //先寻找左边界        while(left &lt;= right){            int mid = (right - left) / 2 + left;            if(nums[mid] == target){                right = mid - 1;            }else if(nums[mid] &lt; target){                left = mid + 1;            }else{                right = mid - 1;            }        }        if(left == nums.length || nums[left] != target){            return res;        }        res[0] = left;        right = nums.length - 1;        //寻找右边界        while(left &lt;= right){            int mid = (right - left) / 2 + left;            if(nums[mid] == target){                left = mid + 1;            }else if(nums[mid] &lt; target){                left = mid + 1;            }else{                right = mid - 1;            }        }        res[1] = right;        return res;    }}"
+  },
+  
+  {
+    "title": "Java反射",
+    "url": "/posts/java-reflection/",
+    "categories": "Java基础",
+    "tags": "Java",
+    "date": "2023-04-20 00:40:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Java Reflection一、定义反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。在设计框架时会用到大量反射。框架 = 注解 + 反射 + 设计模式。通过反射，可以创造单例模式中类的多个对象。二、Class对象每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该...",
+    "content": "Java Reflection一、定义反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。在设计框架时会用到大量反射。框架 = 注解 + 反射 + 设计模式。通过反射，可以创造单例模式中类的多个对象。二、Class对象每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该文件保存这个Class对象。类加载相当于Class对象的加载，类在第一次使用时才动态的加载到JVM中。比如：加载到内存中的Person、String类，都作为Class的对象/实例。Class clazz1 = Person.class; //运行时类Class clazz2 = String.class;Class对象的三种获取方式：//1. 调用运行时类的静态属性Class clazz1 = Person.class; //首次使用，将Person类放到方法区，缓存起来。//2. 调用运行时类的对象的getClass()方法  Person p = new Person();//new的时候去方法区找，没有则加载，有的话直接调用方法区中类的构造方法。Class clazz2 = p.getClass();System.out.println(clazz1 == clazz2);//true//3. 调用Class的静态方法forName(String className) 根据参数确定加载哪个类（没有写死），能够更好的体现动态性。String className = \"Reflection.Person\"; //全类名Class clazz3 = Class.forName(className); //主动加载Person类，已经在内存，不会再次加载。System.out.println(clazz1 == clazz3); //true//clazz1 clazz2 clazz3 都指向堆空间中最初的唯一的运行时类。三、反射的实现方式Class 和 java.lang.reflect 一起对反射提供了支持。java.lang.reflect中包含了以下三个类：（1）Constructor：使用newInstance()创建新的对象；（2）Field：使用get()和set()读取和修改Field对象关联的字段；（3）Method：使用invoke()调用Method对象关联的方法。Class clazz = Person.class;//获取类的私有构造函数Constructor cons = clazz.getDeclaredConstructor(String.class, int.class);cons.setAccessible(true);Person p3 = (Person)cons.newInstance(\"Tom\",12);//私有属性Field nameField = clazz.getDeclaredField(\"name\");nameField.setAccessible(true);//反射时的调用，可以近似的看为属性调对象。nameField.set(p3, \"Bill\");System.out.print(nameField.get(p3));//私有方法Method getNameMethos = clazz.getDeclaredMethod(\"getName\");getNameMethos.setAccessible(true);String name = (String)getNameMethos.invoke(p3);System.out.print(name);四、反射优缺优：更灵活，帮助框架的开发缺：性能开销大，安全问题，内部暴露"
+  },
+  
+  {
+    "title": "DP-树形DP",
+    "url": "/posts/leetcode-dp-tree/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-18 18:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "树形DP数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.框架：void dfs(int v){    dp[v] = ...;    for(int u: G[v]){//遍历v的所有子节点        dfs(u); //确保子节点的值已经更新好        update(u, v);//用子节点的dp值对当前节点的dp值铏更新    }}子树大小给定一棵有N个结点的树，根...",
+    "content": "树形DP数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.框架：void dfs(int v){    dp[v] = ...;    for(int u: G[v]){//遍历v的所有子节点        dfs(u); //确保子节点的值已经更新好        update(u, v);//用子节点的dp值对当前节点的dp值铏更新    }}子树大小给定一棵有N个结点的树，根结点为结点1。对于i = 1 , 2 , … , N求以结点i为根的子树大小（即子树上结点的个数，包括根结点）。输入：第一行输入N接下来N-1行，输入两个整数u, v, 代表u的父亲结点编号为v。输出：N个数，用空格分隔，第i个数代表以i为根的子树的大小。使用**邻接表List[]**存储树形结构，从根节点开始dfs，先更新根的子树的大小，然后更新根的大小.public class TreeDP {    //建立邻接表存储数据    public static List&lt;Integer&gt;[] tree;    //建立dp数组    public static int dp[];    public static void main(String[] args) {        Scanner sc = new Scanner(System.in);        int n = sc.nextInt();        tree = new LinkedList[n];        dp = new int[n];        //初始化        for(int i = 0; i &lt; n; i++) {            tree[i] = new LinkedList&lt;&gt;();        }        //读入n条边        for(int i = 0; i &lt; n - 1; i++) {            int u = sc.nextInt() - 1;            int v = sc.nextInt() - 1;            tree[v].add(u);        }        dfs(0);        for(int i = 0; i &lt; n; i++) {            System.out.print(dp[i] + \" \");        }    }        public static void dfs(int v) {        dp[v] = 1;        for(int u: tree[v]) {            dfs(u);            dp[v] += dp[u];        }    }}没有Boss的舞会有N名职员，编号为1 … N，他们的关系就像一棵以老板为根的树，父节点就是子节点的直接上司。每个职员有一个快乐指数ri，   现在要召开一场舞会，使得没有职员和直接上司一起参会。主办方希望邀请一部分职员参会，使得所有参会职员的快乐指数总和最大，求这个最大值。设v为u的老板（父节点），v的选择和u的选择存在制约关系：若选v，则不能选u；若不选v，则u可选可不选。需要建立两个dp[]数组，分别保存选v的最优解和不选v的最优解。public class NoBoss {    static int[] r; //记录快乐值    static List&lt;Integer&gt;[] tree; ///邻接表    static int[] f; //选v的最优解    static int[] g; //不选v的最优解    public static void main(String[] args) {        Scanner sc = new Scanner(System.in);        int n = sc.nextInt();        r = new int[n];        f = new int[n];        g = new int[n];        tree = new LinkedList[n];        for(int i = 0; i &lt; n; i++) {            r[i] = sc.nextInt();            f[i] = r[i];            tree[i] = new LinkedList&lt;Integer&gt;();        }        //注意，需要找到根节点，没有上司的节点为根节点        int root = -1;        boolean[] notRoot = new boolean[n];        //u的父节点是v        for(int i = 0; i &lt; n - 1; i++) {            int u = sc.nextInt() - 1;            int v = sc.nextInt() - 1;            tree[v].add(u);            notRoot[u] = true;        }        for(int i = 0; i &lt; n; i++) {            if(notRoot[i] == false) {                root = i;                break;            }        }        dfs(root);            System.out.println(Math.max(f[root], g[root]));    }        static void dfs(int i) {        for(int u: tree[i]) {            dfs(u);            g[i] += Math.max(g[u], f[u]); //不选择i，u可选可不选            f[i] += g[u]; //选择i，不能选u         }    }}最多的食物华子的2023实习的机试题目。需要读懂题意。游戏的地图由N个方格组成，每个方格上至多2个传送门，通过传送门可将参与者传送至指定的其它方格。同时，每个方格上标注了三个数字:(1)第一个数字id:代表方格的编号，从0到N-1，每个方格各不相同(2)第二个数字parent-id:代表从编号为parent-id的方格可以通过传送门传送到当前方格(-1则表示没有任何方格可以通过传送门传送到此方格，这样的方格在地图中有且仅有一个); (3)第三个数字value: 取值在[-100，100]的整数值，正整数代表参与者得到相应取值单位的食物，负整数代表失去相应数值单位的食物(参与者可能存在临时持有食物为负数的情况)，0则代表无变化。此外，地图设计时保证了参与者不可能到达相同的方格两次，并且至少有一个方格的value是正整数。 游戏开始后，参与者任意选择一个方格作为出发点，当遇到下列情况之一退出游戏: (1)参与者当前所处的方格无传送门: (2) 参与者在任意方格上主动宣布退出游戏 请计算参与者退出游戏后，最多可以获得多少单位的食物。 对于每一个根节点，首先计算其子节点可以获取的最大食物，根节点+子节点的最大值。public class MostFood {    static List&lt;Integer&gt;[] ls;//邻接表    static int max = -101;    static int[] value;    public static void main(String[] args) {        Scanner sc = new Scanner(System.in);        int N = sc.nextInt();        value = new int[N];        ls = new LinkedList[N];        for(int i = 0; i &lt; N; i++) {            ls[i] = new LinkedList&lt;Integer&gt;();        }        boolean[] notRoot = new boolean[N];        for(int i = 0; i &lt; N; i++) {            int id = sc.nextInt();            int pid = sc.nextInt();            if(pid != -1) {                notRoot[id] = true;            ls[pid].add(id);            }\t            value[id] = sc.nextInt();        }        int root = 0;        for(int i = 0; i &lt; N; i++) {            if(notRoot[i] == false) {                root = i;                break;            }        }        dfs(root);        System.out.println(max);    }        static void dfs(int i) {        //将value i更新为到i时能获得的最多食物        int gain = 0;        for(int u: ls[i]) {            dfs(u);            gain = Math.max(gain, value[u]);        }        if(gain &gt; 0) {            value[i] += gain;        }        max = Math.max(max, value[i]);    }}"
+  },
+  
+  {
     "title": "DP-背包问题",
     "url": "/posts/leetcode-dp-bag/",
     "categories": "LeetCode",

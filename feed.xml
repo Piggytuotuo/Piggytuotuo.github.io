@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-04-18T17:21:08+08:00</updated>
+  <updated>2023-04-21T11:12:45+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,184 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>二分</title>
+    <link href="http://localhost:4000/posts/leetcode-bs/" rel="alternate" type="text/html" title="二分" />
+    <published>2023-04-21T10:05:00+08:00</published>
+  
+    <updated>2023-04-21T10:05:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-bs/</id>
+    <content src="http://localhost:4000/posts/leetcode-bs/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      搜索一个数
+
+搜索区间为 [left, right)
+
+left = 0, right = nums.length;
+
+while(left &amp;lt; right){
+    int mid = (right - left) / 2 + left;
+    if(nums[mid] == target){
+        return mid;
+    }else if(nums[mid] &amp;lt; target){
+        left = mid + 1;
+    }else{
+        right = mid;
+    }
+}
+
+
+搜索区间为 [left, right] √
+
+left = 0, right = nums.length - 1;
+
+while(left &amp;lt;= right){
+    int mid = (right - left) / 2 + l...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Java反射</title>
+    <link href="http://localhost:4000/posts/java-reflection/" rel="alternate" type="text/html" title="Java反射" />
+    <published>2023-04-20T00:40:00+08:00</published>
+  
+    <updated>2023-04-20T00:40:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/java-reflection/</id>
+    <content src="http://localhost:4000/posts/java-reflection/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Java基础" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Java Reflection
+
+一、定义
+
+反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。
+
+在设计框架时会用到大量反射。
+
+框架 = 注解 + 反射 + 设计模式。
+
+通过反射，可以创造单例模式中类的多个对象。
+
+二、Class对象
+
+每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该文件保存这个Class对象。
+
+类加载相当于Class对象的加载，类在第一次使用时才动态的加载到JVM中。
+
+比如：加载到内存中的Person、String类，都作为Class的对象/实例。
+
+Class clazz1 = Person.class; //运行时类
+Class clazz2 = String.class;
+
+
+Class对象的三种获取方式：
+
+//1. ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-树形DP</title>
+    <link href="http://localhost:4000/posts/leetcode-dp-tree/" rel="alternate" type="text/html" title="DP-树形DP" />
+    <published>2023-04-18T18:00:00+08:00</published>
+  
+    <updated>2023-04-19T13:52:48+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-dp-tree/</id>
+    <content src="http://localhost:4000/posts/leetcode-dp-tree/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      树形DP
+
+数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
+
+框架：
+
+void dfs(int v){
+    dp[v] = ...;
+    for(int u: G[v]){//遍历v的所有子节点
+        dfs(u); //确保子节点的值已经更新好
+        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
+    }
+}
+
+
+子树大小
+
+给定一棵有N个结点的树，根结点为结点1。对于i = 1 , 2 , … , N
+求以结点i为根的子树大小（即子树上结点的个数，包括根结点）。
+
+输入：
+第一行输入N
+接下来N-1行，输入两个整数u, v, 代表u的父亲结点编号为v。
+输出：
+N个数，用空格分隔，第i个数代表以i为根的子树的大小。
+
+
+使用**邻接表List[]**存储树形结构，从根节点开始dfs，先更新根的子树的大小，然后...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -80,7 +258,7 @@ for i in [1...N]:
     <link href="http://localhost:4000/posts/leetcode-dp/" rel="alternate" type="text/html" title="DP" />
     <published>2023-04-14T20:40:00+08:00</published>
   
-    <updated>2023-04-14T20:40:00+08:00</updated>
+    <updated>2023-04-18T17:22:31+08:00</updated>
   
     <id>http://localhost:4000/posts/leetcode-dp/</id>
     <content src="http://localhost:4000/posts/leetcode-dp/" />
@@ -119,185 +297,6 @@ for i in [1...N]:
 更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。
 
 写状态转移方程的思路：base case -&amp;gt; 状态 -...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>回溯</title>
-    <link href="http://localhost:4000/posts/leetcode-backtrack/" rel="alternate" type="text/html" title="回溯" />
-    <published>2023-04-13T14:10:00+08:00</published>
-  
-    <updated>2023-04-13T14:10:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-backtrack/</id>
-    <content src="http://localhost:4000/posts/leetcode-backtrack/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      引言
-跟着labuladong刷回溯题的记录。
-
-使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
-子集 无重
-leetcode 78
-
-给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
-示例 1：
-输入：nums = [1,2,3]
-输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
-示例 2：
-输入：nums = [0]
-输出：[[],[0]]
-
-
-在回溯时传递i：
-
-class Solution {
-    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new LinkedList&amp;lt;&amp;gt;();
-    Linke...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Java常用代码</title>
-    <link href="http://localhost:4000/posts/learn-java/" rel="alternate" type="text/html" title="Java常用代码" />
-    <published>2023-04-13T14:10:00+08:00</published>
-  
-    <updated>2023-04-13T14:10:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/learn-java/</id>
-    <content src="http://localhost:4000/posts/learn-java/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Java基础" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      在线文档
-https://www.matools.com/api/java8
-从键盘输入
-Scanner sc =new Scanner(System.in);
-Integer a=sc.nextInt();
-
-
-int、Integer、Double
-int为基本数据类型，Integer为int对应的包装类。
-在范型中使用Integer
-
-HashMap&amp;lt;String,Integer&amp;gt; mymap=new HashMap&amp;lt;String,Integer&amp;gt;(); 判断两个int是否相等或Integer与int是否相等，用== 判断两个Integer是否相等用.equals()
-
-System.out.println(m.peekFirst()==q.peek()); //not always true
-System.out.println(m.peekFirst(...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>wsl创建ubuntu+mysql安装+redis安装</title>
-    <link href="http://localhost:4000/posts/wsl/" rel="alternate" type="text/html" title="wsl创建ubuntu+mysql安装+redis安装" />
-    <published>2023-03-15T14:10:00+08:00</published>
-  
-    <updated>2023-03-15T14:10:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/wsl/</id>
-    <content src="http://localhost:4000/posts/wsl/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Java基础" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-
-方式一 vmware安装
-
-安装vmware,下载ubuntu的iso文件
-
-ubuntu-releases安装包下载_开源镜像站-阿里云
-
-i386是32位 amd64是64位
-
-
-
-方式二 wsl安装
-
-1. 在启动或关闭Windows功能中，打开以下两项，重启
-
-
-
- 2. powershell以管理员身份打开
-
-
-
-在mic store安装分发版也可
-
-查看已经安装的分发版
-
-
-
-打开Ubuntu报错：WslRegisterDistribution failed with error: 0x800701bc
-
-原因是：wsl1升级到wsl2之后，内核没有升级。
-
-解决方法：
-
-
-  下载最新的wsl安装包，
-  安装包下载后，直接运行安装。
-
-
- 下载地址：
-
-https://wslstorestorage.blob.core.windows.net/wslblob/ws...
     </summary>
   
 

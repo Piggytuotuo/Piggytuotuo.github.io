@@ -1178,6 +1178,25 @@ Failed to connect to bus: Host is down</p>
 
 
 
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">Recently Updated</div>
+    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
+      
+    </ul>
+  </div> <!-- #access-lastmod -->
+
+
+
       
 
 
@@ -1360,6 +1379,45 @@ Failed to connect to bus: Host is down</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1384,16 +1442,6 @@ Failed to connect to bus: Host is down</p>
 
 
 
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
   
     
     
@@ -1474,7 +1522,7 @@ int为基本数据类型，Integer为int对应的包装类。
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp-bag/">
+        <a href="/posts/java-reflection/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1486,13 +1534,13 @@ int为基本数据类型，Integer为int对应的包装类。
 
 
 <em class="small"
-    data-ts="1681801200"
+    data-ts="1681922400"
     data-df="ll"
     >
-  Apr 18, 2023
+  Apr 20, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java反射</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1501,19 +1549,60 @@ int为基本数据类型，Integer为int对应的包装类。
 
 
 
-                背包问题
+                Java Reflection
 
-属于动态规划的一类问题，需要明确状态和选择。
+一、定义
 
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
+反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。
 
-01背包：
+在设计框架时会用到大量反射。
 
-每个物品只能装一次，选择装/不装。
+框架 = 注解 + 反射 + 设计模式。
 
-定义状态转移方程dp[i][w]：
+通过反射，可以创造单例模式中类的多个对象。
 
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
+二、Class对象
+
+每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-bs/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682042700"
+    data-df="ll"
+    >
+  Apr 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                搜索一个数
+
+搜索区间为 [left, right)
 
 1
 2
@@ -1525,53 +1614,14 @@ int为基本数据类型，Integer为int对应的包装类。
 8
 9
 10
-int[][] dp = new int[N+1][M+1]
-/...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-dp/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+11
+12
+left = 0, right = nums.length;
 
-
-
-
-
-<em class="small"
-    data-ts="1681476000"
-    data-df="ll"
-    >
-  Apr 14, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                引言
-跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
-
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
-
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
-
-为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
+while(left &amp;lt; right){
+    int mid = (right - left) / 2 + left;
+    if(nums[mid] == target){
+        return m...
               </p>
             </div>
           </div>

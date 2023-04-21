@@ -27,6 +27,10 @@
   >
 
   
+    
+
+    
+  
 
   
 
@@ -35,23 +39,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="深度学习" />
+<meta property="og:title" content="Java反射" />
+<meta name="author" content="Crystal Li" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" />
-<meta property="og:url" content="http://localhost:4000/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" />
+<meta name="description" content="Java Reflection" />
+<meta property="og:description" content="Java Reflection" />
+<link rel="canonical" href="http://localhost:4000/posts/java-reflection/" />
+<meta property="og:url" content="http://localhost:4000/posts/java-reflection/" />
 <meta property="og:site_name" content="Piggytuotuo" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-20T00:40:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="深度学习" />
+<meta property="twitter:title" content="Java反射" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"深度学习","url":"http://localhost:4000/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-04-20T00:40:00+08:00","datePublished":"2023-04-20T00:40:00+08:00","description":"Java Reflection","headline":"Java反射","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/java-reflection/"},"url":"http://localhost:4000/posts/java-reflection/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>深度学习 | Piggytuotuo
+  <title>Java反射 | Piggytuotuo
   </title>
 
   <!--
@@ -103,7 +109,12 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css">
+  
 
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -392,19 +403,13 @@
       
 
         
-          <span>
-            <a href="/categories">
-              Categories
-            </a>
-          </span>
-        
 
       
 
         
 
           
-            <span>深度学习</span>
+            <span>Java反射</span>
           
 
         
@@ -418,7 +423,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      Category
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -452,18 +457,136 @@
     
       
       
-        <div id="page-category">
-  <h1 class="pl-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    深度学习
-    <span class="lead text-muted pl-2">1</span>
-  </h1>
+        <!--
+  Refactor the HTML structure.
+-->
 
-  <ul class="post-content pl-0">
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+<!-- images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
     
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a>
-      <span class="dash flex-grow-1"></span>
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+<h1 data-toc-skip>Java反射</h1>
+
+<div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      Posted
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -473,17 +596,276 @@
 
 
 
-<span class="text-muted small"
-    data-ts="1640499000"
+<em class=""
+    data-ts="1681922400"
     data-df="ll"
-    >
-  Dec 26, 2021
-</span>
+    data-toggle="tooltip" data-placement="bottom">
+  Apr 20, 2023
+</em>
 
-    </li>
+    </span>
+
+    <!-- lastmod date -->
     
-  </ul>
+
+  
+
+  <div class="d-flex justify-content-between">
+    <!-- author(s) -->
+    <span>
+      
+
+      By
+
+      <em>
+      
+        
+          <a href="">Crystal Li</a>
+          
+        
+      
+      </em>
+    </span>
+
+    <div>
+      <!-- page views -->
+      
+
+      <!-- read time -->
+      <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="665 words">
+  <em>3 min</em> read</span>
+
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <h1 id="java-reflection">Java Reflection</h1>
+
+<h2 id="一定义"><span class="mr-2">一、定义</span><a href="#一定义" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>反射是Java被视为<strong>动态语言</strong>的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。</p>
+
+<p>在设计框架时会用到大量反射。</p>
+
+<p>框架 = 注解 + 反射 + 设计模式。</p>
+
+<p>通过反射，可以创造单例模式中类的多个对象。</p>
+
+<h2 id="二class对象"><span class="mr-2">二、Class对象</span><a href="#二class对象" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该文件保存这个Class对象。</p>
+
+<p>类加载相当于Class对象的加载，类在第一次使用时才动态的加载到JVM中。</p>
+
+<p>比如：加载到内存中的Person、String类，都作为Class的对象/实例。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>Class clazz1 = Person.class; //运行时类
+Class clazz2 = String.class;
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Class对象的三种获取方式：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>//1. 调用运行时类的静态属性
+Class clazz1 = Person.class; //首次使用，将Person类放到方法区，缓存起来。
+
+//2. 调用运行时类的对象的getClass()方法  
+Person p = new Person();//new的时候去方法区找，没有则加载，有的话直接调用方法区中类的构造方法。
+Class clazz2 = p.getClass();
+System.out.println(clazz1 == clazz2);//true
+
+//3. 调用Class的静态方法forName(String className) 根据参数确定加载哪个类（没有写死），能够更好的体现动态性。
+String className = "Reflection.Person"; //全类名
+Class clazz3 = Class.forName(className); //主动加载Person类，已经在内存，不会再次加载。
+System.out.println(clazz1 == clazz3); //true
+//clazz1 clazz2 clazz3 都指向堆空间中最初的唯一的运行时类。
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="三反射的实现方式"><span class="mr-2">三、反射的实现方式</span><a href="#三反射的实现方式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Class 和 java.lang.reflect 一起对反射提供了支持。java.lang.reflect中包含了以下三个类：</p>
+
+<p>（1）Constructor：使用newInstance()创建新的对象；</p>
+
+<p>（2）Field：使用get()和set()读取和修改Field对象关联的字段；</p>
+
+<p>（3）Method：使用invoke()调用Method对象关联的方法。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre>Class clazz = Person.class;
+
+//获取类的私有构造函数
+Constructor cons = clazz.getDeclaredConstructor(String.class, int.class);
+cons.setAccessible(true);
+Person p3 = (Person)cons.newInstance("Tom",12);
+
+//私有属性
+Field nameField = clazz.getDeclaredField("name");
+nameField.setAccessible(true);
+//反射时的调用，可以近似的看为属性调对象。
+nameField.set(p3, "Bill");
+System.out.print(nameField.get(p3));
+
+//私有方法
+Method getNameMethos = clazz.getDeclaredMethod("getName");
+getNameMethos.setAccessible(true);
+String name = (String)getNameMethos.invoke(p3);
+System.out.print(name);
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="四反射优缺"><span class="mr-2">四、反射优缺</span><a href="#四反射优缺" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>优：更灵活，帮助框架的开发</p>
+
+<p>缺：性能开销大，安全问题，内部暴露</p>
+
+
 </div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
+    
+      <a href='/categories/java%E5%9F%BA%E7%A1%80/'>Java基础</a>
+  </div>
+  
+
+  <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/java/"
+          class="post-tag no-text-decoration" >Java</a>
+      
+  </div>
+  
+
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+
+      
+
+        
+
+        This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+
+      
+    </div>
+
+    <!--
+ Post sharing snippet
+-->
+
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+      
+        <a href="https://twitter.com/intent/tweet?text=Java%E5%8F%8D%E5%B0%84%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fjava-reflection%2F" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
+    
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Java%E5%8F%8D%E5%B0%84%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fjava-reflection%2F" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fjava-reflection%2F&text=Java%E5%8F%8D%E5%B0%84%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
+    
+
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="Copy link"
+        data-title-succeed="Link copied successfully!">
+    </i>
+
+  </span>
+</div>
+
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
 
       
     
@@ -613,11 +995,391 @@
     </div>
 
     
+      
+      
+
+
+
+  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+    <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+    <nav id="toc"></nav>
+  </div>
+
+  <!-- toc.js will be loaded at medium priority -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script>
+
+
+    
   </div>
 
 </div>
 
 <!-- tail -->
+
+<div class="row">
+  <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5">
+    
+      
+      <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+  
+    
+    
+      
+      
+        
+        
+        
+          
+
+
+
+  <div id="related-posts" class="mb-2 mb-sm-4">
+    <h3 class="pt-2 mb-4 ml-1"
+      data-toc-skip>Further Reading</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/wsl/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1678860600"
+    data-df="ll"
+    >
+  Mar 15, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>wsl创建ubuntu+mysql安装+redis安装</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                
+
+方式一 vmware安装
+
+安装vmware,下载ubuntu的iso文件
+
+ubuntu-releases安装包下载_开源镜像站-阿里云
+
+i386是32位 amd64是64位
+
+
+
+方式二 wsl安装
+
+1. 在启动或关闭Windows功能中，打开以下两项，重启
+
+
+
+ 2. powershell以管理员身份打开
+
+
+
+在mic store安装分发版也可
+
+查看已经安装的分发版
+
+
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/learn-java/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681366200"
+    data-df="ll"
+    >
+  Apr 13, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java常用代码</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                在线文档
+https://www.matools.com/api/java8
+从键盘输入
+Scanner sc =new Scanner(System.in);
+Integer a=sc.nextInt();
+
+
+int、Integer、Double
+int为基本数据类型，Integer为int对应的包装类。
+在范型中使用Integer
+
+HashMap&amp;lt;String,Integer&amp;...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-bs/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682042700"
+    data-df="ll"
+    >
+  Apr 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                搜索一个数
+
+搜索区间为 [left, right)
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+left = 0, right = nums.length;
+
+while(left &amp;lt; right){
+    int mid = (right - left) / 2 + left;
+    if(nums[mid] == target){
+        return m...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+
+    
+      
+      <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/leetcode-dp-tree/" class="btn btn-outline-primary"
+    prompt="Older">
+    <p>DP-树形DP</p>
+  </a>
+  
+
+  
+  <a href="/posts/leetcode-bs/" class="btn btn-outline-primary"
+    prompt="Newer">
+    <p>二分</p>
+  </a>
+  
+
+</div>
+
+    
+      
+      <!--  The comments switcher -->
+
+
+    
+  </div>
+</div>
 
 
       </div>
@@ -809,6 +1571,51 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+
+
+
+  <!-- image lazy-loading & popup & clipboard -->
+  
+
+  
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
 
 
 
@@ -870,7 +1677,7 @@ SimpleJekyllSearch({
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 
