@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-04-21T11:12:45+08:00</updated>
+  <updated>2023-04-26T22:23:11+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>TopK</title>
+    <link href="http://localhost:4000/posts/leetcode-topk/" rel="alternate" type="text/html" title="TopK" />
+    <published>2023-04-26T14:46:00+08:00</published>
+  
+    <updated>2023-04-26T14:46:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-topk/</id>
+    <content src="http://localhost:4000/posts/leetcode-topk/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      使用QuickSort和HeapSort解决TopK问题。
+
+QuickSort O(NlogN)
+定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+
+public static int partition(int[] nums, int l, int h) {
+	//扫描数组，找到第一个&amp;gt;=al的 和 第一个&amp;lt; al的
+	int i = l, j = h + 1;
+	int flag = nums[l];
+	while(true) {
+		while(nums[++i] &amp;lt; flag &amp;amp;&amp;amp; i &amp;lt; h);
+		while(nums[--j] &amp;gt;=...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -247,56 +292,6 @@ for i in [1...N]:
     for w in [1...M]:
         //考虑                 不装入     装入
         dp[i][w] = Math.max(dp[i-1][w],  dp[i-1][w-wt[i-1]]...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>DP</title>
-    <link href="http://localhost:4000/posts/leetcode-dp/" rel="alternate" type="text/html" title="DP" />
-    <published>2023-04-14T20:40:00+08:00</published>
-  
-    <updated>2023-04-18T17:22:31+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-dp/</id>
-    <content src="http://localhost:4000/posts/leetcode-dp/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      引言
-跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
-
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
-
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
-
-为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)$。
-
-状态转移方程
-受备忘录启发，引入DP table，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。
-如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &amp;gt; 1。
-
-更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。
-
-写状态转移方程的思路：base case -&amp;gt; 状态 -...
     </summary>
   
 

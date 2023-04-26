@@ -1513,6 +1513,19 @@ String b=a.toString(8);
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1685,7 +1698,7 @@ i386是32位 amd64是64位
       
       
       <div class="card">
-        <a href="/posts/leetcode-bs/">
+        <a href="/posts/leetcode-topk/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1697,13 +1710,13 @@ i386是32位 amd64是64位
 
 
 <em class="small"
-    data-ts="1682042700"
+    data-ts="1682491560"
     data-df="ll"
     >
-  Apr 21, 2023
+  Apr 26, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>TopK</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1712,9 +1725,10 @@ i386是32位 amd64是64位
 
 
 
-                搜索一个数
+                使用QuickSort和HeapSort解决TopK问题。
 
-搜索区间为 [left, right)
+QuickSort O(NlogN)
+定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
 
 1
 2
@@ -1727,13 +1741,7 @@ i386是32位 amd64是64位
 9
 10
 11
-12
-left = 0, right = nums.length;
-
-while(left &amp;lt; right){
-    int mid = (right - left) / 2 + left;
-    if(nums[mid] == target){
-        return m...
+...
               </p>
             </div>
           </div>

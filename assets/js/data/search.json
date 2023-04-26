@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "TopK",
+    "url": "/posts/leetcode-topk/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-26 14:46:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "使用QuickSort和HeapSort解决TopK问题。QuickSort O(NlogN)定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&gt;= a[l]的元素，再从右向左扫描数组，找到第一个&lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。public static int partition(i...",
+    "content": "使用QuickSort和HeapSort解决TopK问题。QuickSort O(NlogN)定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&gt;= a[l]的元素，再从右向左扫描数组，找到第一个&lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。public static int partition(int[] nums, int l, int h) {\t//扫描数组，找到第一个&gt;=al的 和 第一个&lt; al的\tint i = l, j = h + 1;\tint flag = nums[l];\twhile(true) {\t\twhile(nums[++i] &lt; flag &amp;&amp; i &lt; h);\t\twhile(nums[--j] &gt;= flag &amp;&amp; j &gt; l);\t\tif(i &gt;= j) break;\t\tswap(nums, i, j);\t}\tswap(nums, l , j);\treturn j;}public static void swap(int[] nums, int i, int j) {\tint a = nums[i];\tnums[i] = nums[j];\tnums[j] = a;}根据partition操作，递归写快排。public static void quickSort(int[] nums, int l, int h) {\tif(l &gt;= h) return;\tint j = partition(nums, l, h);\tquickSort(nums, l, j -1);\tquickSort(nums, j + 1, h);}递归的原理思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。栈帧保存在调用栈中，在JVM的栈区中。QuickSort找Top-K O(N)利用partition操作，根据返回的j的位置判断K元素在的位置，缩小下次partition的边界。在升序序列中，第K大元素的坐标为：N-K。public static int topK(int[] nums, int k) {    k = nums.length - k;\tint l = 0, h = nums.length - 1;\twhile(l &lt; h) {\t\tint j = partition(nums, l, h);\t\tif(j == k) {\t\t\tbreak;\t\t}else if(j &lt; k) {\t\t\tl = j + 1;\t\t}else {\t\t\th = j - 1;\t\t}\t}\treturn nums[k];\t}HeapSort O(NlogK)找第K大元素，维护一个大小为K的小顶堆，堆顶即为所求。public static int heapTopK(int[] nums, int k) {\tQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;();\tfor(int i: nums) {\t\tpq.add(i);        //维护堆的大小为k\t\tif(pq.size() &gt; k) {\t\t\tpq.poll();\t\t}\t}\treturn pq.peek();}"
+  },
+  
+  {
     "title": "二分",
     "url": "/posts/leetcode-bs/",
     "categories": "LeetCode",

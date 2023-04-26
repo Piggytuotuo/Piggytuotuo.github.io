@@ -1122,6 +1122,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1169,6 +1182,59 @@
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-topk/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682491560"
+    data-df="ll"
+    >
+  Apr 26, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>TopK</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                使用QuickSort和HeapSort解决TopK问题。
+
+QuickSort O(NlogN)
+定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1273,60 +1339,6 @@ while(left &amp;lt; right){
 二、Class对象
 
 每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-dp-tree/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681812000"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-树形DP</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                树形DP
-
-数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
-
-框架：
-
-1
-2
-3
-4
-5
-6
-7
-void dfs(int v){
-    dp[v] = ...;
-    for(int u: G[v]){//遍历v的所有子节点
-        dfs(u); //确保子节点的值已经更新好
-        update(u, v);//用子节点的dp值对当前节点的dp值铏更...
               </p>
             </div>
           </div>
