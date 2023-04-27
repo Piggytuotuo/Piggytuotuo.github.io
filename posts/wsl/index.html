@@ -1073,7 +1073,7 @@ Failed to connect to bus: Host is down</p>
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/java%E5%9F%BA%E7%A1%80/'>Java基础</a>
+      <a href='/categories/java-foundation/'>Java Foundation</a>
   </div>
   
 
@@ -1431,6 +1431,19 @@ Failed to connect to bus: Host is down</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1553,7 +1566,7 @@ int为基本数据类型，Integer为int对应的包装类。
   Apr 20, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java反射</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java Reflection</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1586,7 +1599,7 @@ int为基本数据类型，Integer为int对应的包装类。
       
       
       <div class="card">
-        <a href="/posts/leetcode-topk/">
+        <a href="/posts/leetcode-recursion/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1598,13 +1611,13 @@ int为基本数据类型，Integer为int对应的包装类。
 
 
 <em class="small"
-    data-ts="1682491560"
+    data-ts="1682561520"
     data-df="ll"
     >
-  Apr 26, 2023
+  Apr 27, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>排序-TopK</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1613,23 +1626,11 @@ int为基本数据类型，Integer为int对应的包装类。
 
 
 
-                使用QuickSort和HeapSort解决TopK问题。
+                原理
 
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-...
+函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
               </p>
             </div>
           </div>

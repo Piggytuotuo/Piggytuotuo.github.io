@@ -501,29 +501,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
-
-  
 
   
   
@@ -615,8 +592,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="713 words">
-  <em>3 min</em> read</span>
+  title="470 words">
+  <em>2 min</em> read</span>
 
     </div>
 
@@ -689,14 +666,6 @@ public static void swap(int[] nums, int i, int j) {
 	quickSort(nums, j + 1, h);
 }
 </pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="递归的原理"><span class="mr-2">递归的原理</span><a href="#递归的原理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。</p>
-
-<p>函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括<strong>函数参数，局部变量及函数返回地址</strong>等信息。当递归调用结束时，栈帧会被弹出，根据<strong>返回地址</strong>返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。</p>
-
-<p>栈帧保在JVM的栈区中。假如P调用Q，则Q的栈帧中的返回地址为调用Q的指令的下一条指令的地址。</p>
 
 <h1 id="quicksort找top-k-on">QuickSort找Top-K O(N)</h1>
 
@@ -989,14 +958,6 @@ public static void swap(int[] nums, int i, int j) {
 
 
 
-  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-    <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
-    <nav id="toc"></nav>
-  </div>
-
-  <!-- toc.js will be loaded at medium priority -->
-  <script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script>
-
 
     
   </div>
@@ -1027,6 +988,19 @@ public static void swap(int[] nums, int i, int j) {
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1202,13 +1176,14 @@ public static void swap(int[] nums, int i, int j) {
 
 使用【回溯法】解决【子集、排列】问题：
 分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
+
 子集 无重
 leetcode 78
 
 给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
 解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
 示例 1：
-输入...
+输...
               </p>
             </div>
           </div>
@@ -1332,10 +1307,10 @@ dp[0][...]...
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/leetcode-recursion/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </div>
+    <p>Recursion</p>
+  </a>
   
 
 </div>

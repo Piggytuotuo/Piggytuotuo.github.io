@@ -772,7 +772,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/'>深度学习</a>
+      <a href='/categories/deep-learning/'>Deep Learning</a>
   </div>
   
 
@@ -1135,6 +1135,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1182,6 +1195,47 @@
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-recursion/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682561520"
+    data-df="ll"
+    >
+  Apr 27, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                原理
+
+思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
+
+函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1288,57 +1342,6 @@ while(left &amp;lt; right){
     int mid = (right - left) / 2 + left;
     if(nums[mid] == target){
         return m...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/java-reflection/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681922400"
-    data-df="ll"
-    >
-  Apr 20, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java反射</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Java Reflection
-
-一、定义
-
-反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。
-
-在设计框架时会用到大量反射。
-
-框架 = 注解 + 反射 + 设计模式。
-
-通过反射，可以创造单例模式中类的多个对象。
-
-二、Class对象
-
-每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一...
               </p>
             </div>
           </div>

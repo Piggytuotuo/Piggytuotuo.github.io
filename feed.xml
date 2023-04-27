@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-04-27T09:40:47+08:00</updated>
+  <updated>2023-04-27T13:00:00+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Recursion</title>
+    <link href="http://localhost:4000/posts/leetcode-recursion/" rel="alternate" type="text/html" title="Recursion" />
+    <published>2023-04-27T10:12:00+08:00</published>
+  
+    <updated>2023-04-27T10:12:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-recursion/</id>
+    <content src="http://localhost:4000/posts/leetcode-recursion/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      原理
+
+思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
+
+函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。
+
+栈帧保在JVM的栈区中。假如P调用Q，则Q的栈帧中的返回地址为调用Q的指令的下一条指令的地址。
+
+框架
+
+递归调用之前的代码正序执行： 前序位置
+
+递归调用之后的代码倒序执行： 后序位置
+
+递归遍历数组
+
+//递归遍历数组
+public static void traverseArray(int[] arr, int i) {
+	if(i == arr.length) r...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -122,8 +174,8 @@ while(left &amp;lt;= right){
 
   
   <entry>
-    <title>Java反射</title>
-    <link href="http://localhost:4000/posts/java-reflection/" rel="alternate" type="text/html" title="Java反射" />
+    <title>Java Reflection</title>
+    <link href="http://localhost:4000/posts/java-reflection/" rel="alternate" type="text/html" title="Java Reflection" />
     <published>2023-04-20T00:40:00+08:00</published>
   
     <updated>2023-04-20T00:40:00+08:00</updated>
@@ -136,7 +188,7 @@ while(left &amp;lt;= right){
 
   
     
-    <category term="Java基础" />
+    <category term="Java Foundation" />
     
   
 
@@ -236,62 +288,6 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
 
 
 使用**邻接表List[]**存储树形结构，从根节点开始dfs，先更新根的子树的大小，然后...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>DP-背包问题</title>
-    <link href="http://localhost:4000/posts/leetcode-dp-bag/" rel="alternate" type="text/html" title="DP-背包问题" />
-    <published>2023-04-18T15:00:00+08:00</published>
-  
-    <updated>2023-04-18T15:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-dp-bag/</id>
-    <content src="http://localhost:4000/posts/leetcode-dp-bag/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      背包问题
-
-属于动态规划的一类问题，需要明确状态和选择。
-
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
-
-01背包：
-
-每个物品只能装一次，选择装/不装。
-
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-int[][] dp = new int[N+1][M+1]
-//base case
-dp[0][...] = 0
-dp[...][0] = 0
-//使用wt[i-1]表示第i个物品的重量 val[i-1]表示第i个物品的价值
-for i in [1...N]:
-    for w in [1...M]:
-        //考虑                 不装入     装入
-        dp[i][w] = Math.max(dp[i-1][w],  dp[i-1][w-wt[i-1]]...
     </summary>
   
 

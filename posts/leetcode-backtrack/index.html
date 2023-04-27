@@ -532,6 +532,54 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -539,6 +587,41 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -627,7 +710,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1181 words">
+  title="1179 words">
   <em>6 min</em> read</span>
 
     </div>
@@ -637,12 +720,13 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="引言">引言</h1>
+  <h2 id="引言"><span class="mr-2">引言</span><a href="#引言" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>跟着<a href="https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/hui-su-sua-56e11/">labuladong</a>刷回溯题的记录。</p>
 
 <p>使用【回溯法】解决【子集、排列】问题：
 分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。</p>
-<h1 id="子集-无重">子集 无重</h1>
+
+<h2 id="子集-无重"><span class="mr-2">子集 无重</span><a href="#子集-无重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p><a href="https://leetcode.cn/problems/subsets/">leetcode 78</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -707,7 +791,7 @@
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="子集-有重">子集 有重</h1>
+<h2 id="子集-有重"><span class="mr-2">子集 有重</span><a href="#子集-有重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p><a href="https://leetcode.cn/problems/subsets-ii/">leetcode90</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -776,7 +860,7 @@
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="排列-无重">排列 无重</h1>
+<h2 id="排列-无重"><span class="mr-2">排列 无重</span><a href="#排列-无重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p><a href="https://leetcode.cn/problems/permutations/">leetcode 46</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -855,8 +939,35 @@
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="排列-有重">排列 有重</h1>
+<h2 id="排列-有重"><span class="mr-2">排列 有重</span><a href="#排列-有重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p><a href="https://leetcode.cn/problems/permutations-ii/">leetcode 47</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>​给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
+示例 1：
+输入：nums = [1,1,2]
+输出：
+[[1,1,2],
+ [1,2,1],
+ [2,1,1]]
+示例 2：
+输入：nums = [1,2,3]
+输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]		
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><strong>先对元素排序，使相同元素相邻。</strong>
+因为存在相同元素，直接全排列会搜索到[1, 1’, 2]和[1’, 1, 2]的相同结果，去重的方式为：<strong>保证相同元素在排列结果中的相对顺序</strong>。也就是：当我们搜到第1’时，必须保证1已经使用过，因此若前一相同元素未被使用，剪枝。</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
@@ -892,29 +1003,7 @@
 30
 31
 32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-</pre></td><td class="rouge-code"><pre>​给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
-示例 1：
-输入：nums = [1,1,2]
-输出：
-[[1,1,2],
- [1,2,1],
- [2,1,1]]
-示例 2：
-输入：nums = [1,2,3]
-输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]		 **先对元素排序，使相同元素相邻。** 因为存在相同元素，直接全排列会搜索到[1, 1', 2]和[1', 1, 2]的相同结果，去重的方式为：**保证相同元素在排列结果中的相对顺序**。也就是：当我们搜到第1'时，必须保证1已经使用过，因此若前一相同元素未被使用，剪枝。
-
-class Solution {
+</pre></td><td class="rouge-code"><pre>class Solution {
     LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();
     List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();
     boolean[] used;
@@ -948,13 +1037,15 @@ class Solution {
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="总结">总结</h1>
-<h2 id="子集"><span class="mr-2">子集</span><a href="#子集" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p>只能选择当前位置后面的元素，通过在回溯时传递搜索的起始索引实现。
-若元素有重，先排序，搜索到重复元素（当前元素和前一元素相同）时，剪枝。</p>
-<h2 id="排列"><span class="mr-2">排列</span><a href="#排列" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p>不能选择用过的数字，通过判断path中是否存在或者使用used数组记录。
-若元素有重，先排序，需要保证相同元素在结果中的相对顺序是一致的，因此：搜索到重复元素（当前元素和前一元素相同）且 前一元素未被使用 时，剪枝。</p>
+<h2 id="总结"><span class="mr-2">总结</span><a href="#总结" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="子集"><span class="mr-2">子集</span><a href="#子集" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>只能选择当前位置后面的元素，通过在回溯时传递搜索的起始索引实现。</p>
+
+<p>若元素有重，先排序，搜索到重复元素（当前元素和前一元素相同）时，剪枝。</p>
+<h3 id="排列"><span class="mr-2">排列</span><a href="#排列" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>不能选择用过的数字，通过判断path中是否存在或者使用used数组记录。</p>
+
+<p>若元素有重，先排序，需要保证相同元素在结果中的相对顺序是一致的，因此：搜索到重复元素（当前元素和前一元素相同）且 前一元素未被使用 时，剪枝。</p>
 
 </div>
 
@@ -1214,6 +1305,19 @@ class Solution {
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
