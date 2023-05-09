@@ -1082,6 +1082,19 @@ System.out.print(name);
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1204,6 +1217,54 @@ System.out.print(name);
       
       
       <div class="card">
+        <a href="/posts/learn-java/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681366200"
+    data-df="ll"
+    >
+  Apr 13, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java常用代码</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                在线文档
+https://www.matools.com/api/java8
+从键盘输入
+Scanner sc =new Scanner(System.in);
+Integer a=sc.nextInt();
+
+
+int、Integer、Double
+int为基本数据类型，Integer为int对应的包装类。
+在范型中使用Integer
+
+HashMap&amp;lt;String,Integer&amp;...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/wsl/">
           <div class="card-body">
             <!--
@@ -1268,7 +1329,7 @@ i386是32位 amd64是64位
       
       
       <div class="card">
-        <a href="/posts/learn-java/">
+        <a href="/posts/leetcode-tree/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1280,13 +1341,13 @@ i386是32位 amd64是64位
 
 
 <em class="small"
-    data-ts="1681366200"
+    data-ts="1683597600"
     data-df="ll"
     >
-  Apr 13, 2023
+  May  9, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java常用代码</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Tree</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1295,59 +1356,37 @@ i386是32位 amd64是64位
 
 
 
-                在线文档
-https://www.matools.com/api/java8
-从键盘输入
-Scanner sc =new Scanner(System.in);
-Integer a=sc.nextInt();
+                LeetCode中关于二叉树的一些问题
 
+判断树是否对称
 
-int、Integer、Double
-int为基本数据类型，Integer为int对应的包装类。
-在范型中使用Integer
+leetcode 剑指Offer 28
 
-HashMap&amp;lt;String,Integer&amp;...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-recursion/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1682561520"
-    data-df="ll"
-    >
-  Apr 27, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                原理
-
-思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
-
-函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
+例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+    1
+   / \
+  2  ...
               </p>
             </div>
           </div>
