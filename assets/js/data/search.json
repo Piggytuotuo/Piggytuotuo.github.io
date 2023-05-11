@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Java 多线程",
+    "url": "/posts/java-threads/",
+    "categories": "Java Concurrency",
+    "tags": "Java",
+    "date": "2023-05-11 20:34:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "实现并行完成多个任务。提高cpu的利用率。三种实现方式public class LearnThreads {    public static void main(String[] args) {        //1. 继承Thread类，实例化一个Thread对象        Thread mt = new MyThread();        mt.start();        /...",
+    "content": "实现并行完成多个任务。提高cpu的利用率。三种实现方式public class LearnThreads {    public static void main(String[] args) {        //1. 继承Thread类，实例化一个Thread对象        Thread mt = new MyThread();        mt.start();        // 2. 实例化一个Runnable对象，作为参数传给Thread类        MyRunnable instance = new MyRunnable();        Thread thread = new Thread(instance);        thread.start();        //3. 实例化一个Callable对象，作为参数传给FutureTask，ft作为参数传给Thread        MyCallable mc = new MyCallable();        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(mc);        Thread thread2 = new Thread(ft);        thread2.start();    }}//1. 继承Thread类class MyThread extends Thread{    public void run(){        System.out.println(\"1. extends thread\");    }}//2. 实现Runnable接口class MyRunnable implements Runnable{    @Override    public void run() {        System.out.println(\"2. implements runnable\");    }}//3. 实现Callable接口class MyCallable implements Callable&lt;Integer&gt;{    @Override    public Integer call() throws Exception {        System.out.println(\"3. implements callable\");        return null;    }}线程池线程池：复用已创建的线程，减少线程创建和销毁的开销。通过管理线程队列 + 任务队列 实现。Java实现的方式：Executor是一个接口，定义了执行Runnable任务的execute方法。将任务提交给Executor，由Executor管理线程池并分配线程执行任务。Executors类提供了实现Executor接口的几种方法：  CachedThreadPool 一个任务创建一个线程  FixedThreadPool 所有任务只能使用固定大小的线程  SingleThreadExecutor 大小为1的FixedThreadPool***  public static void main(String[] args) {      //1. 创建线程池      ExecutorService es = Executors.newCachedThreadPool();      //2. 向线程池提交了5个MyRunnable任务      for(int i = 0; i &lt; 5; i++){          es.execute(new MyRunnable());      }      //   创建匿名线程并提交      es.exexute(() -&gt; {          //…      })      //3. 关闭线程池      //调用shutdown方法：会等待线程都执行完毕再关闭      es.shutdown();  }多线程同步为什么要同步：多个线程尝试读写同一个变量，由于执行顺序不确定，可能会出现数据不一致的情况。实现同步的两种锁机制：1. JVM提供的synchronized锁static class SynExample{    //1. 同步代码块    public void func1(){        synchronized (this){ //this与实例相关            System.out.println(\"func1\");            for(int i = 0; i &lt; 10; i++){ //for循环快捷键：fori                System.out.print(i + \" \");            }            System.out.println();        }    }    //2. 同步方法    public synchronized void func2(){        System.out.println(\"func2\");        for(int i = 0; i &lt; 10; i++){            System.out.print(i + \" \");        }        System.out.println();    }    //3.同步整个类    public void func3(){        synchronized (SynExample.class){ //同步锁对象是SynExample.class            System.out.println(\"func3\");            for(int i = 0; i &lt; 10; i++){                System.out.print(i + \" \");            }            System.out.println();        }    }    //4.同步一个类的静态方法,同样作用于整个类    public synchronized static void fun4(){    }}总结：同步代码块：锁对象选择多个线程可以同时访问的资源，一般为this。作用于当前对象。多个线程访问类的同一个实例时，才会进行同步。同步方法：锁对象默认为当前类的实例this，同样作用于当前对象。类中的多个方法都加了synchronized关键字时，只有一个方法可以获得锁。同步一个类：锁对象为类的Class对象，作用于当前类。多个线程访问类的不同实例时，也会进行同步。2. JRE提供的ReenTrantLock锁，需要手动释放static class LockExample{    //1. 创建锁对象    private Lock lock = new ReentrantLock();    public void func(){        //2. 在需要同步的代码块中，通过lock()方法获取锁        lock.lock();        //3. 执行同步代码块        try{            //同步代码块            for (int i = 0; i &lt; 10; i++) {                System.out.print(i +  \" \");            }            System.out.println();        }finally {            //4. unlock()释放锁            lock.unlock();        }    }}多线程的协作因为一些需求，A线程的某些部分必须在B线程的某些部分之前执行，需要对多线程之间作出一些协调。1. join()在B线程中调用A线程的join方法，会将B线程挂起，等待A线程执行完毕后再执行。public class LearnCollaborate {    class A extends Thread{        @Override        public void run() {            System.out.println(\"A\");        }    }    class B extends Thread{        private A a;        B(A a){            this.a = a;        }        @Override        public void run() {            try{                a.join(); //将当前线程挂起，等待a执行完毕，再执行b线程。            }catch (Exception e){                e.printStackTrace();            }            System.out.println(\"B\");        }    }    public void test(){        A a = new A();        B b = new B(a);        b.start();        a.start();    }}2. wait() notify() notifyAll()必须用在同步的方法或代码块中。调用wait()方法，挂起当前线程，释放锁。等待其他线程调用了notify或notifyAll方法，A线程继续运行。public class LearnWaitNotify {    // 多个方法使用synchronized关键字修饰    // 他们的锁对象都是当前对象的实例this    public synchronized void before(){        System.out.println(\"before\");        notifyAll();    }    public synchronized void after(){        try{            //wait会释放锁，sleep不会.            //wait必须释放锁，才能保证其他线程可以进入到before函数中 调用notify            wait();        }catch (Exception e){            e.printStackTrace();        }        System.out.println(\"after\");    }}3. await() signal() signalAll()在Condition类上调用await()方法使当前线程等待没其他线程调用signal或signalAll唤醒等待的线程。public class LearnAwaitSignal {    private Lock lock = new ReentrantLock();    private Condition condition = lock.newCondition();    public void before(){        lock.lock();        try {            System.out.println(\"before\");            condition.signalAll();        }finally {            lock.unlock();        }    }    public void after(){        lock.lock();        try{            condition.await();            System.out.println(\"after\");        }catch(Exception e){            e.printStackTrace();        }finally{            lock.unlock();        }    }}死锁的例子A线程持有lock1, 等待获得lock2; B线程持有lock2, 等待获得lock1。public class DeadLock {    public static Object lock1 = new Object();    public static Object lock2 = new Object();public static void main(String[] args) {    Thread th1 = new Thread(new Runnable() {        @Override        public void run() {            synchronized (lock1){                try{                    System.out.println(\"th1 holding lock1\");                    Thread.sleep(10);                }catch (Exception e){                    e.printStackTrace();                }                synchronized (lock2){                    System.out.println(\"th1 holding lock1 + lock2\");                }            }        }    });    Thread th2 = new Thread(new Runnable() {        @Override        public void run() {            synchronized (lock2){                try{                    System.out.println(\"th2 holding lock2\");                    Thread.sleep(10);                }catch (Exception e){                    e.printStackTrace();                }                synchronized (lock1){                    System.out.println(\"th2 holding lock2 + lock1\");                }            }        }    });    th1.start();    th2.start();} }"
+  },
+  
+  {
     "title": "Tree",
     "url": "/posts/leetcode-tree/",
     "categories": "LeetCode",
@@ -52,7 +69,7 @@
   },
   
   {
-    "title": "二分",
+    "title": "二分查找",
     "url": "/posts/leetcode-bs/",
     "categories": "LeetCode",
     "tags": "LeetCode",
@@ -155,7 +172,7 @@
   
   {
     "title": "Java常用代码",
-    "url": "/posts/learn-java/",
+    "url": "/posts/java-codes/",
     "categories": "Java Foundation",
     "tags": "Java",
     "date": "2023-04-13 14:10:00 +0800",

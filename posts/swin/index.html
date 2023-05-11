@@ -1161,6 +1161,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1208,6 +1221,91 @@
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/java-threads/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683808440"
+    data-df="ll"
+    >
+  May 11, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java 多线程</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                实现并行完成多个任务。提高cpu的利用率。
+
+三种实现方式
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+public class LearnThreads {
+    public static ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1311,59 +1409,6 @@ leetcode 剑指Offer 28
 思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
 
 函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-topk/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1682491560"
-    data-df="ll"
-    >
-  Apr 26, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>排序-TopK</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                使用QuickSort和HeapSort解决TopK问题。
-
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-...
               </p>
             </div>
           </div>

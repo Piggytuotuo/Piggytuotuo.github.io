@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-09T11:14:18+08:00</updated>
+  <updated>2023-05-11T21:54:20+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,55 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Java 多线程</title>
+    <link href="http://localhost:4000/posts/java-threads/" rel="alternate" type="text/html" title="Java 多线程" />
+    <published>2023-05-11T20:34:00+08:00</published>
+  
+    <updated>2023-05-11T20:34:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/java-threads/</id>
+    <content src="http://localhost:4000/posts/java-threads/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Java Concurrency" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      实现并行完成多个任务。提高cpu的利用率。
+
+三种实现方式
+
+public class LearnThreads {
+    public static void main(String[] args) {
+        //1. 继承Thread类，实例化一个Thread对象
+        Thread mt = new MyThread();
+        mt.start();
+
+        // 2. 实例化一个Runnable对象，作为参数传给Thread类
+        MyRunnable instance = new MyRunnable();
+        Thread thread = new Thread(instance);
+        thread.start();
+
+        //3. 实例化一个Callable对象，作为参数传给F...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -184,8 +233,8 @@ public static int partition(int[] nums, int l, int h) {
 
   
   <entry>
-    <title>二分</title>
-    <link href="http://localhost:4000/posts/leetcode-bs/" rel="alternate" type="text/html" title="二分" />
+    <title>二分查找</title>
+    <link href="http://localhost:4000/posts/leetcode-bs/" rel="alternate" type="text/html" title="二分查找" />
     <published>2023-04-21T10:05:00+08:00</published>
   
     <updated>2023-04-21T10:05:00+08:00</updated>
@@ -234,66 +283,6 @@ left = 0, right = nums.length - 1;
 
 while(left &amp;lt;= right){
     int mid = (right - left) / 2 + l...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Java Reflection</title>
-    <link href="http://localhost:4000/posts/java-reflection/" rel="alternate" type="text/html" title="Java Reflection" />
-    <published>2023-04-20T00:40:00+08:00</published>
-  
-    <updated>2023-04-20T00:40:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/java-reflection/</id>
-    <content src="http://localhost:4000/posts/java-reflection/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Java Foundation" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Java Reflection
-
-一、定义
-
-反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。
-
-在设计框架时会用到大量反射。
-
-框架 = 注解 + 反射 + 设计模式。
-
-通过反射，可以创造单例模式中类的多个对象。
-
-二、Class对象
-
-每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该文件保存这个Class对象。
-
-类加载相当于Class对象的加载，类在第一次使用时才动态的加载到JVM中。
-
-比如：加载到内存中的Person、String类，都作为Class的对象/实例。
-
-Class clazz1 = Person.class; //运行时类
-Class clazz2 = String.class;
-
-
-Class对象的三种获取方式：
-
-//1. ...
     </summary>
   
 
