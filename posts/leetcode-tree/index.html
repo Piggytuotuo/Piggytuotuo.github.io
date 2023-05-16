@@ -1210,6 +1210,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1387,51 +1400,6 @@
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681476000"
-    data-df="ll"
-    >
-  Apr 14, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                引言
-跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
-
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
-
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
-
-为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-dp-bag/">
           <div class="card-body">
             <!--
@@ -1528,6 +1496,53 @@ void dfs(int v){
 
 
 子树...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-bs/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682042700"
+    data-df="ll"
+    >
+  Apr 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分查找</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                搜索一个数
+
+搜索区间为 [left, right)
+
+left = 0, right = nums.length;
+
+while(left &amp;lt; right){
+    int mid = (right - left) / 2 + left;
+    if(nums[mid] == target){
+        return mid;
+    }else if(nums[mid] ...
               </p>
             </div>
           </div>

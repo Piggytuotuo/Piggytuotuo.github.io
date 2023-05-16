@@ -1262,6 +1262,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1309,6 +1322,66 @@
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-sldingwindows/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1684218960"
+    data-df="ll"
+    >
+  May 16, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sliding Windows</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                框架: O(N)
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+int left = 0, right = 0;
+
+while(right &amp;lt; s.size()){
+    //将有边界字符加入窗口中
+    windows.add(s[right]);
+    right ++;
+    ...
+    //根据**一些条件**判断是否需要收缩做窗口
+    whil...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1437,73 +1510,6 @@ Git仓库中的默认分支为main（之前为master）.
 43
 public class LearnThreads {
     public static ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-tree/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683597600"
-    data-df="ll"
-    >
-  May  9, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Tree</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                LeetCode中关于二叉树的一些问题
-
-判断树是否对称
-
-leetcode 剑指Offer 28
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
-例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
-    1
-   / \
-  2  ...
               </p>
             </div>
           </div>

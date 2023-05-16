@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-16T14:18:34+08:00</updated>
+  <updated>2023-05-16T16:44:40+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,64 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Sliding Windows</title>
+    <link href="http://localhost:4000/posts/leetcode-sldingwindows/" rel="alternate" type="text/html" title="Sliding Windows" />
+    <published>2023-05-16T14:36:00+08:00</published>
+  
+    <updated>2023-05-16T14:36:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-sldingwindows/</id>
+    <content src="http://localhost:4000/posts/leetcode-sldingwindows/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      框架: O(N)
+
+int left = 0, right = 0;
+
+while(right &amp;lt; s.size()){
+    //将有边界字符加入窗口中
+    windows.add(s[right]);
+    right ++;
+    ...
+    //根据**一些条件**判断是否需要收缩做窗口
+    while(left &amp;lt; right &amp;amp;&amp;amp; window needs shrink){
+        windows.remove(s[left]);
+        left++;
+    }
+}
+
+
+一些条件根据不同的题目确定。
+
+最小覆盖子串
+leetcode 76
+
+给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
+注意：
+对于 t...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -237,51 +295,6 @@ L.right.val == R...
 //递归遍历数组
 public static void traverseArray(int[] arr, int i) {
 	if(i == arr.length) r...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>排序-TopK</title>
-    <link href="http://localhost:4000/posts/leetcode-topk/" rel="alternate" type="text/html" title="排序-TopK" />
-    <published>2023-04-26T14:46:00+08:00</published>
-  
-    <updated>2023-04-26T14:46:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-topk/</id>
-    <content src="http://localhost:4000/posts/leetcode-topk/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      使用QuickSort和HeapSort解决TopK问题。
-
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
-
-public static int partition(int[] nums, int l, int h) {
-	//扫描数组，找到第一个&amp;gt;=al的 和 第一个&amp;lt; al的
-	int i = l, j = h + 1;
-	int flag = nums[l];
-	while(true) {
-		while(nums[++i] &amp;lt; flag &amp;amp;&amp;amp; i &amp;lt; h);
-		while(nums[--j] &amp;gt;=...
     </summary>
   
 
