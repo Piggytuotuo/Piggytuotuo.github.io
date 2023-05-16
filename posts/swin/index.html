@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="跑Swin-Transformer-Object-Detection过程中遇到的坑及解决" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2021-12-26T14:10:00+08:00","datePublished":"2021-12-26T14:10:00+08:00","description":"代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.","headline":"跑Swin-Transformer-Object-Detection过程中遇到的坑及解决","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/swin/"},"url":"http://localhost:4000/posts/swin/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-05-11T21:56:19+08:00","datePublished":"2021-12-26T14:10:00+08:00","description":"代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.","headline":"跑Swin-Transformer-Object-Detection过程中遇到的坑及解决","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/swin/"},"url":"http://localhost:4000/posts/swin/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -633,6 +633,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683813379"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  May 11, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -884,12 +904,27 @@
         
         
         
-      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
+      <li><a href="/posts/java-reflection/">Java Reflection</a></li>
       
         
         
         
-      <li><a href="/posts/leetcode-dp/">DP</a></li>
+      <li><a href="/posts/leetcode-bs/">二分查找</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -950,6 +985,30 @@
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -966,6 +1025,9 @@
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/tools/">Tools</a>
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
@@ -1013,6 +1075,32 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1225,6 +1313,54 @@
       
       
       <div class="card">
+        <a href="/posts/git/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683960240"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Git</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                关于Git
+Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
+
+Git仓库中的默认分支为main（之前为master）.
+在Github或其他平台上创建仓库后，会创建一个默认的main分支。
+
+一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
+
+在规范的开发流程中，通常使用dev + main：
+
+  
+    ma...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/java-threads/">
           <div class="card-body">
             <!--
@@ -1374,47 +1510,6 @@ leetcode 剑指Offer 28
         </a>
       </div>
     
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-recursion/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1682561520"
-    data-df="ll"
-    >
-  Apr 27, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                原理
-
-思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
-
-函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1514,6 +1609,30 @@ leetcode 剑指Offer 28
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1530,6 +1649,9 @@ leetcode 剑指Offer 28
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/tools/">Tools</a>
     
       
       <a class="post-tag" href="/tags/python/">Python</a>

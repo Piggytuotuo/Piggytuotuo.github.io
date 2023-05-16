@@ -1091,12 +1091,27 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
         
         
         
-      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
+      <li><a href="/posts/java-reflection/">Java Reflection</a></li>
       
         
         
         
-      <li><a href="/posts/leetcode-dp/">DP</a></li>
+      <li><a href="/posts/leetcode-bs/">二分查找</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1157,6 +1172,30 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1173,6 +1212,9 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/tools/">Tools</a>
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
@@ -1303,7 +1345,33 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1402,55 +1470,6 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
       
       
       <div class="card">
-        <a href="/posts/leetcode-backtrack/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681366200"
-    data-df="ll"
-    >
-  Apr 13, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>回溯-排列组合问题</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                引言
-跟着labuladong刷回溯题的记录。
-
-使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
-
-子集 无重
-leetcode 78
-
-给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
-示例 1：
-输...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-dp/">
           <div class="card-body">
             <!--
@@ -1540,6 +1559,64 @@ leetcode 78
 int[][] dp = new int[N+1][M+1]
 //base case
 dp[0][...]...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-bs/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682042700"
+    data-df="ll"
+    >
+  Apr 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分查找</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                搜索一个数
+
+搜索区间为 [left, right)
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+left = 0, right = nums.length;
+
+while(left &amp;lt; right){
+    int mid = (right - left) / 2 + left;
+    if(nums[mid] == target){
+        return m...
               </p>
             </div>
           </div>
@@ -1645,6 +1722,30 @@ dp[0][...]...
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1661,6 +1762,9 @@ dp[0][...]...
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/tools/">Tools</a>
     
       
       <a class="post-tag" href="/tags/python/">Python</a>

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-11T21:54:20+08:00</updated>
+  <updated>2023-05-16T14:18:34+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,62 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Git</title>
+    <link href="http://localhost:4000/posts/git/" rel="alternate" type="text/html" title="Git" />
+    <published>2023-05-13T14:44:00+08:00</published>
+  
+    <updated>2023-05-13T14:44:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/git/</id>
+    <content src="http://localhost:4000/posts/git/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Version Control" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      关于Git
+Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
+
+Git仓库中的默认分支为main（之前为master）.
+在Github或其他平台上创建仓库后，会创建一个默认的main分支。
+
+一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
+
+在规范的开发流程中，通常使用dev + main：
+
+  
+    main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。
+  
+  
+    dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。
+  
+
+
+Windows上使用Git
+
+1.下载安装git Git - Downloading Package
+
+2.在git bash中设置git的用户名和...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -226,63 +282,6 @@ public static int partition(int[] nums, int l, int h) {
 	while(true) {
 		while(nums[++i] &amp;lt; flag &amp;amp;&amp;amp; i &amp;lt; h);
 		while(nums[--j] &amp;gt;=...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>二分查找</title>
-    <link href="http://localhost:4000/posts/leetcode-bs/" rel="alternate" type="text/html" title="二分查找" />
-    <published>2023-04-21T10:05:00+08:00</published>
-  
-    <updated>2023-04-21T10:05:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-bs/</id>
-    <content src="http://localhost:4000/posts/leetcode-bs/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      搜索一个数
-
-搜索区间为 [left, right)
-
-left = 0, right = nums.length;
-
-while(left &amp;lt; right){
-    int mid = (right - left) / 2 + left;
-    if(nums[mid] == target){
-        return mid;
-    }else if(nums[mid] &amp;lt; target){
-        left = mid + 1;
-    }else{
-        right = mid;
-    }
-}
-
-
-搜索区间为 [left, right] √
-
-left = 0, right = nums.length - 1;
-
-while(left &amp;lt;= right){
-    int mid = (right - left) / 2 + l...
     </summary>
   
 

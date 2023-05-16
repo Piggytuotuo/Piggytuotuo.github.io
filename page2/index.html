@@ -452,6 +452,153 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/leetcode-dp-tree/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-树形DP
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              树形DP
+
+数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
+
+框架：
+
+void dfs(int v){
+    dp[v] = ...;
+    for(int u: G[v]){//遍历v的所有子节点
+        dfs(u); //确保子节点的值已经更新好
+        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
+    }
+}
+
+
+子树...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681812000"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/leetcode-dp-bag/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-背包问题
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              背包问题
+
+属于动态规划的一类问题，需要明确状态和选择。
+
+状态：背包的容量 和 可选择的物品；选择：装 和 不装
+
+01背包：
+
+每个物品只能装一次，选择装/不装。
+
+定义状态转移方程dp[i][w]：
+
+对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
+
+int[][] dp = new int[N+1][M+1]
+//base case
+dp[0][...]...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681801200"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-dp/">
         <div class="card-body">
           <h1 class="card-title">
@@ -756,12 +903,27 @@ leetcode 78
         
         
         
-      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
+      <li><a href="/posts/java-reflection/">Java Reflection</a></li>
       
         
         
         
-      <li><a href="/posts/leetcode-dp/">DP</a></li>
+      <li><a href="/posts/leetcode-bs/">二分查找</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -822,6 +984,30 @@ leetcode 78
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -838,6 +1024,9 @@ leetcode 78
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/tools/">Tools</a>
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
@@ -919,6 +1108,30 @@ leetcode 78
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -935,6 +1148,9 @@ leetcode 78
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/tools/">Tools</a>
     
       
       <a class="post-tag" href="/tags/python/">Python</a>

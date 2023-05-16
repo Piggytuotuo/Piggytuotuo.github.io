@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Git",
+    "url": "/posts/git/",
+    "categories": "Version Control",
+    "tags": "Tools",
+    "date": "2023-05-13 14:44:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master）.在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
+    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master）.在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main"
+  },
+  
+  {
     "title": "Java 多线程",
     "url": "/posts/java-threads/",
     "categories": "Java Concurrency",
@@ -151,6 +168,23 @@
     
     "snippet": "引言跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)...",
     "content": "引言跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)$。状态转移方程受备忘录启发，引入DP table，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &gt; 1。更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。写状态转移方程的思路：base case -&gt; 状态 -&gt; 选择 -&gt; 定义dp数组最优子结构例如，想考出最高的成绩，则子问题为每门课程的成绩最高，因为每门课程的成绩互相独立，满足最优子结构。零钱兑换leetcode 322给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。计算并返回可以凑成总金额所需的 最少的硬币个数 。如果没有任何一种硬币组合能组成总金额，返回 -1 。你可以认为每种硬币的数量是无限的。示例 1：输入：coins = [1, 2, 5], amount = 11输出：3 解释：11 = 5 + 5 + 1示例 2：输入：coins = [2], amount = 3输出：-1示例 3：输入：coins = [1], amount = 0输出：0dp[11] = Math.min(dp[10], dp[9], dp[6]) + 1递归-自上而下class Solution {    public int coinChange(int[] coins, int amount) {        int[] mem = new int[amount + 1];        Arrays.fill(mem, - 100);        mem[0] = 0;        return dp(coins, amount, mem);    }        //凑amount零钱需要的最小coin数量    public int dp(int[] coins, int amount, int[] mem){        //base case        if(amount == 0) return 0;        if(amount &lt; 0) return -1;        if(mem[amount] != - 100) return mem[amount];        //caculate the best ans        int res = Integer.MAX_VALUE;        for(int coin: coins){            int sub = dp(coins, amount - coin, mem);            if(sub == -1) continue;            res = Math.min(res, sub + 1);         }        res = res == Integer.MAX_VALUE ? -1 : res;        mem[amount] = res;        return res;         }}迭代-自底向上class Solution {    public int coinChange(int[] coins, int amount) {        //凑成amount需要的最少硬币数量        //初始化一个最大值        int[] dp = new int[amount + 1];        Arrays.fill(dp, amount + 1);        dp[0] = 0;        for(int i = 1; i &lt; amount + 1; i++){            for(int coin: coins){                if(i - coin &lt; 0)continue;                dp[i] = Math.min(dp[i], dp[i - coin] + 1);            }        }        return dp[amount] == amount + 1 ? -1 : dp[amount];    }}最长公共子序列leetcode 1143给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。例如，\"ace\" 是 \"abcde\" 的子序列，但 \"aec\" 不是 \"abcde\" 的子序列。两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。示例 1：输入：text1 = \"abcde\", text2 = \"ace\" 输出：3  解释：最长公共子序列是 \"ace\" ，它的长度为 3 。示例 2：输入：text1 = \"abc\", text2 = \"abc\"输出：3解释：最长公共子序列是 \"abc\" ，它的长度为 3 。示例 3：输入：text1 = \"abc\", text2 = \"def\"输出：0解释：两个字符串没有公共子序列，返回 0 。关键在于寻找状态转移方程class Solution {    public int longestCommonSubsequence(String text1, String text2) {        int m = text1.length();        int n = text2.length();        if(m == 0 || n == 0) return 0;        int[][] dp = new int[m + 1][n + 1];                for(int i = 1; i &lt; m + 1; i++){            for(int j = 1; j &lt; n + 1; j++){                if(text1.charAt(i - 1) == text2.charAt(j - 1)){                    dp[i][j] = dp[i-1][j-1] + 1;                }else{                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);                }            }        }        return dp[m][n];    }}"
+  },
+  
+  {
+    "title": "Build my blog with jekyll",
+    "url": "/posts/blog/",
+    "categories": "Blog",
+    "tags": "Tools",
+    "date": "2023-04-13 15:36:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy1. 搭环境（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/D...",
+    "content": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy1. 搭环境（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Development1.安装ruby安装完成后会提示安装开发工具包（一定要安装）下载安装参考：Jekyll + Github Pages 搭建个人免费博客2.安装jekyll框架gem install jekyll3.克隆代码，解压，编译js文件npm -inpm run build‘NODE_ENV’不是内部或外部命令，也不是可运行的程序或批处理文件。build报了上面的错，解决办法：安装cross-env:npm install cross-env --save-dev修改package.json文件，在运行命令加前缀：在NODE_ENV=xxxxxxx前面添加cross-env。然后重新Build，会再assets下生成xxx.min.js文件。4.设置jekyll安装依赖bundle在本地编辑代码，_posts目录下创建markdown格式的博客，在博客项目目录下，运行jekyll server在本地查看编译效果5.将_sites文件下的内容（编译生成的静态文件）上传到github上username.githubio.io项目下~​"
   },
   
   {
