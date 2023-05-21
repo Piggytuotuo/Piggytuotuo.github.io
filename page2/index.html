@@ -452,6 +452,69 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/leetcode-topk/">
+        <div class="card-body">
+          <h1 class="card-title">
+            排序-TopK
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              使用QuickSort和HeapSort解决TopK问题。
+
+QuickSort O(NlogN)
+定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+
+public static int partit...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1682491560"
+    data-df="ll"
+    >
+  Apr 26, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-bs/">
         <div class="card-body">
           <h1 class="card-title">
@@ -753,13 +816,16 @@ dp[0][...]...
 使用【回溯法】解决【子集、排列】问题：
 分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
 
-子集 无重
-leetcode 78
+回溯的框架
 
-给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
-示例 1：
-输...
+回溯属于暴力搜索，两个要点：路径 + 选择列表。
+
+res = []
+def backtrack(路径，选择列表):
+	if 满足结束条件：
+		res.add(路径)
+		return
+	...
             </p>
           </div>
 

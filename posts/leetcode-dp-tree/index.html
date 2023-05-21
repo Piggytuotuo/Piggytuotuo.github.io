@@ -1371,6 +1371,19 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1483,59 +1496,6 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp-bag/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681801200"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                背包问题
-
-属于动态规划的一类问题，需要明确状态和选择。
-
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
-
-01背包：
-
-每个物品只能装一次，选择装/不装。
-
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-int[][] dp = new int[N+1][M+1]
-//base case
-dp[0][...]...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-bs/">
           <div class="card-body">
             <!--
@@ -1638,6 +1598,47 @@ QuickSort O(NlogN)
 10
 11
 ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-recursion/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682561520"
+    data-df="ll"
+    >
+  Apr 27, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                原理
+
+思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
+
+函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
               </p>
             </div>
           </div>

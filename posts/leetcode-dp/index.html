@@ -1343,6 +1343,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1425,68 +1438,6 @@
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-dp-bag/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681801200"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                背包问题
-
-属于动态规划的一类问题，需要明确状态和选择。
-
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
-
-01背包：
-
-每个物品只能装一次，选择装/不装。
-
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-int[][] dp = new int[N+1][M+1]
-/...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
     
       
       
@@ -1594,6 +1545,59 @@ while(left &amp;lt; right){
     int mid = (right - left) / 2 + left;
     if(nums[mid] == target){
         return m...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-topk/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682491560"
+    data-df="ll"
+    >
+  Apr 26, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>排序-TopK</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                使用QuickSort和HeapSort解决TopK问题。
+
+QuickSort O(NlogN)
+定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+...
               </p>
             </div>
           </div>

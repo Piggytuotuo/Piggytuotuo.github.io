@@ -1114,6 +1114,19 @@ git pull origin main
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1320,9 +1333,6 @@ git pull origin main
   
     
     
-  
-    
-    
       
       
         
@@ -1387,6 +1397,62 @@ github搭建博客的记录
       
       
       <div class="card">
+        <a href="/posts/leetcode-diffnum/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Diff Nums</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                前缀和
+
+可以快速求解闭区间[i,j]的和。
+
+class PrefixSum{
+    private int[] prefix;
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+public PrefixSum(int[] nums){
+    prefix = new int[nums.length + 1];
+    for(int i = 1; i &amp;lt; prefix.length...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/leetcode-sldingwindows/">
           <div class="card-body">
             <!--
@@ -1438,52 +1504,6 @@ while(right &amp;lt; s.size()){
     ...
     //根据**一些条件**判断是否需要收缩做窗口
     whil...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/java-threads/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683808440"
-    data-df="ll"
-    >
-  May 11, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java 多线程</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                实现并行完成多个任务。提高cpu的利用率。
-
-三种实现方式
-
-public class LearnThreads {
-    public static void main(String[] args) {
-        //1. 继承Thread类，实例化一个Thread对象
-        Thread mt = new MyThread();
-        mt.start();
-...
               </p>
             </div>
           </div>

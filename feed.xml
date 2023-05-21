@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-16T16:44:40+08:00</updated>
+  <updated>2023-05-21T19:09:55+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,64 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Diff Nums</title>
+    <link href="http://localhost:4000/posts/leetcode-diffnum/" rel="alternate" type="text/html" title="Diff Nums" />
+    <published>2023-05-21T14:46:00+08:00</published>
+  
+    <updated>2023-05-21T14:46:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/leetcode-diffnum/</id>
+    <content src="http://localhost:4000/posts/leetcode-diffnum/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="LeetCode" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      前缀和
+
+可以快速求解闭区间[i,j]的和。
+
+class PrefixSum{
+    private int[] prefix;
+
+public PrefixSum(int[] nums){
+    prefix = new int[nums.length + 1];
+    for(int i = 1; i &amp;lt; prefix.length; i++){
+        prefix[i] = prefix[i - 1] + nums[i - 1];
+    }
+}
+
+public int query(int i, int j){
+    return prefix[j + 1] - prefix[i];
+} }
+
+
+差分数组
+
+可以快速实现对闭区间[i,j]中的所有元素进行增减。
+
+public class Difference {
+    private int[] d...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -243,58 +301,6 @@ leetcode 剑指Offer 28
 L.val == R.val
 
 L.right.val == R...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Recursion</title>
-    <link href="http://localhost:4000/posts/leetcode-recursion/" rel="alternate" type="text/html" title="Recursion" />
-    <published>2023-04-27T10:12:00+08:00</published>
-  
-    <updated>2023-04-27T10:12:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-recursion/</id>
-    <content src="http://localhost:4000/posts/leetcode-recursion/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      原理
-
-思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
-
-函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。
-
-栈帧保在JVM的栈区中。假如P调用Q，则Q的栈帧中的返回地址为调用Q的指令的下一条指令的地址。
-
-框架
-
-递归调用之前的代码正序执行： 前序位置
-
-递归调用之后的代码倒序执行： 后序位置
-
-递归遍历数组
-
-//递归遍历数组
-public static void traverseArray(int[] arr, int i) {
-	if(i == arr.length) r...
     </summary>
   
 
