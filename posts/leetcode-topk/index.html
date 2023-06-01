@@ -859,6 +859,11 @@ public static void swap(int[] nums, int i, int j) {
         
         
         
+      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
+      
+        
+        
+        
       <li><a href="/posts/java-reflection/">Java Reflection</a></li>
       
         
@@ -875,11 +880,6 @@ public static void swap(int[] nums, int i, int j) {
         
         
       <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1030,6 +1030,19 @@ public static void swap(int[] nums, int i, int j) {
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1264,58 +1277,6 @@ public static void swap(int[] nums, int i, int j) {
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp-tree/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681812000"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-树形DP</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                树形DP
-
-数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
-
-框架：
-
-void dfs(int v){
-    dp[v] = ...;
-    for(int u: G[v]){//遍历v的所有子节点
-        dfs(u); //确保子节点的值已经更新好
-        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
-    }
-}
-
-
-子树...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-bs/">
           <div class="card-body">
             <!--
@@ -1395,6 +1356,73 @@ while(left &amp;lt; right){
 思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
 
 函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-tree/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683597600"
+    data-df="ll"
+    >
+  May  9, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Tree</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                LeetCode中关于二叉树的一些问题
+
+判断树是否对称
+
+leetcode 剑指Offer 28
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
+例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+    1
+   / \
+  2  ...
               </p>
             </div>
           </div>

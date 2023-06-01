@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Design Schema",
+    "url": "/posts/design-schema/",
+    "categories": "Else",
+    "tags": "Java",
+    "date": "2023-05-21 14:46:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){ ...",
+    "content": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){    }    public static Singleton getInstance(){        //懒汉式：需要的时候在进行实例化。线程不安全。        if(uniqueInstance == null){            uniqueInstance = new Singleton();        }        return uniqueInstance;    }}饿汉式-线程安全直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();懒汉式-线程安全仍然延迟实例化，但是对获取实例的方法加锁。优点：线程安全。缺点：会引起线程阻塞，性能降低。public static synchronized Singleton getUniqueInstance() {    if (uniqueInstance == null) {        uniqueInstance = new Singleton();    }    return uniqueInstance;}双重校验锁-线程安全只对实例化部分语句加锁。public class Singleton {    private **volatile** static Singleton uniqueInstance;    private Singleton() {    }    public static Singleton getUniqueInstance() {        if (uniqueInstance == null) {            synchronized (Singleton.class) {                if (uniqueInstance == null) {                    uniqueInstance = new Singleton();                }            }        }        return uniqueInstance;    }}  需要用volatile关键字修饰。禁止指令重排。  需要有两个if语句。若只有第一个，可能会出现两个线程都进入到if语句内，执行两次实例化。volatile关键字两个作用：  保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。  多线程执行下的顺序一致性：禁止JVM指令重排。静态内部类实现返回静态内部类的静态实例。优点：线程安全+延迟初始化。public class Singleton {    private Singleton(){    }    private static class SingletonHolder{        private static final Singleton INSTANCE = new Singleton();    }    public static Singleton getInstance(){        return SingletonHolder.INSTANCE;    }}当Singleton类被加载时，静态内部类不会被加载进内存。只有当调用Singleton.getInstance()时，静态内部类才会被加载，才会初始化INSTANCE实例。枚举实现将枚举类作为单例类。public enum Singleton{    INSTANCE;}多个Singleton.INSTANCE获取到的是同一个对象。"
+  },
+  
+  {
     "title": "Diff Nums",
     "url": "/posts/leetcode-diffnum/",
     "categories": "LeetCode",

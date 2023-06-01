@@ -1225,6 +1225,11 @@ Failed to connect to bus: Host is down</p>
         
         
         
+      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
+      
+        
+        
+        
       <li><a href="/posts/java-reflection/">Java Reflection</a></li>
       
         
@@ -1241,11 +1246,6 @@ Failed to connect to bus: Host is down</p>
         
         
       <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1604,6 +1604,19 @@ Failed to connect to bus: Host is down</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1723,6 +1736,67 @@ public class LearnThreads {
       
       
       <div class="card">
+        <a href="/posts/design-schema/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Design Schema</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                单例Singleton
+
+私有构造函数 + 私有静态变量 + 公有静态函数
+
+只能通过共有静态函数返回唯一的私有静态变量。
+
+懒汉式-线程不安全
+
+在获取实例时，若没有实例化，再进行实例化。
+优点：节约资源；缺点：线程不安全。
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+public class Singleton {
+    private static Singleton u...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/java-reflection/">
           <div class="card-body">
             <!--
@@ -1765,66 +1839,6 @@ public class LearnThreads {
 二、Class对象
 
 每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/java-codes/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681366200"
-    data-df="ll"
-    >
-  Apr 13, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java常用代码</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                在线文档
-https://www.matools.com/api/java8
-从键盘输入
-1
-2
-Scanner sc =new Scanner(System.in);
-Integer a=sc.nextInt();
-
-
-int、Integer、Double
-int为基本数据类型，Integer为int对应的包装类。
-在范型中使用Integer
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-1...
               </p>
             </div>
           </div>

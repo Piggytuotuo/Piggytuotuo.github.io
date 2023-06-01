@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-21T19:09:55+08:00</updated>
+  <updated>2023-06-01T22:01:26+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,60 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Design Schema</title>
+    <link href="http://localhost:4000/posts/design-schema/" rel="alternate" type="text/html" title="Design Schema" />
+    <published>2023-05-21T14:46:00+08:00</published>
+  
+    <updated>2023-05-21T14:46:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/design-schema/</id>
+    <content src="http://localhost:4000/posts/design-schema/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Else" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      单例Singleton
+
+私有构造函数 + 私有静态变量 + 公有静态函数
+
+只能通过共有静态函数返回唯一的私有静态变量。
+
+懒汉式-线程不安全
+
+在获取实例时，若没有实例化，再进行实例化。
+优点：节约资源；缺点：线程不安全。
+
+public class Singleton {
+    private static Singleton uniqueInstance;
+    private Singleton(){
+    }
+    public static Singleton getInstance(){
+        //懒汉式：需要的时候在进行实例化。线程不安全。
+        if(uniqueInstance == null){
+            uniqueInstance = new Singleton();
+        }
+        retur...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -234,73 +288,6 @@ public class LearnThreads {
         thread.start();
 
         //3. 实例化一个Callable对象，作为参数传给F...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Tree</title>
-    <link href="http://localhost:4000/posts/leetcode-tree/" rel="alternate" type="text/html" title="Tree" />
-    <published>2023-05-09T10:00:00+08:00</published>
-  
-    <updated>2023-05-09T10:00:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-tree/</id>
-    <content src="http://localhost:4000/posts/leetcode-tree/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      LeetCode中关于二叉树的一些问题
-
-判断树是否对称
-
-leetcode 剑指Offer 28
-
-请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
-例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
-    1
-   / \
-  2   2
- / \ / \
-3  4 4  3
-但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
-    1
-   / \
-  2   2
-   \   \
-   3    3
-
-示例 1：
-输入：root = [1,2,2,3,4,4,3]
-输出：true
-示例 2：
-输入：root = [1,2,2,null,3,null,3]
-输出：false
-
-
-满足镜像对称的条件：
-对于镜像对称的一对节点L和R:
-
-L.val == R.val
-
-L.right.val == R...
     </summary>
   
 

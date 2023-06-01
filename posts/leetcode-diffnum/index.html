@@ -1064,6 +1064,11 @@ class Solution {
         
         
         
+      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
+      
+        
+        
+        
       <li><a href="/posts/java-reflection/">Java Reflection</a></li>
       
         
@@ -1080,11 +1085,6 @@ class Solution {
         
         
       <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/leetcode-backtrack/">回溯-排列组合问题</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1243,6 +1243,19 @@ class Solution {
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1477,58 +1490,6 @@ class Solution {
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp-tree/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1681812000"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-树形DP</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                树形DP
-
-数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
-
-框架：
-
-void dfs(int v){
-    dp[v] = ...;
-    for(int u: G[v]){//遍历v的所有子节点
-        dfs(u); //确保子节点的值已经更新好
-        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
-    }
-}
-
-
-子树...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-bs/">
           <div class="card-body">
             <!--
@@ -1615,6 +1576,47 @@ public static int partit...
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-recursion/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682561520"
+    data-df="ll"
+    >
+  Apr 27, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                原理
+
+思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
+
+函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1634,10 +1636,10 @@ public static int partit...
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/design-schema/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </div>
+    <p>Design Schema</p>
+  </a>
   
 
 </div>
