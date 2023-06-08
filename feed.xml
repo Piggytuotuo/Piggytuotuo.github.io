@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-08T12:10:45+08:00</updated>
+  <updated>2023-06-08T13:09:49+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -81,7 +81,7 @@
     <link href="http://localhost:4000/posts/dp-structural-proxy-jdk/" rel="alternate" type="text/html" title="DP-Structural Pattern-Proxy-JDK" />
     <published>2023-06-07T17:16:00+08:00</published>
   
-    <updated>2023-06-07T17:16:00+08:00</updated>
+    <updated>2023-06-08T12:11:28+08:00</updated>
   
     <id>http://localhost:4000/posts/dp-structural-proxy-jdk/</id>
     <content src="http://localhost:4000/posts/dp-structural-proxy-jdk/" />
@@ -153,7 +153,7 @@ public class TrainStation implements SellTickets{
     <link href="http://localhost:4000/posts/dp-structural-proxy-gclib/" rel="alternate" type="text/html" title="DP-Structural Pattern-Proxy-GCLib" />
     <published>2023-06-07T17:16:00+08:00</published>
   
-    <updated>2023-06-07T17:16:00+08:00</updated>
+    <updated>2023-06-08T12:11:28+08:00</updated>
   
     <id>http://localhost:4000/posts/dp-structural-proxy-gclib/</id>
     <content src="http://localhost:4000/posts/dp-structural-proxy-gclib/" />
@@ -207,7 +207,7 @@ public class ProxyFactory implements MethodInterceptor {
     <link href="http://localhost:4000/posts/javaweb-bugs/" rel="alternate" type="text/html" title="Java Web Bug记录" />
     <published>2023-06-03T14:35:00+08:00</published>
   
-    <updated>2023-06-03T14:35:00+08:00</updated>
+    <updated>2023-06-08T12:11:28+08:00</updated>
   
     <id>http://localhost:4000/posts/javaweb-bugs/</id>
     <content src="http://localhost:4000/posts/javaweb-bugs/" />
