@@ -451,10 +451,10 @@
 <div id="post-list">
   
     <div class="card post-preview">
-      <a href="/posts/git/">
+      <a href="/posts/javaweb-bugs/">
         <div class="card-body">
           <h1 class="card-title">
-            Git
+            Java Web Bug记录
           </h1>
 
           <div class="card-text post-content">
@@ -465,18 +465,16 @@
 
 
 
-              关于Git
-Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
+              Bug1
 
-Git仓库中的默认分支为main（之前为master）.
-在Github或其他平台上创建仓库后，会创建一个默认的main分支。
+Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
 
-一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
 
-在规范的开发流程中，通常使用dev + main：
+背景：jsp中导入java包，并部署在tomcat运行时报错。
 
-  
-    ma...
+原因：在jsp中没有找到相关的java类。
+
+解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifac...
             </p>
           </div>
 
@@ -494,10 +492,10 @@ Git仓库中的默认分支为main（之前为master）.
 
 
 <em class=""
-    data-ts="1683960240"
+    data-ts="1685774100"
     data-df="ll"
     >
-  May 13, 2023
+  Jun  3, 2023
 </em>
 
 
@@ -506,7 +504,7 @@ Git仓库中的默认分支为main（之前为master）.
                 <i class="far fa-folder-open fa-fw"></i>
                 <span>
                   
-                    Version Control
+                    Develop
                 </span>
               
             </div>
@@ -674,79 +672,6 @@ public class LearnThreads {
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/blog/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Build my blog with jekyll
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              ​
-github搭建博客的记录
-
-本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。
-
-我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy
-
-1. 搭环境
-（如果没有nodejs先安装nodejs）
-
-部署教程参考：https://github.com/cotes2020/jekyll-theme-chi...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681371360"
-    data-df="ll"
-    >
-  Apr 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Blog
-                </span>
-              
-            </div>
-
-            
-              <div class="pin">
-                <i class="fas fa-thumbtack fa-fw"></i>
-                <span>Pinned</span>
-              </div>
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
       <a href="/posts/java-codes/">
         <div class="card-body">
           <h1 class="card-title">
@@ -794,96 +719,6 @@ HashMap&amp;lt;String,Integer&amp;...
     data-df="ll"
     >
   Apr 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Java Foundation
-                </span>
-              
-            </div>
-
-            
-              <div class="pin">
-                <i class="fas fa-thumbtack fa-fw"></i>
-                <span>Pinned</span>
-              </div>
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/wsl/">
-        <div class="card-body">
-          <h1 class="card-title">
-            wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              
-
-方式一 vmware安装
-
-安装vmware,下载ubuntu的iso文件
-
-ubuntu-releases安装包下载_开源镜像站-阿里云
-
-i386是32位 amd64是64位
-
-
-
-方式二 wsl安装
-
-1. 在启动或关闭Windows功能中，打开以下两项，重启
-
-
-
- 2. powershell以管理员身份打开
-
-
-
-在mic store安装分发版也可
-
-查看已经安装的分发版
-
-
-...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1678860600"
-    data-df="ll"
-    >
-  Mar 15, 2023
 </em>
 
 
@@ -964,12 +799,12 @@ i386是32位 amd64是64位
         
         
         
-      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
       
         
         
         
-      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1002,6 +837,25 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1035,10 +889,20 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1070,6 +934,9 @@ i386是32位 amd64是64位
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1126,6 +993,25 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1159,10 +1045,20 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1194,6 +1090,9 @@ i386是32位 amd64是64位
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>

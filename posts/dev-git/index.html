@@ -39,25 +39,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="回溯-排列组合问题" />
+<meta property="og:title" content="Git" />
 <meta name="author" content="Crystal Li" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="引言 跟着labuladong刷回溯题的记录。" />
-<meta property="og:description" content="引言 跟着labuladong刷回溯题的记录。" />
-<link rel="canonical" href="http://localhost:4000/posts/leetcode-backtrack/" />
-<meta property="og:url" content="http://localhost:4000/posts/leetcode-backtrack/" />
+<meta name="description" content="关于Git Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。" />
+<meta property="og:description" content="关于Git Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。" />
+<link rel="canonical" href="http://localhost:4000/posts/dev-git/" />
+<meta property="og:url" content="http://localhost:4000/posts/dev-git/" />
 <meta property="og:site_name" content="Piggytuotuo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-13T14:10:00+08:00" />
+<meta property="article:published_time" content="2023-05-13T14:44:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="回溯-排列组合问题" />
+<meta property="twitter:title" content="Git" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-05-21T19:10:52+08:00","datePublished":"2023-04-13T14:10:00+08:00","description":"引言 跟着labuladong刷回溯题的记录。","headline":"回溯-排列组合问题","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/leetcode-backtrack/"},"url":"http://localhost:4000/posts/leetcode-backtrack/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-05-13T14:44:00+08:00","datePublished":"2023-05-13T14:44:00+08:00","description":"关于Git Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。","headline":"Git","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-git/"},"url":"http://localhost:4000/posts/dev-git/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>回溯-排列组合问题 | Piggytuotuo
+  <title>Git | Piggytuotuo
   </title>
 
   <!--
@@ -409,7 +409,7 @@
         
 
           
-            <span>回溯-排列组合问题</span>
+            <span>Git</span>
           
 
         
@@ -544,54 +544,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -599,41 +551,6 @@
 
   
   
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
 
   
 
@@ -652,7 +569,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>回溯-排列组合问题</h1>
+<h1 data-toc-skip>Git</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -668,35 +585,15 @@
 
 
 <em class=""
-    data-ts="1681366200"
+    data-ts="1683960240"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Apr 13, 2023
+  May 13, 2023
 </em>
 
     </span>
 
     <!-- lastmod date -->
-    
-    <span>
-      Updated
-      <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1684667452"
-    data-df="ll"
-    data-toggle="tooltip" data-placement="bottom">
-  May 21, 2023
-</em>
-
-    </span>
     
 
   
@@ -742,8 +639,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1267 words">
-  <em>7 min</em> read</span>
+  title="654 words">
+  <em>3 min</em> read</span>
 
     </div>
 
@@ -752,15 +649,54 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="引言"><span class="mr-2">引言</span><a href="#引言" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p>跟着<a href="https://labuladong.gitee.io/algo/di-ling-zh-bfe1b/hui-su-sua-56e11/">labuladong</a>刷回溯题的记录。</p>
+  <h2 id="关于git"><span class="mr-2">关于Git</span><a href="#关于git" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。</p>
 
-<p>使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。</p>
+<p>Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。</p>
 
-<h2 id="回溯的框架"><span class="mr-2">回溯的框架</span><a href="#回溯的框架" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。</p>
 
-<p>回溯属于<strong>暴力搜索</strong>，两个要点：<strong>路径</strong> + <strong>选择列表</strong>。</p>
+<p>在规范的开发流程中，通常使用dev + main：</p>
+<ol>
+  <li>
+    <p>main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。</p>
+  </li>
+  <li>
+    <p>dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。</p>
+  </li>
+</ol>
+
+<h2 id="windows上使用git"><span class="mr-2">Windows上使用Git</span><a href="#windows上使用git" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>1.下载安装git <a href="https://git-scm.com/download/win">Git - Downloading Package</a></p>
+
+<p>2.在git bash中设置git的用户名和邮箱</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>git config --global user.name aaa
+
+git config --global user.email xxx
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github</p>
+
+<p>3.初始化git仓库</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>在仓库文件夹下执行git init
+
+右键git bash here - &gt; git clone~
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>4.将本地仓库与远程仓库关联</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
@@ -771,23 +707,36 @@
 5
 6
 7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre>res = []
-def backtrack(路径，选择列表):
-	if 满足结束条件：
-		res.add(路径)
-		return
-	
-	for 选择 in 选择列表：
-		做选择
-		backtrack(路径，选择列表)
-		撤销选择
+</pre></td><td class="rouge-code"><pre>git remote add origin git@...git
+
+git add .
+
+git commit -m description //将修改提交至本地仓库
+
+git push -u origin main //-u 第一次提交
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="子集-无重"><span class="mr-2">子集 无重</span><a href="#子集-无重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><a href="https://leetcode.cn/problems/subsets/">leetcode 78</a></p>
+<hr />
+<p>若使用git push -u origin master 会创建一个master分支。
+***</p>
+
+<p>5.修改并提交</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>git add .  //如果增加了文件，将所有的文件增加到git的版本管理中
+
+git commit -m description //将修改提交至本地仓库
+
+git push origin main //将修改提交到远程仓库
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>6.拉取过程</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
@@ -798,150 +747,26 @@ def backtrack(路径，选择列表):
 5
 6
 7
-8
-</pre></td><td class="rouge-code"><pre>给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
-示例 1：
-输入：nums = [1,2,3]
-输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
-示例 2：
-输入：nums = [0]
-输出：[[],[0]]
+</pre></td><td class="rouge-code"><pre>在本地建立空文件夹
+
+git init
+
+git remote add origin git@...git
+
+git pull origin main
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>在回溯时传递i：</strong></p>
+<h2 id="dev分支的创建与合并"><span class="mr-2">dev分支的创建与合并</span><a href="#dev分支的创建与合并" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>1.创建dev分支并切换到dev分支</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-</pre></td><td class="rouge-code"><pre>class Solution {
-    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();
-    LinkedList&lt;Integer&gt; path = new LinkedList&lt;Integer&gt;();
-    public List&lt;List&lt;Integer&gt;&gt; subsets(int[] nums) {
-        backtrac(nums, 0);
-        return res;
-    }
-    public void backtrac(int[] nums, int i){
-    	//每个节点的值都是一个结果
-        res.add(new LinkedList&lt;Integer&gt;(path));
-        int n = nums.length;
-        for(int j = i; j &lt; n; j++){
-            path.addLast(nums[j]);
-            backtrac(nums, j + 1);
-            path.removeLast();
-        }
-    }
-}
+</pre></td><td class="rouge-code"><pre>git checkout -b dev
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="子集-有重"><span class="mr-2">子集 有重</span><a href="#子集-有重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><a href="https://leetcode.cn/problems/subsets-ii/">leetcode90</a></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre>给你一个整数数组 nums ，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。
-解集 不能 包含重复的子集。返回的解集中，子集可以按 任意顺序 排列。
-示例 1：
-输入：nums = [1,2,2]
-输出：[[],[1],[1,2],[1,2,2],[2],[2,2]]
-示例 2：
-输入：nums = [0]
-输出：[[],[0]]
-</pre></td></tr></tbody></table></code></div></div>
-
-<p><strong>先对元素排序，使相同的元素相邻，搜索时若当前元素和前一元素相同，剪枝当前元素</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="rouge-code"><pre>class Solution {
-    LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();
-    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();
-    public List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(int[] nums) {
-        Arrays.sort(nums);
-        backtrack(nums, 0);
-        return res;
-    }
-    public void backtrack(int[] nums, int i){
-        res.add(new LinkedList(path));
-        for(int j = i; j &lt; nums.length; j++){
-            if(j &gt; i &amp;&amp; nums[j] == nums[j - 1]){//不是j&gt;0，j&gt;0就剪多了，j&gt;0会导致j=i时也被剪
-                continue;
-            }
-            path.add(nums[j]);
-            backtrack(nums,  j + 1);
-            path.removeLast();
-        }
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="排列-无重"><span class="mr-2">排列 无重</span><a href="#排列-无重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><a href="https://leetcode.cn/problems/permutations/">leetcode 46</a></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre>给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
-示例 1：
-输入：nums = [1,2,3]
-输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-示例 2：
-输入：nums = [0,1]
-输出：[[0,1],[1,0]]
-</pre></td></tr></tbody></table></code></div></div>
-
-<p><strong>排除使用过的元素，没有重复元素，只需要排除当前path中已经包含的元素</strong></p>
+<p>2.将dev分支合并到main分支</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
@@ -956,156 +781,19 @@ def backtrack(路径，选择列表):
 9
 10
 11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-</pre></td><td class="rouge-code"><pre>class Solution {
-    LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();
-    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();
+</pre></td><td class="rouge-code"><pre>在本地切换到dev分支：git checkout dev
 
-    public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums) {
-        backtrack(nums);
-        return res;
-    }
-    public void backtrack(int[] nums){
-        if(path.size() == nums.length){
-            res.add(new LinkedList&lt;&gt;(path));
-            return;
-        }
-        for(int i = 0; i &lt; nums.length; i++){
-            //排序已经包含的元素
-            if(path.contains(nums[i])){
-                continue; 
-            }
-            //做选择
-            path.add(nums[i]);
-            backtrack(nums);
-            //撤销选择
-            path.removeLast();
-        }
-    }
-}
+将main分支拉取到本地：git pull origin main
+如果出现冲突，需要解决冲突，然后提交更改
+
+切换到main分支：git checkout main
+
+将dev分支合并到main分支：git merge dev
+如果出现冲突，需要解决冲突，然后提交更改
+
+将更新后的main分支推送到远程仓库：git push origin main
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="排列-有重"><span class="mr-2">排列 有重</span><a href="#排列-有重" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><a href="https://leetcode.cn/problems/permutations-ii/">leetcode 47</a></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre>​给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
-示例 1：
-输入：nums = [1,1,2]
-输出：
-[[1,1,2],
- [1,2,1],
- [2,1,1]]
-示例 2：
-输入：nums = [1,2,3]
-输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]		
-</pre></td></tr></tbody></table></code></div></div>
-
-<p><strong>先对元素排序，使相同元素相邻。</strong>
-因为存在相同元素，直接全排列会搜索到[1, 1’, 2]和[1’, 1, 2]的相同结果，去重的方式为：<strong>保证相同元素在排列结果中的相对顺序</strong>。也就是：当我们搜到第1’时，必须保证1已经使用过，因此若前一相同元素未被使用，剪枝。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-</pre></td><td class="rouge-code"><pre>class Solution {
-    LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();
-    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();
-    boolean[] used;
-    public List&lt;List&lt;Integer&gt;&gt; permuteUnique(int[] nums) {
-         Arrays.sort(nums);
-         int n = nums.length;
-         used = new boolean[n];
-         backtrack(nums);
-         return res;
-    }
-    public void backtrack(int[] nums){
-        int n = nums.length;
-        if(path.size() == n){
-            res.add(new LinkedList&lt;&gt;(path));
-            return;
-        }
-        for(int j = 0; j &lt; n; j++){
-            if(used[j]){
-                continue;
-            }
-            if(j &gt; 0 &amp;&amp; nums[j] == nums[j - 1] &amp;&amp; !used[j - 1]){
-                continue;
-            }
-            path.add(nums[j]);
-            used[j] = true;
-            backtrack(nums);
-            path.removeLast();
-            used[j] = false;
-        }
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="总结"><span class="mr-2">总结</span><a href="#总结" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<h3 id="子集"><span class="mr-2">子集</span><a href="#子集" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>只能选择当前位置后面的元素，通过在回溯时传递搜索的起始索引实现。</p>
-
-<p>若元素有重，先排序，搜索到重复元素（当前元素和前一元素相同）时，剪枝。</p>
-<h3 id="排列"><span class="mr-2">排列</span><a href="#排列" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>不能选择用过的数字，通过判断path中是否存在或者使用used数组记录。</p>
-
-<p>若元素有重，先排序，需要保证相同元素在结果中的相对顺序是一致的，因此：搜索到重复元素（当前元素和前一元素相同）且 前一元素未被使用 时，剪枝。</p>
 
 </div>
 
@@ -1116,7 +804,7 @@ def backtrack(路径，选择列表):
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/leetcode/'>LeetCode</a>
+      <a href='/categories/develop/'>Develop</a>
   </div>
   
 
@@ -1125,8 +813,8 @@ def backtrack(路径，选择列表):
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/leetcode/"
-          class="post-tag no-text-decoration" >LeetCode</a>
+      <a href="/tags/tools/"
+          class="post-tag no-text-decoration" >Tools</a>
       
   </div>
   
@@ -1161,19 +849,19 @@ def backtrack(路径，选择列表):
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=%E5%9B%9E%E6%BA%AF-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fleetcode-backtrack%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Git%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-git%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%9B%9E%E6%BA%AF-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fleetcode-backtrack%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Git%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-git%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fleetcode-backtrack%2F&text=%E5%9B%9E%E6%BA%AF-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E9%97%AE%E9%A2%98%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-git%2F&text=Git%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1535,163 +1223,163 @@ def backtrack(路径，选择列表):
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1751,7 +1439,7 @@ def backtrack(路径，选择列表):
       
       
       <div class="card">
-        <a href="/posts/leetcode-sldingwindows/">
+        <a href="/posts/dev-blog/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1763,13 +1451,13 @@ def backtrack(路径，选择列表):
 
 
 <em class="small"
-    data-ts="1684218960"
+    data-ts="1681371360"
     data-df="ll"
     >
-  May 16, 2023
+  Apr 13, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sliding Windows</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Build my blog with jekyll</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1778,30 +1466,17 @@ def backtrack(路径，选择列表):
 
 
 
-                框架: O(N)
+                ​
+github搭建博客的记录
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-int left = 0, right = 0;
+本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。
 
-while(right &amp;lt; s.size()){
-    //将有边界字符加入窗口中
-    windows.add(s[right]);
-    right ++;
-    ...
-    //根据**一些条件**判断是否需要收缩做窗口
-    whil...
+我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy
+
+Steps
+（如果没有nodejs先安装nodejs）
+
+部署教程参考：https://github.com/cotes2020/jekyll-theme-chir...
               </p>
             </div>
           </div>
@@ -1811,7 +1486,7 @@ while(right &amp;lt; s.size()){
       
       
       <div class="card">
-        <a href="/posts/leetcode-diffnum/">
+        <a href="/posts/dev-mysql/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1823,13 +1498,13 @@ while(right &amp;lt; s.size()){
 
 
 <em class="small"
-    data-ts="1684651560"
+    data-ts="1683958200"
     data-df="ll"
     >
-  May 21, 2023
+  May 13, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Diff Nums</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Mysql</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1838,26 +1513,28 @@ while(right &amp;lt; s.size()){
 
 
 
-                前缀和
+                Windows上启动Mysql
 
-可以快速求解闭区间[i,j]的和。
+windows上安装了mysql，STEPS：
 
-class PrefixSum{
-    private int[] prefix;
+1.在windows的服务中启动mysql服务
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-public PrefixSum(int[] nums){
-    prefix = new int[nums.length + 1];
-    for(int i = 1; i &amp;lt; prefix.length...
+
+
+2.右键查看mysql的安装目录
+
+3.管理员打开cmd，进入mysql的安装bin目录，执行
+
+
+
+
+
+或者在启动服务后，打开mysql command line。
+
+然后可以使用mysql workbench进行可视化操作~~
+
+#
+
               </p>
             </div>
           </div>
@@ -1867,7 +1544,7 @@ public PrefixSum(int[] nums){
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp/">
+        <a href="/posts/javaweb-bugs/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1879,13 +1556,13 @@ public PrefixSum(int[] nums){
 
 
 <em class="small"
-    data-ts="1681476000"
+    data-ts="1685774100"
     data-df="ll"
     >
-  Apr 14, 2023
+  Jun  3, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java Web Bug记录</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1894,15 +1571,17 @@ public PrefixSum(int[] nums){
 
 
 
-                引言
-跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
+                Bug1
 
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
+1
+Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
 
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
 
-为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
+背景：jsp中导入java包，并部署在tomcat运行时报错。
+
+原因：在jsp中没有找到相关的java类。
+
+解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artif...
               </p>
             </div>
           </div>
@@ -1921,16 +1600,16 @@ public PrefixSum(int[] nums){
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/java-codes/" class="btn btn-outline-primary"
+  <a href="/posts/dev-mysql/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Java常用代码</p>
+    <p>Mysql</p>
   </a>
   
 
   
-  <a href="/posts/dev-blog/" class="btn btn-outline-primary"
+  <a href="/posts/leetcode-sldingwindows/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>Build my blog with jekyll</p>
+    <p>Sliding Windows</p>
   </a>
   
 

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-01T22:01:26+08:00</updated>
+  <updated>2023-06-08T12:10:45+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,21 +20,258 @@
 
   
   <entry>
-    <title>Design Schema</title>
-    <link href="http://localhost:4000/posts/design-schema/" rel="alternate" type="text/html" title="Design Schema" />
-    <published>2023-05-21T14:46:00+08:00</published>
+    <title>DP-Creational Pattern-Factory</title>
+    <link href="http://localhost:4000/posts/dp-creational-factory/" rel="alternate" type="text/html" title="DP-Creational Pattern-Factory" />
+    <published>2023-06-08T12:00:00+08:00</published>
   
-    <updated>2023-05-21T14:46:00+08:00</updated>
+    <updated>2023-06-08T12:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/design-schema/</id>
-    <content src="http://localhost:4000/posts/design-schema/" />
+    <id>http://localhost:4000/posts/dp-creational-factory/</id>
+    <content src="http://localhost:4000/posts/dp-creational-factory/" />
     <author>
       <name>piggy</name>
     </author>
 
   
     
-    <category term="Else" />
+    <category term="Design Pattern" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      工厂模式：解耦
+
+创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。
+
+简单工厂
+
+
+
+工厂方法
+
+
+
+抽象工厂
+
+
+
+原型Prototype
+
+
+
+建造者Builder
+
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-Structural Pattern-Proxy-JDK</title>
+    <link href="http://localhost:4000/posts/dp-structural-proxy-jdk/" rel="alternate" type="text/html" title="DP-Structural Pattern-Proxy-JDK" />
+    <published>2023-06-07T17:16:00+08:00</published>
+  
+    <updated>2023-06-07T17:16:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dp-structural-proxy-jdk/</id>
+    <content src="http://localhost:4000/posts/dp-structural-proxy-jdk/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Design Pattern" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Proxy
+
+代理作为访问对象和目标对象之间的中介。
+
+作用：
+
+  降低系统耦合度
+  代理对象调用目标对象时可以对目标对象进行增强。
+
+
+分为：
+
+
+  静态代理：编译时生成代理类
+  动态代理：运行时动态生成代理类，基于反射
+    
+      JDK代理：必须定义接口
+      CGLib代理：可以代理没实现接口的类
+    
+  
+
+
+动态代理-JDK代理
+
+1.接口类：卖票
+
+public interface SellTickets {
+    void sell();
+}
+
+
+2.具体实现类：火车站卖票
+
+public class TrainStation implements SellTickets{
+    @Override
+    public void sell() {
+        System.out.println("火车站卖票");
+    }
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-Structural Pattern-Proxy-GCLib</title>
+    <link href="http://localhost:4000/posts/dp-structural-proxy-gclib/" rel="alternate" type="text/html" title="DP-Structural Pattern-Proxy-GCLib" />
+    <published>2023-06-07T17:16:00+08:00</published>
+  
+    <updated>2023-06-07T17:16:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dp-structural-proxy-gclib/</id>
+    <content src="http://localhost:4000/posts/dp-structural-proxy-gclib/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Design Pattern" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      动态代理-GCLIB代理
+
+1.具体实现类
+
+public class TrainStation {
+    public void sell(){
+        System.out.println("火车站卖票");
+    }
+}
+
+
+2.代理工厂类
+
+//代理对象是目标对象所属类别的子类
+//使用enhancer的create方法获取代理对象
+public class ProxyFactory implements MethodInterceptor {
+
+    private TrainStation station = new TrainStation();
+    public TrainStation getProxyObject(){
+        //创建Enhancer对象，类似JDK代理中的Proxy类
+        Enhancer enhancer...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Java Web Bug记录</title>
+    <link href="http://localhost:4000/posts/javaweb-bugs/" rel="alternate" type="text/html" title="Java Web Bug记录" />
+    <published>2023-06-03T14:35:00+08:00</published>
+  
+    <updated>2023-06-03T14:35:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/javaweb-bugs/</id>
+    <content src="http://localhost:4000/posts/javaweb-bugs/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Develop" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Bug1
+
+Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
+
+
+背景：jsp中导入java包，并部署在tomcat运行时报错。
+
+原因：在jsp中没有找到相关的java类。
+
+解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifact。
+
+Bug2
+
+Dependency ... not found.
+
+
+背景：配置依赖时，在mvn仓库中可以查到，但是显示找不到依赖
+
+原因：mvn配置有问题
+
+解决：File - Settings - Build,Execution,Deployment - Build Tools - Maven 设置mvn的User setting files和Local repository。若还有问题...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-Creational Pattern-Singleton</title>
+    <link href="http://localhost:4000/posts/dp-creational-singleton/" rel="alternate" type="text/html" title="DP-Creational Pattern-Singleton" />
+    <published>2023-05-21T14:46:00+08:00</published>
+  
+    <updated>2023-05-21T14:46:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dp-creational-singleton/</id>
+    <content src="http://localhost:4000/posts/dp-creational-singleton/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Design Pattern" />
     
   
 
@@ -52,6 +289,16 @@
 
 只能通过共有静态函数返回唯一的私有静态变量。
 
+饿汉式-静态变量
+
+直接实例化。
+优点：线程安全。缺点：不节约资源。
+
+private static Singleton uniqueInstance = new Singleton();
+
+
+饿汉式-静态代码块
+
 懒汉式-线程不安全
 
 在获取实例时，若没有实例化，再进行实例化。
@@ -62,232 +309,7 @@ public class Singleton {
     private Singleton(){
     }
     public static Singleton getInstance(){
-        //懒汉式：需要的时候在进行实例化。线程不安全。
-        if(uniqueInstance == null){
-            uniqueInstance = new Singleton();
-        }
-        retur...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Diff Nums</title>
-    <link href="http://localhost:4000/posts/leetcode-diffnum/" rel="alternate" type="text/html" title="Diff Nums" />
-    <published>2023-05-21T14:46:00+08:00</published>
-  
-    <updated>2023-05-21T14:46:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-diffnum/</id>
-    <content src="http://localhost:4000/posts/leetcode-diffnum/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      前缀和
-
-可以快速求解闭区间[i,j]的和。
-
-class PrefixSum{
-    private int[] prefix;
-
-public PrefixSum(int[] nums){
-    prefix = new int[nums.length + 1];
-    for(int i = 1; i &amp;lt; prefix.length; i++){
-        prefix[i] = prefix[i - 1] + nums[i - 1];
-    }
-}
-
-public int query(int i, int j){
-    return prefix[j + 1] - prefix[i];
-} }
-
-
-差分数组
-
-可以快速实现对闭区间[i,j]中的所有元素进行增减。
-
-public class Difference {
-    private int[] d...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Sliding Windows</title>
-    <link href="http://localhost:4000/posts/leetcode-sldingwindows/" rel="alternate" type="text/html" title="Sliding Windows" />
-    <published>2023-05-16T14:36:00+08:00</published>
-  
-    <updated>2023-05-16T14:36:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/leetcode-sldingwindows/</id>
-    <content src="http://localhost:4000/posts/leetcode-sldingwindows/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="LeetCode" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      框架: O(N)
-
-int left = 0, right = 0;
-
-while(right &amp;lt; s.size()){
-    //将有边界字符加入窗口中
-    windows.add(s[right]);
-    right ++;
-    ...
-    //根据**一些条件**判断是否需要收缩做窗口
-    while(left &amp;lt; right &amp;amp;&amp;amp; window needs shrink){
-        windows.remove(s[left]);
-        left++;
-    }
-}
-
-
-一些条件根据不同的题目确定。
-
-最小覆盖子串
-leetcode 76
-
-给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
-注意：
-对于 t...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Git</title>
-    <link href="http://localhost:4000/posts/git/" rel="alternate" type="text/html" title="Git" />
-    <published>2023-05-13T14:44:00+08:00</published>
-  
-    <updated>2023-05-13T14:44:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/git/</id>
-    <content src="http://localhost:4000/posts/git/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Version Control" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      关于Git
-Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
-
-Git仓库中的默认分支为main（之前为master）.
-在Github或其他平台上创建仓库后，会创建一个默认的main分支。
-
-一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
-
-在规范的开发流程中，通常使用dev + main：
-
-  
-    main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。
-  
-  
-    dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。
-  
-
-
-Windows上使用Git
-
-1.下载安装git Git - Downloading Package
-
-2.在git bash中设置git的用户名和...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Java 多线程</title>
-    <link href="http://localhost:4000/posts/java-threads/" rel="alternate" type="text/html" title="Java 多线程" />
-    <published>2023-05-11T20:34:00+08:00</published>
-  
-    <updated>2023-05-11T20:34:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/java-threads/</id>
-    <content src="http://localhost:4000/posts/java-threads/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Java Concurrency" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      实现并行完成多个任务。提高cpu的利用率。
-
-三种实现方式
-
-public class LearnThreads {
-    public static void main(String[] args) {
-        //1. 继承Thread类，实例化一个Thread对象
-        Thread mt = new MyThread();
-        mt.start();
-
-        // 2. 实例化一个Runnable对象，作为参数传给Thread类
-        MyRunnable instance = new MyRunnable();
-        Thread thread = new Thread(instance);
-        thread.start();
-
-        //3. 实例化一个Callable对象，作为参数传给F...
+        //懒汉式：需要的时候在进行实例化。线程不安...
     </summary>
   
 

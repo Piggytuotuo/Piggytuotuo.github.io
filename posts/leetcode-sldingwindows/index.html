@@ -1238,12 +1238,12 @@ while(right &lt; s.size()){
         
         
         
-      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
       
         
         
         
-      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1276,6 +1276,25 @@ while(right &lt; s.size()){
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1309,10 +1328,20 @@ while(right &lt; s.size()){
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1344,6 +1373,9 @@ while(right &lt; s.size()){
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1433,7 +1465,72 @@ while(right &lt; s.size()){
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1649,7 +1746,7 @@ while(right &lt; s.size()){
       
       
       <div class="card">
-        <a href="/posts/leetcode-bs/">
+        <a href="/posts/leetcode-diffnum/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1661,13 +1758,13 @@ while(right &lt; s.size()){
 
 
 <em class="small"
-    data-ts="1682042700"
+    data-ts="1684651560"
     data-df="ll"
     >
-  Apr 21, 2023
+  May 21, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分查找</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Diff Nums</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1676,17 +1773,26 @@ while(right &lt; s.size()){
 
 
 
-                搜索一个数
+                前缀和
 
-搜索区间为 [left, right)
+可以快速求解闭区间[i,j]的和。
 
-left = 0, right = nums.length;
+class PrefixSum{
+    private int[] prefix;
 
-while(left &amp;lt; right){
-    int mid = (right - left) / 2 + left;
-    if(nums[mid] == target){
-        return mid;
-    }else if(nums[mid] ...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+public PrefixSum(int[] nums){
+    prefix = new int[nums.length + 1];
+    for(int i = 1; i &amp;lt; prefix.length...
               </p>
             </div>
           </div>
@@ -1696,7 +1802,7 @@ while(left &amp;lt; right){
       
       
       <div class="card">
-        <a href="/posts/leetcode-topk/">
+        <a href="/posts/leetcode-backtrack/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1708,13 +1814,13 @@ while(left &amp;lt; right){
 
 
 <em class="small"
-    data-ts="1682491560"
+    data-ts="1681366200"
     data-df="ll"
     >
-  Apr 26, 2023
+  Apr 13, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>排序-TopK</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>回溯-排列组合问题</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1723,12 +1829,22 @@ while(left &amp;lt; right){
 
 
 
-                使用QuickSort和HeapSort解决TopK问题。
+                引言
+跟着labuladong刷回溯题的记录。
 
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+使用【回溯法】解决【子集、排列】问题：
+分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
 
-public static int partit...
+回溯的框架
+
+回溯属于暴力搜索，两个要点：路径 + 选择列表。
+
+res = []
+def backtrack(路径，选择列表):
+	if 满足结束条件：
+		res.add(路径)
+		return
+	...
               </p>
             </div>
           </div>
@@ -1738,7 +1854,7 @@ public static int partit...
       
       
       <div class="card">
-        <a href="/posts/leetcode-recursion/">
+        <a href="/posts/leetcode-dp/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1750,13 +1866,13 @@ public static int partit...
 
 
 <em class="small"
-    data-ts="1682561520"
+    data-ts="1681476000"
     data-df="ll"
     >
-  Apr 27, 2023
+  Apr 14, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Recursion</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1765,11 +1881,15 @@ public static int partit...
 
 
 
-                原理
+                引言
+跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
 
-思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
+重叠子问题
+计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
 
-函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
+若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
+
+为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
               </p>
             </div>
           </div>
@@ -1788,7 +1908,7 @@ public static int partit...
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/git/" class="btn btn-outline-primary"
+  <a href="/posts/dev-git/" class="btn btn-outline-primary"
     prompt="Older">
     <p>Git</p>
   </a>
@@ -1847,6 +1967,25 @@ public static int partit...
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1880,10 +2019,20 @@ public static int partit...
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1915,6 +2064,9 @@ public static int partit...
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>

@@ -936,12 +936,12 @@ System.out.print(name);
         
         
         
-      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
       
         
         
         
-      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -974,6 +974,25 @@ System.out.print(name);
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1007,10 +1026,20 @@ System.out.print(name);
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1042,6 +1071,9 @@ System.out.print(name);
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1100,6 +1132,71 @@ System.out.print(name);
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1432,7 +1529,7 @@ public class LearnThreads {
       
       
       <div class="card">
-        <a href="/posts/design-schema/">
+        <a href="/posts/dp-creational-singleton/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1450,7 +1547,7 @@ public class LearnThreads {
   May 21, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Design Schema</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Creational Pattern-Singleton</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1465,10 +1562,73 @@ public class LearnThreads {
 
 只能通过共有静态函数返回唯一的私有静态变量。
 
+饿汉式-静态变量
+
+直接实例化。
+优点：线程安全。缺点：不节约资源。
+
+1
+private static Singleton uniqueInstance = new Singleton();
+
+
+饿汉式-静态代码块
+
 懒汉式-线程不安全
 
-在获取实例时，若没有实例化，再进行实例化。
-优点：节约资源；缺点：线程不安全。
+在获取实例时，若没有实例化...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dp-structural-proxy-gclib/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686129360"
+    data-df="ll"
+    >
+  Jun  7, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Proxy-GCLib</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                动态代理-GCLIB代理
+
+1.具体实现类
+
+1
+2
+3
+4
+5
+public class TrainStation {
+    public void sell(){
+        System.out.println(&quot;火车站卖票&quot;);
+    }
+}
+
+
+2.代理工厂类
 
 1
 2
@@ -1482,72 +1642,16 @@ public class LearnThreads {
 10
 11
 12
-public class Singleton {
-    private static Singleton u...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/wsl/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1678860600"
-    data-df="ll"
-    >
-  Mar 15, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                
-
-方式一 vmware安装
-
-安装vmware,下载ubuntu的iso文件
-
-ubuntu-releases安装包下载_开源镜像站-阿里云
-
-i386是32位 amd64是64位
-
-
-
-方式二 wsl安装
-
-1. 在启动或关闭Windows功能中，打开以下两项，重启
-
-
-
- 2. powershell以管理员身份打开
-
-
-
-在mic store安装分发版也可
-
-查看已经安装的分发版
-
-
-...
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22...
               </p>
             </div>
           </div>
@@ -1625,6 +1729,25 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1658,10 +1781,20 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1693,6 +1826,9 @@ i386是32位 amd64是64位
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>

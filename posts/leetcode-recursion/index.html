@@ -969,12 +969,12 @@ public static TreeNode mirrorTree(TreeNode root) {
         
         
         
-      <li><a href="/posts/swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/leetcode-dp-tree/">DP-树形DP</a></li>
       
         
         
         
-      <li><a href="/posts/wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1007,6 +1007,25 @@ public static TreeNode mirrorTree(TreeNode root) {
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1040,10 +1059,20 @@ public static TreeNode mirrorTree(TreeNode root) {
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1075,6 +1104,9 @@ public static TreeNode mirrorTree(TreeNode root) {
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1133,6 +1165,71 @@ public static TreeNode mirrorTree(TreeNode root) {
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1380,7 +1477,7 @@ public static TreeNode mirrorTree(TreeNode root) {
       
       
       <div class="card">
-        <a href="/posts/leetcode-bs/">
+        <a href="/posts/leetcode-sldingwindows/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1392,13 +1489,13 @@ public static TreeNode mirrorTree(TreeNode root) {
 
 
 <em class="small"
-    data-ts="1682042700"
+    data-ts="1684218960"
     data-df="ll"
     >
-  Apr 21, 2023
+  May 16, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>二分查找</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sliding Windows</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1407,100 +1504,7 @@ public static TreeNode mirrorTree(TreeNode root) {
 
 
 
-                搜索一个数
-
-搜索区间为 [left, right)
-
-left = 0, right = nums.length;
-
-while(left &amp;lt; right){
-    int mid = (right - left) / 2 + left;
-    if(nums[mid] == target){
-        return mid;
-    }else if(nums[mid] ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-topk/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1682491560"
-    data-df="ll"
-    >
-  Apr 26, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>排序-TopK</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                使用QuickSort和HeapSort解决TopK问题。
-
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
-
-public static int partit...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-tree/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683597600"
-    data-df="ll"
-    >
-  May  9, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Tree</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                LeetCode中关于二叉树的一些问题
-
-判断树是否对称
-
-leetcode 剑指Offer 28
+                框架: O(N)
 
 1
 2
@@ -1515,18 +1519,123 @@ leetcode 剑指Offer 28
 11
 12
 13
-14
-15
-16
-17
-18
-19
-20
-请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
-例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
-    1
-   / \
-  2  ...
+int left = 0, right = 0;
+
+while(right &amp;lt; s.size()){
+    //将有边界字符加入窗口中
+    windows.add(s[right]);
+    right ++;
+    ...
+    //根据**一些条件**判断是否需要收缩做窗口
+    whil...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-diffnum/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Diff Nums</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                前缀和
+
+可以快速求解闭区间[i,j]的和。
+
+class PrefixSum{
+    private int[] prefix;
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+public PrefixSum(int[] nums){
+    prefix = new int[nums.length + 1];
+    for(int i = 1; i &amp;lt; prefix.length...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-backtrack/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681366200"
+    data-df="ll"
+    >
+  Apr 13, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>回溯-排列组合问题</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                引言
+跟着labuladong刷回溯题的记录。
+
+使用【回溯法】解决【子集、排列】问题：
+分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
+
+回溯的框架
+
+回溯属于暴力搜索，两个要点：路径 + 选择列表。
+
+res = []
+def backtrack(路径，选择列表):
+	if 满足结束条件：
+		res.add(路径)
+		return
+	...
               </p>
             </div>
           </div>
@@ -1604,6 +1713,25 @@ leetcode 剑指Offer 28
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1637,10 +1765,20 @@ leetcode 剑指Offer 28
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1672,6 +1810,9 @@ leetcode 剑指Offer 28
     
       
       <a class="post-tag" href="/tags/java/">Java</a>
+    
+      
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>

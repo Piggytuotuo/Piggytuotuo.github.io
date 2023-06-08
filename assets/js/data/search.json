@@ -1,9 +1,77 @@
 [
   
   {
-    "title": "Design Schema",
-    "url": "/posts/design-schema/",
-    "categories": "Else",
+    "title": "DP-Creational Pattern-Factory",
+    "url": "/posts/dp-creational-factory/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-08 12:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "工厂模式：解耦创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。简单工厂工厂方法抽象工厂原型Prototype建造者Builder",
+    "content": "工厂模式：解耦创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。简单工厂工厂方法抽象工厂原型Prototype建造者Builder"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Proxy-JDK",
+    "url": "/posts/dp-structural-proxy-jdk/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-07 17:16:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Proxy代理作为访问对象和目标对象之间的中介。作用：  降低系统耦合度  代理对象调用目标对象时可以对目标对象进行增强。分为：  静态代理：编译时生成代理类  动态代理：运行时动态生成代理类，基于反射          JDK代理：必须定义接口      CGLib代理：可以代理没实现接口的类      动态代理-JDK代理1.接口类：卖票public interface SellTick...",
+    "content": "Proxy代理作为访问对象和目标对象之间的中介。作用：  降低系统耦合度  代理对象调用目标对象时可以对目标对象进行增强。分为：  静态代理：编译时生成代理类  动态代理：运行时动态生成代理类，基于反射          JDK代理：必须定义接口      CGLib代理：可以代理没实现接口的类      动态代理-JDK代理1.接口类：卖票public interface SellTickets {    void sell();}2.具体实现类：火车站卖票public class TrainStation implements SellTickets{    @Override    public void sell() {        System.out.println(\"火车站卖票\");    }}3.代理工厂类：在程序运行时动态生成代理类，代理类继承Java提供的Proxy类。public class ProxyFactory {    //目标对象    private TrainStation station = new TrainStation();    //获取代理对象，并返回接口    public SellTickets getProxyObject(){        //返回代理对象，代理对象实现了接口方法，因此用接口接收        SellTickets proxyObject = (SellTickets) Proxy.newProxyInstance(                station.getClass().getClassLoader(), //代理对象的类加载器                station.getClass().getInterfaces(), //代理对象的接口                new InvocationHandler() { //代理对象的调用处理程序                    @Override                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {                        //       代理对象，也就是proxyObject                        //       封装接口中的方法的对象，如调用proxyObject.sell()，则method的值为sell                        //       调用方法的实际参数                        System.out.println(\"代售点收费（jdk动态代理）\");                        //执行目标对象的方法                        Object obj = method.invoke(station, args); //使用反射机制执行方法，参数为：要调用方法的对象 和 方法所需要的参数                        return obj;                    }                }        );        return proxyObject;    }}4.Client：调用代理类买票public class Client {    public static void main(String[] args) {        //1.创建代理工厂对象        ProxyFactory factory = new ProxyFactory();        //使用工厂对象的方法获取代理对象（父接口引用指向子类对象）        SellTickets proxyObject = factory.getProxyObject();        //调用代理对象的sell方法时，其实内部调用了匿名内部类InvocationHandler中的invoke方法。        proxyObject.sell(); //执行的是代理的invoke方法        /*执行过程：        1. 通过代理对象调用sell()方法        2. 根据多态的特性，执行代理类$Proxy0中的sell方法        3. 代理类中的sell方法调用了继承自InvocationHandler接口实现类的invoke方法        4. 在invoke方法中，通过反射执行了真实对象所属类TrainStation中的sell方法*/    }}"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Proxy-GCLib",
+    "url": "/posts/dp-structural-proxy-gclib/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-07 17:16:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "动态代理-GCLIB代理1.具体实现类public class TrainStation {    public void sell(){        System.out.println(\"火车站卖票\");    }}2.代理工厂类//代理对象是目标对象所属类别的子类//使用enhancer的create方法获取代理对象public class ProxyFactory implemen...",
+    "content": "动态代理-GCLIB代理1.具体实现类public class TrainStation {    public void sell(){        System.out.println(\"火车站卖票\");    }}2.代理工厂类//代理对象是目标对象所属类别的子类//使用enhancer的create方法获取代理对象public class ProxyFactory implements MethodInterceptor {    private TrainStation station = new TrainStation();    public TrainStation getProxyObject(){        //创建Enhancer对象，类似JDK代理中的Proxy类        Enhancer enhancer = new Enhancer();        //设置父类的字节码对象        enhancer.setSuperclass(TrainStation.class);        //设置回调函数        enhancer.setCallback(this);        //创建代理对象        TrainStation proxyObject = (TrainStation) enhancer.create();        return proxyObject;    }    @Override    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {        System.out.println(\"代售点收服务费(CGLIB代理)\");        //要调用目标对象的方法        Object obj = method.invoke(station, objects);        return null;    }}3.Client类public class Client {    public static void main(String[] args) {        ProxyFactory proxyFactory = new ProxyFactory();        TrainStation proxyObj = proxyFactory.getProxyObject();        proxyObj.sell();    }}实现中报错Exception in thread \"main\" java.lang.ExceptionInInitializerError    at com.xjtu.structural.proxy.cglib_proxy.ProxyFactory.getProxyObject(ProxyFactory.java:16)    at com.xjtu.structural.proxy.cglib_proxy.Client.main(Client.java:6)Caused by: net.sf.cglib.core.CodeGenerationException: java.lang.reflect.InaccessibleObjectException--&gt;Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not \"opens java.lang\" to unnamed module @4f2410ac    at net.sf.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:464)    at net.sf.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:339)    at net.sf.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:96)    at net.sf.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:94)    at net.sf.cglib.core.internal.LoadingCache$2.call(LoadingCache.java:54)    at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)    at net.sf.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:61)    at net.sf.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)    at net.sf.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:119)    at net.sf.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:294)    at net.sf.cglib.core.KeyFactory$Generator.create(KeyFactory.java:221)    at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:174)    at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:153)    at net.sf.cglib.proxy.Enhancer.&lt;clinit&gt;(Enhancer.java:73)    ... 2 moreCaused by: java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not \"opens java.lang\" to unnamed module @4f2410ac    at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)    at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)    at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)    at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)    at net.sf.cglib.core.ReflectUtils$1.run(ReflectUtils.java:61)    at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)    at net.sf.cglib.core.ReflectUtils.&lt;clinit&gt;(ReflectUtils.java:52)    at net.sf.cglib.core.KeyFactory$Generator.generateClass(KeyFactory.java:243)    at net.sf.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)    at net.sf.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:332)    ... 14 more原因：JDK 8 中有关反射相关的功能自从 JDK 9 开始就已经被限制了。需要手动设置。解决：运行项目时添加VM options--add-opens java.base/java.lang=ALL-UNNAMED--add-opens java.base/java.lang.invoke=ALL-UNNAMED--add-opens java.base/java.math=ALL-UNNAMED--add-opens java.base/java.util=ALL-UNNAMED--add-opens java.base/java.nio=ALL-UNNAMED--add-opens java.base/sun.nio.ch=ALL-UNNAMED--add-opens java.base/java.io=ALL-UNNAMED--add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED"
+  },
+  
+  {
+    "title": "Java Web Bug记录",
+    "url": "/posts/javaweb-bugs/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-06-03 14:35:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Bug1Only a type can be imported. com.xxx.xxx.XXX resolves to a package.背景：jsp中导入java包，并部署在tomcat运行时报错。原因：在jsp中没有找到相关的java类。解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifact。Bug2Dep...",
+    "content": "Bug1Only a type can be imported. com.xxx.xxx.XXX resolves to a package.背景：jsp中导入java包，并部署在tomcat运行时报错。原因：在jsp中没有找到相关的java类。解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifact。Bug2Dependency ... not found.背景：配置依赖时，在mvn仓库中可以查到，但是显示找不到依赖原因：mvn配置有问题解决：File - Settings - Build,Execution,Deployment - Build Tools - Maven 设置mvn的User setting files和Local repository。若还有问题，尝试将剪切重新粘贴，或重启IDE~"
+  },
+  
+  {
+    "title": "DP-Creational Pattern-Singleton",
+    "url": "/posts/dp-creational-singleton/",
+    "categories": "Design Pattern",
     "tags": "Java",
     "date": "2023-05-21 14:46:00 +0800",
     
@@ -13,8 +81,8 @@
 
 
     
-    "snippet": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){ ...",
-    "content": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){    }    public static Singleton getInstance(){        //懒汉式：需要的时候在进行实例化。线程不安全。        if(uniqueInstance == null){            uniqueInstance = new Singleton();        }        return uniqueInstance;    }}饿汉式-线程安全直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();懒汉式-线程安全仍然延迟实例化，但是对获取实例的方法加锁。优点：线程安全。缺点：会引起线程阻塞，性能降低。public static synchronized Singleton getUniqueInstance() {    if (uniqueInstance == null) {        uniqueInstance = new Singleton();    }    return uniqueInstance;}双重校验锁-线程安全只对实例化部分语句加锁。public class Singleton {    private **volatile** static Singleton uniqueInstance;    private Singleton() {    }    public static Singleton getUniqueInstance() {        if (uniqueInstance == null) {            synchronized (Singleton.class) {                if (uniqueInstance == null) {                    uniqueInstance = new Singleton();                }            }        }        return uniqueInstance;    }}  需要用volatile关键字修饰。禁止指令重排。  需要有两个if语句。若只有第一个，可能会出现两个线程都进入到if语句内，执行两次实例化。volatile关键字两个作用：  保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。  多线程执行下的顺序一致性：禁止JVM指令重排。静态内部类实现返回静态内部类的静态实例。优点：线程安全+延迟初始化。public class Singleton {    private Singleton(){    }    private static class SingletonHolder{        private static final Singleton INSTANCE = new Singleton();    }    public static Singleton getInstance(){        return SingletonHolder.INSTANCE;    }}当Singleton类被加载时，静态内部类不会被加载进内存。只有当调用Singleton.getInstance()时，静态内部类才会被加载，才会初始化INSTANCE实例。枚举实现将枚举类作为单例类。public enum Singleton{    INSTANCE;}多个Singleton.INSTANCE获取到的是同一个对象。"
+    "snippet": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();饿汉式-静态代码块懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线...",
+    "content": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();饿汉式-静态代码块懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){    }    public static Singleton getInstance(){        //懒汉式：需要的时候在进行实例化。线程不安全。        if(uniqueInstance == null){            uniqueInstance = new Singleton();        }        return uniqueInstance;    }}懒汉式-synchronized锁仍然延迟实例化，但是对获取实例的方法加锁。优点：线程安全。缺点：会引起线程阻塞，性能降低。public static synchronized Singleton getUniqueInstance() {    if (uniqueInstance == null) {        uniqueInstance = new Singleton();    }    return uniqueInstance;}懒汉式-双重校验锁只对实例化部分语句加锁。public class Singleton {    private **volatile** static Singleton uniqueInstance;    private Singleton() {    }    public static Singleton getUniqueInstance() {        if (uniqueInstance == null) {            synchronized (Singleton.class) {                if (uniqueInstance == null) {                    uniqueInstance = new Singleton();                }            }        }        return uniqueInstance;    }}  需要用volatile关键字修饰。禁止指令重排。  需要有两个if语句。若只有第一个，可能会出现两个线程都进入到if语句内，执行两次实例化。volatile关键字两个作用：  保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。  多线程执行下的顺序一致性：禁止JVM指令重排。懒汉式-静态内部类实现返回静态内部类的静态实例。优点：线程安全+延迟初始化。public class Singleton {    private Singleton(){    }    private static class SingletonHolder{        private static final Singleton INSTANCE = new Singleton();    }    public static Singleton getInstance(){        return SingletonHolder.INSTANCE;    }}当Singleton类被加载时，静态内部类不会被加载进内存。只有当调用Singleton.getInstance()时，静态内部类才会被加载，才会初始化INSTANCE实例。饿汉式-枚举实现将枚举类作为单例类。public enum Singleton{    INSTANCE;}多个Singleton.INSTANCE获取到的是同一个对象。"
   },
   
   {
@@ -53,8 +121,8 @@
   
   {
     "title": "Git",
-    "url": "/posts/git/",
-    "categories": "Version Control",
+    "url": "/posts/dev-git/",
+    "categories": "Develop",
     "tags": "Tools",
     "date": "2023-05-13 14:44:00 +0800",
     
@@ -64,8 +132,25 @@
 
 
     
-    "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master）.在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
-    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master）.在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main"
+    "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
+    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main"
+  },
+  
+  {
+    "title": "Mysql",
+    "url": "/posts/dev-mysql/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~#",
+    "content": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~#"
   },
   
   {
@@ -223,8 +308,8 @@
   
   {
     "title": "Build my blog with jekyll",
-    "url": "/posts/blog/",
-    "categories": "Blog",
+    "url": "/posts/dev-blog/",
+    "categories": "Develop",
     "tags": "Tools",
     "date": "2023-04-13 15:36:00 +0800",
     
@@ -234,8 +319,8 @@
 
 
     
-    "snippet": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy1. 搭环境（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/D...",
-    "content": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy1. 搭环境（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Development1.安装ruby安装完成后会提示安装开发工具包（一定要安装）下载安装参考：Jekyll + Github Pages 搭建个人免费博客2.安装jekyll框架gem install jekyll3.克隆代码，解压，编译js文件npm -inpm run build‘NODE_ENV’不是内部或外部命令，也不是可运行的程序或批处理文件。build报了上面的错，解决办法：安装cross-env:npm install cross-env --save-dev修改package.json文件，在运行命令加前缀：在NODE_ENV=xxxxxxx前面添加cross-env。然后重新Build，会再assets下生成xxx.min.js文件。4.设置jekyll安装依赖bundle在本地编辑代码，_posts目录下创建markdown格式的博客，在博客项目目录下，运行jekyll server在本地查看编译效果5.将_sites文件下的内容（编译生成的静态文件）上传到github上username.githubio.io项目下~​"
+    "snippet": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpySteps（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/De...",
+    "content": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpySteps（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Development1.安装ruby安装完成后会提示安装开发工具包（一定要安装）下载安装参考：Jekyll + Github Pages 搭建个人免费博客2.安装jekyll框架gem install jekyll3.克隆代码，解压，编译js文件npm -inpm run build‘NODE_ENV’不是内部或外部命令，也不是可运行的程序或批处理文件。build报了上面的错，解决办法：安装cross-env:npm install cross-env --save-dev修改package.json文件，在运行命令加前缀：在NODE_ENV=xxxxxxx前面添加cross-env。然后重新Build，会再assets下生成xxx.min.js文件。4.设置jekyll安装依赖bundle在本地编辑代码，_posts目录下创建markdown格式的博客，在博客项目目录下，运行jekyll server在本地查看编译效果5.将_sites文件下的内容（编译生成的静态文件）上传到github上username.githubio.io项目下~​"
   },
   
   {
@@ -274,9 +359,9 @@
   
   {
     "title": "wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装",
-    "url": "/posts/wsl/",
-    "categories": "Java Foundation",
-    "tags": "Java",
+    "url": "/posts/dev-wsl/",
+    "categories": "Develop",
+    "tags": "develop",
     "date": "2023-03-15 14:10:00 +0800",
     
 
@@ -291,7 +376,7 @@
   
   {
     "title": "跑Swin-Transformer-Object-Detection过程中遇到的坑及解决",
-    "url": "/posts/swin/",
+    "url": "/posts/dl-swin/",
     "categories": "Deep Learning",
     "tags": "Python",
     "date": "2021-12-26 14:10:00 +0800",
