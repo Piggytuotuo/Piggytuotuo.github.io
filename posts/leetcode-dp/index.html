@@ -42,8 +42,8 @@
 <meta property="og:title" content="DP" />
 <meta name="author" content="Crystal Li" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="引言 跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程" />
-<meta property="og:description" content="引言 跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程" />
+<meta name="description" content="引言 跟着labuladong刷动态规划题的记录。" />
+<meta property="og:description" content="引言 跟着labuladong刷动态规划题的记录。" />
 <link rel="canonical" href="http://localhost:4000/posts/leetcode-dp/" />
 <meta property="og:url" content="http://localhost:4000/posts/leetcode-dp/" />
 <meta property="og:site_name" content="Piggytuotuo" />
@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="DP" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-04-18T17:22:31+08:00","datePublished":"2023-04-14T20:40:00+08:00","description":"引言 跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程","headline":"DP","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/leetcode-dp/"},"url":"http://localhost:4000/posts/leetcode-dp/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-04-18T17:22:31+08:00","datePublished":"2023-04-14T20:40:00+08:00","description":"引言 跟着labuladong刷动态规划题的记录。","headline":"DP","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/leetcode-dp/"},"url":"http://localhost:4000/posts/leetcode-dp/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -659,7 +659,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1148 words">
+  title="1222 words">
   <em>6 min</em> read</span>
 
     </div>
@@ -670,7 +670,13 @@
 
 <div class="post-content">
   <h1 id="引言">引言</h1>
-<p>跟着<a href="https://labuladong.gitee.io/algo/di-er-zhan-a01c6/dong-tai-g-a223e/dong-tai-g-1e688/">labuladong</a>刷动态规划题的记录。DP三要素：<strong>重叠子问题、最优子结构、状态转移方程</strong></p>
+<p>跟着<a href="https://labuladong.gitee.io/algo/di-er-zhan-a01c6/dong-tai-g-a223e/dong-tai-g-1e688/">labuladong</a>刷动态规划题的记录。</p>
+
+<p>题型：求最值。</p>
+
+<p>核心：穷举。</p>
+
+<p>三要素：<strong>重叠子问题、最优子结构、状态转移方程</strong></p>
 
 <h2 id="重叠子问题"><span class="mr-2">重叠子问题</span><a href="#重叠子问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。</p>
@@ -679,13 +685,26 @@
 
 <p>为了避免重复计算，引入<strong>备忘录</strong>，存储子问题的答案，时间复杂度降低为$O(n)$。</p>
 
+<p><strong>备忘录</strong>:存储子问题答案的数组。</p>
+
+<hr />
+<p>递归的时间复杂度 = 递归函数本身的时间复杂度 * 递归调用的次数。</p>
+
+<p>无备忘录: $O(1) * O(2 ^ n)$</p>
+
+<p>有备忘录: $O(1) * O(n)$</p>
+
+<p>空间换时间。</p>
+
+<hr />
+
 <h2 id="状态转移方程"><span class="mr-2">状态转移方程</span><a href="#状态转移方程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>受备忘录启发，引入<strong>DP table</strong>，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。
 如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &gt; 1。</p>
 
 <p>更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。</p>
 
-<p>写状态转移方程的思路：<strong>base case -&gt; 状态 -&gt; 选择 -&gt; 定义dp数组</strong></p>
+<p>思路：<strong>base case -&gt; 状态 -&gt; 选择 -&gt; 定义dp数组</strong></p>
 
 <h2 id="最优子结构"><span class="mr-2">最优子结构</span><a href="#最优子结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>例如，想考出最高的成绩，则子问题为<strong>每门课程的成绩最高</strong>，因为每门课程的成绩互相独立，满足最优子结构。</p>
@@ -1029,17 +1048,12 @@
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -1049,7 +1063,12 @@
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1082,15 +1101,15 @@
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1175,10 +1194,10 @@
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1240,6 +1259,149 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1552,122 +1714,6 @@
       
       
       <div class="card">
-        <a href="/posts/leetcode-sldingwindows/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1684218960"
-    data-df="ll"
-    >
-  May 16, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sliding Windows</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                框架: O(N)
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-int left = 0, right = 0;
-
-while(right &amp;lt; s.size()){
-    //将有边界字符加入窗口中
-    windows.add(s[right]);
-    right ++;
-    ...
-    //根据**一些条件**判断是否需要收缩做窗口
-    whil...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-diffnum/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1684651560"
-    data-df="ll"
-    >
-  May 21, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Diff Nums</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                前缀和
-
-可以快速求解闭区间[i,j]的和。
-
-class PrefixSum{
-    private int[] prefix;
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-public PrefixSum(int[] nums){
-    prefix = new int[nums.length + 1];
-    for(int i = 1; i &amp;lt; prefix.length...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-backtrack/">
           <div class="card-body">
             <!--
@@ -1711,6 +1757,122 @@ def backtrack(路径，选择列表):
 		res.add(路径)
 		return
 	...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-dp-bag/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681801200"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                背包问题
+
+属于动态规划的一类问题，需要明确状态和选择。
+
+状态：背包的容量 和 可选择的物品；选择：装 和 不装
+
+01背包：
+
+每个物品只能装一次，选择装/不装。
+
+定义状态转移方程dp[i][w]：
+
+对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+int[][] dp = new int[N+1][M+1]
+/...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-dp-tree/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681812000"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-树形DP</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                树形DP
+
+数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
+
+框架：
+
+1
+2
+3
+4
+5
+6
+7
+void dfs(int v){
+    dp[v] = ...;
+    for(int u: G[v]){//遍历v的所有子节点
+        dfs(u); //确保子节点的值已经更新好
+        update(u, v);//用子节点的dp值对当前节点的dp值铏更...
               </p>
             </div>
           </div>
@@ -1788,15 +1950,15 @@ def backtrack(路径，选择列表):
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1881,10 +2043,10 @@ def backtrack(路径，选择列表):
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

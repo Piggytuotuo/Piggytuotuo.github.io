@@ -1,6 +1,159 @@
 [
   
   {
+    "title": "DP-Behavioral Pattern-Template Method",
+    "url": "/posts/dp-behavioral-template/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Template Method定义算法框架，将一些步骤的实现延迟到子类。冲饮料冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。场景      算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。        需要通过子类决定父类算法中的某个步骤是否执行。  优      提高代码复用性。        实现反向控制。  缺  对每个不同的实现都需要定义一个...",
+    "content": "Template Method定义算法框架，将一些步骤的实现延迟到子类。冲饮料冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。场景      算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。        需要通过子类决定父类算法中的某个步骤是否执行。  优      提高代码复用性。        实现反向控制。  缺  对每个不同的实现都需要定义一个子类，导致子类个数增加。"
+  },
+  
+  {
+    "title": "DP-Behavioral Pattern-Strategy",
+    "url": "/posts/dp-behavioral-strategy/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Strategy举例场景优缺",
+    "content": "Strategy举例场景优缺"
+  },
+  
+  {
+    "title": "DP-Behavioral Pattern-Chain of Responsibility",
+    "url": "/posts/dp-behavioral-chain/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Chain of Responsibility沿着责任链处理请求。场景JavaWeb中的FilterChain优缺",
+    "content": "Chain of Responsibility沿着责任链处理请求。场景JavaWeb中的FilterChain优缺"
+  },
+  
+  {
+    "title": "DP-Structural-Flyweight Pattern-FlyWeight",
+    "url": "/posts/dp-structural-flyweight/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Flyweight通过共享技术来支持大量细粒度对象的复用。通过共享已经存在的对象来减少需要创建的对象数量。两种状态：      内部状态：不随着环境改变的可共享状态。        外部状态：随着环境改变而改变的不可共享部分。  俄罗斯方块有很多不同形状的方块，希望通过共享减少对象的创建数量。      内部状态： 形状        外部状态： 颜色***  abstract class ...",
+    "content": "Flyweight通过共享技术来支持大量细粒度对象的复用。通过共享已经存在的对象来减少需要创建的对象数量。两种状态：      内部状态：不随着环境改变的可共享状态。        外部状态：随着环境改变而改变的不可共享部分。  俄罗斯方块有很多不同形状的方块，希望通过共享减少对象的创建数量。      内部状态： 形状        外部状态： 颜色***  abstract class AbstractBox{      public abstract String getShape();      public void display(String color){      System.out.println(\"box shape: \" + this.getShape() + \"color: \" + color);  }   }        class CBox extends AbstractBox {      @Override      public String getShape() {          return “C”;      }  }    import java.util.HashMap;  class BoxFactory{      private static HashMap&lt;String, AbstractBox&gt; map;      public BoxFactory() {      map = new HashMap&lt;&gt;();      map.put(\"I\", new IBox());      map.put(\"C\", new CBox());      map.put(\"L\", new LBox());  }  public static final BoxFactory getInstance(){      return SingletonHolder.INSTANCE;  }  public static class SingletonHolder{      private static final BoxFactory INSTANCE = new BoxFactory();  }  public AbstractBox getBox(String key){      return map.get(key);  }   }        public class Client {      public static void main(String[] args) {          // 通过享元工厂获取享元对象          AbstractBox cbox1 = BoxFactory.getInstance().getBox(“C”);          AbstractBox cbox2 = BoxFactory.getInstance().getBox(“C”);          // 获取的为同一个对象，节省的空间          System.out.println(cbox1 == cbox2); // TRUE      }  }  场景      系统有大量相同或相似的对象。        对象的大部分状态可以外部化。  优      减少相似对象的数量，节省资源。        外部状态不影响内部状态。  缺  需要划分内部/外部状态，使程序逻辑复杂化。"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Facade",
+    "url": "/posts/dp-structural-facade/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Facade对外提供一个统一的接口，用来访问子系统中的一群接口，使子系统更容易访问。看电影观看电影需要有：打开电视，设置CD，开始播放 三个步骤，使用外观模式一键看电影。场景      构建分层结构系统时，可以使用外观模式定义子系统中每层的入口点，简化子系统之间的依赖关系。        提供简单的接口。        提供子系统的独立性和可移植性。  优  降低了子系统和客户端之间的耦合度...",
+    "content": "Facade对外提供一个统一的接口，用来访问子系统中的一群接口，使子系统更容易访问。看电影观看电影需要有：打开电视，设置CD，开始播放 三个步骤，使用外观模式一键看电影。场景      构建分层结构系统时，可以使用外观模式定义子系统中每层的入口点，简化子系统之间的依赖关系。        提供简单的接口。        提供子系统的独立性和可移植性。  优  降低了子系统和客户端之间的耦合度  使子系统更加容易使用缺  违反了开闭原则"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Composite",
+    "url": "/posts/dp-structural-composite/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Composite将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。菜单场景出现树形结构的地方。优      清楚定义分层次的复杂对象。        方便的增加树枝节点和叶子节点，符合开闭原则。  ",
+    "content": "Composite将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。菜单场景出现树形结构的地方。优      清楚定义分层次的复杂对象。        方便的增加树枝节点和叶子节点，符合开闭原则。  "
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Bridge",
+    "url": "/posts/dp-structural-bridge/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Bridge将抽象与实现分离开，使他们可以独立变化。跨平台视频播放场景类存在两个独立变化的维度，且这两个维度都需要扩展。",
+    "content": "Bridge将抽象与实现分离开，使他们可以独立变化。跨平台视频播放场景类存在两个独立变化的维度，且这两个维度都需要扩展。"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Decorator",
+    "url": "/posts/dp-structural-decorator/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-10 16:21:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Decorator为对象动态添加功能。",
+    "content": "Decorator为对象动态添加功能。"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Adapter",
+    "url": "/posts/dp-strcutural-adapter/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-10 15:21:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Adapter适配器将 已有的接口 转换为 用户需要的接口。分类：  类适配器： 继承实现  对象适配器：组合和聚合实现成分：  目标Target：客户期待得到的接口  适配者Adaptee：已经存在的，需要适配的类。  适配器Adapter：将源接口转换为目标接口。类适配器/*** 这是客户所期待的接口，目标可以是具体的或抽象类，也可以是接口*/public interface Targe...",
+    "content": "Adapter适配器将 已有的接口 转换为 用户需要的接口。分类：  类适配器： 继承实现  对象适配器：组合和聚合实现成分：  目标Target：客户期待得到的接口  适配者Adaptee：已经存在的，需要适配的类。  适配器Adapter：将源接口转换为目标接口。类适配器/*** 这是客户所期待的接口，目标可以是具体的或抽象类，也可以是接口*/public interface Target {    void request();}/*** 需要适配的类，被访问和适配的现存组件库中的组件接口*/public class Adaptee {    public void specificRequest(){        System.out.println(\"适配者中的业务代码被调用！\");    }}/*** 类适配器类*/public class ClassAdapter extends Adaptee implements Target{    @Override    public void request() {        specificRequest();    }}//客户端代码public class ClassAdapterTest{    public static void main(String[] args)    {        System.out.println(\"类适配器模式测试：\");        Target target = new ClassAdapter();        target.request();    }}对象适配器/*** 对象适配器，通过在内部包装一个 Adaptee 对象，把源接口转换为目标接口*/public class ObjectAdapter implements Target {    // 建立一个私有的 Adaptee 对象    private Adaptee adaptee;    public ObjectAdapter(Adaptee adaptee) {        this.adaptee = adaptee;    }    @Override    public void request() {        // 把表面上调用 request() 方法变成实际调用 specificRequest()         adaptee.specificRequest();    }}//客户端代码public class ObjectAdapterTest{    public static void main(String[] args)    {        System.out.println(\"对象适配器模式测试：\");        // 对客户端来说，调用的就是 Target 的 request()        Target target = new ObjectAdapter();        target.request();    }}"
+  },
+  
+  {
     "title": "DP-Creational Pattern-Factory",
     "url": "/posts/dp-creational-factory/",
     "categories": "Design Pattern",
@@ -69,6 +222,23 @@
   },
   
   {
+    "title": "DP-Creational Pattern-Directory",
+    "url": "/posts/dp-directory/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-01 10:55:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "类之间的关系  关联          单向      双向      自关联        聚合 空心菱形  组合 实心菱形  依赖 虚线箭头  继承 空心三角  实现 虚线三角设计模式创建型      单例    工厂          简单工厂      工厂方法      抽象工厂            原型    建造者结构型  代理  适配器          类适配器     ...",
+    "content": "类之间的关系  关联          单向      双向      自关联        聚合 空心菱形  组合 实心菱形  依赖 虚线箭头  继承 空心三角  实现 虚线三角设计模式创建型      单例    工厂          简单工厂      工厂方法      抽象工厂            原型    建造者结构型  代理  适配器          类适配器      对象适配器        装饰者  桥接  外观  组合  享元行为型  模板方法"
+  },
+  
+  {
     "title": "DP-Creational Pattern-Singleton",
     "url": "/posts/dp-creational-singleton/",
     "categories": "Design Pattern",
@@ -81,8 +251,8 @@
 
 
     
-    "snippet": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();饿汉式-静态代码块懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线...",
-    "content": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数只能通过共有静态函数返回唯一的私有静态变量。饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();饿汉式-静态代码块懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){    }    public static Singleton getInstance(){        //懒汉式：需要的时候在进行实例化。线程不安全。        if(uniqueInstance == null){            uniqueInstance = new Singleton();        }        return uniqueInstance;    }}懒汉式-synchronized锁仍然延迟实例化，但是对获取实例的方法加锁。优点：线程安全。缺点：会引起线程阻塞，性能降低。public static synchronized Singleton getUniqueInstance() {    if (uniqueInstance == null) {        uniqueInstance = new Singleton();    }    return uniqueInstance;}懒汉式-双重校验锁只对实例化部分语句加锁。public class Singleton {    private **volatile** static Singleton uniqueInstance;    private Singleton() {    }    public static Singleton getUniqueInstance() {        if (uniqueInstance == null) {            synchronized (Singleton.class) {                if (uniqueInstance == null) {                    uniqueInstance = new Singleton();                }            }        }        return uniqueInstance;    }}  需要用volatile关键字修饰。禁止指令重排。  需要有两个if语句。若只有第一个，可能会出现两个线程都进入到if语句内，执行两次实例化。volatile关键字两个作用：  保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。  多线程执行下的顺序一致性：禁止JVM指令重排。懒汉式-静态内部类实现返回静态内部类的静态实例。优点：线程安全+延迟初始化。public class Singleton {    private Singleton(){    }    private static class SingletonHolder{        private static final Singleton INSTANCE = new Singleton();    }    public static Singleton getInstance(){        return SingletonHolder.INSTANCE;    }}当Singleton类被加载时，静态内部类不会被加载进内存。只有当调用Singleton.getInstance()时，静态内部类才会被加载，才会初始化INSTANCE实例。饿汉式-枚举实现将枚举类作为单例类。public enum Singleton{    INSTANCE;}多个Singleton.INSTANCE获取到的是同一个对象。"
+    "snippet": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数。只能通公有静态函数返回唯一的私有静态变量。分为：      饿汉式：类加载时就会创建对象。        懒汉式：类加载时不创建，首次使用时才创建。  饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleto...",
+    "content": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数。只能通公有静态函数返回唯一的私有静态变量。分为：      饿汉式：类加载时就会创建对象。        懒汉式：类加载时不创建，首次使用时才创建。  饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();饿汉式-静态代码块private static Singleton uniqueInstance;static{    instance = new Singleton();}懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){    }    public static Singleton getInstance(){        //懒汉式：需要的时候在进行实例化。线程不安全。        if(uniqueInstance == null){            uniqueInstance = new Singleton();        }        return uniqueInstance;    }}懒汉式-synchronized锁仍然延迟实例化，但是对获取实例的方法加锁。优点：线程安全。缺点：会引起线程阻塞，性能降低。public static synchronized Singleton getUniqueInstance() {    if (uniqueInstance == null) {        uniqueInstance = new Singleton();    }    return uniqueInstance;}懒汉式-双重校验锁只对实例化部分语句加锁。public class Singleton {    private **volatile** static Singleton uniqueInstance;    private Singleton() {    }    public static Singleton getUniqueInstance() {        if (uniqueInstance == null) {            synchronized (Singleton.class) {                if (uniqueInstance == null) {                    uniqueInstance = new Singleton();                }            }        }        return uniqueInstance;    }}  需要用volatile关键字修饰。禁止指令重排。  需要有两个if语句。若只有第一个，可能会出现两个线程都进入到if语句内，执行两次实例化。volatile关键字两个作用：  保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。  多线程执行下的顺序一致性：禁止JVM指令重排。***懒汉式-静态内部类实现返回静态内部类的静态实例。优点：线程安全+延迟初始化。public class Singleton {    private Singleton(){    }    private static class SingletonHolder{        private static final Singleton INSTANCE = new Singleton();    }    public static Singleton getInstance(){        return SingletonHolder.INSTANCE;    }}当Singleton类被加载时，静态内部类不会被加载进内存。只有当调用Singleton.getInstance()时，静态内部类才会被加载，才会初始化INSTANCE实例。饿汉式-枚举实现将枚举类作为单例类。public enum Singleton{    INSTANCE;}多个Singleton.INSTANCE获取到的是同一个对象。"
   },
   
   {
@@ -133,7 +303,24 @@
 
     
     "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
-    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main"
+    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main冲突记录本地和远程修改了同一个文件的代码，pull远程分支时出现文件冲突：根据提示, 解决办法为：git stash  //将本地修改存入栈中git pull origin master //拉取远程代码git stash pop //将存储在栈中的修改放出但我执行完pop后，再次报错了：意思是，你修改了一些文件（可能是远程更新的），但这些文件还没有加入暂存区，因此不能提交，所以：git add . //将所有文件加入暂存区git commit -m afterstash //提交暂存区的文件"
+  },
+  
+  {
+    "title": "Spring",
+    "url": "/posts/dev-spring/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Spring是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。AOPAOP:面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。然后在想要使用这个功能的方法上加上参数中的...",
+    "content": "Spring是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。AOPAOP:面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。然后在想要使用这个功能的方法上加上参数中的注解。@Aspect@Componentpublic class loggingAspect{ //切面类    @Before(\"@annotation(Loggable)\")    public void logBefore(){            }    @After(\"@annotation(Loggable)\")    public void logAfter(){            }}@Servicepublic void myService{    @Loggable    public void doSomething(){ //注入切面的方法    }}IOCIOC（Inversion of Control）:控制反转。  是啥：通过IOC容器管理所有Java对象的实例化和初始化，把对象的管理权限交给容器。应用程序如果需要某个对象的实例，直接从IOC容器中获取即可。  IOC之前：直接new对象，对象的生命周期由程序员控制，不同层之间耦合度太高。  好处：为了实现高内聚低耦合的设计原则，引入IoC，以降低不同层之间的耦合度，使程序的体系结构更灵活。  实现：将对象的生命周期交给容器来管理。          在xml文件中，定义Bean，配置不同Bean之间的依赖关系。      BeanDefinitionReader读取配置文件，解析和加载后生成BeanDefinition，然后保存到一个Map集合中，也就是注册到IOC容器中。      根据BeanDifinition，通过BeanFactory工厂+反射进行实例化，然后初始化。      通过Context.getBean()或者Autowired注解从IOC容器获取Bean的实例。***  //声明一个Bean的接口  public interface UserService{  public coid createUser(User user);  }        //声明一个Bean的实现类  @Service  public class UserServiceImpl implements userService{      public void creatUser(User user){      }  }    //在应用程序中，通过注解获取Bean的实例  public class UserControl{      @Autowired  //如果Bean是接口，autowired会自动注入其实现类      private UserService userService;      public void createUser(User user){      userService.createUser(user);  }   }      依赖注入DI在Spring创建对象的过程中，将对象依赖属性通过配置进行注入。  Set注入  构造注入Spring创建对象的过程（1）加载xml配置文件（2）解析xml文件（3）获取xml文件bean标签属性值，包含id和classs（4）使用反射，根据类的全路径创建对象    Class clazz = Class.forName(“com.xjtu.spring6.User”);    User user = (User) clazz.getDeclaredConstructor().newInstance();（5）创建对象后，放到Map容器中    Map&lt;String, BeanDefinition&gt; beanDefinitionMap;"
   },
   
   {
@@ -149,8 +336,8 @@
 
 
     
-    "snippet": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~#",
-    "content": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~#"
+    "snippet": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~",
+    "content": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~"
   },
   
   {
@@ -201,7 +388,7 @@
 
     
     "snippet": "原理思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，...",
-    "content": "原理思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。栈帧保在JVM的栈区中。假如P调用Q，则Q的栈帧中的返回地址为调用Q的指令的下一条指令的地址。框架递归调用之前的代码正序执行： 前序位置递归调用之后的代码倒序执行： 后序位置递归遍历数组//递归遍历数组public static void traverseArray(int[] arr, int i) {\tif(i == arr.length) return;\tSystem.out.print(\"bef:\" + arr[i] + \" \"); //正序遍历数组\ttraverseArray(arr, i + 1);\tSystem.out.print(\"end:\" + arr[i] + \" \"); //倒序遍历数组}递归遍历链表//递归遍历链表public static void traverseList(ListNode head) {\tif(head == null) return;\tSystem.out.print(\"bef:\" + head.val + \"  \"); //正序打印链表\ttraverseList(head.next);\tSystem.out.print(\"end:\" + head.val+ \" \"); //倒序打印链表}翻转链表//递归翻转链表public static ListNode reverseList(ListNode head) {\tif(head == null || head.next == null) return head;\tListNode newNode = reverseList(head.next);\thead.next.next = head;\thead.next = null;\treturn newNode;}递归遍历二叉树二叉树 可以看作 每一个位置都有两个选择的二叉链表， 多了一个中序位置//前序遍历二叉树public static void traverseTree(TreeNode root) {\tif(root == null) return;\tSystem.out.print(root.val+ \" \");//前序位置\ttraverseTree(root.left);    //中序位置\ttraverseTree(root.right);    //后序位置}翻转二叉树//翻转二叉树public static TreeNode mirrorTree(TreeNode root) {\tif(root == null) return root;\tTreeNode left = root.left;\troot.left = mirrorTree(root.right);\troot.right = mirrorTree(left);\treturn root;}"
+    "content": "原理思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。栈帧保在JVM的栈区中。假如P调用Q，则Q的栈帧中的返回地址为调用Q的指令的下一条指令的地址。时间复杂度递归的时间复杂度 = 递归函数本身的时间复杂度 * 递归次数。框架递归调用之前的代码正序执行： 前序位置递归调用之后的代码倒序执行： 后序位置递归遍历数组//递归遍历数组public static void traverseArray(int[] arr, int i) {\tif(i == arr.length) return;\tSystem.out.print(\"bef:\" + arr[i] + \" \"); //正序遍历数组\ttraverseArray(arr, i + 1);\tSystem.out.print(\"end:\" + arr[i] + \" \"); //倒序遍历数组}递归遍历链表//递归遍历链表public static void traverseList(ListNode head) {\tif(head == null) return;\tSystem.out.print(\"bef:\" + head.val + \"  \"); //正序打印链表\ttraverseList(head.next);\tSystem.out.print(\"end:\" + head.val+ \" \"); //倒序打印链表}翻转链表//递归翻转链表public static ListNode reverseList(ListNode head) {\tif(head == null || head.next == null) return head;\tListNode newNode = reverseList(head.next);\thead.next.next = head;\thead.next = null;\treturn newNode;}递归遍历二叉树二叉树 可以看作 每一个位置都有两个选择的二叉链表， 多了一个中序位置//前序遍历二叉树public static void traverseTree(TreeNode root) {\tif(root == null) return;\tSystem.out.print(root.val+ \" \");//前序位置\ttraverseTree(root.left);    //中序位置\ttraverseTree(root.right);    //后序位置}翻转二叉树//翻转二叉树public static TreeNode mirrorTree(TreeNode root) {\tif(root == null) return root;\tTreeNode left = root.left;\troot.left = mirrorTree(root.right);\troot.right = mirrorTree(left);\treturn root;}"
   },
   
   {
@@ -302,8 +489,8 @@
 
 
     
-    "snippet": "引言跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)...",
-    "content": "引言跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)$。状态转移方程受备忘录启发，引入DP table，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &gt; 1。更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。写状态转移方程的思路：base case -&gt; 状态 -&gt; 选择 -&gt; 定义dp数组最优子结构例如，想考出最高的成绩，则子问题为每门课程的成绩最高，因为每门课程的成绩互相独立，满足最优子结构。零钱兑换leetcode 322给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。计算并返回可以凑成总金额所需的 最少的硬币个数 。如果没有任何一种硬币组合能组成总金额，返回 -1 。你可以认为每种硬币的数量是无限的。示例 1：输入：coins = [1, 2, 5], amount = 11输出：3 解释：11 = 5 + 5 + 1示例 2：输入：coins = [2], amount = 3输出：-1示例 3：输入：coins = [1], amount = 0输出：0dp[11] = Math.min(dp[10], dp[9], dp[6]) + 1递归-自上而下class Solution {    public int coinChange(int[] coins, int amount) {        int[] mem = new int[amount + 1];        Arrays.fill(mem, - 100);        mem[0] = 0;        return dp(coins, amount, mem);    }        //凑amount零钱需要的最小coin数量    public int dp(int[] coins, int amount, int[] mem){        //base case        if(amount == 0) return 0;        if(amount &lt; 0) return -1;        if(mem[amount] != - 100) return mem[amount];        //caculate the best ans        int res = Integer.MAX_VALUE;        for(int coin: coins){            int sub = dp(coins, amount - coin, mem);            if(sub == -1) continue;            res = Math.min(res, sub + 1);         }        res = res == Integer.MAX_VALUE ? -1 : res;        mem[amount] = res;        return res;         }}迭代-自底向上class Solution {    public int coinChange(int[] coins, int amount) {        //凑成amount需要的最少硬币数量        //初始化一个最大值        int[] dp = new int[amount + 1];        Arrays.fill(dp, amount + 1);        dp[0] = 0;        for(int i = 1; i &lt; amount + 1; i++){            for(int coin: coins){                if(i - coin &lt; 0)continue;                dp[i] = Math.min(dp[i], dp[i - coin] + 1);            }        }        return dp[amount] == amount + 1 ? -1 : dp[amount];    }}最长公共子序列leetcode 1143给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。例如，\"ace\" 是 \"abcde\" 的子序列，但 \"aec\" 不是 \"abcde\" 的子序列。两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。示例 1：输入：text1 = \"abcde\", text2 = \"ace\" 输出：3  解释：最长公共子序列是 \"ace\" ，它的长度为 3 。示例 2：输入：text1 = \"abc\", text2 = \"abc\"输出：3解释：最长公共子序列是 \"abc\" ，它的长度为 3 。示例 3：输入：text1 = \"abc\", text2 = \"def\"输出：0解释：两个字符串没有公共子序列，返回 0 。关键在于寻找状态转移方程class Solution {    public int longestCommonSubsequence(String text1, String text2) {        int m = text1.length();        int n = text2.length();        if(m == 0 || n == 0) return 0;        int[][] dp = new int[m + 1][n + 1];                for(int i = 1; i &lt; m + 1; i++){            for(int j = 1; j &lt; n + 1; j++){                if(text1.charAt(i - 1) == text2.charAt(j - 1)){                    dp[i][j] = dp[i-1][j-1] + 1;                }else{                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);                }            }        }        return dp[m][n];    }}"
+    "snippet": "引言跟着labuladong刷动态规划题的记录。题型：求最值。核心：穷举。三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间...",
+    "content": "引言跟着labuladong刷动态规划题的记录。题型：求最值。核心：穷举。三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)$。备忘录:存储子问题答案的数组。递归的时间复杂度 = 递归函数本身的时间复杂度 * 递归调用的次数。无备忘录: $O(1) * O(2 ^ n)$有备忘录: $O(1) * O(n)$空间换时间。状态转移方程受备忘录启发，引入DP table，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &gt; 1。更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。思路：base case -&gt; 状态 -&gt; 选择 -&gt; 定义dp数组最优子结构例如，想考出最高的成绩，则子问题为每门课程的成绩最高，因为每门课程的成绩互相独立，满足最优子结构。零钱兑换leetcode 322给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。计算并返回可以凑成总金额所需的 最少的硬币个数 。如果没有任何一种硬币组合能组成总金额，返回 -1 。你可以认为每种硬币的数量是无限的。示例 1：输入：coins = [1, 2, 5], amount = 11输出：3 解释：11 = 5 + 5 + 1示例 2：输入：coins = [2], amount = 3输出：-1示例 3：输入：coins = [1], amount = 0输出：0dp[11] = Math.min(dp[10], dp[9], dp[6]) + 1递归-自上而下class Solution {    public int coinChange(int[] coins, int amount) {        int[] mem = new int[amount + 1];        Arrays.fill(mem, - 100);        mem[0] = 0;        return dp(coins, amount, mem);    }        //凑amount零钱需要的最小coin数量    public int dp(int[] coins, int amount, int[] mem){        //base case        if(amount == 0) return 0;        if(amount &lt; 0) return -1;        if(mem[amount] != - 100) return mem[amount];        //caculate the best ans        int res = Integer.MAX_VALUE;        for(int coin: coins){            int sub = dp(coins, amount - coin, mem);            if(sub == -1) continue;            res = Math.min(res, sub + 1);         }        res = res == Integer.MAX_VALUE ? -1 : res;        mem[amount] = res;        return res;         }}迭代-自底向上class Solution {    public int coinChange(int[] coins, int amount) {        //凑成amount需要的最少硬币数量        //初始化一个最大值        int[] dp = new int[amount + 1];        Arrays.fill(dp, amount + 1);        dp[0] = 0;        for(int i = 1; i &lt; amount + 1; i++){            for(int coin: coins){                if(i - coin &lt; 0)continue;                dp[i] = Math.min(dp[i], dp[i - coin] + 1);            }        }        return dp[amount] == amount + 1 ? -1 : dp[amount];    }}最长公共子序列leetcode 1143给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。例如，\"ace\" 是 \"abcde\" 的子序列，但 \"aec\" 不是 \"abcde\" 的子序列。两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。示例 1：输入：text1 = \"abcde\", text2 = \"ace\" 输出：3  解释：最长公共子序列是 \"ace\" ，它的长度为 3 。示例 2：输入：text1 = \"abc\", text2 = \"abc\"输出：3解释：最长公共子序列是 \"abc\" ，它的长度为 3 。示例 3：输入：text1 = \"abc\", text2 = \"def\"输出：0解释：两个字符串没有公共子序列，返回 0 。关键在于寻找状态转移方程class Solution {    public int longestCommonSubsequence(String text1, String text2) {        int m = text1.length();        int n = text2.length();        if(m == 0 || n == 0) return 0;        int[][] dp = new int[m + 1][n + 1];                for(int i = 1; i &lt; m + 1; i++){            for(int j = 1; j &lt; n + 1; j++){                if(text1.charAt(i - 1) == text2.charAt(j - 1)){                    dp[i][j] = dp[i-1][j-1] + 1;                }else{                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);                }            }        }        return dp[m][n];    }}"
   },
   
   {

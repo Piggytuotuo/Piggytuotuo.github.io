@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="跑Swin-Transformer-Object-Detection过程中遇到的坑及解决" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2021-12-26T14:10:00+08:00","datePublished":"2021-12-26T14:10:00+08:00","description":"代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.","headline":"跑Swin-Transformer-Object-Detection过程中遇到的坑及解决","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dl-swin/"},"url":"http://localhost:4000/posts/dl-swin/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-12T09:49:49+08:00","datePublished":"2021-12-26T14:10:00+08:00","description":"代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.","headline":"跑Swin-Transformer-Object-Detection过程中遇到的坑及解决","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dl-swin/"},"url":"http://localhost:4000/posts/dl-swin/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -633,6 +633,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686534589"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  Jun 12, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -884,17 +904,12 @@
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -904,7 +919,12 @@
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -937,15 +957,15 @@
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1030,10 +1050,10 @@
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1378,6 +1398,149 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1429,7 +1592,7 @@
       
       
       <div class="card">
-        <a href="/posts/dp-creational-factory/">
+        <a href="/posts/dp-behavioral-template/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1441,13 +1604,13 @@
 
 
 <em class="small"
-    data-ts="1686196800"
+    data-ts="1686454740"
     data-df="ll"
     >
-  Jun  8, 2023
+  Jun 11, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Creational Pattern-Factory</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Template Method</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1456,92 +1619,37 @@
 
 
 
-                工厂模式：解耦
+                Template Method
 
-创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。
-
-简单工厂
+定义算法框架，将一些步骤的实现延迟到子类。
 
 
 
-工厂方法
+冲饮料
+
+冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。
 
 
 
-抽象工厂
+场景
 
 
-
-原型Prototype
-
-
-
-建造者Builder
-
-
-
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dp-structural-proxy-jdk/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1686129360"
-    data-df="ll"
-    >
-  Jun  7, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Proxy-JDK</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Proxy
-
-代理作为访问对象和目标对象之间的中介。
-
-作用：
-
-  降低系统耦合度
-  代理对象调用目标对象时可以对目标对象进行增强。
-
-
-分为：
-
-
-  静态代理：编译时生成代理类
-  动态代理：运行时动态生成代理类，基于反射
-    
-      JDK代理：必须定义接口
-      CGLib代理：可以代理没实现接口的类
-    
+  
+    算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。
+  
+  
+    需要通过子类决定父类算法中的某个步骤是否执行。
   
 
 
-动态代理-JDK代理
+优
 
-1.接口类：卖票
-...
+
+  
+    提高代码复用性。
+  
+  
+ ...
               </p>
             </div>
           </div>
@@ -1551,7 +1659,7 @@
       
       
       <div class="card">
-        <a href="/posts/dp-structural-proxy-gclib/">
+        <a href="/posts/dp-behavioral-strategy/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1563,13 +1671,13 @@
 
 
 <em class="small"
-    data-ts="1686129360"
+    data-ts="1686454740"
     data-df="ll"
     >
-  Jun  7, 2023
+  Jun 11, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Proxy-GCLib</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Strategy</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1578,46 +1686,63 @@
 
 
 
-                动态代理-GCLIB代理
+                Strategy
 
-1.具体实现类
+举例
 
-1
-2
-3
-4
-5
-public class TrainStation {
-    public void sell(){
-        System.out.println(&quot;火车站卖票&quot;);
-    }
-}
+场景
+
+优
+
+缺
+
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dp-behavioral-chain/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
-2.代理工厂类
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22...
+
+
+<em class="small"
+    data-ts="1686454740"
+    data-df="ll"
+    >
+  Jun 11, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Chain of Responsibility</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Chain of Responsibility
+
+沿着责任链处理请求。
+
+场景
+JavaWeb中的FilterChain
+
+优
+
+缺
+
               </p>
             </div>
           </div>
@@ -1695,15 +1820,15 @@ public class TrainStation {
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1788,10 +1913,10 @@ public class TrainStation {
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

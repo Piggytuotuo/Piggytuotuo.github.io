@@ -1064,17 +1064,12 @@ class Solution {
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -1084,7 +1079,12 @@ class Solution {
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1117,15 +1117,15 @@ class Solution {
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1210,10 +1210,10 @@ class Solution {
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1345,7 +1345,150 @@ class Solution {
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1587,53 +1730,6 @@ class Solution {
       
       
       <div class="card">
-        <a href="/posts/leetcode-sldingwindows/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1684218960"
-    data-df="ll"
-    >
-  May 16, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sliding Windows</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                框架: O(N)
-
-int left = 0, right = 0;
-
-while(right &amp;lt; s.size()){
-    //将有边界字符加入窗口中
-    windows.add(s[right]);
-    right ++;
-    ...
-    //根据**一些条件**判断是否需要收缩做窗口
-    while(left &amp;lt; right &amp;amp;&amp;amp; w...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-backtrack/">
           <div class="card-body">
             <!--
@@ -1714,14 +1810,73 @@ def backtrack(路径，选择列表):
 
 
                 引言
-跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
+跟着labuladong刷动态规划题的记录。
+
+题型：求最值。
+
+核心：穷举。
+
+三要素：重叠子问题、最优子结构、状态转移方程
 
 重叠子问题
 计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
 
 若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
 
-为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
+为了避免重复计算，引入备...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-dp-bag/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681801200"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                背包问题
+
+属于动态规划的一类问题，需要明确状态和选择。
+
+状态：背包的容量 和 可选择的物品；选择：装 和 不装
+
+01背包：
+
+每个物品只能装一次，选择装/不装。
+
+定义状态转移方程dp[i][w]：
+
+对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
+
+int[][] dp = new int[N+1][M+1]
+//base case
+dp[0][...]...
               </p>
             </div>
           </div>
@@ -1799,15 +1954,15 @@ def backtrack(路径，选择列表):
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1892,10 +2047,10 @@ def backtrack(路径，选择列表):
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

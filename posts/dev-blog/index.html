@@ -832,17 +832,12 @@ npm run build
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -852,7 +847,12 @@ npm run build
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -885,15 +885,15 @@ npm run build
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -978,10 +978,10 @@ npm run build
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1043,6 +1043,149 @@ npm run build
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1402,6 +1545,70 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
       
       
       <div class="card">
+        <a href="/posts/dev-wsl/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1678860600"
+    data-df="ll"
+    >
+  Mar 15, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                
+
+方式一 vmware安装
+
+安装vmware,下载ubuntu的iso文件
+
+ubuntu-releases安装包下载_开源镜像站-阿里云
+
+i386是32位 amd64是64位
+
+
+
+方式二 wsl安装
+
+1. 在启动或关闭Windows功能中，打开以下两项，重启
+
+
+
+ 2. powershell以管理员身份打开
+
+
+
+在mic store安装分发版也可
+
+查看已经安装的分发版
+
+
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/dev-mysql/">
           <div class="card-body">
             <!--
@@ -1448,55 +1655,7 @@ windows上安装了mysql，STEPS：
 
 然后可以使用mysql workbench进行可视化操作~~
 
-#
 
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/javaweb-bugs/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1685774100"
-    data-df="ll"
-    >
-  Jun  3, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java Web Bug记录</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Bug1
-
-1
-Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
-
-
-背景：jsp中导入java包，并部署在tomcat运行时报错。
-
-原因：在jsp中没有找到相关的java类。
-
-解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artif...
               </p>
             </div>
           </div>
@@ -1574,15 +1733,15 @@ Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1667,10 +1826,10 @@ Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="DP-Creational Pattern-Singleton" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-05-21T14:46:00+08:00","datePublished":"2023-05-21T14:46:00+08:00","description":"单例Singleton","headline":"DP-Creational Pattern-Singleton","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-creational-singleton/"},"url":"http://localhost:4000/posts/dp-creational-singleton/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-12T09:49:49+08:00","datePublished":"2023-05-21T14:46:00+08:00","description":"单例Singleton","headline":"DP-Creational Pattern-Singleton","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-creational-singleton/"},"url":"http://localhost:4000/posts/dp-creational-singleton/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -666,6 +666,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686534589"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  Jun 12, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -710,7 +730,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="656 words">
+  title="711 words">
   <em>3 min</em> read</span>
 
     </div>
@@ -722,9 +742,20 @@
 <div class="post-content">
   <h2 id="单例singleton"><span class="mr-2">单例Singleton</span><a href="#单例singleton" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>私有构造函数 + 私有静态变量 + 公有静态函数</p>
+<p>私有构造函数 + 私有静态变量 + 公有静态函数。</p>
 
-<p>只能通过共有静态函数返回唯一的私有静态变量。</p>
+<p>只能通公有静态函数返回唯一的私有静态变量。</p>
+
+<p>分为：</p>
+
+<ul>
+  <li>
+    <p>饿汉式：类加载时就会创建对象。</p>
+  </li>
+  <li>
+    <p>懒汉式：类加载时不创建，首次使用时才创建。</p>
+  </li>
+</ul>
 
 <h3 id="饿汉式-静态变量"><span class="mr-2">饿汉式-静态变量</span><a href="#饿汉式-静态变量" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -738,6 +769,20 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="饿汉式-静态代码块"><span class="mr-2">饿汉式-静态代码块</span><a href="#饿汉式-静态代码块" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>private static Singleton uniqueInstance;
+
+static{
+    instance = new Singleton();
+}
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="懒汉式-线程不安全"><span class="mr-2">懒汉式-线程不安全</span><a href="#懒汉式-线程不安全" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -846,7 +891,8 @@
 <p>volatile关键字两个作用：</p>
 <ol>
   <li>保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。</li>
-  <li>多线程执行下的顺序一致性：禁止JVM指令重排。</li>
+  <li>多线程执行下的顺序一致性：禁止JVM指令重排。
+***</li>
 </ol>
 
 <h3 id="懒汉式-静态内部类实现"><span class="mr-2">懒汉式-静态内部类实现</span><a href="#懒汉式-静态内部类实现" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1022,17 +1068,12 @@
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -1042,7 +1083,12 @@
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1075,15 +1121,15 @@
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1168,10 +1214,10 @@
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1290,7 +1336,150 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1545,52 +1734,6 @@
       
       
       <div class="card">
-        <a href="/posts/java-threads/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683808440"
-    data-df="ll"
-    >
-  May 11, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java 多线程</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                实现并行完成多个任务。提高cpu的利用率。
-
-三种实现方式
-
-public class LearnThreads {
-    public static void main(String[] args) {
-        //1. 继承Thread类，实例化一个Thread对象
-        Thread mt = new MyThread();
-        mt.start();
-...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/java-codes/">
           <div class="card-body">
             <!--
@@ -1687,6 +1830,52 @@ HashMap&amp;lt;String,Integer&amp;...
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/java-threads/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683808440"
+    data-df="ll"
+    >
+  May 11, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java 多线程</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                实现并行完成多个任务。提高cpu的利用率。
+
+三种实现方式
+
+public class LearnThreads {
+    public static void main(String[] args) {
+        //1. 继承Thread类，实例化一个Thread对象
+        Thread mt = new MyThread();
+        mt.start();
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1706,9 +1895,9 @@ HashMap&amp;lt;String,Integer&amp;...
   
 
   
-  <a href="/posts/javaweb-bugs/" class="btn btn-outline-primary"
+  <a href="/posts/dp-directory/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>Java Web Bug记录</p>
+    <p>DP-Creational Pattern-Directory</p>
   </a>
   
 
@@ -1758,15 +1947,15 @@ HashMap&amp;lt;String,Integer&amp;...
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1851,10 +2040,10 @@ HashMap&amp;lt;String,Integer&amp;...
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

@@ -453,10 +453,10 @@
 <div id="post-list">
   
     <div class="card post-preview">
-      <a href="/posts/dev-git/">
+      <a href="/posts/dp-structural-decorator/">
         <div class="card-body">
           <h1 class="card-title">
-            Git
+            DP-Structural Pattern-Decorator
           </h1>
 
           <div class="card-text post-content">
@@ -467,95 +467,14 @@
 
 
 
-              关于Git
-Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
+              Decorator
 
-Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。
-
-一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
-
-在规范的开发流程中，通常使用dev + main：
-
-  
-    mai...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+为对象动态添加功能。
 
 
 
 
 
-<em class=""
-    data-ts="1683960240"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-mysql/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Mysql
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              Windows上启动Mysql
-
-windows上安装了mysql，STEPS：
-
-1.在windows的服务中启动mysql服务
-
-
-
-2.右键查看mysql的安装目录
-
-3.管理员打开cmd，进入mysql的安装bin目录，执行
-
-
-
-
-
-或者在启动服务后，打开mysql command line。
-
-然后可以使用mysql workbench进行可视化操作~~
-
-#
 
             </p>
           </div>
@@ -574,10 +493,10 @@ windows上安装了mysql，STEPS：
 
 
 <em class=""
-    data-ts="1683958200"
+    data-ts="1686385260"
     data-df="ll"
     >
-  May 13, 2023
+  Jun 10, 2023
 </em>
 
 
@@ -586,7 +505,7 @@ windows上安装了mysql，STEPS：
                 <i class="far fa-folder-open fa-fw"></i>
                 <span>
                   
-                    Develop
+                    Design Pattern
                 </span>
               
             </div>
@@ -600,10 +519,10 @@ windows上安装了mysql，STEPS：
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/leetcode-tree/">
+      <a href="/posts/dp-strcutural-adapter/">
         <div class="card-body">
           <h1 class="card-title">
-            Tree
+            DP-Structural Pattern-Adapter
           </h1>
 
           <div class="card-text post-content">
@@ -614,20 +533,31 @@ windows上安装了mysql，STEPS：
 
 
 
-              LeetCode中关于二叉树的一些问题
+              Adapter
 
-判断树是否对称
+适配器将 已有的接口 转换为 用户需要的接口。
 
-leetcode 剑指Offer 28
 
-请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
-例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
-    1
-   / \
-  2   2
- / \ / \
-3  4 4  3
-但是下面这个 [1,2,2,null,3,null,3] ...
+
+分类：
+
+  类适配器： 继承实现
+  对象适配器：组合和聚合实现
+
+
+成分：
+
+  目标Target：客户期待得到的接口
+  适配者Adaptee：已经存在的，需要适配的类。
+  适配器Adapter：将源接口转换为目标接口。
+
+
+类适配器
+
+
+/**
+* 这是客户所期待的接口，目标可以是具体的或抽象类，也可以是接口
+...
             </p>
           </div>
 
@@ -645,10 +575,10 @@ leetcode 剑指Offer 28
 
 
 <em class=""
-    data-ts="1683597600"
+    data-ts="1686381660"
     data-df="ll"
     >
-  May  9, 2023
+  Jun 10, 2023
 </em>
 
 
@@ -657,7 +587,7 @@ leetcode 剑指Offer 28
                 <i class="far fa-folder-open fa-fw"></i>
                 <span>
                   
-                    LeetCode
+                    Design Pattern
                 </span>
               
             </div>
@@ -671,10 +601,10 @@ leetcode 剑指Offer 28
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/leetcode-recursion/">
+      <a href="/posts/dp-creational-factory/">
         <div class="card-body">
           <h1 class="card-title">
-            Recursion
+            DP-Creational Pattern-Factory
           </h1>
 
           <div class="card-text post-content">
@@ -685,11 +615,30 @@ leetcode 剑指Offer 28
 
 
 
-              原理
+              工厂模式：解耦
 
-思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
+创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。
 
-函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
+简单工厂
+
+
+
+工厂方法
+
+
+
+抽象工厂
+
+
+
+原型Prototype
+
+
+
+建造者Builder
+
+
+
             </p>
           </div>
 
@@ -707,10 +656,10 @@ leetcode 剑指Offer 28
 
 
 <em class=""
-    data-ts="1682561520"
+    data-ts="1686196800"
     data-df="ll"
     >
-  Apr 27, 2023
+  Jun  8, 2023
 </em>
 
 
@@ -719,7 +668,7 @@ leetcode 剑指Offer 28
                 <i class="far fa-folder-open fa-fw"></i>
                 <span>
                   
-                    LeetCode
+                    Design Pattern
                 </span>
               
             </div>
@@ -733,10 +682,10 @@ leetcode 剑指Offer 28
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/leetcode-topk/">
+      <a href="/posts/dp-structural-proxy-jdk/">
         <div class="card-body">
           <h1 class="card-title">
-            排序-TopK
+            DP-Structural Pattern-Proxy-JDK
           </h1>
 
           <div class="card-text post-content">
@@ -747,12 +696,32 @@ leetcode 剑指Offer 28
 
 
 
-              使用QuickSort和HeapSort解决TopK问题。
+              Proxy
 
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
+代理作为访问对象和目标对象之间的中介。
 
-public static int partit...
+作用：
+
+  降低系统耦合度
+  代理对象调用目标对象时可以对目标对象进行增强。
+
+
+分为：
+
+
+  静态代理：编译时生成代理类
+  动态代理：运行时动态生成代理类，基于反射
+    
+      JDK代理：必须定义接口
+      CGLib代理：可以代理没实现接口的类
+    
+  
+
+
+动态代理-JDK代理
+
+1.接口类：卖票
+...
             </p>
           </div>
 
@@ -770,10 +739,10 @@ public static int partit...
 
 
 <em class=""
-    data-ts="1682491560"
+    data-ts="1686129360"
     data-df="ll"
     >
-  Apr 26, 2023
+  Jun  7, 2023
 </em>
 
 
@@ -782,7 +751,7 @@ public static int partit...
                 <i class="far fa-folder-open fa-fw"></i>
                 <span>
                   
-                    LeetCode
+                    Design Pattern
                 </span>
               
             </div>
@@ -796,10 +765,10 @@ public static int partit...
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/leetcode-bs/">
+      <a href="/posts/dp-structural-proxy-gclib/">
         <div class="card-body">
           <h1 class="card-title">
-            二分查找
+            DP-Structural Pattern-Proxy-GCLib
           </h1>
 
           <div class="card-text post-content">
@@ -810,90 +779,22 @@ public static int partit...
 
 
 
-              搜索一个数
+              动态代理-GCLIB代理
 
-搜索区间为 [left, right)
+1.具体实现类
 
-left = 0, right = nums.length;
-
-while(left &amp;lt; right){
-    int mid = (right - left) / 2 + left;
-    if(nums[mid] == target){
-        return mid;
-    }else if(nums[mid] ...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1682042700"
-    data-df="ll"
-    >
-  Apr 21, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-dp-tree/">
-        <div class="card-body">
-          <h1 class="card-title">
-            DP-树形DP
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              树形DP
-
-数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
-
-框架：
-
-void dfs(int v){
-    dp[v] = ...;
-    for(int u: G[v]){//遍历v的所有子节点
-        dfs(u); //确保子节点的值已经更新好
-        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
+public class TrainStation {
+    public void sell(){
+        System.out.println(&quot;火车站卖票&quot;);
     }
 }
 
 
-子树...
+2.代理工厂类
+
+//代理对象是目标对象所属类别的子类
+//使用enhancer的create方法获取代理对象
+public class ProxyF...
             </p>
           </div>
 
@@ -911,10 +812,10 @@ void dfs(int v){
 
 
 <em class=""
-    data-ts="1681812000"
+    data-ts="1686129360"
     data-df="ll"
     >
-  Apr 18, 2023
+  Jun  7, 2023
 </em>
 
 
@@ -923,7 +824,7 @@ void dfs(int v){
                 <i class="far fa-folder-open fa-fw"></i>
                 <span>
                   
-                    LeetCode
+                    Design Pattern
                 </span>
               
             </div>
@@ -937,10 +838,10 @@ void dfs(int v){
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/leetcode-dp-bag/">
+      <a href="/posts/javaweb-bugs/">
         <div class="card-body">
           <h1 class="card-title">
-            DP-背包问题
+            Java Web Bug记录
           </h1>
 
           <div class="card-text post-content">
@@ -951,23 +852,16 @@ void dfs(int v){
 
 
 
-              背包问题
+              Bug1
 
-属于动态规划的一类问题，需要明确状态和选择。
+Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
 
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
 
-01背包：
+背景：jsp中导入java包，并部署在tomcat运行时报错。
 
-每个物品只能装一次，选择装/不装。
+原因：在jsp中没有找到相关的java类。
 
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-int[][] dp = new int[N+1][M+1]
-//base case
-dp[0][...]...
+解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifac...
             </p>
           </div>
 
@@ -985,144 +879,10 @@ dp[0][...]...
 
 
 <em class=""
-    data-ts="1681801200"
+    data-ts="1685774100"
     data-df="ll"
     >
-  Apr 18, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-dp/">
-        <div class="card-body">
-          <h1 class="card-title">
-            DP
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              引言
-跟着labuladong刷动态规划题的记录。DP三要素：重叠子问题、最优子结构、状态转移方程
-
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
-
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
-
-为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681476000"
-    data-df="ll"
-    >
-  Apr 14, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-blog/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Build my blog with jekyll
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              ​
-github搭建博客的记录
-
-本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。
-
-我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy
-
-Steps
-（如果没有nodejs先安装nodejs）
-
-部署教程参考：https://github.com/cotes2020/jekyll-theme-chir...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681371360"
-    data-df="ll"
-    >
-  Apr 13, 2023
+  Jun  3, 2023
 </em>
 
 
@@ -1132,6 +892,315 @@ Steps
                 <span>
                   
                     Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dp-directory/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Creational Pattern-Directory
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              类之间的关系
+
+
+  关联
+    
+      单向
+      双向
+      自关联
+    
+  
+  聚合 空心菱形
+  组合 实心菱形
+  依赖 虚线箭头
+  继承 空心三角
+  实现 虚线三角
+
+
+设计模式
+
+创建型
+
+
+  
+    单例
+  
+  工厂
+    
+      简单工厂
+      工厂方法
+      抽象工厂
+    
+  
+  
+    原型
+  
+ ...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1685588100"
+    data-df="ll"
+    >
+  Jun  1, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dp-creational-singleton/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Creational Pattern-Singleton
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              单例Singleton
+
+私有构造函数 + 私有静态变量 + 公有静态函数。
+
+只能通公有静态函数返回唯一的私有静态变量。
+
+分为：
+
+
+  
+    饿汉式：类加载时就会创建对象。
+  
+  
+    懒汉式：类加载时不创建，首次使用时才创建。
+  
+
+
+饿汉式-静态变量
+
+直接实例化。
+优点：线程安全。缺点：不节约资源。
+
+private static Singleton uniqueI...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/leetcode-diffnum/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Diff Nums
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              前缀和
+
+可以快速求解闭区间[i,j]的和。
+
+class PrefixSum{
+    private int[] prefix;
+
+public PrefixSum(int[] nums){
+    prefix = new int[nums.length + 1];
+    for(int i = 1; i &amp;lt; prefix.length; i++){
+        prefi...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/leetcode-sldingwindows/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Sliding Windows
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              框架: O(N)
+
+int left = 0, right = 0;
+
+while(right &amp;lt; s.size()){
+    //将有边界字符加入窗口中
+    windows.add(s[right]);
+    right ++;
+    ...
+    //根据**一些条件**判断是否需要收缩做窗口
+    while(left &amp;lt; right &amp;amp;&amp;amp; w...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684218960"
+    data-df="ll"
+    >
+  May 16, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
                 </span>
               
             </div>
@@ -1219,10 +1288,27 @@ Steps
 
   
 
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/page4">4</a>
+      </li>
+    
+
+  
+
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>2</span>
-    <span class="text-muted">/ 3</span>
+    <span class="text-muted">/ 4</span>
   </li>
 
   <!-- right arrow -->
@@ -1272,17 +1358,12 @@ Steps
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -1292,7 +1373,12 @@ Steps
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1325,15 +1411,15 @@ Steps
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1418,10 +1504,10 @@ Steps
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1481,15 +1567,15 @@ Steps
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1574,10 +1660,10 @@ Steps
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

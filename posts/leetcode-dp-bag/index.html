@@ -996,17 +996,12 @@ return dp[N][M]
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -1016,7 +1011,12 @@ return dp[N][M]
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1049,15 +1049,15 @@ return dp[N][M]
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1142,10 +1142,10 @@ return dp[N][M]
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1207,6 +1207,149 @@ return dp[N][M]
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1519,122 +1662,6 @@ return dp[N][M]
       
       
       <div class="card">
-        <a href="/posts/leetcode-sldingwindows/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1684218960"
-    data-df="ll"
-    >
-  May 16, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sliding Windows</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                框架: O(N)
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-int left = 0, right = 0;
-
-while(right &amp;lt; s.size()){
-    //将有边界字符加入窗口中
-    windows.add(s[right]);
-    right ++;
-    ...
-    //根据**一些条件**判断是否需要收缩做窗口
-    whil...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-diffnum/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1684651560"
-    data-df="ll"
-    >
-  May 21, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Diff Nums</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                前缀和
-
-可以快速求解闭区间[i,j]的和。
-
-class PrefixSum{
-    private int[] prefix;
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-public PrefixSum(int[] nums){
-    prefix = new int[nums.length + 1];
-    for(int i = 1; i &amp;lt; prefix.length...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/leetcode-backtrack/">
           <div class="card-body">
             <!--
@@ -1678,6 +1705,111 @@ def backtrack(路径，选择列表):
 		res.add(路径)
 		return
 	...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-dp/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681476000"
+    data-df="ll"
+    >
+  Apr 14, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                引言
+跟着labuladong刷动态规划题的记录。
+
+题型：求最值。
+
+核心：穷举。
+
+三要素：重叠子问题、最优子结构、状态转移方程
+
+重叠子问题
+计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
+
+若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
+
+为了避免重复计算，引入备...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-dp-tree/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681812000"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-树形DP</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                树形DP
+
+数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
+
+框架：
+
+1
+2
+3
+4
+5
+6
+7
+void dfs(int v){
+    dp[v] = ...;
+    for(int u: G[v]){//遍历v的所有子节点
+        dfs(u); //确保子节点的值已经更新好
+        update(u, v);//用子节点的dp值对当前节点的dp值铏更...
               </p>
             </div>
           </div>
@@ -1755,15 +1887,15 @@ def backtrack(路径，选择列表):
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1848,10 +1980,10 @@ def backtrack(路径，选择列表):
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>

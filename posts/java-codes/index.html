@@ -1293,17 +1293,12 @@ String b=a.toString(8);
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
       
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/javaweb-bugs/">Java Web Bug记录</a></li>
+      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
       
         
         
@@ -1313,7 +1308,12 @@ String b=a.toString(8);
         
         
         
-      <li><a href="/posts/dp-structural-proxy-gclib/">DP-Structural Pattern-Proxy-GCLib</a></li>
+      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1346,15 +1346,15 @@ String b=a.toString(8);
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -1439,10 +1439,10 @@ String b=a.toString(8);
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
@@ -1769,6 +1769,149 @@ String b=a.toString(8);
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1816,7 +1959,7 @@ String b=a.toString(8);
       
       
       <div class="card">
-        <a href="/posts/java-threads/">
+        <a href="/posts/dp-creational-factory/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1828,13 +1971,13 @@ String b=a.toString(8);
 
 
 <em class="small"
-    data-ts="1683808440"
+    data-ts="1686196800"
     data-df="ll"
     >
-  May 11, 2023
+  Jun  8, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java 多线程</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Creational Pattern-Factory</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1843,9 +1986,87 @@ String b=a.toString(8);
 
 
 
-                实现并行完成多个任务。提高cpu的利用率。
+                工厂模式：解耦
 
-三种实现方式
+创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。
+
+简单工厂
+
+
+
+工厂方法
+
+
+
+抽象工厂
+
+
+
+原型Prototype
+
+
+
+建造者Builder
+
+
+
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dp-strcutural-adapter/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686381660"
+    data-df="ll"
+    >
+  Jun 10, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Adapter</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Adapter
+
+适配器将 已有的接口 转换为 用户需要的接口。
+
+
+
+分类：
+
+  类适配器： 继承实现
+  对象适配器：组合和聚合实现
+
+
+成分：
+
+  目标Target：客户期待得到的接口
+  适配者Adaptee：已经存在的，需要适配的类。
+  适配器Adapter：将源接口转换为目标接口。
+
+
+类适配器
+
 
 1
 2
@@ -1862,36 +2083,7 @@ String b=a.toString(8);
 13
 14
 15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-public class LearnThreads {
-    public static ...
+1...
               </p>
             </div>
           </div>
@@ -1901,7 +2093,7 @@ public class LearnThreads {
       
       
       <div class="card">
-        <a href="/posts/dp-creational-singleton/">
+        <a href="/posts/dp-structural-decorator/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1913,13 +2105,13 @@ public class LearnThreads {
 
 
 <em class="small"
-    data-ts="1684651560"
+    data-ts="1686385260"
     data-df="ll"
     >
-  May 21, 2023
+  Jun 10, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Creational Pattern-Singleton</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Decorator</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1928,102 +2120,15 @@ public class LearnThreads {
 
 
 
-                单例Singleton
+                Decorator
 
-私有构造函数 + 私有静态变量 + 公有静态函数
-
-只能通过共有静态函数返回唯一的私有静态变量。
-
-饿汉式-静态变量
-
-直接实例化。
-优点：线程安全。缺点：不节约资源。
-
-1
-private static Singleton uniqueInstance = new Singleton();
-
-
-饿汉式-静态代码块
-
-懒汉式-线程不安全
-
-在获取实例时，若没有实例化...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dp-structural-proxy-gclib/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+为对象动态添加功能。
 
 
 
 
 
-<em class="small"
-    data-ts="1686129360"
-    data-df="ll"
-    >
-  Jun  7, 2023
-</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Proxy-GCLib</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                动态代理-GCLIB代理
-
-1.具体实现类
-
-1
-2
-3
-4
-5
-public class TrainStation {
-    public void sell(){
-        System.out.println(&quot;火车站卖票&quot;);
-    }
-}
-
-
-2.代理工厂类
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22...
               </p>
             </div>
           </div>
@@ -2101,15 +2206,15 @@ public class TrainStation {
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
   
     
     
@@ -2194,10 +2299,10 @@ public class TrainStation {
 
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/java/">Java</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/develop/">develop</a>
