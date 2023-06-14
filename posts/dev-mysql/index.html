@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Mysql" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-12T09:49:49+08:00","datePublished":"2023-05-13T14:10:00+08:00","description":"Windows上启动Mysql","headline":"Mysql","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-mysql/"},"url":"http://localhost:4000/posts/dev-mysql/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-12T21:47:57+08:00","datePublished":"2023-05-13T14:10:00+08:00","description":"Windows上启动Mysql","headline":"Mysql","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-mysql/"},"url":"http://localhost:4000/posts/dev-mysql/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -713,7 +713,7 @@
 
 
 <em class=""
-    data-ts="1686534589"
+    data-ts="1686577677"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
   Jun 12, 2023
@@ -916,27 +916,27 @@
         
         
         
-      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
+      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
       
         
         
         
-      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/dev-spring/">Spring-AOP-IOC</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dp-behavioral-strategy/">DP-Behavioral Pattern-Strategy</a></li>
       
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-structural-flyweight/">DP-Structural-Flyweight Pattern-FlyWeight</a></li>
       
         
         
         
-      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1371,7 +1371,85 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1592,7 +1670,7 @@
   Mar 15, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1638,7 +1716,7 @@ i386是32位 amd64是64位
       
       
       <div class="card">
-        <a href="/posts/dev-spring/">
+        <a href="/posts/dev-maven/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1656,7 +1734,7 @@ i386是32位 amd64是64位
   May 13, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Spring</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Maven</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1665,12 +1743,26 @@ i386是32位 amd64是64位
 
 
 
-                Spring
-是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。
+                Maven
+包管理工具，使用GAV坐标定位。
 
-AOP
-AOP:面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。
-比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。然后在想要使用这个功能的方法上加...
+
+  groupId：公司或组织的Id
+  artifactId:项目或项目中模块的id
+  version：版本号
+
+
+配置安装
+
+使用IDEA自带的mvn
+
+查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。
+
+
+&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+
+
+&amp;...
               </p>
             </div>
           </div>
@@ -1680,7 +1772,7 @@ AOP:面向切面编程。用于将一些通用的功能（日志记录、权限�
       
       
       <div class="card">
-        <a href="/posts/javaweb-bugs/">
+        <a href="/posts/dev-spring-annotation/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1692,13 +1784,13 @@ AOP:面向切面编程。用于将一些通用的功能（日志记录、权限�
 
 
 <em class="small"
-    data-ts="1685774100"
+    data-ts="1683958200"
     data-df="ll"
     >
-  Jun  3, 2023
+  May 13, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java Web Bug记录</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Spring-Annotation</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1707,17 +1799,24 @@ AOP:面向切面编程。用于将一些通用的功能（日志记录、权限�
 
 
 
-                Bug1
+                常用注解
+
+
+  @Component : 普通组件
+  @Controller：控制器
+  @Service：业务逻辑
+  @Repository：持久化层
+
+
+扫描包
+
+通过扫描的方式检测注解，根据注解操作。扫描包的配置：
 
 1
-Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
+&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/&amp;gt;
 
 
-背景：jsp中导入java包，并部署在tomcat运行时报错。
-
-原因：在jsp中没有找到相关的java类。
-
-解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artif...
+自动装配注...
               </p>
             </div>
           </div>
@@ -1736,16 +1835,16 @@ Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/java-threads/" class="btn btn-outline-primary"
+  <a href="/posts/dev-maven/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Java 多线程</p>
+    <p>Maven</p>
   </a>
   
 
   
-  <a href="/posts/dev-spring/" class="btn btn-outline-primary"
+  <a href="/posts/dev-spring-annotation/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>Spring</p>
+    <p>Spring-Annotation</p>
   </a>
   
 

@@ -453,6 +453,74 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/leetcode-sldingwindows/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Sliding Windows
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              框架: O(N)
+
+int left = 0, right = 0;
+
+while(right &amp;lt; s.size()){
+    //将有边界字符加入窗口中
+    windows.add(s[right]);
+    right ++;
+    ...
+    //根据**一些条件**判断是否需要收缩做窗口
+    while(left &amp;lt; right &amp;amp;&amp;amp; w...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684218960"
+    data-df="ll"
+    >
+  May 16, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/dev-git/">
         <div class="card-body">
           <h1 class="card-title">
@@ -524,7 +592,7 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
       <a href="/posts/dev-spring/">
         <div class="card-body">
           <h1 class="card-title">
-            Spring
+            Spring-AOP-IOC
           </h1>
 
           <div class="card-text post-content">
@@ -541,6 +609,305 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
 AOP
 AOP:面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。
 比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。然后在想要使用这个功能的方法上加...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-spring-getbean/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-获取Bean的方式
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              获取Bean对象的三种方式
+
+
+  根据id
+  根据类型（xxx.class）
+  根据id和类型
+
+
+在xml文件中定义bean， 配置id和class
+
+&amp;lt;!--创建user类对象--&amp;gt;
+&amp;lt;bean id=&quot;user&quot; class = &quot;com.xjtu.spring.iocxml.User&quot;&amp;gt;&amp;lt;/bean&amp;gt;
+
+
+在测试类中获取对象
+
+public ...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-spring-di/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-依赖注入DI
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              依赖注入DI
+
+在Spring创建对象的过程中，将对象依赖属性通过配置进行注入。
+注入方式分为：Set注入和构造注入。
+
+
+  
+    Set注入
+
+    
+      
+        创建类，定义属性，生成属性的set方法
+      public class Book {
+      private String name;
+      private String author;...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-spring-beanlifrcycle/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-Bean的作用域、生命周期
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Bean的作用域
+
+bean标签的scope属性设置。
+
+
+  singleton：单例，IOC容器初始化时创建。
+  
+    prototype：多个实例，获取Bean时创建。
+
+    
+      
+  
+  
+
+
+Bean的生命周期
+
+
+  bean 对象创建（调用无参构造器）
+  给 bean 对象设置属性（调用属性对应的 setter 方法）
+  bean 对象初始化之前操作（...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-spring-annotation/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-Annotation
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              常用注解
+
+
+  @Component : 普通组件
+  @Controller：控制器
+  @Service：业务逻辑
+  @Repository：持久化层
+
+
+扫描包
+
+通过扫描的方式检测注解，根据注解操作。扫描包的配置：
+
+&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/&amp;gt;
+
+
+自动装配注解
+...
             </p>
           </div>
 
@@ -662,6 +1029,83 @@ windows上安装了mysql，STEPS：
     <!-- .post-review -->
   
     <div class="card post-preview">
+      <a href="/posts/dev-maven/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Maven
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Maven
+包管理工具，使用GAV坐标定位。
+
+
+  groupId：公司或组织的Id
+  artifactId:项目或项目中模块的id
+  version：版本号
+
+
+配置安装
+
+使用IDEA自带的mvn
+
+查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。
+
+
+&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+
+
+&amp;...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-tree/">
         <div class="card-body">
           <h1 class="card-title">
@@ -711,418 +1155,6 @@ leetcode 剑指Offer 28
     data-df="ll"
     >
   May  9, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-recursion/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Recursion
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              原理
-
-思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。
-
-函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1682561520"
-    data-df="ll"
-    >
-  Apr 27, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-topk/">
-        <div class="card-body">
-          <h1 class="card-title">
-            排序-TopK
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              使用QuickSort和HeapSort解决TopK问题。
-
-QuickSort O(NlogN)
-定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&amp;gt;= a[l]的元素，再从右向左扫描数组，找到第一个&amp;lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。
-
-public static int partit...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1682491560"
-    data-df="ll"
-    >
-  Apr 26, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-bs/">
-        <div class="card-body">
-          <h1 class="card-title">
-            二分查找
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              搜索一个数
-
-搜索区间为 [left, right)
-
-left = 0, right = nums.length;
-
-while(left &amp;lt; right){
-    int mid = (right - left) / 2 + left;
-    if(nums[mid] == target){
-        return mid;
-    }else if(nums[mid] ...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1682042700"
-    data-df="ll"
-    >
-  Apr 21, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-dp-tree/">
-        <div class="card-body">
-          <h1 class="card-title">
-            DP-树形DP
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              树形DP
-
-数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
-
-框架：
-
-void dfs(int v){
-    dp[v] = ...;
-    for(int u: G[v]){//遍历v的所有子节点
-        dfs(u); //确保子节点的值已经更新好
-        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
-    }
-}
-
-
-子树...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681812000"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-dp-bag/">
-        <div class="card-body">
-          <h1 class="card-title">
-            DP-背包问题
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              背包问题
-
-属于动态规划的一类问题，需要明确状态和选择。
-
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
-
-01背包：
-
-每个物品只能装一次，选择装/不装。
-
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-int[][] dp = new int[N+1][M+1]
-//base case
-dp[0][...]...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681801200"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-dp/">
-        <div class="card-body">
-          <h1 class="card-title">
-            DP
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              引言
-跟着labuladong刷动态规划题的记录。
-
-题型：求最值。
-
-核心：穷举。
-
-三要素：重叠子问题、最优子结构、状态转移方程
-
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
-
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
-
-为了避免重复计算，引入备...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681476000"
-    data-df="ll"
-    >
-  Apr 14, 2023
 </em>
 
 
@@ -1289,27 +1321,27 @@ dp[0][...]...
         
         
         
-      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
+      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
       
         
         
         
-      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/dev-spring/">Spring-AOP-IOC</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dp-behavioral-strategy/">DP-Behavioral Pattern-Strategy</a></li>
       
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-structural-flyweight/">DP-Structural-Flyweight Pattern-FlyWeight</a></li>
       
         
         
         
-      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->

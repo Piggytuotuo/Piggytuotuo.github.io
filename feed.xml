@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-12T21:47:20+08:00</updated>
+  <updated>2023-06-14T21:48:16+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -97,7 +97,7 @@
     <link href="http://localhost:4000/posts/dp-behavioral-strategy/" rel="alternate" type="text/html" title="DP-Behavioral Pattern-Strategy" />
     <published>2023-06-11T11:39:00+08:00</published>
   
-    <updated>2023-06-11T22:57:05+08:00</updated>
+    <updated>2023-06-13T16:50:18+08:00</updated>
   
     <id>http://localhost:4000/posts/dp-behavioral-strategy/</id>
     <content src="http://localhost:4000/posts/dp-behavioral-strategy/" />
@@ -121,13 +121,61 @@
 
       Strategy
 
-举例
+定义一系列算法，封装每个算法，并使它们可以互换。
 
-场景
+
+
+优
+
+  算法独立于使用它的客户端
+  策略可切换
+  易于扩展
+
+
+缺
+
+  客户端必须知道所有的策略类
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-Behavioral Pattern-Command</title>
+    <link href="http://localhost:4000/posts/dp-behavioral-command/" rel="alternate" type="text/html" title="DP-Behavioral Pattern-Command" />
+    <published>2023-06-11T11:39:00+08:00</published>
+  
+    <updated>2023-06-11T11:39:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dp-behavioral-command/</id>
+    <content src="http://localhost:4000/posts/dp-behavioral-command/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Design Pattern" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Command
 
 优
 
 缺
+
 
     </summary>
   
@@ -140,7 +188,7 @@
     <link href="http://localhost:4000/posts/dp-behavioral-chain/" rel="alternate" type="text/html" title="DP-Behavioral Pattern-Chain of Responsibility" />
     <published>2023-06-11T11:39:00+08:00</published>
   
-    <updated>2023-06-11T22:57:05+08:00</updated>
+    <updated>2023-06-13T16:50:18+08:00</updated>
   
     <id>http://localhost:4000/posts/dp-behavioral-chain/</id>
     <content src="http://localhost:4000/posts/dp-behavioral-chain/" />
@@ -164,14 +212,26 @@
 
       Chain of Responsibility
 
-沿着责任链处理请求。
+沿着责任链处理请求,直到有对象可以处理为止。
 
-场景
-JavaWeb中的FilterChain
+
+
+应用
+JavaWeb中的FilterChain。
+定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。
 
 优
 
+
+  降低耦合
+  责任分担
+
+
 缺
+
+  不能保证每个请求一定被处理。
+  责任链过长，系统性能受影响。
+
 
     </summary>
   
@@ -184,7 +244,7 @@ JavaWeb中的FilterChain
     <link href="http://localhost:4000/posts/dp-structural-flyweight/" rel="alternate" type="text/html" title="DP-Structural-Flyweight Pattern-FlyWeight" />
     <published>2023-06-11T11:39:00+08:00</published>
   
-    <updated>2023-06-11T11:39:00+08:00</updated>
+    <updated>2023-06-12T21:47:57+08:00</updated>
   
     <id>http://localhost:4000/posts/dp-structural-flyweight/</id>
     <content src="http://localhost:4000/posts/dp-structural-flyweight/" />
@@ -238,76 +298,6 @@ JavaWeb中的FilterChain
 
       public void display(String color){
       System.out.println("box shape: " + this.getShape() + "color: " + color)...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>DP-Structural Pattern-Facade</title>
-    <link href="http://localhost:4000/posts/dp-structural-facade/" rel="alternate" type="text/html" title="DP-Structural Pattern-Facade" />
-    <published>2023-06-11T11:39:00+08:00</published>
-  
-    <updated>2023-06-11T11:39:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/dp-structural-facade/</id>
-    <content src="http://localhost:4000/posts/dp-structural-facade/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Design Pattern" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Facade
-
-对外提供一个统一的接口，用来访问子系统中的一群接口，使子系统更容易访问。
-
-
-
-看电影
-
-观看电影需要有：打开电视，设置CD，开始播放 三个步骤，使用外观模式一键看电影。
-
-场景
-
-
-  
-    构建分层结构系统时，可以使用外观模式定义子系统中每层的入口点，简化子系统之间的依赖关系。
-  
-  
-    提供简单的接口。
-  
-  
-    提供子系统的独立性和可移植性。
-  
-
-
-优
-
-
-  降低了子系统和客户端之间的耦合度
-  使子系统更加容易使用
-
-
-缺
-
-
-  违反了开闭原则
-
-
     </summary>
   
 

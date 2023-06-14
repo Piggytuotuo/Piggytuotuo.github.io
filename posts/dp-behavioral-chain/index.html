@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="DP-Behavioral Pattern-Chain of Responsibility" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-11T22:57:05+08:00","datePublished":"2023-06-11T11:39:00+08:00","description":"Chain of Responsibility","headline":"DP-Behavioral Pattern-Chain of Responsibility","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-behavioral-chain/"},"url":"http://localhost:4000/posts/dp-behavioral-chain/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-13T16:50:18+08:00","datePublished":"2023-06-11T11:39:00+08:00","description":"Chain of Responsibility","headline":"DP-Behavioral Pattern-Chain of Responsibility","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-behavioral-chain/"},"url":"http://localhost:4000/posts/dp-behavioral-chain/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -486,6 +486,91 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -619,10 +704,10 @@
 
 
 <em class=""
-    data-ts="1686495425"
+    data-ts="1686646218"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Jun 11, 2023
+  Jun 13, 2023
 </em>
 
     </span>
@@ -671,7 +756,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="21 words">
+  title="106 words">
   <em>1 min</em> read</span>
 
     </div>
@@ -683,14 +768,26 @@
 <div class="post-content">
   <h2 id="chain-of-responsibility"><span class="mr-2">Chain of Responsibility</span><a href="#chain-of-responsibility" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>沿着责任链处理请求。</p>
+<p>沿着责任链处理请求,直到有对象可以处理为止。</p>
 
-<h2 id="场景"><span class="mr-2">场景</span><a href="#场景" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p>JavaWeb中的FilterChain</p>
+<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230613113231.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230613113231.png" alt="20230613113231" class="lazyload" data-proofer-ignore></a></p>
+
+<h2 id="应用"><span class="mr-2">应用</span><a href="#应用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>JavaWeb中的FilterChain。
+定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。</p>
 
 <h2 id="优"><span class="mr-2">优</span><a href="#优" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<ul>
+  <li>降低耦合</li>
+  <li>责任分担</li>
+</ul>
+
 <h2 id="缺"><span class="mr-2">缺</span><a href="#缺" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>不能保证每个请求一定被处理。</li>
+  <li>责任链过长，系统性能受影响。</li>
+</ul>
 
 </div>
 
@@ -813,27 +910,27 @@
         
         
         
-      <li><a href="/posts/dp-creational-factory/">DP-Creational Pattern-Factory</a></li>
+      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
       
         
         
         
-      <li><a href="/posts/dl-swin/">跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</a></li>
+      <li><a href="/posts/dev-spring/">Spring-AOP-IOC</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">wsl创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dp-behavioral-strategy/">DP-Behavioral Pattern-Strategy</a></li>
       
         
         
         
-      <li><a href="/posts/dev-mysql/">Mysql</a></li>
+      <li><a href="/posts/dp-structural-flyweight/">DP-Structural-Flyweight Pattern-FlyWeight</a></li>
       
         
         
         
-      <li><a href="/posts/dp-creational-singleton/">DP-Creational Pattern-Singleton</a></li>
+      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1055,7 +1152,85 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1640,9 +1815,9 @@ public class LearnThreads {
   
 
   
-  <a href="/posts/dp-behavioral-strategy/" class="btn btn-outline-primary"
+  <a href="/posts/dp-behavioral-command/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>DP-Behavioral Pattern-Strategy</p>
+    <p>DP-Behavioral Pattern-Command</p>
   </a>
   
 
