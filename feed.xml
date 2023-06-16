@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-14T21:48:16+08:00</updated>
+  <updated>2023-06-16T17:28:53+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,65 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>SpringMVC</title>
+    <link href="http://localhost:4000/posts/dev-springmvc/" rel="alternate" type="text/html" title="SpringMVC" />
+    <published>2023-06-16T06:10:00+08:00</published>
+  
+    <updated>2023-06-16T06:10:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dev-springmvc/</id>
+    <content src="http://localhost:4000/posts/dev-springmvc/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Develop" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      定义
+
+是表述层框架。
+
+
+  Model：模型层
+  View ：视图层，展示数据
+  Controller：控制层，接收请求和响应浏览器
+
+
+特点
+
+
+  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。
+
+
+流程
+
+
+  配置Web.xml文件（注册SpringMVC）
+  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）
+
+
+流程
+
+浏览器发送请求，若请求地址符合前端控制器的url-pattern，该请求就会被前端控制器DispatcherServlet处理。前端控制器会读取SpringMVC的核心配置文件，通过扫描组件找到控制器，将请求地址和控制器中@RequestMapping注解的value属性值进行匹配，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -233,71 +292,6 @@ JavaWeb中的FilterChain。
   责任链过长，系统性能受影响。
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>DP-Structural-Flyweight Pattern-FlyWeight</title>
-    <link href="http://localhost:4000/posts/dp-structural-flyweight/" rel="alternate" type="text/html" title="DP-Structural-Flyweight Pattern-FlyWeight" />
-    <published>2023-06-11T11:39:00+08:00</published>
-  
-    <updated>2023-06-12T21:47:57+08:00</updated>
-  
-    <id>http://localhost:4000/posts/dp-structural-flyweight/</id>
-    <content src="http://localhost:4000/posts/dp-structural-flyweight/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Design Pattern" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Flyweight
-
-通过共享技术来支持大量细粒度对象的复用。
-通过共享已经存在的对象来减少需要创建的对象数量。
-
-两种状态：
-
-
-  
-    内部状态：不随着环境改变的可共享状态。
-  
-  
-    外部状态：随着环境改变而改变的不可共享部分。
-  
-
-
-俄罗斯方块
-
-有很多不同形状的方块，希望通过共享减少对象的创建数量。
-
-
-  
-    内部状态： 形状
-  
-  
-    外部状态： 颜色
-***
-  abstract class AbstractBox{
-      public abstract String getShape();
-
-      public void display(String color){
-      System.out.println("box shape: " + this.getShape() + "color: " + color)...
     </summary>
   
 

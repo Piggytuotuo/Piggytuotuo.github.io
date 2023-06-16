@@ -453,6 +453,74 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/leetcode-diffnum/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Diff Nums
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              前缀和
+
+可以快速求解闭区间[i,j]的和。
+
+class PrefixSum{
+    private int[] prefix;
+
+public PrefixSum(int[] nums){
+    prefix = new int[nums.length + 1];
+    for(int i = 1; i &amp;lt; prefix.length; i++){
+        prefi...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-sldingwindows/">
         <div class="card-body">
           <h1 class="card-title">
@@ -564,69 +632,6 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
 
 <em class=""
     data-ts="1683960240"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-spring/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Spring-AOP-IOC
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              Spring
-是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。
-
-AOP
-AOP:面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。
-比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。然后在想要使用这个功能的方法上加...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683958200"
     data-df="ll"
     >
   May 13, 2023
@@ -876,6 +881,77 @@ Bean的生命周期
     <!-- .post-review -->
   
     <div class="card post-preview">
+      <a href="/posts/dev-spring-aop-ioc/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-AOP-IOC
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Spring
+是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。
+
+AOP
+
+定义
+
+面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。
+
+实现方式： 预编译方式和运行动态代理。
+
+核心套路
+
+比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/dev-spring-annotation/">
         <div class="card-body">
           <h1 class="card-title">
@@ -894,20 +970,16 @@ Bean的生命周期
 
 
   @Component : 普通组件
-  @Controller：控制器
-  @Service：业务逻辑
-  @Repository：持久化层
+  @Controller：控制层组件
+  @Service   ：业务层组件
+  @Repository：持久层组件（数据库）
 
 
 扫描包
 
 通过扫描的方式检测注解，根据注解操作。扫描包的配置：
 
-&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/&amp;gt;
-
-
-自动装配注解
-...
+&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/&amp;g...
             </p>
           </div>
 
@@ -1105,77 +1177,6 @@ windows上安装了mysql，STEPS：
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/leetcode-tree/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Tree
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              LeetCode中关于二叉树的一些问题
-
-判断树是否对称
-
-leetcode 剑指Offer 28
-
-请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
-例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
-    1
-   / \
-  2   2
- / \ / \
-3  4 4  3
-但是下面这个 [1,2,2,null,3,null,3] ...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683597600"
-    data-df="ll"
-    >
-  May  9, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1268,10 +1269,27 @@ leetcode 剑指Offer 28
 
   
 
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/page5">5</a>
+      </li>
+    
+
+  
+
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>3</span>
-    <span class="text-muted">/ 4</span>
+    <span class="text-muted">/ 5</span>
   </li>
 
   <!-- right arrow -->
@@ -1321,27 +1339,27 @@ leetcode 剑指Offer 28
         
         
         
+      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-maven/">Maven</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring/">Spring-AOP-IOC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-behavioral-strategy/">DP-Behavioral Pattern-Strategy</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-flyweight/">DP-Structural-Flyweight Pattern-FlyWeight</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1383,20 +1401,22 @@ leetcode 剑指Offer 28
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1470,10 +1490,10 @@ leetcode 剑指Offer 28
       <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
-      <a class="post-tag" href="/tags/develop/">develop</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1539,20 +1559,22 @@ leetcode 剑指Offer 28
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1626,10 +1648,10 @@ leetcode 剑指Offer 28
       <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
-      <a class="post-tag" href="/tags/develop/">develop</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>

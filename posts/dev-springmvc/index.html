@@ -39,25 +39,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Spring-依赖注入DI" />
+<meta property="og:title" content="SpringMVC" />
 <meta name="author" content="Crystal Li" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="依赖注入DI" />
-<meta property="og:description" content="依赖注入DI" />
-<link rel="canonical" href="http://localhost:4000/posts/dev-spring-di/" />
-<meta property="og:url" content="http://localhost:4000/posts/dev-spring-di/" />
+<meta name="description" content="定义" />
+<meta property="og:description" content="定义" />
+<link rel="canonical" href="http://localhost:4000/posts/dev-springmvc/" />
+<meta property="og:url" content="http://localhost:4000/posts/dev-springmvc/" />
 <meta property="og:site_name" content="Piggytuotuo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-05-13T14:10:00+08:00" />
+<meta property="article:published_time" content="2023-06-16T06:10:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Spring-依赖注入DI" />
+<meta property="twitter:title" content="SpringMVC" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-05-13T14:10:00+08:00","datePublished":"2023-05-13T14:10:00+08:00","description":"依赖注入DI","headline":"Spring-依赖注入DI","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-spring-di/"},"url":"http://localhost:4000/posts/dev-spring-di/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-16T06:10:00+08:00","datePublished":"2023-06-16T06:10:00+08:00","description":"定义","headline":"SpringMVC","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-springmvc/"},"url":"http://localhost:4000/posts/dev-springmvc/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Spring-依赖注入DI | Piggytuotuo
+  <title>SpringMVC | Piggytuotuo
   </title>
 
   <!--
@@ -409,7 +409,7 @@
         
 
           
-            <span>Spring-依赖注入DI</span>
+            <span>SpringMVC</span>
           
 
         
@@ -486,6 +486,91 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -508,6 +593,30 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -569,7 +678,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>Spring-依赖注入DI</h1>
+<h1 data-toc-skip>SpringMVC</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -585,10 +694,10 @@
 
 
 <em class=""
-    data-ts="1683958200"
+    data-ts="1686867000"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  May 13, 2023
+  Jun 16, 2023
 </em>
 
     </span>
@@ -639,8 +748,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="516 words">
-  <em>2 min</em> read</span>
+  title="330 words">
+  <em>1 min</em> read</span>
 
     </div>
 
@@ -649,208 +758,41 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="依赖注入di"><span class="mr-2">依赖注入DI</span><a href="#依赖注入di" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="定义"><span class="mr-2">定义</span><a href="#定义" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>在Spring创建对象的过程中，将对象依赖属性通过配置进行注入。
-注入方式分为：Set注入和构造注入。</p>
-
-<ul>
-  <li>
-    <p>Set注入</p>
-
-    <ul>
-      <li>
-        <p>创建类，定义属性，生成属性的set方法
-      public class Book {
-      private String name;
-      private String author;</p>
-
-        <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre>  public Book() {
-  }
-
-  public Book(String name , String author) {
-      this.name = name;
-      this.author = author;
-  }
-
-  public void setAuthor(String author) {
-      this.author = author;
-  }
-
-  public void setName(String name) {
-      this.name = name;
-  }
-  }
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-      <li>
-        <p>在&lt;bean&gt;标签下使用&lt;property&gt;标签设置属性值</p>
-
-        <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>  &lt;bean id="book" class="com.xjtu.spring.iocxml.di.Book"&gt;
-      &lt;property name="name" value="名字A"&gt;&lt;/property&gt;
-      &lt;property name="author" value="作者A"&gt;&lt;/property&gt;
-  &lt;/bean&gt;
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>构造注入</p>
-
-    <ul>
-      <li>创建类，定义属性，生成有参数的构造方法，同上</li>
-      <li>在&lt;bean&gt;标签下使用&lt;constructor-arg&gt;标签注入</li>
-    </ul>
-
-    <bean id="bookCon" class="com.xjtu.spring.iocxml.di.Book">
-      <constructor-arg name="name" value="名字B"></constructor-arg>
-      <constructor-arg name="author" value="作者B"></constructor-arg>
-  </bean>
-  </li>
-</ul>
-
-<h2 id="不同类型的属性"><span class="mr-2">不同类型的属性</span><a href="#不同类型的属性" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>是表述层框架。</p>
 
 <ul>
-  <li>
-    <p>对象和数组属性：ref引用对象，array设置数组属性</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre>  &lt;bean id="studentFour" class="com.xjtu.spring.bean.Student"&gt;
-      &lt;property name="name" value="赵六"&gt;&lt;/property&gt;
-      &lt;property name="sex" value="女"&gt;&lt;/property&gt;
-      &lt;!-- ref属性：引用IOC容器中某个bean的id，将所对应的bean为属性赋值 --&gt;
-      &lt;property name="clazz" ref="clazzOne"&gt;&lt;/property&gt;
-      &lt;property name="hobbies"&gt;
-          &lt;array&gt;
-              &lt;value&gt;抽烟&lt;/value&gt;
-              &lt;value&gt;喝酒&lt;/value&gt;
-              &lt;value&gt;烫头&lt;/value&gt;
-          &lt;/array&gt;
-      &lt;/property&gt;
-  &lt;/bean&gt;
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>集合属性: list标签</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-</pre></td><td class="rouge-code"><pre>  private List&lt;Student&gt; students;
-
-  public List&lt;Student&gt; getStudents() {
-      return students;
-  }
-
-  public void setStudents(List&lt;Student&gt; students) {
-      this.students = students;
-  }
-    
-
-  &lt;bean id="clazzTwo" class="com.xjtu.spring.bean.Clazz"&gt;
-      &lt;property name="clazzId" value="4444"&gt;&lt;/property&gt;
-      &lt;property name="clazzName" value="Javaee0222"&gt;&lt;/property&gt;
-      &lt;property name="students"&gt;
-          &lt;list&gt;
-              &lt;ref bean="studentOne"&gt;&lt;/ref&gt;
-              &lt;ref bean="studentTwo"&gt;&lt;/ref&gt;
-              &lt;ref bean="studentThree"&gt;&lt;/ref&gt;
-          &lt;/list&gt;
-      &lt;/property&gt;
-  &lt;/bean&gt;
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>…</p>
-  </li>
+  <li>Model：模型层</li>
+  <li>View ：视图层，展示数据</li>
+  <li>Controller：控制层，接收请求和响应浏览器</li>
 </ul>
 
-<h2 id="自动装配"><span class="mr-2">自动装配</span><a href="#自动装配" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="特点"><span class="mr-2">特点</span><a href="#特点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>手动装配：使用property和ref
-自动装配：使用bean标签的autowire属性</p>
+<ul>
+  <li>基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre>&lt;!-- byType：根据类型进行装配，此时如果类型匹配的bean不止一个，那么会抛异常 --&gt;
-&lt;!-- byName：根据bean的id进行匹配。而bean的id是根据需要装配组件的属性的属性名确定--&gt;
-&lt;bean id="happyController"
-    class="com.atguigu.ioc.component.HappyController"
-    autowire="byName"
-&gt;
-    &lt;!-- 手动装配：在property标签中使用ref属性明确指定要装配的bean --&gt;
-    &lt;!--&lt;property name="happyService" ref="happyService"/&gt;--&gt;
-&lt;/bean&gt;
-</pre></td></tr></tbody></table></code></div></div>
+<h2 id="流程"><span class="mr-2">流程</span><a href="#流程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>配置Web.xml文件（注册SpringMVC）</li>
+  <li>配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）</li>
+</ul>
+
+<h2 id="流程-1"><span class="mr-2">流程</span><a href="#流程-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>浏览器发送请求，若请求地址符合前端控制器的url-pattern，该请求就会被前端控制器DispatcherServlet处理。前端控制器会读取SpringMVC的核心配置文件，通过扫描组件找到控制器，将请求地址和控制器中@RequestMapping注解的value属性值进行匹配，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，该视图名称会被视图解析器解析，加上前缀和后缀组成视图的路径，通过Thymeleaf对视图进行渲染，最终转发到视图所对应页面。</p>
+
+<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230616172523.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230616172523.png" alt="20230616172523" class="lazyload" data-proofer-ignore></a></p>
+
+<h2 id="注解"><span class="mr-2">注解</span><a href="#注解" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>@RequestMapping(value = “/”)</li>
+</ul>
+
+<p>浏览器访问该路径时，执行注解下的方法，方法返回需要跳转的视图名称，由视图解析器解析。</p>
 
 
 </div>
@@ -907,19 +849,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=Spring-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-spring-di%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=SpringMVC%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-springmvc%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=Spring-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-spring-di%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=SpringMVC%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-springmvc%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-spring-di%2F&text=Spring-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-springmvc%2F&text=SpringMVC%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1192,280 +1134,280 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1919,17 +1861,17 @@ windows上安装了mysql，STEPS：
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/dev-spring-beanlifrcycle/" class="btn btn-outline-primary"
+  <a href="/posts/dp-behavioral-template/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Spring-Bean的作用域、生命周期</p>
+    <p>DP-Behavioral Pattern-Template Method</p>
   </a>
   
 
   
-  <a href="/posts/dev-spring-getbean/" class="btn btn-outline-primary"
+  <div class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>Spring-获取Bean的方式</p>
-  </a>
+    <p>-</p>
+  </div>
   
 
 </div>

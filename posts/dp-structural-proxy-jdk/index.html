@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="DP-Structural Pattern-Proxy-JDK" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-08T12:11:28+08:00","datePublished":"2023-06-07T17:16:00+08:00","description":"Proxy","headline":"DP-Structural Pattern-Proxy-JDK","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-structural-proxy-jdk/"},"url":"http://localhost:4000/posts/dp-structural-proxy-jdk/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-16T17:28:15+08:00","datePublished":"2023-06-07T17:16:00+08:00","description":"Proxy","headline":"DP-Structural Pattern-Proxy-JDK","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-structural-proxy-jdk/"},"url":"http://localhost:4000/posts/dp-structural-proxy-jdk/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -486,6 +486,91 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -606,10 +691,10 @@
 
 
 <em class=""
-    data-ts="1686197488"
+    data-ts="1686907695"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Jun  8, 2023
+  Jun 16, 2023
 </em>
 
     </span>
@@ -658,8 +743,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="674 words">
-  <em>3 min</em> read</span>
+  title="758 words">
+  <em>4 min</em> read</span>
 
     </div>
 
@@ -684,11 +769,13 @@
   <li>静态代理：编译时生成代理类</li>
   <li>动态代理：运行时动态生成代理类，基于反射
     <ul>
-      <li>JDK代理：必须定义接口</li>
-      <li>CGLib代理：可以代理没实现接口的类</li>
+      <li>JDK代理：必须定义接口。代理对象和目标对象实现相同的接口。</li>
+      <li>CGLib代理：可以代理没实现接口的类。继承被代理的目标类实现。</li>
     </ul>
   </li>
 </ul>
+
+<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230616150842.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230616150842.png" alt="20230616150842" class="lazyload" data-proofer-ignore></a></p>
 
 <h3 id="动态代理-jdk代理"><span class="mr-2">动态代理-JDK代理</span><a href="#动态代理-jdk代理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -753,7 +840,7 @@
 25
 26
 </pre></td><td class="rouge-code"><pre>public class ProxyFactory {
-    //目标对象
+    //目标对象，声明为成员变量
     private TrainStation station = new TrainStation();
 
     //获取代理对象，并返回接口
@@ -782,7 +869,16 @@
 
 <p>4.Client：调用代理类买票</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
+<p><strong>核心步骤：</strong></p>
+
+<ol>
+  <li>创建被代理的目标对象</li>
+  <li>创建代理工厂对象</li>
+  <li>使用工厂生产代理对象</li>
+  <li>
+    <p>通过代理对象调用目标方法</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -800,23 +896,25 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>public class Client {
-    public static void main(String[] args) {
-        //1.创建代理工厂对象
-        ProxyFactory factory = new ProxyFactory();
-        //使用工厂对象的方法获取代理对象（父接口引用指向子类对象）
-        SellTickets proxyObject = factory.getProxyObject();
-        //调用代理对象的sell方法时，其实内部调用了匿名内部类InvocationHandler中的invoke方法。
-        proxyObject.sell(); //执行的是代理的invoke方法
+</pre></td><td class="rouge-code"><pre> public class Client {
+     public static void main(String[] args) {
+         //1.创建代理工厂对象
+         ProxyFactory factory = new ProxyFactory();
+         //使用工厂对象的方法获取代理对象（父接口引用指向子类对象）
+         SellTickets proxyObject = factory.getProxyObject();
+         //调用代理对象的sell方法时，其实内部调用了匿名内部类InvocationHandler中的invoke方法。
+         proxyObject.sell(); //执行的是代理的invoke方法
 
-        /*执行过程：
-        1. 通过代理对象调用sell()方法
-        2. 根据多态的特性，执行代理类$Proxy0中的sell方法
-        3. 代理类中的sell方法调用了继承自InvocationHandler接口实现类的invoke方法
-        4. 在invoke方法中，通过反射执行了真实对象所属类TrainStation中的sell方法*/
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
+         /*执行过程：
+         1. 通过代理对象调用sell()方法
+         2. 根据多态的特性，执行代理类$Proxy0中的sell方法
+         3. 代理类中的sell方法调用了继承自InvocationHandler接口实现类的invoke方法
+         4. 在invoke方法中，通过反射执行了真实对象所属类TrainStation中的sell方法*/
+     }
+ }
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ol>
 
 
 </div>
@@ -940,27 +1038,27 @@
         
         
         
+      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-maven/">Maven</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring/">Spring-AOP-IOC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-behavioral-strategy/">DP-Behavioral Pattern-Strategy</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-flyweight/">DP-Structural-Flyweight Pattern-FlyWeight</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1002,20 +1100,22 @@
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1089,10 +1189,10 @@
       <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
-      <a class="post-tag" href="/tags/develop/">develop</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1151,6 +1251,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1838,7 +1951,7 @@ public class LearnThreads {
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/dp-structural-proxy-gclib/" class="btn btn-outline-primary"
+  <a href="/posts/dp-structural-proxy-cglib/" class="btn btn-outline-primary"
     prompt="Older">
     <p>DP-Structural Pattern-Proxy-GCLib</p>
   </a>
@@ -1906,20 +2019,22 @@ public class LearnThreads {
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1993,10 +2108,10 @@ public class LearnThreads {
       <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
-      <a class="post-tag" href="/tags/develop/">develop</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>

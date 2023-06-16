@@ -453,6 +453,85 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/dp-structural-composite/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Structural Pattern-Composite
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Composite
+
+将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。
+
+
+
+菜单
+
+场景
+
+出现树形结构的地方。
+
+优
+
+  
+    清楚定义分层次的复杂对象。
+  
+  
+    方便的增加树枝节点和叶子节点，符合开闭原则。
+  
+
+
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686454740"
+    data-df="ll"
+    >
+  Jun 11, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/dp-structural-bridge/">
         <div class="card-body">
           <h1 class="card-title">
@@ -782,15 +861,8 @@
   静态代理：编译时生成代理类
   动态代理：运行时动态生成代理类，基于反射
     
-      JDK代理：必须定义接口
-      CGLib代理：可以代理没实现接口的类
-    
-  
-
-
-动态代理-JDK代理
-
-1.接口类：卖票
+      JDK代理：必须定义接口。代理对象和目标对象实现相同的接口。
+      CGLib代理：可以代理没实现接口的类。继承被代理的目标类实现。
 ...
             </p>
           </div>
@@ -835,7 +907,7 @@
     <!-- .post-review -->
   
     <div class="card post-preview">
-      <a href="/posts/dp-structural-proxy-gclib/">
+      <a href="/posts/dp-structural-proxy-cglib/">
         <div class="card-body">
           <h1 class="card-title">
             DP-Structural Pattern-Proxy-GCLib
@@ -1147,74 +1219,6 @@ private static Singleton uniqueI...
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/leetcode-diffnum/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Diff Nums
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              前缀和
-
-可以快速求解闭区间[i,j]的和。
-
-class PrefixSum{
-    private int[] prefix;
-
-public PrefixSum(int[] nums){
-    prefix = new int[nums.length + 1];
-    for(int i = 1; i &amp;lt; prefix.length; i++){
-        prefi...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1684651560"
-    data-df="ll"
-    >
-  May 21, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1299,9 +1303,29 @@ public PrefixSum(int[] nums){
     
 
     
+      <!-- hide number -->
+      
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page4">4</a>
+        <a class="page-link btn-box-shadow" href="/page5">5</a>
       </li>
     
 
@@ -1310,7 +1334,7 @@ public PrefixSum(int[] nums){
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>2</span>
-    <span class="text-muted">/ 4</span>
+    <span class="text-muted">/ 5</span>
   </li>
 
   <!-- right arrow -->
@@ -1360,27 +1384,27 @@ public PrefixSum(int[] nums){
         
         
         
+      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-maven/">Maven</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring/">Spring-AOP-IOC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-behavioral-strategy/">DP-Behavioral Pattern-Strategy</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-flyweight/">DP-Structural-Flyweight Pattern-FlyWeight</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/leetcode-dp/">DP</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1422,20 +1446,22 @@ public PrefixSum(int[] nums){
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1509,10 +1535,10 @@ public PrefixSum(int[] nums){
       <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
-      <a class="post-tag" href="/tags/develop/">develop</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
@@ -1578,20 +1604,22 @@ public PrefixSum(int[] nums){
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1665,10 +1693,10 @@ public PrefixSum(int[] nums){
       <a class="post-tag" href="/tags/java/">Java</a>
     
       
-      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
+      <a class="post-tag" href="/tags/develop/">develop</a>
     
       
-      <a class="post-tag" href="/tags/develop/">develop</a>
+      <a class="post-tag" href="/tags/leetcode/">LeetCode</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
