@@ -1,0 +1,322 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Piggytuotuo</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2023-08-21T07:16:57+08:00</updated>
+  <author>
+    <name>Piggytuotuo</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 Piggytuotuo </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Domanin-driven design</title>
+    <link href="http://localhost:4000/posts/dev-ddd/" rel="alternate" type="text/html" title="Domanin-driven design" />
+    <published>2023-06-29T14:44:00+08:00</published>
+  
+    <updated>2023-06-29T14:44:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dev-ddd/</id>
+    <content src="http://localhost:4000/posts/dev-ddd/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Develop" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      领取驱动设计
+
+在传统的mvc架构上做出改进。
+
+分为：
+
+
+  
+    Adapater – VO
+Value Object展示用的数据，多为JSON对象 (yaml生成、resources定义)
+  
+  
+    Application – DTO
+Data transfer object
+  
+  
+    Domain – DO
+Domain Object (业务对象)
+  
+  
+    Infrastructure – PO
+Persistant Object （持久层对象）
+  
+
+
+DTO和DO可以共用模型，放置在Domain层。
+VO转DTO: 在Adapter层。
+DO,PO转换：接口定义在Domain层，实现在Infrastructure层。
+
+Bugs
+
+  Calendar对象初始化时默认的DATE为当前日期，在月末执行代码，并执行月份自增后，可能会导致...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Redis</title>
+    <link href="http://localhost:4000/posts/dev-redis/" rel="alternate" type="text/html" title="Redis" />
+    <published>2023-06-25T22:32:00+08:00</published>
+  
+    <updated>2023-06-25T22:32:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dev-redis/</id>
+    <content src="http://localhost:4000/posts/dev-redis/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Develop" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Redis使用场景
+
+缓存
+
+穿透、击穿、雪崩
+
+数据过期、淘汰策略
+
+分布式锁
+
+计数器
+
+保存token
+
+消息队列
+
+延迟队列
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>SpringMVC</title>
+    <link href="http://localhost:4000/posts/dev-springmvc/" rel="alternate" type="text/html" title="SpringMVC" />
+    <published>2023-06-16T06:10:00+08:00</published>
+  
+    <updated>2023-06-21T13:28:52+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dev-springmvc/</id>
+    <content src="http://localhost:4000/posts/dev-springmvc/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Develop" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      定义
+
+是表述层框架。
+
+
+  Model：模型层
+  View ：视图层，展示数据
+  Controller：控制层，接收请求和响应浏览器
+
+
+特点
+
+
+  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。
+
+
+流程
+
+
+  配置Web.xml文件（注册SpringMVC）
+  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）
+
+
+流程
+
+浏览器发送请求，若请求地址符合前端控制器的url-pattern，该请求就会被前端控制器DispatcherServlet处理。前端控制器会读取SpringMVC的核心配置文件，通过扫描组件找到控制器，将请求地址和控制器中@RequestMapping注解的value属性值进行匹配，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-Behavioral Pattern-Template Method</title>
+    <link href="http://localhost:4000/posts/dp-behavioral-template/" rel="alternate" type="text/html" title="DP-Behavioral Pattern-Template Method" />
+    <published>2023-06-11T11:39:00+08:00</published>
+  
+    <updated>2023-06-11T11:39:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dp-behavioral-template/</id>
+    <content src="http://localhost:4000/posts/dp-behavioral-template/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Design Pattern" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Template Method
+
+定义算法框架，将一些步骤的实现延迟到子类。
+
+
+
+冲饮料
+
+冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。
+
+
+
+场景
+
+
+  
+    算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。
+  
+  
+    需要通过子类决定父类算法中的某个步骤是否执行。
+  
+
+
+优
+
+
+  
+    提高代码复用性。
+  
+  
+    实现反向控制。
+  
+
+
+缺
+
+
+  对每个不同的实现都需要定义一个子类，导致子类个数增加。
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>DP-Behavioral Pattern-Strategy</title>
+    <link href="http://localhost:4000/posts/dp-behavioral-strategy/" rel="alternate" type="text/html" title="DP-Behavioral Pattern-Strategy" />
+    <published>2023-06-11T11:39:00+08:00</published>
+  
+    <updated>2023-06-13T16:50:18+08:00</updated>
+  
+    <id>http://localhost:4000/posts/dp-behavioral-strategy/</id>
+    <content src="http://localhost:4000/posts/dp-behavioral-strategy/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Design Pattern" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Strategy
+
+定义一系列算法，封装每个算法，并使它们可以互换。
+
+
+
+优
+
+  算法独立于使用它的客户端
+  策略可切换
+  易于扩展
+
+
+缺
+
+  客户端必须知道所有的策略类
+
+
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+

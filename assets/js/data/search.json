@@ -1,0 +1,735 @@
+[
+  
+  {
+    "title": "Domanin-driven design",
+    "url": "/posts/dev-ddd/",
+    "categories": "Develop",
+    "tags": "Tools",
+    "date": "2023-06-29 14:44:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "领取驱动设计在传统的mvc架构上做出改进。分为：      Adapater – VOValue Object展示用的数据，多为JSON对象 (yaml生成、resources定义)        Application – DTOData transfer object        Domain – DODomain Object (业务对象)        Infrastructure...",
+    "content": "领取驱动设计在传统的mvc架构上做出改进。分为：      Adapater – VOValue Object展示用的数据，多为JSON对象 (yaml生成、resources定义)        Application – DTOData transfer object        Domain – DODomain Object (业务对象)        Infrastructure – POPersistant Object （持久层对象）  DTO和DO可以共用模型，放置在Domain层。VO转DTO: 在Adapter层。DO,PO转换：接口定义在Domain层，实现在Infrastructure层。Bugs  Calendar对象初始化时默认的DATE为当前日期，在月末执行代码，并执行月份自增后，可能会导致下个月没有该日期而月份再次+1。因此需要读DATE指定值。"
+  },
+  
+  {
+    "title": "Redis",
+    "url": "/posts/dev-redis/",
+    "categories": "Develop",
+    "tags": "Redis",
+    "date": "2023-06-25 22:32:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Redis使用场景缓存穿透、击穿、雪崩数据过期、淘汰策略分布式锁计数器保存token消息队列延迟队列",
+    "content": "Redis使用场景缓存穿透、击穿、雪崩数据过期、淘汰策略分布式锁计数器保存token消息队列延迟队列"
+  },
+  
+  {
+    "title": "SpringMVC",
+    "url": "/posts/dev-springmvc/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-06-16 06:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "定义是表述层框架。  Model：模型层  View ：视图层，展示数据  Controller：控制层，接收请求和响应浏览器特点  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。流程  配置Web.xml文件（注册SpringMVC）  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）流程浏览器发送请求，若请求地址符合前端控制...",
+    "content": "定义是表述层框架。  Model：模型层  View ：视图层，展示数据  Controller：控制层，接收请求和响应浏览器特点  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。流程  配置Web.xml文件（注册SpringMVC）  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）流程浏览器发送请求，若请求地址符合前端控制器的url-pattern，该请求就会被前端控制器DispatcherServlet处理。前端控制器会读取SpringMVC的核心配置文件，通过扫描组件找到控制器，将请求地址和控制器中@RequestMapping注解的value属性值进行匹配，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，该视图名称会被视图解析器解析，加上前缀和后缀组成视图的路径，通过Thymeleaf对视图进行渲染，最终转发到视图所对应页面。  url-pattern和@RequestMapping的value属性匹配  注解标识的控制器处理请求并返回视图  视图通过Thymeleaf解析和跳转注解  @RequestMapping(“/”)浏览器访问该路径时，执行注解下的方法，方法返回需要跳转的视图名称，由视图解析器解析。指定请求方法  @GetMapping(“/”)  @PostMapping(“/”)  @PutMapping(“/”)  @DeteleMapping(“/”)  @PatchMapping(“/”) 对资源数据局部更新域对象      请求域：一次请求的开启到关闭        会话域：浏览器开启到关闭        应用域：服务器开启到关闭  "
+  },
+  
+  {
+    "title": "DP-Behavioral Pattern-Template Method",
+    "url": "/posts/dp-behavioral-template/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Template Method定义算法框架，将一些步骤的实现延迟到子类。冲饮料冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。场景      算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。        需要通过子类决定父类算法中的某个步骤是否执行。  优      提高代码复用性。        实现反向控制。  缺  对每个不同的实现都需要定义一个...",
+    "content": "Template Method定义算法框架，将一些步骤的实现延迟到子类。冲饮料冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。场景      算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。        需要通过子类决定父类算法中的某个步骤是否执行。  优      提高代码复用性。        实现反向控制。  缺  对每个不同的实现都需要定义一个子类，导致子类个数增加。"
+  },
+  
+  {
+    "title": "DP-Behavioral Pattern-Strategy",
+    "url": "/posts/dp-behavioral-strategy/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Strategy定义一系列算法，封装每个算法，并使它们可以互换。优  算法独立于使用它的客户端  策略可切换  易于扩展缺  客户端必须知道所有的策略类",
+    "content": "Strategy定义一系列算法，封装每个算法，并使它们可以互换。优  算法独立于使用它的客户端  策略可切换  易于扩展缺  客户端必须知道所有的策略类"
+  },
+  
+  {
+    "title": "DP-Behavioral Pattern-Command",
+    "url": "/posts/dp-behavioral-command/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Command优缺",
+    "content": "Command优缺"
+  },
+  
+  {
+    "title": "DP-Behavioral Pattern-Chain of Responsibility",
+    "url": "/posts/dp-behavioral-chain/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Chain of Responsibility沿着责任链处理请求,直到有对象可以处理为止。应用JavaWeb中的FilterChain。定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。优  降低耦合  责任分担缺  不能保证每个请求一定被处理。  责任链过长，系统性能受影响。",
+    "content": "Chain of Responsibility沿着责任链处理请求,直到有对象可以处理为止。应用JavaWeb中的FilterChain。定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。优  降低耦合  责任分担缺  不能保证每个请求一定被处理。  责任链过长，系统性能受影响。"
+  },
+  
+  {
+    "title": "DP-Structural-Flyweight Pattern-FlyWeight",
+    "url": "/posts/dp-structural-flyweight/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Flyweight通过共享技术来支持大量细粒度对象的复用。通过共享已经存在的对象来减少需要创建的对象数量。两种状态：      内部状态：不随着环境改变的可共享状态。        外部状态：随着环境改变而改变的不可共享部分。  俄罗斯方块有很多不同形状的方块，希望通过共享减少对象的创建数量。      内部状态： 形状        外部状态： 颜色***  abstract class ...",
+    "content": "Flyweight通过共享技术来支持大量细粒度对象的复用。通过共享已经存在的对象来减少需要创建的对象数量。两种状态：      内部状态：不随着环境改变的可共享状态。        外部状态：随着环境改变而改变的不可共享部分。  俄罗斯方块有很多不同形状的方块，希望通过共享减少对象的创建数量。      内部状态： 形状        外部状态： 颜色***  abstract class AbstractBox{      public abstract String getShape();      public void display(String color){      System.out.println(\"box shape: \" + this.getShape() + \"color: \" + color);  }   }        class CBox extends AbstractBox {      @Override      public String getShape() {          return “C”;      }  }    import java.util.HashMap;  class BoxFactory{      private static HashMap&lt;String, AbstractBox&gt; map;      public BoxFactory() {      map = new HashMap&lt;&gt;();      map.put(\"I\", new IBox());      map.put(\"C\", new CBox());      map.put(\"L\", new LBox());  }  public static final BoxFactory getInstance(){      return SingletonHolder.INSTANCE;  }  public static class SingletonHolder{      private static final BoxFactory INSTANCE = new BoxFactory();  }  public AbstractBox getBox(String key){      return map.get(key);  }   }        public class Client {      public static void main(String[] args) {          // 通过享元工厂获取享元对象          AbstractBox cbox1 = BoxFactory.getInstance().getBox(“C”);          AbstractBox cbox2 = BoxFactory.getInstance().getBox(“C”);          // 获取的为同一个对象，节省的空间          System.out.println(cbox1 == cbox2); // TRUE      }  }  场景      系统有大量相同或相似的对象。        对象的大部分状态可以外部化。  优      减少相似对象的数量，节省资源。        外部状态不影响内部状态。  缺  需要划分内部/外部状态，使程序逻辑复杂化。"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Facade",
+    "url": "/posts/dp-structural-facade/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Facade对外提供一个统一的接口，用来访问子系统中的一群接口，使子系统更容易访问。看电影观看电影需要有：打开电视，设置CD，开始播放 三个步骤，使用外观模式一键看电影。场景      构建分层结构系统时，可以使用外观模式定义子系统中每层的入口点，简化子系统之间的依赖关系。        提供简单的接口。        提供子系统的独立性和可移植性。  优  降低了子系统和客户端之间的耦合度...",
+    "content": "Facade对外提供一个统一的接口，用来访问子系统中的一群接口，使子系统更容易访问。看电影观看电影需要有：打开电视，设置CD，开始播放 三个步骤，使用外观模式一键看电影。场景      构建分层结构系统时，可以使用外观模式定义子系统中每层的入口点，简化子系统之间的依赖关系。        提供简单的接口。        提供子系统的独立性和可移植性。  优  降低了子系统和客户端之间的耦合度  使子系统更加容易使用缺  违反了开闭原则"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Composite",
+    "url": "/posts/dp-structural-composite/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Composite将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。菜单场景出现树形结构的地方。优      清楚定义分层次的复杂对象。        方便的增加树枝节点和叶子节点，符合开闭原则。  ",
+    "content": "Composite将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。菜单场景出现树形结构的地方。优      清楚定义分层次的复杂对象。        方便的增加树枝节点和叶子节点，符合开闭原则。  "
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Bridge",
+    "url": "/posts/dp-structural-bridge/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-11 11:39:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Bridge将抽象与实现分离开，使他们可以独立变化。跨平台视频播放场景类存在两个独立变化的维度，且这两个维度都需要扩展。",
+    "content": "Bridge将抽象与实现分离开，使他们可以独立变化。跨平台视频播放场景类存在两个独立变化的维度，且这两个维度都需要扩展。"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Decorator",
+    "url": "/posts/dp-structural-decorator/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-10 16:21:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Decorator为对象动态添加功能。",
+    "content": "Decorator为对象动态添加功能。"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Adapter",
+    "url": "/posts/dp-strcutural-adapter/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-10 15:21:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Adapter适配器将 已有的接口 转换为 用户需要的接口。分类：  类适配器： 继承实现  对象适配器：组合和聚合实现成分：  目标Target：客户期待得到的接口  适配者Adaptee：已经存在的，需要适配的类。  适配器Adapter：将源接口转换为目标接口。类适配器/*** 这是客户所期待的接口，目标可以是具体的或抽象类，也可以是接口*/public interface Targe...",
+    "content": "Adapter适配器将 已有的接口 转换为 用户需要的接口。分类：  类适配器： 继承实现  对象适配器：组合和聚合实现成分：  目标Target：客户期待得到的接口  适配者Adaptee：已经存在的，需要适配的类。  适配器Adapter：将源接口转换为目标接口。类适配器/*** 这是客户所期待的接口，目标可以是具体的或抽象类，也可以是接口*/public interface Target {    void request();}/*** 需要适配的类，被访问和适配的现存组件库中的组件接口*/public class Adaptee {    public void specificRequest(){        System.out.println(\"适配者中的业务代码被调用！\");    }}/*** 类适配器类*/public class ClassAdapter extends Adaptee implements Target{    @Override    public void request() {        specificRequest();    }}//客户端代码public class ClassAdapterTest{    public static void main(String[] args)    {        System.out.println(\"类适配器模式测试：\");        Target target = new ClassAdapter();        target.request();    }}对象适配器/*** 对象适配器，通过在内部包装一个 Adaptee 对象，把源接口转换为目标接口*/public class ObjectAdapter implements Target {    // 建立一个私有的 Adaptee 对象    private Adaptee adaptee;    public ObjectAdapter(Adaptee adaptee) {        this.adaptee = adaptee;    }    @Override    public void request() {        // 把表面上调用 request() 方法变成实际调用 specificRequest()         adaptee.specificRequest();    }}//客户端代码public class ObjectAdapterTest{    public static void main(String[] args)    {        System.out.println(\"对象适配器模式测试：\");        // 对客户端来说，调用的就是 Target 的 request()        Target target = new ObjectAdapter();        target.request();    }}"
+  },
+  
+  {
+    "title": "DP-Creational Pattern-Factory",
+    "url": "/posts/dp-creational-factory/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-08 12:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "工厂模式：解耦创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。简单工厂工厂方法抽象工厂原型Prototype建造者Builder",
+    "content": "工厂模式：解耦创建对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。简单工厂工厂方法抽象工厂原型Prototype建造者Builder"
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Proxy-JDK",
+    "url": "/posts/dp-structural-proxy-jdk/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-07 17:16:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Proxy代理作为访问对象和目标对象之间的中介。作用：  降低系统耦合度  代理对象调用目标对象时可以对目标对象进行增强。分为：  静态代理：编译时生成代理类  动态代理：运行时动态生成代理类，基于反射          JDK代理：必须定义接口。代理对象和目标对象实现相同的接口。      CGLib代理：可以代理没实现接口的类。继承被代理的目标类实现。      动态代理-JDK代理1....",
+    "content": "Proxy代理作为访问对象和目标对象之间的中介。作用：  降低系统耦合度  代理对象调用目标对象时可以对目标对象进行增强。分为：  静态代理：编译时生成代理类  动态代理：运行时动态生成代理类，基于反射          JDK代理：必须定义接口。代理对象和目标对象实现相同的接口。      CGLib代理：可以代理没实现接口的类。继承被代理的目标类实现。      动态代理-JDK代理1.接口类：卖票public interface SellTickets {    void sell();}2.具体实现类：火车站卖票public class TrainStation implements SellTickets{    @Override    public void sell() {        System.out.println(\"火车站卖票\");    }}3.代理工厂类：在程序运行时动态生成代理类，代理类继承Java提供的Proxy类。public class ProxyFactory {    //目标对象，声明为成员变量    private TrainStation station = new TrainStation();    //获取代理对象，并返回接口    public SellTickets getProxyObject(){        //返回代理对象，代理对象实现了接口方法，因此用接口接收        SellTickets proxyObject = (SellTickets) Proxy.newProxyInstance(                station.getClass().getClassLoader(), //代理对象的类加载器                station.getClass().getInterfaces(), //代理对象的接口                new InvocationHandler() { //代理对象的调用处理程序                    @Override                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {                        //       代理对象，也就是proxyObject                        //       封装接口中的方法的对象，如调用proxyObject.sell()，则method的值为sell                        //       调用方法的实际参数                        System.out.println(\"代售点收费（jdk动态代理）\");                        //执行目标对象的方法                        Object obj = method.invoke(station, args); //使用反射机制执行方法，参数为：要调用方法的对象 和 方法所需要的参数                        return obj;                    }                }        );        return proxyObject;    }}4.Client：调用代理类买票核心步骤：  创建被代理的目标对象  创建代理工厂对象  使用工厂生产代理对象      通过代理对象调用目标方法     public class Client {     public static void main(String[] args) {         //1.创建代理工厂对象         ProxyFactory factory = new ProxyFactory();         //使用工厂对象的方法获取代理对象（父接口引用指向子类对象）         SellTickets proxyObject = factory.getProxyObject();         //调用代理对象的sell方法时，其实内部调用了匿名内部类InvocationHandler中的invoke方法。         proxyObject.sell(); //执行的是代理的invoke方法         /*执行过程：         1. 通过代理对象调用sell()方法         2. 根据多态的特性，执行代理类$Proxy0中的sell方法         3. 代理类中的sell方法调用了继承自InvocationHandler接口实现类的invoke方法         4. 在invoke方法中，通过反射执行了真实对象所属类TrainStation中的sell方法*/     } }      "
+  },
+  
+  {
+    "title": "DP-Structural Pattern-Proxy-CGLib",
+    "url": "/posts/dp-structural-proxy-cglib/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-07 17:16:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "动态代理-CGLIB代理1.具体实现类public class TrainStation {    public void sell(){        System.out.println(\"火车站卖票\");    }}2.代理工厂类//代理对象是目标对象所属类别的子类//使用enhancer的create方法获取代理对象public class ProxyFactory implemen...",
+    "content": "动态代理-CGLIB代理1.具体实现类public class TrainStation {    public void sell(){        System.out.println(\"火车站卖票\");    }}2.代理工厂类//代理对象是目标对象所属类别的子类//使用enhancer的create方法获取代理对象public class ProxyFactory implements MethodInterceptor {    private TrainStation station = new TrainStation();    public TrainStation getProxyObject(){        //创建Enhancer对象，类似JDK代理中的Proxy类        Enhancer enhancer = new Enhancer();        //设置父类的字节码对象        enhancer.setSuperclass(TrainStation.class);        //设置回调函数        enhancer.setCallback(this);        //创建代理对象        TrainStation proxyObject = (TrainStation) enhancer.create();        return proxyObject;    }    @Override    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {        System.out.println(\"代售点收服务费(CGLIB代理)\");        //要调用目标对象的方法        Object obj = method.invoke(station, objects);        return null;    }}3.Client类public class Client {    public static void main(String[] args) {        ProxyFactory proxyFactory = new ProxyFactory();        TrainStation proxyObj = proxyFactory.getProxyObject();        proxyObj.sell();    }}实现中报错Exception in thread \"main\" java.lang.ExceptionInInitializerError    at com.xjtu.structural.proxy.cglib_proxy.ProxyFactory.getProxyObject(ProxyFactory.java:16)    at com.xjtu.structural.proxy.cglib_proxy.Client.main(Client.java:6)Caused by: net.sf.cglib.core.CodeGenerationException: java.lang.reflect.InaccessibleObjectException--&gt;Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not \"opens java.lang\" to unnamed module @4f2410ac    at net.sf.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:464)    at net.sf.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:339)    at net.sf.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:96)    at net.sf.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:94)    at net.sf.cglib.core.internal.LoadingCache$2.call(LoadingCache.java:54)    at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)    at net.sf.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:61)    at net.sf.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)    at net.sf.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:119)    at net.sf.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:294)    at net.sf.cglib.core.KeyFactory$Generator.create(KeyFactory.java:221)    at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:174)    at net.sf.cglib.core.KeyFactory.create(KeyFactory.java:153)    at net.sf.cglib.proxy.Enhancer.&lt;clinit&gt;(Enhancer.java:73)    ... 2 moreCaused by: java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not \"opens java.lang\" to unnamed module @4f2410ac    at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)    at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)    at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)    at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)    at net.sf.cglib.core.ReflectUtils$1.run(ReflectUtils.java:61)    at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)    at net.sf.cglib.core.ReflectUtils.&lt;clinit&gt;(ReflectUtils.java:52)    at net.sf.cglib.core.KeyFactory$Generator.generateClass(KeyFactory.java:243)    at net.sf.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)    at net.sf.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:332)    ... 14 more原因：JDK 8 中有关反射相关的功能自从 JDK 9 开始就已经被限制了。需要手动设置。解决：运行项目时添加VM options--add-opens java.base/java.lang=ALL-UNNAMED--add-opens java.base/java.lang.invoke=ALL-UNNAMED--add-opens java.base/java.math=ALL-UNNAMED--add-opens java.base/java.util=ALL-UNNAMED--add-opens java.base/java.nio=ALL-UNNAMED--add-opens java.base/sun.nio.ch=ALL-UNNAMED--add-opens java.base/java.io=ALL-UNNAMED--add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED"
+  },
+  
+  {
+    "title": "Java Web Bug记录",
+    "url": "/posts/dev-javaweb-bugs/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-06-03 14:35:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Bug1Only a type can be imported. com.xxx.xxx.XXX resolves to a package.背景：jsp中导入java包，并部署在tomcat运行时报错。原因：在jsp中没有找到相关的java类。解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifact。Bug2Dep...",
+    "content": "Bug1Only a type can be imported. com.xxx.xxx.XXX resolves to a package.背景：jsp中导入java包，并部署在tomcat运行时报错。原因：在jsp中没有找到相关的java类。解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifact。Bug2Dependency ... not found.背景：配置依赖时，在mvn仓库中可以查到，但是显示找不到依赖原因：mvn配置有问题解决：File - Settings - Build,Execution,Deployment - Build Tools - Maven 设置mvn的User setting files和Local repository。若还有问题，尝试将剪切重新粘贴，或重启IDE~"
+  },
+  
+  {
+    "title": "DP-Creational Pattern-Directory",
+    "url": "/posts/dp-directory/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-06-01 10:55:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "类之间的关系  关联          单向      双向      自关联        聚合 空心菱形  组合 实心菱形  依赖 虚线箭头  继承 空心三角  实现 虚线三角设计模式创建型      单例    工厂          简单工厂      工厂方法      抽象工厂            原型    建造者结构型  代理  适配器          类适配器     ...",
+    "content": "类之间的关系  关联          单向      双向      自关联        聚合 空心菱形  组合 实心菱形  依赖 虚线箭头  继承 空心三角  实现 虚线三角设计模式创建型      单例    工厂          简单工厂      工厂方法      抽象工厂            原型    建造者结构型  代理  适配器          类适配器      对象适配器        装饰者  桥接  外观  组合  享元行为型  模板方法"
+  },
+  
+  {
+    "title": "DP-Creational Pattern-Singleton",
+    "url": "/posts/dp-creational-singleton/",
+    "categories": "Design Pattern",
+    "tags": "Java",
+    "date": "2023-05-21 14:46:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数。只能通公有静态函数返回唯一的私有静态变量。分为：      饿汉式：类加载时就会创建对象。        懒汉式：类加载时不创建，首次使用时才创建。  饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleto...",
+    "content": "单例Singleton私有构造函数 + 私有静态变量 + 公有静态函数。只能通公有静态函数返回唯一的私有静态变量。分为：      饿汉式：类加载时就会创建对象。        懒汉式：类加载时不创建，首次使用时才创建。  饿汉式-静态变量直接实例化。优点：线程安全。缺点：不节约资源。private static Singleton uniqueInstance = new Singleton();饿汉式-静态代码块private static Singleton uniqueInstance;static{    instance = new Singleton();}懒汉式-线程不安全在获取实例时，若没有实例化，再进行实例化。优点：节约资源；缺点：线程不安全。public class Singleton {    private static Singleton uniqueInstance;    private Singleton(){    }    public static Singleton getInstance(){        //懒汉式：需要的时候在进行实例化。线程不安全。        if(uniqueInstance == null){            uniqueInstance = new Singleton();        }        return uniqueInstance;    }}懒汉式-synchronized锁仍然延迟实例化，但是对获取实例的方法加锁。优点：线程安全。缺点：会引起线程阻塞，性能降低。public static synchronized Singleton getUniqueInstance() {    if (uniqueInstance == null) {        uniqueInstance = new Singleton();    }    return uniqueInstance;}懒汉式-双重校验锁只对实例化部分语句加锁。public class Singleton {    private **volatile** static Singleton uniqueInstance;    private Singleton() {    }    public static Singleton getUniqueInstance() {        if (uniqueInstance == null) {            synchronized (Singleton.class) {                if (uniqueInstance == null) {                    uniqueInstance = new Singleton();                }            }        }        return uniqueInstance;    }}  需要用volatile关键字修饰。禁止指令重排。  需要有两个if语句。若只有第一个，可能会出现两个线程都进入到if语句内，执行两次实例化。volatile关键字两个作用：  保证变量的线程可见性：一个线程修改共享变量后，保证另一个线程能够读到这个修改的值。  多线程执行下的顺序一致性：禁止JVM指令重排。***懒汉式-静态内部类实现返回静态内部类的静态实例。优点：线程安全+延迟初始化。public class Singleton {    private Singleton(){    }    private static class SingletonHolder{        private static final Singleton INSTANCE = new Singleton();    }    public static Singleton getInstance(){        return SingletonHolder.INSTANCE;    }}当Singleton类被加载时，静态内部类不会被加载进内存。只有当调用Singleton.getInstance()时，静态内部类才会被加载，才会初始化INSTANCE实例。饿汉式-枚举实现将枚举类作为单例类。public enum Singleton{    INSTANCE;}多个Singleton.INSTANCE获取到的是同一个对象。"
+  },
+  
+  {
+    "title": "Diff Nums",
+    "url": "/posts/leetcode-diffnum/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-05-21 14:46:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "前缀和可以快速求解闭区间[i,j]的和。class PrefixSum{    private int[] prefix;public PrefixSum(int[] nums){    prefix = new int[nums.length + 1];    for(int i = 1; i &lt; prefix.length; i++){        prefix[i] = pre...",
+    "content": "前缀和可以快速求解闭区间[i,j]的和。class PrefixSum{    private int[] prefix;public PrefixSum(int[] nums){    prefix = new int[nums.length + 1];    for(int i = 1; i &lt; prefix.length; i++){        prefix[i] = prefix[i - 1] + nums[i - 1];    }}public int query(int i, int j){    return prefix[j + 1] - prefix[i];} }差分数组可以快速实现对闭区间[i,j]中的所有元素进行增减。public class Difference {    private int[] diff;    public Difference(int[] nums){        if(nums.length == 0){            throw new AssertionError();        };        //根据传入的数组构造差分数组        diff = new int[nums.length];        diff[0] = nums[0];        for(int i = 1; i &lt; nums.length; i++){            diff[i] = nums[i] - nums[i - 1];        }    }    //对闭区间[i,j]所有数字+val    public void increment(int i, int j, int val){        if(i &lt; 0 || i &gt;= diff.length){            throw new AssertionError();        };        diff[i] += val;        if(j + 1 &lt; diff.length){            diff[j + 1] -= val;        }    }    //根据差分数组重建数组    public int[] res(){        int[] res = new int[diff.length];        res[0] = diff[0];        for(int i = 1; i &lt; diff.length; i++){            res[i] = res[i - 1] + diff[i];        }        return res;    }}航班预定统计leetcode 1109车上最初有 capacity 个空座位。车 只能 向一个方向行驶（也就是说，不允许掉头或改变方向）给定整数 capacity 和一个数组 trips ,  trip[i] = [numPassengersi, fromi, toi] 表示第 i 次旅行有 numPassengersi 乘客，接他们和放他们的位置分别是 fromi 和 toi 。这些位置是从汽车的初始位置向东的公里数。当且仅当你可以在所有给定的行程中接送所有乘客时，返回 true，否则请返回 false。示例 1：输入：trips = [[2,1,5],[3,3,7]], capacity = 4输出：false示例 2：输入：trips = [[2,1,5],[3,3,7]], capacity = 5输出：trueclass Solution {    public int[] corpFlightBookings(int[][] bookings, int n) {        int[] res = new int[n];        int[] diff = new int[n];        for(int i = 0; i &lt; bookings.length; i++){            int[] item = bookings[i];            int first = item[0] - 1;            int last = item[1] - 1;            int seat = item[2];            diff[first] += seat;            if(last + 1 &lt; n){                diff[last + 1] -= seat;            }        }        res[0] = diff[0];        for(int i = 1; i &lt; n; i++){            res[i] = res[i - 1] + diff[i];        }        return res;    }}拼车leetcode 1094车上最初有 capacity 个空座位。车 只能 向一个方向行驶（也就是说，不允许掉头或改变方向）给定整数 capacity 和一个数组 trips ,  trip[i] = [numPassengersi, fromi, toi] 表示第 i 次旅行有 numPassengersi 乘客，接他们和放他们的位置分别是 fromi 和 toi 。这些位置是从汽车的初始位置向东的公里数。当且仅当你可以在所有给定的行程中接送所有乘客时，返回 true，否则请返回 false。示例 1：输入：trips = [[2,1,5],[3,3,7]], capacity = 4输出：false示例 2：输入：trips = [[2,1,5],[3,3,7]], capacity = 5输出：trueimport java.util.ArrayList;import java.util.HashMap;import java.util.List;import java.util.Map;class Solution {    public boolean carPooling(int[][] trips, int capacity) {        int[] diff = new int[10001];        int maxTo = 0;        for(int[] trip : trips){            int num = trip[0];            int from = trip[1];            int to = trip[2];            diff[from] += num;            diff[to] -= num;            maxTo = Math.max(maxTo, to);        }        int passNum = 0;        for(int i = 0; i &lt;= maxTo; i++){            passNum += diff[i];            if(passNum &gt; capacity){                return false;            }        }        return true;    } }"
+  },
+  
+  {
+    "title": "Sliding Windows",
+    "url": "/posts/leetcode-sldingwindows/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-05-16 14:36:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "框架: O(N)int left = 0, right = 0;while(right &lt; s.size()){    //将有边界字符加入窗口中    windows.add(s[right]);    right ++;    ...    //根据**一些条件**判断是否需要收缩做窗口    while(left &lt; right &amp;&amp; window need...",
+    "content": "框架: O(N)int left = 0, right = 0;while(right &lt; s.size()){    //将有边界字符加入窗口中    windows.add(s[right]);    right ++;    ...    //根据**一些条件**判断是否需要收缩做窗口    while(left &lt; right &amp;&amp; window needs shrink){        windows.remove(s[left]);        left++;    }}一些条件根据不同的题目确定。最小覆盖子串leetcode 76给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 \"\" 。注意：对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。如果 s 中存在这样的子串，我们保证它是唯一的答案。示例 1：输入：s = \"ADOBECODEBANC\", t = \"ABC\"输出：\"BANC\"解释：最小覆盖子串 \"BANC\" 包含来自字符串 t 的 'A'、'B' 和 'C'。使用两个hashmap存储 t中的字符及数量, window中的字符及数量。收缩左边界的条件：满足了覆盖条件，收缩以找到最小的区间。class Solution {    public String minWindow(String s, String t) {        Map&lt;Character, Integer&gt; need = new HashMap&lt;&gt;();        Map&lt;Character, Integer&gt; win = new HashMap&lt;&gt;();        for(char ch: t.toCharArray()){            need.put(ch, need.getOrDefault(ch, 0) + 1);        }        int left = 0, right = 0, valid = 0;        int start = 0, min_len = s.length() + 1;        while(right &lt; s.length()){            char ch = s.charAt(right);            if(need.containsKey(ch)){                win.put(ch, win.getOrDefault(ch, 0) + 1);                if(win.get(ch).equals(need.get(ch))){                    valid++;                }            }            right ++;            //在满足覆盖的条件下，收缩左边界            while(valid == need.size()){                //更新最小长度                if(right - left &lt; min_len){                    start = left;                    min_len = right - left;                }                char dh = s.charAt(left);                left ++;                if(win.containsKey(dh)){                    if(win.get(dh).equals(need.get(dh))){                        valid --;                    }                    win.put(dh, win.get(dh) - 1);                }            }        }        return min_len == s.length() + 1 ?  \"\" : s.substring(start, start + min_len);        }}字符串的排列leetcode 567给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。如果是，返回 true ；否则，返回 false 。换句话说，s1 的排列之一是 s2 的 子串 。示例 1：输入：s1 = \"ab\" s2 = \"eidbaooo\"输出：true解释：s2 包含 s1 的排列之一 (\"ba\").示例 2：输入：s1= \"ab\" s2 = \"eidboaoo\"输出：false需要维护窗口大小为s1.length(),收缩左边界的条件：窗口&gt; s1.length()。class Solution {    public boolean checkInclusion(String s1, String s2) {        Map&lt;Character, Integer&gt; need = new HashMap&lt;&gt;();        Map&lt;Character, Integer&gt; win = new HashMap&lt;&gt;();        for(char c: s1.toCharArray()){            need.put(c, need.getOrDefault(c, 0) + 1);        }        int left = 0, right = 0, valid = 0;        while(right &lt; s2.length()){            char c = s2.charAt(right);            if(need.containsKey(c)){                win.put(c, win.getOrDefault(c, 0) + 1);                if(win.get(c).equals(need.get(c))){                    valid ++;                }            }            right ++;            if(valid == need.size() &amp;&amp; win.size() == need.size()) {                break;            }            //窗口太大时收缩左边界，保证下次right++后窗口大小与s1.Length相等。            while(right - left &gt;= s1.length()){                char d = s2.charAt(left);                if(win.containsKey(d)){                    if(win.get(d).equals(need.get(d))){                        valid --;                    }                    win.put(d, win.get(d) - 1);                }                left ++;            }        }        return valid == need.size() ? true : false;    }}字符串中所有的字母异位词leetcode 438给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。示例 1:输入: s = \"cbaebabacd\", p = \"abc\"输出: [0,6]解释:起始索引等于 0 的子串是 \"cba\", 它是 \"abc\" 的异位词。起始索引等于 6 的子串是 \"bac\", 它是 \"abc\" 的异位词。需要维护窗口大小为p.length，收锁左边界的条件：窗口大小 &gt; p.length()。class Solution {    public List&lt;Integer&gt; findAnagrams(String s, String p) {        Map&lt;Character, Integer&gt; need = new HashMap&lt;&gt;();        Map&lt;Character, Integer&gt; win = new HashMap&lt;&gt;();                List&lt;Integer&gt; res = new LinkedList&lt;&gt;();        for(char c: p.toCharArray()){            need.put(c, need.getOrDefault(c, 0) + 1);        }        int left = 0, right = 0, valid = 0;        while(right &lt; s.length()){            char c = s.charAt(right);            right++;            if(need.containsKey(c)){                win.put(c, win.getOrDefault(c, 0) + 1);                if(win.get(c).equals(need.get(c))){                    valid++;                }            }            if(valid == need.size()){                res.add(left);            }            while(right - left &gt;= p.length()){                char d = s.charAt(left);                left++;                if(win.containsKey(d)){                    if(win.get(d).equals(need.get(d))){                        valid --;                    }                    win.put(d, win.get(d) - 1);                }            }        }        return res;    }}无重复字符的最长子串leetcode 3给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。示例 1:输入: s = \"abcabcbb\"输出: 3 解释: 因为无重复字符的最长子串是 \"abc\"，所以其长度为 3。示例 2:输入: s = \"bbbbb\"输出: 1解释: 因为无重复字符的最长子串是 \"b\"，所以其长度为 1。收缩左边界的条件：窗口内存在重复字符。class Solution {    public int lengthOfLongestSubstring(String s) {        Map&lt;Character, Integer&gt; win = new HashMap&lt;&gt;();        int left = 0, right = 0, res = 0;        //保证窗口内的字符无重复        while(right &lt; s.length()){            char c = s.charAt(right);            right ++;            win.put(c, win.getOrDefault(c, 0) + 1);            while(win.get(c) &gt; 1){                char d = s.charAt(left);                left ++;                win.put(d, win.get(d) - 1);            }            res = Math.max(res, right - left);        }        return res;    }}"
+  },
+  
+  {
+    "title": "Git",
+    "url": "/posts/dev-git/",
+    "categories": "Develop",
+    "tags": "Tools",
+    "date": "2023-05-13 14:44:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
+    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main冲突记录本地和远程修改了同一个文件的代码，pull远程分支时出现文件冲突：根据提示, 解决办法为：git stash  //将本地修改存入栈中git pull origin master //拉取远程代码git stash pop //将存储在栈中的修改放出但我执行完pop后，再次报错了：意思是，你修改了一些文件（可能是远程更新的），但这些文件还没有加入暂存区，因此不能提交，所以：git add . //将所有文件加入暂存区git commit -m afterstash //提交暂存区的文件"
+  },
+  
+  {
+    "title": "Spring-获取Bean的方式",
+    "url": "/posts/dev-spring-getbean/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "获取Bean对象的三种方式  根据id  根据类型（xxx.class）  根据id和类型在xml文件中定义bean， 配置id和class&lt;!--创建user类对象--&gt;&lt;bean id=\"user\" class = \"com.xjtu.spring.iocxml.User\"&gt;&lt;/bean&gt;在测试类中获取对象public class TestUser {...",
+    "content": "获取Bean对象的三种方式  根据id  根据类型（xxx.class）  根据id和类型在xml文件中定义bean， 配置id和class&lt;!--创建user类对象--&gt;&lt;bean id=\"user\" class = \"com.xjtu.spring.iocxml.User\"&gt;&lt;/bean&gt;在测试类中获取对象public class TestUser {    public static void main(String[] args) {        //创建Spring IoC容器对象        ApplicationContext context = new ClassPathXmlApplicationContext(\"bean.xml\");        //1. 根据id        User user = (User) context.getBean(\"user\");        //2. 根据类型        User user2 =  context.getBean(User.class);        //3. 根据id和类型        User user3 = context.getBean(\"user\", User.class);    }}注意1根据类型获取bean时，要求IoC容器中指定类型的bean有且只能有一个（满足bean的唯一性）。例如：&lt;bean id=\"user\" class = \"com.xjtu.spring.iocxml.User\"&gt;&lt;/bean&gt;&lt;bean id=\"user1\" class = \"com.xjtu.spring.iocxml.User\"&gt;&lt;/bean&gt;就会报错。注意2如果组件类实现了接口，可以根据接口的class获取组件对象。如果一个接口有多个实现类，则不可以。"
+  },
+  
+  {
+    "title": "Spring-依赖注入DI",
+    "url": "/posts/dev-spring-di/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "依赖注入DI在Spring创建对象的过程中，将对象依赖属性通过配置进行注入。注入方式分为：Set注入和构造注入。      Set注入                  创建类，定义属性，生成属性的set方法      public class Book {      private String name;      private String author;          publ...",
+    "content": "依赖注入DI在Spring创建对象的过程中，将对象依赖属性通过配置进行注入。注入方式分为：Set注入和构造注入。      Set注入                  创建类，定义属性，生成属性的set方法      public class Book {      private String name;      private String author;          public Book() {  }  public Book(String name , String author) {      this.name = name;      this.author = author;  }  public void setAuthor(String author) {      this.author = author;  }  public void setName(String name) {      this.name = name;  }  }                            在&lt;bean&gt;标签下使用&lt;property&gt;标签设置属性值          &lt;bean id=\"book\" class=\"com.xjtu.spring.iocxml.di.Book\"&gt;      &lt;property name=\"name\" value=\"名字A\"&gt;&lt;/property&gt;      &lt;property name=\"author\" value=\"作者A\"&gt;&lt;/property&gt;  &lt;/bean&gt;                          构造注入          创建类，定义属性，生成有参数的构造方法，同上      在&lt;bean&gt;标签下使用&lt;constructor-arg&gt;标签注入                        不同类型的属性      对象和数组属性：ref引用对象，array设置数组属性      &lt;bean id=\"studentFour\" class=\"com.xjtu.spring.bean.Student\"&gt;      &lt;property name=\"name\" value=\"赵六\"&gt;&lt;/property&gt;      &lt;property name=\"sex\" value=\"女\"&gt;&lt;/property&gt;      &lt;!-- ref属性：引用IOC容器中某个bean的id，将所对应的bean为属性赋值 --&gt;      &lt;property name=\"clazz\" ref=\"clazzOne\"&gt;&lt;/property&gt;      &lt;property name=\"hobbies\"&gt;          &lt;array&gt;              &lt;value&gt;抽烟&lt;/value&gt;              &lt;value&gt;喝酒&lt;/value&gt;              &lt;value&gt;烫头&lt;/value&gt;          &lt;/array&gt;      &lt;/property&gt;  &lt;/bean&gt;            集合属性: list标签      private List&lt;Student&gt; students;  public List&lt;Student&gt; getStudents() {      return students;  }  public void setStudents(List&lt;Student&gt; students) {      this.students = students;  }      &lt;bean id=\"clazzTwo\" class=\"com.xjtu.spring.bean.Clazz\"&gt;      &lt;property name=\"clazzId\" value=\"4444\"&gt;&lt;/property&gt;      &lt;property name=\"clazzName\" value=\"Javaee0222\"&gt;&lt;/property&gt;      &lt;property name=\"students\"&gt;          &lt;list&gt;              &lt;ref bean=\"studentOne\"&gt;&lt;/ref&gt;              &lt;ref bean=\"studentTwo\"&gt;&lt;/ref&gt;              &lt;ref bean=\"studentThree\"&gt;&lt;/ref&gt;          &lt;/list&gt;      &lt;/property&gt;  &lt;/bean&gt;            …  自动装配手动装配：使用property和ref自动装配：使用bean标签的autowire属性&lt;!-- byType：根据类型进行装配，此时如果类型匹配的bean不止一个，那么会抛异常 --&gt;&lt;!-- byName：根据bean的id进行匹配。而bean的id是根据需要装配组件的属性的属性名确定--&gt;&lt;bean id=\"happyController\"    class=\"com.atguigu.ioc.component.HappyController\"    autowire=\"byName\"&gt;    &lt;!-- 手动装配：在property标签中使用ref属性明确指定要装配的bean --&gt;    &lt;!--&lt;property name=\"happyService\" ref=\"happyService\"/&gt;--&gt;&lt;/bean&gt;"
+  },
+  
+  {
+    "title": "Spring-Bean的作用域、生命周期",
+    "url": "/posts/dev-spring-beanlifrcycle/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Bean的作用域bean标签的scope属性设置。  singleton：单例，IOC容器初始化时创建。      prototype：多个实例，获取Bean时创建。              Bean的生命周期  bean 对象创建（调用无参构造器）  给 bean 对象设置属性（调用属性对应的 setter 方法）  bean 对象初始化之前操作（由 bean 的后置处理器负责）  be...",
+    "content": "Bean的作用域bean标签的scope属性设置。  singleton：单例，IOC容器初始化时创建。      prototype：多个实例，获取Bean时创建。              Bean的生命周期  bean 对象创建（调用无参构造器）  给 bean 对象设置属性（调用属性对应的 setter 方法）  bean 对象初始化之前操作（由 bean 的后置处理器负责）  bean 对象初始化（需在配置 bean 时指定初始化方法）  bean 对象初始化之后操作（由 bean 的后置处理器负责）  bean 对象就绪可以使用  bean 对象销毁（需在配置 bean 时指定销毁方法）  IOC 容器关闭"
+  },
+  
+  {
+    "title": "Spring-AOP-IOC",
+    "url": "/posts/dev-spring-aop-ioc/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Spring是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。AOP定义面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。实现方式： 预编译方式和运行动态代理。核心套路比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。...",
+    "content": "Spring是一种轻量的JavaEE框架，为Java开发提供了基础架构支持。提供了Java开发所需的一系列技术栈。AOP定义面向切面编程。用于将一些通用的功能（日志记录、权限控制、事务处理等）从业务逻辑中剥离出来，便于复用和维护。实现方式： 预编译方式和运行动态代理。核心套路比如我想要在方法A的执行前后自动完成一些操作，那么可以将这些操作定义在切面类中。然后使用注解中的参数规定他生效的范围。然后在想要使用这个功能的方法上加上参数中的注解。//表示该类为切面类@Aspect//表示该类能够放入IOC容器@Componentpublic class loggingAspect{ //切面类    @Before(\"@annotation(Loggable)\")    public void logBefore(){            }    @After(\"@annotation(Loggable)\")    public void logAfter(){            }}@Servicepublic void myService{    @Loggable    public void doSomething(){ //注入切面的方法    }}IOCIOC（Inversion of Control）:控制反转。  是啥：通过IOC容器管理所有Java对象的实例化和初始化，把对象的管理权限交给容器。应用程序如果需要某个对象的实例，直接从IOC容器中获取即可。  IOC之前：直接new对象，对象的生命周期由程序员控制，不同层之间耦合度太高。  好处：为了实现高内聚低耦合的设计原则，引入IoC，以降低不同层之间的耦合度，使程序的体系结构更灵活。  实现：将对象的生命周期交给容器来管理。          在xml文件中，定义Bean，配置不同Bean之间的依赖关系。      BeanDefinitionReader读取配置文件，解析和加载后生成BeanDefinition，然后保存到一个Map集合中，也就是注册到IOC容器中。      根据BeanDifinition，通过BeanFactory工厂+反射进行实例化，然后初始化。      通过Context.getBean()或者Autowired注解从IOC容器获取Bean的实例。***  //声明一个Bean的接口  public interface UserService{  public coid createUser(User user);  }        //声明一个Bean的实现类  @Service  public class UserServiceImpl implements userService{      public void creatUser(User user){      }  }    //在应用程序中，通过注解获取Bean的实例  public class UserControl{      @Autowired  //如果Bean是接口，autowired会自动注入其实现类      private UserService userService;      public void createUser(User user){      userService.createUser(user);  }   }      Spring创建对象的过程（1）加载xml配置文件（2）解析xml文件（3）获取xml文件bean标签属性值，包含id和class（4）使用反射，根据类的全路径创建对象    Class clazz = Class.forName(“com.xjtu.spring6.User”);    User user = (User) clazz.getDeclaredConstructor().newInstance();（5）创建对象后，放到Map容器中    Map&lt;String, BeanDefinition&gt; beanDefinitionMap;"
+  },
+  
+  {
+    "title": "Spring-Annotation",
+    "url": "/posts/dev-spring-annotation/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "常用注解  @Component : 普通组件  @Controller：控制层组件  @Service   ：业务层组件  @Repository：持久层组件（数据库）扫描包通过扫描的方式检测注解，根据注解操作。扫描包的配置：&lt;context:component-scan base-package=\"com.atguigu.ioc.component\"/&gt;自动装配注解     ...",
+    "content": "常用注解  @Component : 普通组件  @Controller：控制层组件  @Service   ：业务层组件  @Repository：持久层组件（数据库）扫描包通过扫描的方式检测注解，根据注解操作。扫描包的配置：&lt;context:component-scan base-package=\"com.atguigu.ioc.component\"/&gt;自动装配注解      @Autowired          在成员变量上直接标记      在构造方法上标价      在setXXX方法上标记      完全注解开发      创建配置类    @Configuration：标记为Spring的配置类        根据配置类创建IOC容器对象    // AnnotationConfigApplicationContext 根据配置类创建 IOC 容器对象  private ApplicationContext iocContainerAnnotation = new AnnotationConfigApplicationContext(MyConfiguration.class);        在配置类中配置bean    @Bean注解：相当于XML配置文件中的bean标签        在配置类中配置自动扫描的包    @Configuration  @ComponentScan(“com.atguigu.ioc.component”)  public class MyConfiguration {      ……  }  "
+  },
+  
+  {
+    "title": "Mysql",
+    "url": "/posts/dev-mysql/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~",
+    "content": "Windows上启动Mysqlwindows上安装了mysql，STEPS：1.在windows的服务中启动mysql服务2.右键查看mysql的安装目录3.管理员打开cmd，进入mysql的安装bin目录，执行或者在启动服务后，打开mysql command line。然后可以使用mysql workbench进行可视化操作~~"
+  },
+  
+  {
+    "title": "Maven",
+    "url": "/posts/dev-maven/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-05-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Maven包管理工具，使用GAV坐标定位。  groupId：公司或组织的Id  artifactId:项目或项目中模块的id  version：版本号配置安装使用IDEA自带的mvn查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;settings xmlns=\"...",
+    "content": "Maven包管理工具，使用GAV坐标定位。  groupId：公司或组织的Id  artifactId:项目或项目中模块的id  version：版本号配置安装使用IDEA自带的mvn查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;settings xmlns=\"http://maven.apache.org/SETTINGS/1.0.0\"        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"        xsi:schemaLocation=\"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd\"&gt;&lt;!-- localRepository| The path to the local repository maven will use to store artifacts.|| Default: ${user.home}/.m2/repository&lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;--&gt;&lt;!-- 配置本地仓库位置--&gt;&lt;localRepository&gt;G:\\maven_respository&lt;/localRepository&gt;&lt;pluginGroups&gt;    &lt;!-- pluginGroup    | Specifies a further group identifier to use for plugin lookup.    &lt;pluginGroup&gt;com.your.plugins&lt;/pluginGroup&gt;    --&gt;&lt;/pluginGroups&gt;&lt;!-- proxies| This is a list of proxies which can be used on this machine to connect to the network.| Unless otherwise specified (by system property or command-line switch), the first proxy| specification in this list marked as active will be used.|--&gt;&lt;proxies&gt;    &lt;!-- proxy    | Specification for one proxy, to be used in connecting to the network.    |    &lt;proxy&gt;    &lt;id&gt;optional&lt;/id&gt;    &lt;active&gt;true&lt;/active&gt;    &lt;protocol&gt;http&lt;/protocol&gt;    &lt;username&gt;proxyuser&lt;/username&gt;    &lt;password&gt;proxypass&lt;/password&gt;    &lt;host&gt;proxy.host.net&lt;/host&gt;    &lt;port&gt;80&lt;/port&gt;    &lt;nonProxyHosts&gt;local.net|some.host.com&lt;/nonProxyHosts&gt;    &lt;/proxy&gt;    --&gt;&lt;/proxies&gt;&lt;!-- servers| This is a list of authentication profiles, keyed by the server-id used within the system.| Authentication profiles can be used whenever maven must make a connection to a remote server.|--&gt;&lt;servers&gt;    &lt;!-- server    | Specifies the authentication information to use when connecting to a particular server, identified by    | a unique name within the system (referred to by the 'id' attribute below).    |    | NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are    |       used together.    |    &lt;server&gt;    &lt;id&gt;deploymentRepo&lt;/id&gt;    &lt;username&gt;repouser&lt;/username&gt;    &lt;password&gt;repopwd&lt;/password&gt;    &lt;/server&gt;    --&gt;    &lt;!-- Another sample, using keys to authenticate.    &lt;server&gt;    &lt;id&gt;siteServer&lt;/id&gt;    &lt;privateKey&gt;/path/to/private/key&lt;/privateKey&gt;    &lt;passphrase&gt;optional; leave empty if not used.&lt;/passphrase&gt;    &lt;/server&gt;    --&gt;&lt;/servers&gt;&lt;!-- mirrors| This is a list of mirrors to be used in downloading artifacts from remote repositories.|| It works like this: a POM may declare a repository to use in resolving certain artifacts.| However, this repository may have problems with heavy traffic at times, so people have mirrored| it to several places.|| That repository definition will have a unique id, so we can create a mirror reference for that| repository, to be used as an alternate download site. The mirror site will be the preferred| server for that repository.|--&gt;&lt;mirrors&gt;    &lt;!-- mirror    | Specifies a repository mirror site to use instead of a given repository. The repository that    | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used    | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.    |    &lt;mirror&gt;    &lt;id&gt;mirrorId&lt;/id&gt;    &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;    &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;    &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;    &lt;/mirror&gt;    --&gt;    &lt;!-- 配置阿里云仓库--&gt;    &lt;mirror&gt;    &lt;id&gt;alimaven&lt;/id&gt;    &lt;name&gt;aliyun maven&lt;/name&gt;    &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;    &lt;/mirror&gt;&lt;/mirrors&gt;&lt;!-- profiles| This is a list of profiles which can be activated in a variety of ways, and which can modify| the build process. Profiles provided in the settings.xml are intended to provide local machine-| specific paths and repository locations which allow the build to work in the local environment.|| For example, if you have an integration testing plugin - like cactus - that needs to know where| your Tomcat instance is installed, you can provide a variable here such that the variable is| dereferenced during the build process to configure the cactus plugin.|| As noted above, profiles can be activated in a variety of ways. One way - the activeProfiles| section of this document (settings.xml) - will be discussed later. Another way essentially| relies on the detection of a system property, either matching a particular value for the property,| or merely testing its existence. Profiles can also be activated by JDK version prefix, where a| value of '1.4' might activate a profile when the build is executed on a JDK version of '1.4.2_07'.| Finally, the list of active profiles can be specified directly from the command line.|| NOTE: For profiles defined in the settings.xml, you are restricted to specifying only artifact|       repositories, plugin repositories, and free-form properties to be used as configuration|       variables for plugins in the POM.||--&gt;&lt;profiles&gt;    &lt;/settings&gt;本地仓库存放jar包，最好自己在其他盘创建一个，并修改上图中的Local repository。自己下载maven使用参考 Maven核心程序解压与配置在IDEA中修改为自己的路径。"
+  },
+  
+  {
+    "title": "Java 多线程",
+    "url": "/posts/java-threads/",
+    "categories": "Java Concurrency",
+    "tags": "Java",
+    "date": "2023-05-11 20:34:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "实现并行完成多个任务。提高cpu的利用率。三种实现方式public class LearnThreads {    public static void main(String[] args) {        //1. 继承Thread类，实例化一个Thread对象        Thread mt = new MyThread();        mt.start();        /...",
+    "content": "实现并行完成多个任务。提高cpu的利用率。三种实现方式public class LearnThreads {    public static void main(String[] args) {        //1. 继承Thread类，实例化一个Thread对象        Thread mt = new MyThread();        mt.start();        // 2. 实例化一个Runnable对象，作为参数传给Thread类        MyRunnable instance = new MyRunnable();        Thread thread = new Thread(instance);        thread.start();        //3. 实例化一个Callable对象，作为参数传给FutureTask，ft作为参数传给Thread        MyCallable mc = new MyCallable();        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(mc);        Thread thread2 = new Thread(ft);        thread2.start();    }}//1. 继承Thread类class MyThread extends Thread{    public void run(){        System.out.println(\"1. extends thread\");    }}//2. 实现Runnable接口class MyRunnable implements Runnable{    @Override    public void run() {        System.out.println(\"2. implements runnable\");    }}//3. 实现Callable接口class MyCallable implements Callable&lt;Integer&gt;{    @Override    public Integer call() throws Exception {        System.out.println(\"3. implements callable\");        return null;    }}线程池线程池：复用已创建的线程，减少线程创建和销毁的开销。通过管理线程队列 + 任务队列 实现。Java实现的方式：Executor是一个接口，定义了执行Runnable任务的execute方法。将任务提交给Executor，由Executor管理线程池并分配线程执行任务。Executors类提供了实现Executor接口的几种方法：  CachedThreadPool 一个任务创建一个线程  FixedThreadPool 所有任务只能使用固定大小的线程  SingleThreadExecutor 大小为1的FixedThreadPool***  public static void main(String[] args) {      //1. 创建线程池      ExecutorService es = Executors.newCachedThreadPool();      //2. 向线程池提交了5个MyRunnable任务      for(int i = 0; i &lt; 5; i++){          es.execute(new MyRunnable());      }      //   创建匿名线程并提交      es.exexute(() -&gt; {          //…      })      //3. 关闭线程池      //调用shutdown方法：会等待线程都执行完毕再关闭      es.shutdown();  }多线程同步为什么要同步：多个线程尝试读写同一个变量，由于执行顺序不确定，可能会出现数据不一致的情况。实现同步的两种锁机制：1. JVM提供的synchronized锁static class SynExample{    //1. 同步代码块    public void func1(){        synchronized (this){ //this与实例相关            System.out.println(\"func1\");            for(int i = 0; i &lt; 10; i++){ //for循环快捷键：fori                System.out.print(i + \" \");            }            System.out.println();        }    }    //2. 同步方法    public synchronized void func2(){        System.out.println(\"func2\");        for(int i = 0; i &lt; 10; i++){            System.out.print(i + \" \");        }        System.out.println();    }    //3.同步整个类    public void func3(){        synchronized (SynExample.class){ //同步锁对象是SynExample.class            System.out.println(\"func3\");            for(int i = 0; i &lt; 10; i++){                System.out.print(i + \" \");            }            System.out.println();        }    }    //4.同步一个类的静态方法,同样作用于整个类    public synchronized static void fun4(){    }}总结：同步代码块：锁对象选择多个线程可以同时访问的资源，一般为this。作用于当前对象。多个线程访问类的同一个实例时，才会进行同步。同步方法：锁对象默认为当前类的实例this，同样作用于当前对象。类中的多个方法都加了synchronized关键字时，只有一个方法可以获得锁。同步一个类：锁对象为类的Class对象，作用于当前类。多个线程访问类的不同实例时，也会进行同步。2. JRE提供的ReenTrantLock锁，需要手动释放static class LockExample{    //1. 创建锁对象    private Lock lock = new ReentrantLock();    public void func(){        //2. 在需要同步的代码块中，通过lock()方法获取锁        lock.lock();        //3. 执行同步代码块        try{            //同步代码块            for (int i = 0; i &lt; 10; i++) {                System.out.print(i +  \" \");            }            System.out.println();        }finally {            //4. unlock()释放锁            lock.unlock();        }    }}多线程的协作因为一些需求，A线程的某些部分必须在B线程的某些部分之前执行，需要对多线程之间作出一些协调。1. join()在B线程中调用A线程的join方法，会将B线程挂起，等待A线程执行完毕后再执行。public class LearnCollaborate {    class A extends Thread{        @Override        public void run() {            System.out.println(\"A\");        }    }    class B extends Thread{        private A a;        B(A a){            this.a = a;        }        @Override        public void run() {            try{                a.join(); //将当前线程挂起，等待a执行完毕，再执行b线程。            }catch (Exception e){                e.printStackTrace();            }            System.out.println(\"B\");        }    }    public void test(){        A a = new A();        B b = new B(a);        b.start();        a.start();    }}2. wait() notify() notifyAll()必须用在同步的方法或代码块中。调用wait()方法，挂起当前线程，释放锁。等待其他线程调用了notify或notifyAll方法，A线程继续运行。public class LearnWaitNotify {    // 多个方法使用synchronized关键字修饰    // 他们的锁对象都是当前对象的实例this    public synchronized void before(){        System.out.println(\"before\");        notifyAll();    }    public synchronized void after(){        try{            //wait会释放锁，sleep不会.            //wait必须释放锁，才能保证其他线程可以进入到before函数中 调用notify            wait();        }catch (Exception e){            e.printStackTrace();        }        System.out.println(\"after\");    }}3. await() signal() signalAll()在Condition类上调用await()方法使当前线程等待没其他线程调用signal或signalAll唤醒等待的线程。public class LearnAwaitSignal {    private Lock lock = new ReentrantLock();    private Condition condition = lock.newCondition();    public void before(){        lock.lock();        try {            System.out.println(\"before\");            condition.signalAll();        }finally {            lock.unlock();        }    }    public void after(){        lock.lock();        try{            condition.await();            System.out.println(\"after\");        }catch(Exception e){            e.printStackTrace();        }finally{            lock.unlock();        }    }}死锁的例子A线程持有lock1, 等待获得lock2; B线程持有lock2, 等待获得lock1。public class DeadLock {    public static Object lock1 = new Object();    public static Object lock2 = new Object();public static void main(String[] args) {    Thread th1 = new Thread(new Runnable() {        @Override        public void run() {            synchronized (lock1){                try{                    System.out.println(\"th1 holding lock1\");                    Thread.sleep(10);                }catch (Exception e){                    e.printStackTrace();                }                synchronized (lock2){                    System.out.println(\"th1 holding lock1 + lock2\");                }            }        }    });    Thread th2 = new Thread(new Runnable() {        @Override        public void run() {            synchronized (lock2){                try{                    System.out.println(\"th2 holding lock2\");                    Thread.sleep(10);                }catch (Exception e){                    e.printStackTrace();                }                synchronized (lock1){                    System.out.println(\"th2 holding lock2 + lock1\");                }            }        }    });    th1.start();    th2.start();} }"
+  },
+  
+  {
+    "title": "Tree",
+    "url": "/posts/leetcode-tree/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-05-09 10:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "LeetCode中关于二叉树的一些问题判断树是否对称leetcode 剑指Offer 28请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。例如，二叉树 [1,2,2,3,4,4,3] 是对称的。    1   / \\  2   2 / \\ / \\3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:    ...",
+    "content": "LeetCode中关于二叉树的一些问题判断树是否对称leetcode 剑指Offer 28请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。例如，二叉树 [1,2,2,3,4,4,3] 是对称的。    1   / \\  2   2 / \\ / \\3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:    1   / \\  2   2   \\   \\   3    3示例 1：输入：root = [1,2,2,3,4,4,3]输出：true示例 2：输入：root = [1,2,2,null,3,null,3]输出：false满足镜像对称的条件：对于镜像对称的一对节点L和R:L.val == R.valL.right.val == R.left.valL.left.val == R.right.valclass Solution {    public boolean isSymmetric(TreeNode root) {        if(root == null) return true;        return check(root.left, root.right);    }    public boolean check(TreeNode l, TreeNode r){        //检查l和r的值是否相等，递归判断判断l的左右孩子和r的右左孩子的值是否相等        if(l == null &amp;&amp; r == null) return true;        if(l == null || r == null || l.val != r.val) return false;        return check(l.right, r.left) &amp;&amp; check(l.left, r.right);    }}二叉树的镜像leetcode 剑指Offer 27请完成一个函数，输入一个二叉树，该函数输出它的镜像。例如输入：     4   /   \\  2     7 / \\   / \\1   3 6   9镜像输出：     4   /   \\  7     2 / \\   / \\9   6 3   1示例 1：输入：root = [4,2,7,1,3,6,9]输出：[4,7,2,9,6,3,1]在每一层交换他的左右孩子：class Solution {    public TreeNode mirrorTree(TreeNode root) {        if(root == null) return root;        //交换左右孩子        TreeNode left = mirrorTree(root.left);        root.left = mirrorTree(root.right);        root.right = left;        return root;    }}最近公共祖先leetcode 剑指Offer 68给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]示例 1:输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1输出: 3解释: 节点 5 和节点 1 的最近公共祖先是节点 3。示例 2:输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4输出: 5解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。考虑两种情况：(1)在root的左子树中可以找到左孩子，右子树中可以找到右孩子，则root为LCA(2)root为p或q，则root为LCAclass Solution {    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {        //前序位置，找到某一节点就返回        if(root == null) return root;        if(root == p || root == q) return root;        //没找到，找左右孩子中是否有节点        TreeNode left = lowestCommonAncestor(root.left, p, q);        TreeNode right = lowestCommonAncestor(root.right, p, q);        //p和q分别在左右节点，则root为LCA        if(left != null &amp;&amp; right != null) return root;        return left == null ? right : left;    }}"
+  },
+  
+  {
+    "title": "Recursion",
+    "url": "/posts/leetcode-recursion/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-27 10:12:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "原理思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，...",
+    "content": "原理思想：自己调用自己。将原问题分解为规模更小的子问题，并不断调用自己来解决这些子问题，当问题规模足够小，就直接解决而不再需要调用，此时就是找到了base case。函数执行过程：一系列栈帧的的压入和弹出。每次递归调用会压入一个新的栈帧，保存当前的状态，包括函数参数，局部变量及函数返回地址等信息。当递归调用结束时，栈帧会被弹出，根据返回地址返回到上一个调用点继续执行。最终所有栈帧都会被弹出，程序执行结束。栈帧保在JVM的栈区中。假如P调用Q，则Q的栈帧中的返回地址为调用Q的指令的下一条指令的地址。时间复杂度递归的时间复杂度 = 递归函数本身的时间复杂度 * 递归次数。框架递归调用之前的代码正序执行： 前序位置递归调用之后的代码倒序执行： 后序位置递归遍历数组//递归遍历数组public static void traverseArray(int[] arr, int i) {\tif(i == arr.length) return;\tSystem.out.print(\"bef:\" + arr[i] + \" \"); //正序遍历数组\ttraverseArray(arr, i + 1);\tSystem.out.print(\"end:\" + arr[i] + \" \"); //倒序遍历数组}递归遍历链表//递归遍历链表public static void traverseList(ListNode head) {\tif(head == null) return;\tSystem.out.print(\"bef:\" + head.val + \"  \"); //正序打印链表\ttraverseList(head.next);\tSystem.out.print(\"end:\" + head.val+ \" \"); //倒序打印链表}翻转链表//递归翻转链表public static ListNode reverseList(ListNode head) {\tif(head == null || head.next == null) return head;\tListNode newNode = reverseList(head.next);\thead.next.next = head;\thead.next = null;\treturn newNode;}递归遍历二叉树二叉树 可以看作 每一个位置都有两个选择的二叉链表， 多了一个中序位置//前序遍历二叉树public static void traverseTree(TreeNode root) {\tif(root == null) return;\tSystem.out.print(root.val+ \" \");//前序位置\ttraverseTree(root.left);    //中序位置\ttraverseTree(root.right);    //后序位置}翻转二叉树//翻转二叉树public static TreeNode mirrorTree(TreeNode root) {\tif(root == null) return root;\tTreeNode left = root.left;\troot.left = mirrorTree(root.right);\troot.right = mirrorTree(left);\treturn root;}"
+  },
+  
+  {
+    "title": "排序-TopK",
+    "url": "/posts/leetcode-topk/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-26 14:46:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "使用QuickSort和HeapSort解决TopK问题。QuickSort O(NlogN)定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&gt;= a[l]的元素，再从右向左扫描数组，找到第一个&lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。public static int partition(i...",
+    "content": "使用QuickSort和HeapSort解决TopK问题。QuickSort O(NlogN)定义快排的partition操作：使用a[l]作为切分元素，从左向右扫描数组，找到第一个&gt;= a[l]的元素，再从右向左扫描数组，找到第一个&lt; a[l]的元素，交换这两个元素，当两个指针相遇，将切分元素a[l]和a[j]交换位置。public static int partition(int[] nums, int l, int h) {\t//扫描数组，找到第一个&gt;=al的 和 第一个&lt; al的\tint i = l, j = h + 1;\tint flag = nums[l];\twhile(true) {\t\twhile(nums[++i] &lt; flag &amp;&amp; i &lt; h);\t\twhile(nums[--j] &gt;= flag &amp;&amp; j &gt; l);\t\tif(i &gt;= j) break;\t\tswap(nums, i, j);\t}\tswap(nums, l , j);\treturn j;}public static void swap(int[] nums, int i, int j) {\tint a = nums[i];\tnums[i] = nums[j];\tnums[j] = a;}根据partition操作，递归写快排。public static void quickSort(int[] nums, int l, int h) {\tif(l &gt;= h) return;\tint j = partition(nums, l, h);\tquickSort(nums, l, j -1);\tquickSort(nums, j + 1, h);}QuickSort找Top-K O(N)利用partition操作，根据返回的j的位置判断K元素在的位置，缩小下次partition的边界。在升序序列中，第K大元素的坐标为：N-K。public static int topK(int[] nums, int k) {    k = nums.length - k; \tint l = 0, h = nums.length - 1;\twhile(l &lt; h) {\t\tint j = partition(nums, l, h);\t\tif(j == k) {\t\t\tbreak;\t\t}else if(j &lt; k) {\t\t\tl = j + 1;\t\t}else {\t\t\th = j - 1;\t\t}\t}\treturn nums[k];\t}HeapSort O(NlogK)找第K大元素，维护一个大小为K的小顶堆，堆顶即为所求。public static int heapTopK(int[] nums, int k) {\tQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;();\tfor(int i: nums) {\t\tpq.add(i);        //维护堆的大小为k\t\tif(pq.size() &gt; k) {\t\t\tpq.poll();\t\t}\t}\treturn pq.peek();}"
+  },
+  
+  {
+    "title": "二分查找",
+    "url": "/posts/leetcode-bs/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-21 10:05:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "搜索一个数搜索区间为 [left, right)left = 0, right = nums.length;while(left &lt; right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        return mid;    }else if(nums[mid] &lt; targe...",
+    "content": "搜索一个数搜索区间为 [left, right)left = 0, right = nums.length;while(left &lt; right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        return mid;    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid;    }}搜索区间为 [left, right] √left = 0, right = nums.length - 1;while(left &lt;= right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        return mid;    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid - 1;    }}搜左侧边界left = 0, right = nums.length - 1;while(left &lt;= right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        right = mid - 1;//当搜到第一个答案后，继续收缩右边界    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid - 1;    }}//搜索区间[left, right], 结束条件为left = right + 1, 则left的范围[0, nums.length]；//若left == nums.length,越界;//否则结束循环时,left = mid, 指向区间的左边界, 因为nums[mid] == target，right会再次收缩。if(left ==  nums.length) return -1;//判断最左边界元素是不是target。return nums[left] == target ? left : -1;搜右侧边界left = 0, right = nums.length - 1;while(left &lt;= right){    int mid = (right - left) / 2 + left;    if(nums[mid] == target){        left = mid + 1;//当搜到第一个答案后，继续收缩左边界    }else if(nums[mid] &lt; target){        left = mid + 1;    }else{        right = mid - 1;    }}//搜索区间[left, right], 结束条件为left = right + 1；//若右边界一直收缩, left = 0, right = -1, 越界;if(right == -1) return -1;//否则结束循环时, mid = right, 指向区间的右边界, 因为nums[mid] == target，left会再次收缩left = right + 1。//判断最右边界元素是不是target。return nums[right] == target ? right : -1;总结统一搜索区间[left, right], 设置left = 0 , right = nums.length - 1搜索一个数：找到就返回搜索左侧边界：找到满足的继续收缩右边界搜索右侧边界：找到满足的继续收缩左边界查找元素的第一个和最后一个位置leetcode 34给你一个按照非递减顺序排列的整数数组 nums，和一个目标值 target。请你找出给定目标值在数组中的开始位置和结束位置。如果数组中不存在目标值 target，返回 [-1, -1]。你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。示例 1：输入：nums = [5,7,7,8,8,10], target = 8输出：[3,4]示例 2：输入：nums = [5,7,7,8,8,10], target = 6输出：[-1,-1]示例 3：输入：nums = [], target = 0输出：[-1,-1]搜索target的左右边界class Solution {    public int[] searchRange(int[] nums, int target) {        int[] res = new int[]{-1, -1};        if(nums == null || nums.length == 0) return res;        int left = 0, right = nums.length - 1;        //先寻找左边界        while(left &lt;= right){            int mid = (right - left) / 2 + left;            if(nums[mid] == target){                right = mid - 1;            }else if(nums[mid] &lt; target){                left = mid + 1;            }else{                right = mid - 1;            }        }        if(left == nums.length || nums[left] != target){            return res;        }        res[0] = left;        right = nums.length - 1;        //寻找右边界        while(left &lt;= right){            int mid = (right - left) / 2 + left;            if(nums[mid] == target){                left = mid + 1;            }else if(nums[mid] &lt; target){                left = mid + 1;            }else{                right = mid - 1;            }        }        res[1] = right;        return res;    }}"
+  },
+  
+  {
+    "title": "Java Reflection",
+    "url": "/posts/java-reflection/",
+    "categories": "Java Foundation",
+    "tags": "Java",
+    "date": "2023-04-20 00:40:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Java Reflection一、定义反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。在设计框架时会用到大量反射。框架 = 注解 + 反射 + 设计模式。通过反射，可以创造单例模式中类的多个对象。二、Class对象每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该...",
+    "content": "Java Reflection一、定义反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。在设计框架时会用到大量反射。框架 = 注解 + 反射 + 设计模式。通过反射，可以创造单例模式中类的多个对象。二、Class对象每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一个同名的.class文件，该文件保存这个Class对象。类加载相当于Class对象的加载，类在第一次使用时才动态的加载到JVM中。比如：加载到内存中的Person、String类，都作为Class的对象/实例。Class clazz1 = Person.class; //运行时类Class clazz2 = String.class;Class对象的三种获取方式：//1. 调用运行时类的静态属性Class clazz1 = Person.class; //首次使用，将Person类放到方法区，缓存起来。//2. 调用运行时类的对象的getClass()方法  Person p = new Person();//new的时候去方法区找，没有则加载，有的话直接调用方法区中类的构造方法。Class clazz2 = p.getClass();System.out.println(clazz1 == clazz2);//true//3. 调用Class的静态方法forName(String className) 根据参数确定加载哪个类（没有写死），能够更好的体现动态性。String className = \"Reflection.Person\"; //全类名Class clazz3 = Class.forName(className); //主动加载Person类，已经在内存，不会再次加载。System.out.println(clazz1 == clazz3); //true//clazz1 clazz2 clazz3 都指向堆空间中最初的唯一的运行时类。三、反射的实现方式Class 和 java.lang.reflect 一起对反射提供了支持。java.lang.reflect中包含了以下三个类：（1）Constructor：使用newInstance()创建新的对象；（2）Field：使用get()和set()读取和修改Field对象关联的字段；（3）Method：使用invoke()调用Method对象关联的方法。Class clazz = Person.class;//获取类的私有构造函数Constructor cons = clazz.getDeclaredConstructor(String.class, int.class);cons.setAccessible(true);Person p3 = (Person)cons.newInstance(\"Tom\",12);//私有属性Field nameField = clazz.getDeclaredField(\"name\");nameField.setAccessible(true);//反射时的调用，可以近似的看为属性调对象。nameField.set(p3, \"Bill\");System.out.print(nameField.get(p3));//私有方法Method getNameMethos = clazz.getDeclaredMethod(\"getName\");getNameMethos.setAccessible(true);String name = (String)getNameMethos.invoke(p3);System.out.print(name);四、反射优缺优：更灵活，帮助框架的开发缺：性能开销大，安全问题，内部暴露"
+  },
+  
+  {
+    "title": "DP-树形DP",
+    "url": "/posts/leetcode-dp-tree/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-18 18:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "树形DP数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.框架：void dfs(int v){    dp[v] = ...;    for(int u: G[v]){//遍历v的所有子节点        dfs(u); //确保子节点的值已经更新好        update(u, v);//用子节点的dp值对当前节点的dp值铏更新    }}子树大小给定一棵有N个结点的树，根...",
+    "content": "树形DP数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.框架：void dfs(int v){    dp[v] = ...;    for(int u: G[v]){//遍历v的所有子节点        dfs(u); //确保子节点的值已经更新好        update(u, v);//用子节点的dp值对当前节点的dp值铏更新    }}子树大小给定一棵有N个结点的树，根结点为结点1。对于i = 1 , 2 , … , N求以结点i为根的子树大小（即子树上结点的个数，包括根结点）。输入：第一行输入N接下来N-1行，输入两个整数u, v, 代表u的父亲结点编号为v。输出：N个数，用空格分隔，第i个数代表以i为根的子树的大小。使用**邻接表List[]**存储树形结构，从根节点开始dfs，先更新根的子树的大小，然后更新根的大小.public class TreeDP {    //建立邻接表存储数据    public static List&lt;Integer&gt;[] tree;    //建立dp数组    public static int dp[];    public static void main(String[] args) {        Scanner sc = new Scanner(System.in);        int n = sc.nextInt();        tree = new LinkedList[n];        dp = new int[n];        //初始化        for(int i = 0; i &lt; n; i++) {            tree[i] = new LinkedList&lt;&gt;();        }        //读入n条边        for(int i = 0; i &lt; n - 1; i++) {            int u = sc.nextInt() - 1;            int v = sc.nextInt() - 1;            tree[v].add(u);        }        dfs(0);        for(int i = 0; i &lt; n; i++) {            System.out.print(dp[i] + \" \");        }    }        public static void dfs(int v) {        dp[v] = 1;        for(int u: tree[v]) {            dfs(u);            dp[v] += dp[u];        }    }}没有Boss的舞会有N名职员，编号为1 … N，他们的关系就像一棵以老板为根的树，父节点就是子节点的直接上司。每个职员有一个快乐指数ri，   现在要召开一场舞会，使得没有职员和直接上司一起参会。主办方希望邀请一部分职员参会，使得所有参会职员的快乐指数总和最大，求这个最大值。设v为u的老板（父节点），v的选择和u的选择存在制约关系：若选v，则不能选u；若不选v，则u可选可不选。需要建立两个dp[]数组，分别保存选v的最优解和不选v的最优解。public class NoBoss {    static int[] r; //记录快乐值    static List&lt;Integer&gt;[] tree; ///邻接表    static int[] f; //选v的最优解    static int[] g; //不选v的最优解    public static void main(String[] args) {        Scanner sc = new Scanner(System.in);        int n = sc.nextInt();        r = new int[n];        f = new int[n];        g = new int[n];        tree = new LinkedList[n];        for(int i = 0; i &lt; n; i++) {            r[i] = sc.nextInt();            f[i] = r[i];            tree[i] = new LinkedList&lt;Integer&gt;();        }        //注意，需要找到根节点，没有上司的节点为根节点        int root = -1;        boolean[] notRoot = new boolean[n];        //u的父节点是v        for(int i = 0; i &lt; n - 1; i++) {            int u = sc.nextInt() - 1;            int v = sc.nextInt() - 1;            tree[v].add(u);            notRoot[u] = true;        }        for(int i = 0; i &lt; n; i++) {            if(notRoot[i] == false) {                root = i;                break;            }        }        dfs(root);            System.out.println(Math.max(f[root], g[root]));    }        static void dfs(int i) {        for(int u: tree[i]) {            dfs(u);            g[i] += Math.max(g[u], f[u]); //不选择i，u可选可不选            f[i] += g[u]; //选择i，不能选u         }    }}最多的食物华子的2023实习的机试题目。需要读懂题意。游戏的地图由N个方格组成，每个方格上至多2个传送门，通过传送门可将参与者传送至指定的其它方格。同时，每个方格上标注了三个数字:(1)第一个数字id:代表方格的编号，从0到N-1，每个方格各不相同(2)第二个数字parent-id:代表从编号为parent-id的方格可以通过传送门传送到当前方格(-1则表示没有任何方格可以通过传送门传送到此方格，这样的方格在地图中有且仅有一个); (3)第三个数字value: 取值在[-100，100]的整数值，正整数代表参与者得到相应取值单位的食物，负整数代表失去相应数值单位的食物(参与者可能存在临时持有食物为负数的情况)，0则代表无变化。此外，地图设计时保证了参与者不可能到达相同的方格两次，并且至少有一个方格的value是正整数。 游戏开始后，参与者任意选择一个方格作为出发点，当遇到下列情况之一退出游戏: (1)参与者当前所处的方格无传送门: (2) 参与者在任意方格上主动宣布退出游戏 请计算参与者退出游戏后，最多可以获得多少单位的食物。 对于每一个根节点，首先计算其子节点可以获取的最大食物，根节点+子节点的最大值。public class MostFood {    static List&lt;Integer&gt;[] ls;//邻接表    static int max = -101;    static int[] value;    public static void main(String[] args) {        Scanner sc = new Scanner(System.in);        int N = sc.nextInt();        value = new int[N];        ls = new LinkedList[N];        for(int i = 0; i &lt; N; i++) {            ls[i] = new LinkedList&lt;Integer&gt;();        }        boolean[] notRoot = new boolean[N];        for(int i = 0; i &lt; N; i++) {            int id = sc.nextInt();            int pid = sc.nextInt();            if(pid != -1) {                notRoot[id] = true;            ls[pid].add(id);            }\t            value[id] = sc.nextInt();        }        int root = 0;        for(int i = 0; i &lt; N; i++) {            if(notRoot[i] == false) {                root = i;                break;            }        }        dfs(root);        System.out.println(max);    }        static void dfs(int i) {        //将value i更新为到i时能获得的最多食物        int gain = 0;        for(int u: ls[i]) {            dfs(u);            gain = Math.max(gain, value[u]);        }        if(gain &gt; 0) {            value[i] += gain;        }        max = Math.max(max, value[i]);    }}"
+  },
+  
+  {
+    "title": "DP-背包问题",
+    "url": "/posts/leetcode-dp-bag/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-18 15:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "背包问题属于动态规划的一类问题，需要明确状态和选择。状态：背包的容量 和 可选择的物品；选择：装 和 不装01背包：每个物品只能装一次，选择装/不装。定义状态转移方程dp[i][w]：对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。int[][] dp = new int[N+1][M+1]//base casedp[0][...] = 0dp[...][0] =...",
+    "content": "背包问题属于动态规划的一类问题，需要明确状态和选择。状态：背包的容量 和 可选择的物品；选择：装 和 不装01背包：每个物品只能装一次，选择装/不装。定义状态转移方程dp[i][w]：对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。int[][] dp = new int[N+1][M+1]//base casedp[0][...] = 0dp[...][0] = 0//使用wt[i-1]表示第i个物品的重量 val[i-1]表示第i个物品的价值for i in [1...N]:    for w in [1...M]:        //考虑                 不装入     装入        dp[i][w] = Math.max(dp[i-1][w],  dp[i-1][w-wt[i-1]] + val[i-1])return dp[N][M]子集背包：每个物品只能装一次，将寻找子集问题转换为背包问题。leetcode 416给你一个 只包含正整数 的 非空 数组 nums 。请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。示例 1：输入：nums = [1,5,11,5]输出：true解释：数组可以分割成 [1, 5, 5] 和 [11] 。示例 2：输入：nums = [1,2,3,5]输出：false解释：数组不能分割成两个元素和相等的子集。本题等价于：每个物品重量为nums[i]，对于前n个物品，是否能找到一种装法，恰好将容量为sum/2的背包装满，从而可以套用背包问题的模板解答。定义dp数组：boolean[] dp[i][w]，含义为对于前i个物品，当前背包容量为w时，是否存在一种方法可以恰好将背包装满。则答案为dp[n][sum/2]。class Solution {    public boolean canPartition(int[] nums) {        int n = nums.length;        int sum = 0;        for(int i = 0; i &lt; n; i++){            sum += nums[i];        }        if(sum % 2 == 1) return false;        //前i个物品，容量为j的背包        boolean[][] dp = new boolean[n + 1][sum / 2 + 1];        for(int i = 0; i &lt; n + 1; i++){            dp[i][0] = true;;        }        for(int i = 1; i &lt; n + 1; i++){            for(int j = 1; j &lt; sum / 2 + 1; j++){                if(j - nums[i - 1] &gt;= 0){                    //考虑不装入和装入，注意在装入当前物品时，考虑的是i-1个商品是否能恰好装满                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];                 }else{                    dp[i][j] = dp[i - 1][j];                }            }        }        return dp[n][sum / 2];    }}完全背包：物品数量无限。对状态转移方程做修改leetcode 518给你一个整数数组 coins 表示不同面额的硬币，另给一个整数 amount 表示总金额。请你计算并返回可以凑成总金额的硬币组合数。如果任何硬币组合都无法凑出总金额，返回 0 。假设每一种面额的硬币有无限个。 题目数据保证结果符合 32 位带符号整数。示例 1：输入：amount = 5, coins = [1, 2, 5]输出：4解释：有四种方式可以凑成总金额：5=55=2+2+15=2+1+1+15=1+1+1+1+1示例 2：输入：amount = 3, coins = [2]输出：0解释：只用面额 2 的硬币不能凑成总金额 3 。示例 3：输入：amount = 10, coins = [10] 输出：1定义dp[i][w]数组，对于前i个物品，凑出价值的w的方法有多少种。class Solution {    public int change(int amount, int[] coins) {        int n = coins.length;        //对于前i个商品，背包容量为amount时，可以凑出的方法有几种        int[][] dp = new int[n + 1][amount + 1];        for(int i = 0; i &lt; n + 1; i++){            dp[i][0] = 1;//容量为0，不需要装硬币，便可以凑出结果。        }        for(int i = 1; i &lt; n + 1; i++){            for(int j = 1; j &lt; amount + 1; j++){                if(j - coins[i - 1] &gt;= 0){                    //因为物品可以重复使用，注意在选择装入的请款下这里考虑的仍然是前i个物品                    dp[i][j] = dp[i - 1][j] + dp[i][j - coins[i -1]];                }else{                    dp[i][j] = dp[i - 1][j];                }            }        }        return dp[n][amount];    }}"
+  },
+  
+  {
+    "title": "DP",
+    "url": "/posts/leetcode-dp/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-14 20:40:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "引言跟着labuladong刷动态规划题的记录。题型：求最值。核心：穷举。三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间...",
+    "content": "引言跟着labuladong刷动态规划题的记录。题型：求最值。核心：穷举。三要素：重叠子问题、最优子结构、状态转移方程重叠子问题计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;为了避免重复计算，引入备忘录，存储子问题的答案，时间复杂度降低为$O(n)$。备忘录:存储子问题答案的数组。递归的时间复杂度 = 递归函数本身的时间复杂度 * 递归调用的次数。无备忘录: $O(1) * O(2 ^ n)$有备忘录: $O(1) * O(n)$空间换时间。状态转移方程受备忘录启发，引入DP table，存储子问题的答案，完成自底向上的推算，即列出状态转移方程。如Fibonacci：dp[n] = dp[n - 1] + dp[n - 2], n &gt; 1。更进一步，由于n的状态只跟n-1和n-2相关，只需要存储前两个状态，可以使用2个变量滚动更新。思路：base case -&gt; 状态 -&gt; 选择 -&gt; 定义dp数组最优子结构例如，想考出最高的成绩，则子问题为每门课程的成绩最高，因为每门课程的成绩互相独立，满足最优子结构。零钱兑换leetcode 322给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。计算并返回可以凑成总金额所需的 最少的硬币个数 。如果没有任何一种硬币组合能组成总金额，返回 -1 。你可以认为每种硬币的数量是无限的。示例 1：输入：coins = [1, 2, 5], amount = 11输出：3 解释：11 = 5 + 5 + 1示例 2：输入：coins = [2], amount = 3输出：-1示例 3：输入：coins = [1], amount = 0输出：0dp[11] = Math.min(dp[10], dp[9], dp[6]) + 1递归-自上而下class Solution {    public int coinChange(int[] coins, int amount) {        int[] mem = new int[amount + 1];        Arrays.fill(mem, - 100);        mem[0] = 0;        return dp(coins, amount, mem);    }        //凑amount零钱需要的最小coin数量    public int dp(int[] coins, int amount, int[] mem){        //base case        if(amount == 0) return 0;        if(amount &lt; 0) return -1;        if(mem[amount] != - 100) return mem[amount];        //caculate the best ans        int res = Integer.MAX_VALUE;        for(int coin: coins){            int sub = dp(coins, amount - coin, mem);            if(sub == -1) continue;            res = Math.min(res, sub + 1);         }        res = res == Integer.MAX_VALUE ? -1 : res;        mem[amount] = res;        return res;         }}迭代-自底向上class Solution {    public int coinChange(int[] coins, int amount) {        //凑成amount需要的最少硬币数量        //初始化一个最大值        int[] dp = new int[amount + 1];        Arrays.fill(dp, amount + 1);        dp[0] = 0;        for(int i = 1; i &lt; amount + 1; i++){            for(int coin: coins){                if(i - coin &lt; 0)continue;                dp[i] = Math.min(dp[i], dp[i - coin] + 1);            }        }        return dp[amount] == amount + 1 ? -1 : dp[amount];    }}最长公共子序列leetcode 1143给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。例如，\"ace\" 是 \"abcde\" 的子序列，但 \"aec\" 不是 \"abcde\" 的子序列。两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。示例 1：输入：text1 = \"abcde\", text2 = \"ace\" 输出：3  解释：最长公共子序列是 \"ace\" ，它的长度为 3 。示例 2：输入：text1 = \"abc\", text2 = \"abc\"输出：3解释：最长公共子序列是 \"abc\" ，它的长度为 3 。示例 3：输入：text1 = \"abc\", text2 = \"def\"输出：0解释：两个字符串没有公共子序列，返回 0 。关键在于寻找状态转移方程class Solution {    public int longestCommonSubsequence(String text1, String text2) {        int m = text1.length();        int n = text2.length();        if(m == 0 || n == 0) return 0;        int[][] dp = new int[m + 1][n + 1];                for(int i = 1; i &lt; m + 1; i++){            for(int j = 1; j &lt; n + 1; j++){                if(text1.charAt(i - 1) == text2.charAt(j - 1)){                    dp[i][j] = dp[i-1][j-1] + 1;                }else{                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);                }            }        }        return dp[m][n];    }}"
+  },
+  
+  {
+    "title": "Build my blog with jekyll",
+    "url": "/posts/dev-blog/",
+    "categories": "Develop",
+    "tags": "Tools",
+    "date": "2023-04-13 15:36:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpySteps（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/De...",
+    "content": "​github搭建博客的记录本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。我选的主题是https://github.com/cotes2020/jekyll-theme-chirpySteps（如果没有nodejs先安装nodejs）部署教程参考：https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Development1.安装ruby安装完成后会提示安装开发工具包（一定要安装）下载安装参考：Jekyll + Github Pages 搭建个人免费博客2.安装jekyll框架gem install jekyll3.克隆代码，解压，编译js文件npm -inpm run build‘NODE_ENV’不是内部或外部命令，也不是可运行的程序或批处理文件。build报了上面的错，解决办法：安装cross-env:npm install cross-env --save-dev修改package.json文件，在运行命令加前缀：在NODE_ENV=xxxxxxx前面添加cross-env。然后重新Build，会再assets下生成xxx.min.js文件。4.设置jekyll安装依赖bundle在本地编辑代码，_posts目录下创建markdown格式的博客，在博客项目目录下，运行jekyll server在本地查看编译效果5.将_sites文件下的内容（编译生成的静态文件）上传到github上username.githubio.io项目下~​"
+  },
+  
+  {
+    "title": "回溯-排列组合问题",
+    "url": "/posts/leetcode-backtrack/",
+    "categories": "LeetCode",
+    "tags": "LeetCode",
+    "date": "2023-04-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "引言跟着labuladong刷回溯题的记录。使用【回溯法】解决【子集、排列】问题：分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。回溯的框架回溯属于暴力搜索，两个要点：路径 + 选择列表。res = []def backtrack(路径，选择列表):\tif 满足结束条件：\t\tres.add(路径)\t\treturn\t\tfor 选择 in 选择列表...",
+    "content": "引言跟着labuladong刷回溯题的记录。使用【回溯法】解决【子集、排列】问题：分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。回溯的框架回溯属于暴力搜索，两个要点：路径 + 选择列表。res = []def backtrack(路径，选择列表):\tif 满足结束条件：\t\tres.add(路径)\t\treturn\t\tfor 选择 in 选择列表：\t\t做选择\t\tbacktrack(路径，选择列表)\t\t撤销选择子集 无重leetcode 78给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。示例 1：输入：nums = [1,2,3]输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]示例 2：输入：nums = [0]输出：[[],[0]]在回溯时传递i：class Solution {    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();    LinkedList&lt;Integer&gt; path = new LinkedList&lt;Integer&gt;();    public List&lt;List&lt;Integer&gt;&gt; subsets(int[] nums) {        backtrac(nums, 0);        return res;    }    public void backtrac(int[] nums, int i){    \t//每个节点的值都是一个结果        res.add(new LinkedList&lt;Integer&gt;(path));        int n = nums.length;        for(int j = i; j &lt; n; j++){            path.addLast(nums[j]);            backtrac(nums, j + 1);            path.removeLast();        }    }}子集 有重leetcode90给你一个整数数组 nums ，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。解集 不能 包含重复的子集。返回的解集中，子集可以按 任意顺序 排列。示例 1：输入：nums = [1,2,2]输出：[[],[1],[1,2],[1,2,2],[2],[2,2]]示例 2：输入：nums = [0]输出：[[],[0]]先对元素排序，使相同的元素相邻，搜索时若当前元素和前一元素相同，剪枝当前元素class Solution {    LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();    public List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(int[] nums) {        Arrays.sort(nums);        backtrack(nums, 0);        return res;    }    public void backtrack(int[] nums, int i){        res.add(new LinkedList(path));        for(int j = i; j &lt; nums.length; j++){            if(j &gt; i &amp;&amp; nums[j] == nums[j - 1]){//不是j&gt;0，j&gt;0就剪多了，j&gt;0会导致j=i时也被剪                continue;            }            path.add(nums[j]);            backtrack(nums,  j + 1);            path.removeLast();        }    }}排列 无重leetcode 46给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。示例 1：输入：nums = [1,2,3]输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]示例 2：输入：nums = [0,1]输出：[[0,1],[1,0]]排除使用过的元素，没有重复元素，只需要排除当前path中已经包含的元素class Solution {    LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();    public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums) {        backtrack(nums);        return res;    }    public void backtrack(int[] nums){        if(path.size() == nums.length){            res.add(new LinkedList&lt;&gt;(path));            return;        }        for(int i = 0; i &lt; nums.length; i++){            //排序已经包含的元素            if(path.contains(nums[i])){                continue;             }            //做选择            path.add(nums[i]);            backtrack(nums);            //撤销选择            path.removeLast();        }    }}排列 有重leetcode 47​给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。示例 1：输入：nums = [1,1,2]输出：[[1,1,2], [1,2,1], [2,1,1]]示例 2：输入：nums = [1,2,3]输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]\t\t先对元素排序，使相同元素相邻。因为存在相同元素，直接全排列会搜索到[1, 1’, 2]和[1’, 1, 2]的相同结果，去重的方式为：保证相同元素在排列结果中的相对顺序。也就是：当我们搜到第1’时，必须保证1已经使用过，因此若前一相同元素未被使用，剪枝。class Solution {    LinkedList&lt;Integer&gt; path = new LinkedList&lt;&gt;();    List&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();    boolean[] used;    public List&lt;List&lt;Integer&gt;&gt; permuteUnique(int[] nums) {         Arrays.sort(nums);         int n = nums.length;         used = new boolean[n];         backtrack(nums);         return res;    }    public void backtrack(int[] nums){        int n = nums.length;        if(path.size() == n){            res.add(new LinkedList&lt;&gt;(path));            return;        }        for(int j = 0; j &lt; n; j++){            if(used[j]){                continue;            }            if(j &gt; 0 &amp;&amp; nums[j] == nums[j - 1] &amp;&amp; !used[j - 1]){                continue;            }            path.add(nums[j]);            used[j] = true;            backtrack(nums);            path.removeLast();            used[j] = false;        }    }}总结子集只能选择当前位置后面的元素，通过在回溯时传递搜索的起始索引实现。若元素有重，先排序，搜索到重复元素（当前元素和前一元素相同）时，剪枝。排列不能选择用过的数字，通过判断path中是否存在或者使用used数组记录。若元素有重，先排序，需要保证相同元素在结果中的相对顺序是一致的，因此：搜索到重复元素（当前元素和前一元素相同）且 前一元素未被使用 时，剪枝。"
+  },
+  
+  {
+    "title": "Java常用代码",
+    "url": "/posts/java-codes/",
+    "categories": "Java Foundation",
+    "tags": "Java",
+    "date": "2023-04-13 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "在线文档https://www.matools.com/api/java8从键盘输入Scanner sc =new Scanner(System.in);Integer a=sc.nextInt();int、Integer、Doubleint为基本数据类型，Integer为int对应的包装类。在范型中使用IntegerHashMap&lt;String,Integer&gt; mymap=n...",
+    "content": "在线文档https://www.matools.com/api/java8从键盘输入Scanner sc =new Scanner(System.in);Integer a=sc.nextInt();int、Integer、Doubleint为基本数据类型，Integer为int对应的包装类。在范型中使用IntegerHashMap&lt;String,Integer&gt; mymap=new HashMap&lt;String,Integer&gt;(); 判断两个int是否相等或Integer与int是否相等，用== 判断两个Integer是否相等用.equals()System.out.println(m.peekFirst()==q.peek()); //not always trueSystem.out.println(m.peekFirst().equals(q.peek()));//Trueint ans=q.peek();System.out.println(m.peekFirst()==ans);//True//int转doubleDouble v=Double.valueOf(intvalue);//double转IntInteger a=(int)doublevalue; //强制转换默认舍弃小数点后的数 Integer b=(int)Math.round(doublevalule);//Math.round四舍五入                //按格式输出String.format(\"%5d\",Integer.valueof(\"3\"));String.format(\"%.2f\",Double.valueof(\"3\"));//四舍五入并保留小数BigDecimal bd=new BigDecimal(\"133.227878\");bd=bd.setScale(5,RoundingMode.HALF_UP);//RoundingMode.UP Roundingode.DOWN最大值最小值//Float Double Byte Character Short Integer LongImax = Integer.MAX_VALUE;Imin = Integer.MIN_VALUE;Math.max((int)a,(int)b);Math.min((int)a,(int)b);排序Arrays.sort()对数组排序，重载了四类方法● sort(T[] a)：对指定T型数组按数字升序排序。● sort(T[] a,int formIndex, int toIndex)：对指定T型数组的指定范围按数字升序排序。● sort(T[] a, Comparator&lt;? supre T&gt; c): 根据指定比较器产生的顺序对指定对象数组进行排序。● sort(T[] a, int formIndex, int toIndex, Comparator&lt;? supre T&gt; c): 根据指定比较器产生的顺序对指定对象数组的指定对象数组进行排序。Comparator的compare方法默认从小到大（o1的优先级高于o2）：若参数o1&lt;参数o2,返回负值，o1=o2返回0，o1&gt;o2返回正值。//Arrays.sort只支持对包装类进行自定义排序Integer[] a=new Integer[n];//比较器写法//降序排序需要自定义comparatorComparator cmp = new MyComparator();Arrays.sort(a, cmp);class MyComparator implements Comparator&lt;Integer&gt; {    //如果o1小于o2，我们就返回正值，如果o1大于o2我们就返回负值，    //这样颠倒一下，就可以实现反向排序了    @Override    public int compare(Integer o1, Integer o2) {        return o2-o1;    }}//lamda写法Arrays.sort(a, (n1,n2)-&gt;{    return n2 - n1;}); Collections.sort()对List&lt;T&gt;排序 ● sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c):根据指定比较器产生的顺序对指定List进行排序。字符串String转int/longint a = Integer.parseInt(string);long la = Long.parseLong(string); # Int转StringString s = String.valueOf(a);String s = a + \"\";//int转不同进制的Stringint i = 2023;String s = Integer.toBinaryString(i);String s = Integer.toOctalString(i);String s = Integer.toString(i);String s = Integer.toHexString(i); ## StringString s = \"asdefgasdefg\";for(int i = 0; i &lt; s.length(); i++){    char c = s.charAt(i);}s.indexOf('s') //retrun 1s.indexof('s',2) //return 7s.lastIndexOf('s') //return 7s.lastIndexOf('s',6)//return 1string[] ss = s.split(String a);//以字符串a分割字符串String s = s.substring((int)start,(int)end)//[start,end)//String与char数组的转换char[] cs = s.toCharArray();String s = new String(cs);String s = s.toLowerCase();String s = s.toUpperCase();String s = s.trim(); //去掉字符串两端多余的空格String s = String.valueOf(object);boolean equal=s1.equals(s2);//string左补0String a=String.format(\"%6d\",Integer.valueof(\"123\"))//输出000123//字典顺序比较两个Stringint res = a.compareTo(b);//a&lt;b,res&lt;0;a&gt;b,res&gt;0 StringBuilder &amp; StringBuffer速度：StringBuilder &gt; StringBuffer &gt; String    线程不安全     线程安全   常量StringBuilder sb = new StringBuilder(\"String\");sb.append(\"\");sb.reverse();sb.delete((int)start,(int)end); //[start,end)sb.deleteCharAt(int index);sb.insert((int)offset,\"String\");sb.toString();sb.setCharAt((int)index,(char)c);//翻转字符串StringBuffer sb = new StringBuffer(\"TestString\");sb.reverse();System.out.println(sb.toString()); ## 字符串组String[] a = new String[100];Arrays.sort(a);//与list转换  List&lt;Integer&gt; 和 int[] 因类型不同不可直接转换List&lt;String&gt; list = Arrays.asList(a);String[] b = (String[])list.toArray(new String[size]);//复制String[] c = Arrays.copyOfRange(String[] original,(int)start,(int)to)//[start,to)//填充Arrays.fill(a,\"fill\");JDK1.8集合框架Collection接口（一维集合）Collection接口是Set,List,Queue接口的父接口//Collectionadd(Object o);addAll(Collection c);clear();contains(Object o);remove(Object o);size();toArray();Collections.sort(Collection c);Collections.reverse(Collection c); 一维集合 set list queue//Set 不允许重复HashSet&lt;Object&gt; set = new HashSet&lt;&gt;();set.add(Object o);set.contains(Object o);set.remove(Object o);//List  有序集合，具有和索引有关的操作List&lt;Object&gt; list = new ArrayList&lt;&gt;();list.add((int)index,Object o);list.get((int)index);list.remove((int)index);list.indexOf(Object o);list.subList(int start,int end); [start,end);//list转arraylist1.stream().mapToInt(Integer::valueOf).toArray();//遍历1for(Integer t:res) {\tSystem.out.println(t);}//遍历2Iterator it=res.iterator();while(it.hasNext()){\tSystem.out.println(it.next());}                                  //Stack(LIFO)Stack&lt;Object&gt; s = new Stack&lt;&gt;();s.pop();//返回Objects.peek();//返回Objects.push(Object o);//返回Object                                  //Queue(FIFO)Queue&lt;Object&gt; q = new LinkedList&lt;&gt;();q.offer(Object o);q.peek();q.poll(); ## List转int数组//Arraylist转int[]//转为stream--intStream-调用toArray转为int[]List&lt;Integer&gt; a = new ArrayList&lt;Integer&gt;();int[] res_a = a.stream().mapToInt(Integer::valueOf).toArray();//ArrayList转int[][]List&lt;int[]&gt; b = new ArrayList&lt;int[]&gt;();int[][] res_b = b.toArray(new int[0][]);//使用IntStream生成array //InStream接口中的静态方法：通过接口名调用。range 开区间 rangeclosed闭区间int[] res = IntStream.rangeClosed(0, 5).toArray();//[0,1,2,3,4,5]List组//长度为n的数组，每个元素是一个listList&lt;Integer&gt;[] a = new ArrayList[n];for(int i = 0; i &lt; n; i++) {    a[i] = new ArrayList&lt;Integer&gt;();}# Map接口（二维集合）HashTable，此类实现一个哈希表，该哈希表将键映射到相应的值。任何非 null 对象都可以用作键或值。HashMap,基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）LinkedHashMap，Map 接口的哈希表和链接列表实现，具有可预知的迭代顺序，为插入顺序。TreeMap，基于红黑树，该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。Map&lt;String,String&gt; map = new HashMap&lt;&gt;();map.put(\"key\",\"value\");map.getOrDefault(\"key\",\"default\");//if(map.containsKey(\"key\")) return \"value\" else return \"default\"map.get(\"key\"); //return \"value\";map.containsKey(\"key\");for(String s : map.keySet()){    map.get(s);//return value;}for(Map.Entry&lt;String,String&gt; entry : map.entrySet()){    entry.getKey();    entry.getValue();}求余先忽略符号计算，最后判断符号（异号为－，同号为＋）位运算异或^if((n&amp;1)==1) ==的优先级高于&amp;，因此必须加括号位运算实现加法：异或保留 与进位，与为空时就返回移位运算符System.out.println(8 &lt;&lt; 2); //32//有符号右移，高位正数补0，负数补1//-1(11111111 11111111 11111111 11111111) 右移1位(01111111 11111111 11111111 11111111)//的结果是-1(11111111 11111111 11111111 11111111)System.out.println(-1 &gt;&gt; 1);// -1//无符号右移，高位补0//-1(11111111 11111111 11111111 11111111) 右移1位(01111111 11111111 11111111 11111111)//的结果是2147483647(Integer.MAX_VALUE)(01111111 11111111 11111111 11111111)System.out.println(-1 &gt;&gt;&gt; 1);大数（大于Double）运算import java.math.BigDecimal;public class test {    public static void main(String[] args) {    \tBigDecimal mybign=new BigDecimal(10);    \tBigDecimal res_pow=mybign.pow(10);    \tBigDecimal res_mul=mybign.multiply(new BigDecimal(10));    \tBigDecimal res_dev=mybign.divide(new BigDecimal(10));    \tBigDecimal res_rem=mybign.divideAndRemainder(new BigDecimal(10))[1];    \tSystem.out.println(res_pow.doubleValue()+\" \"+res_mul.intValue());    \tSystem.out.println(res_dev.intValue()+\" \"+res_rem.intValue());\t}} ## 进制转换import java.math.BigInteger;BigInteger a=new BigInteger(s,16);String b=a.toString(8);"
+  },
+  
+  {
+    "title": "WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装",
+    "url": "/posts/dev-wsl/",
+    "categories": "Develop",
+    "tags": "develop",
+    "date": "2023-03-15 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "方式一 vmware安装安装vmware,下载ubuntu的iso文件ubuntu-releases安装包下载_开源镜像站-阿里云i386是32位 amd64是64位方式二 wsl安装1. 在启动或关闭Windows功能中，打开以下两项，重启 2. powershell以管理员身份打开在mic store安装分发版也可查看已经安装的分发版打开Ubuntu报错：WslRegisterDistr...",
+    "content": "方式一 vmware安装安装vmware,下载ubuntu的iso文件ubuntu-releases安装包下载_开源镜像站-阿里云i386是32位 amd64是64位方式二 wsl安装1. 在启动或关闭Windows功能中，打开以下两项，重启 2. powershell以管理员身份打开在mic store安装分发版也可查看已经安装的分发版打开Ubuntu报错：WslRegisterDistribution failed with error: 0x800701bc原因是：wsl1升级到wsl2之后，内核没有升级。解决方法：  下载最新的wsl安装包，  安装包下载后，直接运行安装。 下载地址：https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi搜索Ubuntu或者Debian即可打开~WSL下的mysql安装sudo apt-get install mysql-server安装后默认创建root用户，没有密码，登录：mysql -u root报错：ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/var/run/mysqld/mysqld.sock’ (2)查看sql状态service mysql status重启sqlservice mysql restart不知道为什么这里重启一下就好了。。。。登录mysql -u rootWSL下的redis安装安装redissudo apt-get updatesudo apt-get install redis-server查看redis版本redis-server -v查看redis状态在linux系统上使用：sudo systemctl status redis-server wsl没有systemctl模块，报错：System has not been booted with systemd as init system (PID 1). Can’t operate.Failed to connect to bus: Host is down使用：sudo service redis-server status启动redis服务sudo service redis-server start进入redis环境redis-cli查看端口占用sudo lsof -i:xxxx查看本机ipsudo apt install net-tools //没有的话安装ifconfiginet:本机ip  netmask:网络掩码  broadcast:广播地址  ether:物理地址查看redis进程ps -aux|grep redis查看redis连接信息redis-cliinfo //查看信息info Clients //查看用户信息wsl以自定义的用户和密码登录，若需启用root权限，先设置root密码sudo passwd root切换root权限su配置redis远程访问查看redis目录在哪whereis redis进入redis目录 修改redis.confvim redis.conf找到bind 127.0.0.1 ::1，把他注释掉bind指的是只有指定的网段才能远程访问redis，因此注释掉同时找到preotected-mode这一行，将yes改为no保存文件，重启redisservice redis-server restart配置防火墙，允许网络流量通过TCP端口6379sudo ufw allow proto tcp from xxx.xxx.x.xxx to any port 6379使用redis-cli从远程机器上ping redis服务器redis-cli -h xxx.xx.xxx.xxx ping收到一个PONG即设置完成~Wsl安装RabbitMQ参考官网文档的cloudsmith方法和CSDN教程一路丝滑~~"
+  },
+  
+  {
+    "title": "跑Swin-Transformer-Object-Detection过程中遇到的坑及解决",
+    "url": "/posts/dl-swin/",
+    "categories": "Deep Learning",
+    "tags": "Python",
+    "date": "2021-12-26 14:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection...",
+    "content": "代码地址：GitHub - SwinTransformer/Swin-Transformer-Object-Detection: This is an official implementation for “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows” on Object Detection and Instance Segmentation.BUG1:安装mmcv报了undefined symbol的错，大概如下undefined symbol: _ZN3c105ErrorC1ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE根据mmcv文档Frequently Asked Questions — MMDetection 2.19.1 documentation但查看了pytorch版本和gcc版本都是没有问题的。但基本可以确定是版本问题。Solve:根据所用的cuda和pytorch版本到https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html查看和python版本也相匹配的mmcv版本，用pip安装pip install https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/mmcv_full-1.3.9-cp36-cp36m-manylinux1_x86_64.whl解决！BUG2:AssertionError: The `num_classes` (80) in FCNMaskHead of MMDataParallel does not matches the length of `CLASSES` 8) in..FCNMaskHead检测头的类别设置不对Solve:在configs/swin/下用到的配置文件config.py中修改类别为8.BUG3:AssertionError: Default process group is not initialized非分布式的代码用了分布式的设置解决：参考github的issuesCheck your config file and replace all “SyncBN” entries to “BN”, that should help.BUG4:使用cityscapes数据集训练时，在mmdet下的文件这一行seg_map=img_info[‘segm_file’])报了keyrrror的错，就是说img_info中没有segm_file这个keySolve:数据集的问题，使用/tools/dataset_converters/cityscapes.py代码将cityscapes转换为coco格式。BUG5:mmdet/core/mask/mask_target.py的文件里报了typeerror的错，TypeError: 'NoneType' object is not iterable in Python似乎是传入的mask是NoneTypeSolve:模型用的是cascade mask rcnn，但configs/_base_/datasets/用的是cityscapes_detection的配置文件，detection设置mask为false，就是没有给模型传入mask，修改为cityscapes_instance的配置文件，解决！大概就记得这么多，就是说，没有GITHUB和GOOGLE解决不了的BUG！"
+  }
+  
+]
+
