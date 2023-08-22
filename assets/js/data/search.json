@@ -14,7 +14,7 @@
 
     
     "snippet": "领取驱动设计在传统的mvc架构上做出改进。分为：      Adapater – VOValue Object展示用的数据，多为JSON对象 (yaml生成、resources定义)        Application – DTOData transfer object        Domain – DODomain Object (业务对象)        Infrastructure...",
-    "content": "领取驱动设计在传统的mvc架构上做出改进。分为：      Adapater – VOValue Object展示用的数据，多为JSON对象 (yaml生成、resources定义)        Application – DTOData transfer object        Domain – DODomain Object (业务对象)        Infrastructure – POPersistant Object （持久层对象）  DTO和DO可以共用模型，放置在Domain层。VO转DTO: 在Adapter层。DO,PO转换：接口定义在Domain层，实现在Infrastructure层。Bugs  Calendar对象初始化时默认的DATE为当前日期，在月末执行代码，并执行月份自增后，可能会导致下个月没有该日期而月份再次+1。因此需要读DATE指定值。"
+    "content": "领取驱动设计在传统的mvc架构上做出改进。分为：      Adapater – VOValue Object展示用的数据，多为JSON对象 (yaml生成、resources定义)        Application – DTOData transfer object        Domain – DODomain Object (业务对象)        Infrastructure – POPersistant Object （持久层对象）  DTO和DO可以共用模型，放置在Domain层。VO转DTO: 在Adapter层。DO,PO转换：接口定义在Domain层，实现在Infrastructure层。Bugs      Calendar对象初始化时默认的DATE为当前日期，在月末执行代码，并执行月份自增后，可能会导致下个月没有该日期而月份再次+1。因此需要读DATE指定值。        一些代码规范        命名可读，注释可读，数据库存储的String可读        函数返回时，默认返回空值，避免外层判空；判空使用Optional更优雅        多个相似的函数，可以抽泛型，例如：    枚举类都继承自Enum，如果参数都是枚举，可以抽取为  &lt;T extends Enum&gt; String convert(List enums){      return enums.stream().map(item -&gt; item.name()).collect(Collectors.joining(SEPARATOR));  }    .stream()把集合转换为流，如list.stream()  Stream.of()将任意参数或数组转为流，如Stream.of(1,2,3)        sql建表时，指定字段是否可为空，修改时需考虑兼容性；模糊匹配用INSTR()        注释相关：@AllArgsConstructor  "
   },
   
   {
