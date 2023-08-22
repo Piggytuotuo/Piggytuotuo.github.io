@@ -570,6 +570,41 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -651,7 +686,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="42 words">
+  title="272 words">
   <em>1 min</em> read</span>
 
     </div>
@@ -665,19 +700,53 @@
 
 <h2 id="缓存"><span class="mr-2">缓存</span><a href="#缓存" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>穿透、击穿、雪崩</p>
+<p>穿透：访问一个不存在的Key  -  布隆过滤器。</p>
 
-<p>数据过期、淘汰策略</p>
+<div class="table-wrapper"><table>
+  <tbody>
+    <tr>
+      <td>击穿：热点数据过期 - 设置逻辑过期</td>
+      <td>互斥锁。</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>雪崩：大量热点数据同时过期  - 均匀设置过期时间。</p>
+
+<p>Redis服务器宕机 - Redis集群。</p>
+
+<h2 id="数据过期策略"><span class="mr-2">数据过期策略</span><a href="#数据过期策略" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>惰性删除 + 定期删除</p>
+
+<h2 id="数据淘汰策略"><span class="mr-2">数据淘汰策略</span><a href="#数据淘汰策略" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>分8种，结合业务选择。默认为noeviction，内存不足报错。</p>
+
+<p>LRU：最近最少使用。</p>
+
+<p>LFU：最少频率使用。</p>
 
 <h2 id="分布式锁"><span class="mr-2">分布式锁</span><a href="#分布式锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="计数器"><span class="mr-2">计数器</span><a href="#计数器" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>synchronized锁只对单个JVM有效，因此集群情况下需要分布式锁。</p>
 
-<h2 id="保存token"><span class="mr-2">保存token</span><a href="#保存token" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h4 id="获取锁"><span class="mr-2">获取锁</span><a href="#获取锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>消息队列</p>
+<p>SET lock_key unique_value NX EX 100
+lock_key： key键</p>
 
-<p>延迟队列</p>
+<p>unique_value：客户端表示，区分不同客户端的锁操作</p>
+
+<p>NX：lock_key不存在时才操作</p>
+
+<p>EX：过期时间，避免因客户端异常无法释放锁</p>
+
+<h4 id="释放锁"><span class="mr-2">释放锁</span><a href="#释放锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>DEL key (释放锁需要先判断unique_value是否为加锁客户端)</p>
+
+<p>可见，解锁有两个操作，需要结束Lua脚本保证原子性。</p>
 
 </div>
 

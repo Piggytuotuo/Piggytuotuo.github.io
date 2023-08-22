@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-08-22T21:47:12+08:00</updated>
+  <updated>2023-08-22T22:11:32+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -116,20 +116,47 @@ Bugs
 
 缓存
 
-穿透、击穿、雪崩
+穿透：访问一个不存在的Key  -  布隆过滤器。
 
-数据过期、淘汰策略
+
+  
+    
+      击穿：热点数据过期 - 设置逻辑过期
+      互斥锁。
+    
+  
+
+
+雪崩：大量热点数据同时过期  - 均匀设置过期时间。
+
+Redis服务器宕机 - Redis集群。
+
+数据过期策略
+
+惰性删除 + 定期删除
+
+数据淘汰策略
+
+分8种，结合业务选择。默认为noeviction，内存不足报错。
+
+LRU：最近最少使用。
+
+LFU：最少频率使用。
 
 分布式锁
 
-计数器
+synchronized锁只对单个JVM有效，因此集群情况下需要分布式锁。
 
-保存token
+获取锁
 
-消息队列
+SET lock_key unique_value NX EX 100
+lock_key： key键
 
-延迟队列
+unique_value：客户端表示，区分不同客户端的锁操作
 
+NX：lock_key不存在时才操作
+
+EX：过期时...
     </summary>
   
 
