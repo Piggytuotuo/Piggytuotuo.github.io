@@ -358,23 +358,6 @@
   },
   
   {
-    "title": "Git",
-    "url": "/posts/dev-git/",
-    "categories": "Develop",
-    "tags": "Tools",
-    "date": "2023-05-13 14:44:00 +0800",
-    
-
-
-
-
-
-    
-    "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
-    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main冲突记录本地和远程修改了同一个文件的代码，pull远程分支时出现文件冲突：根据提示, 解决办法为：git stash  //将本地修改存入栈中git pull origin master //拉取远程代码git stash pop //将存储在栈中的修改放出但我执行完pop后，再次报错了：意思是，你修改了一些文件（可能是远程更新的），但这些文件还没有加入暂存区，因此不能提交，所以：git add . //将所有文件加入暂存区git commit -m afterstash //提交暂存区的文件"
-  },
-  
-  {
     "title": "Spring-获取Bean的方式",
     "url": "/posts/dev-spring-getbean/",
     "categories": "Develop",
@@ -712,6 +695,23 @@
     
     "snippet": "方式一 vmware安装安装vmware,下载ubuntu的iso文件ubuntu-releases安装包下载_开源镜像站-阿里云i386是32位 amd64是64位方式二 wsl安装1. 在启动或关闭Windows功能中，打开以下两项，重启 2. powershell以管理员身份打开在mic store安装分发版也可查看已经安装的分发版打开Ubuntu报错：WslRegisterDistr...",
     "content": "方式一 vmware安装安装vmware,下载ubuntu的iso文件ubuntu-releases安装包下载_开源镜像站-阿里云i386是32位 amd64是64位方式二 wsl安装1. 在启动或关闭Windows功能中，打开以下两项，重启 2. powershell以管理员身份打开在mic store安装分发版也可查看已经安装的分发版打开Ubuntu报错：WslRegisterDistribution failed with error: 0x800701bc原因是：wsl1升级到wsl2之后，内核没有升级。解决方法：  下载最新的wsl安装包，  安装包下载后，直接运行安装。 下载地址：https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi搜索Ubuntu或者Debian即可打开~WSL下的mysql安装sudo apt-get install mysql-server安装后默认创建root用户，没有密码，登录：mysql -u root报错：ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/var/run/mysqld/mysqld.sock’ (2)查看sql状态service mysql status重启sqlservice mysql restart不知道为什么这里重启一下就好了。。。。登录mysql -u rootWSL下的redis安装安装redissudo apt-get updatesudo apt-get install redis-server查看redis版本redis-server -v查看redis状态在linux系统上使用：sudo systemctl status redis-server wsl没有systemctl模块，报错：System has not been booted with systemd as init system (PID 1). Can’t operate.Failed to connect to bus: Host is down使用：sudo service redis-server status启动redis服务sudo service redis-server start进入redis环境redis-cli查看端口占用sudo lsof -i:xxxx查看本机ipsudo apt install net-tools //没有的话安装ifconfiginet:本机ip  netmask:网络掩码  broadcast:广播地址  ether:物理地址查看redis进程ps -aux|grep redis查看redis连接信息redis-cliinfo //查看信息info Clients //查看用户信息wsl以自定义的用户和密码登录，若需启用root权限，先设置root密码sudo passwd root切换root权限su配置redis远程访问查看redis目录在哪whereis redis进入redis目录 修改redis.confvim redis.conf找到bind 127.0.0.1 ::1，把他注释掉bind指的是只有指定的网段才能远程访问redis，因此注释掉同时找到preotected-mode这一行，将yes改为no保存文件，重启redisservice redis-server restart配置防火墙，允许网络流量通过TCP端口6379sudo ufw allow proto tcp from xxx.xxx.x.xxx to any port 6379使用redis-cli从远程机器上ping redis服务器redis-cli -h xxx.xx.xxx.xxx ping收到一个PONG即设置完成~Wsl安装RabbitMQ参考官网文档的cloudsmith方法和CSDN教程一路丝滑~~"
+  },
+  
+  {
+    "title": "Git",
+    "url": "/posts/dev-git/",
+    "categories": "Develop",
+    "tags": "Tools",
+    "date": "2022-05-13 14:44:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的...",
+    "content": "关于GitGit为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。在规范的开发流程中，通常使用dev + main：      main分支用于保存发布的代码版本。代码是稳定可靠的，任何使用都可以基于main分支部署。        dev分支是开发分支，当在dev分支上开发一个新功能后，需要发布时，创建一个release分支。经过测试合并后再合并回main分支。  Windows上使用Git1.下载安装git Git - Downloading Package2.在git bash中设置git的用户名和邮箱git config --global user.name aaagit config --global user.email xxx为了防止需要多次输入密码，在本地生成rsa密钥，并将公钥复制到github3.初始化git仓库在仓库文件夹下执行git init右键git bash here - &gt; git clone~4.将本地仓库与远程仓库关联git remote add origin git@...gitgit add .git commit -m description //将修改提交至本地仓库git push -u origin main //-u 第一次提交若使用git push -u origin master 会创建一个master分支。***5.修改并提交git add .  //如果增加了文件，将所有的文件增加到git的版本管理中git commit -m description //将修改提交至本地仓库git push origin main //将修改提交到远程仓库6.拉取过程在本地建立空文件夹git initgit remote add origin git@...gitgit pull origin maindev分支的创建与合并1.创建dev分支并切换到dev分支git checkout -b dev2.将dev分支合并到main分支在本地切换到dev分支：git checkout dev将main分支拉取到本地：git pull origin main如果出现冲突，需要解决冲突，然后提交更改切换到main分支：git checkout main将dev分支合并到main分支：git merge dev如果出现冲突，需要解决冲突，然后提交更改将更新后的main分支推送到远程仓库：git push origin main冲突记录本地和远程修改了同一个文件的代码，pull远程分支时出现文件冲突：根据提示, 解决办法为：git stash  //将本地修改存入栈中git pull origin master //拉取远程代码git stash pop //将存储在栈中的修改放出但我执行完pop后，再次报错了：意思是，你修改了一些文件（可能是远程更新的），但这些文件还没有加入暂存区，因此不能提交，所以：git add . //将所有文件加入暂存区git commit -m afterstash //提交暂存区的文件git代理配置git push报错：Failed to connect to github.com port 443 after 21062 ms: Couldn’t connect to server解决：配置http代理git config --global http.proxy 127.0.0.1:7890git config --global https.proxy 127.0.0.1:7890主机号：自己电脑有vpn，则自己的主机可以看作访问github的代理，即127.0.0.1。端口号：代理软件的端口。查看代理：git config --global --get http.proxygit config --global --get https.proxy取消代理：git config --global --unset http.proxygit config --global --unset https.proxy"
   },
   
   {
