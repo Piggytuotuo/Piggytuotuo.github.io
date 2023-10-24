@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-08-22T22:11:32+08:00</updated>
+  <updated>2023-10-24T22:04:36+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,74 @@
 
   
   <entry>
+    <title>Compile latex with vscode</title>
+    <link href="http://localhost:4000/posts/latex/" rel="alternate" type="text/html" title="Compile latex with vscode" />
+    <published>2023-10-24T16:16:00+08:00</published>
+  
+    <updated>2023-10-24T16:16:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/latex/</id>
+    <content src="http://localhost:4000/posts/latex/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Deep Learning" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      latex编译环境
+
+
+  下载TexLive镜像（Latex的安装编译包），附上清华镜像网址
+
+
+
+
+
+  
+    下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)
+  
+  
+    安装完成，检查安装是否成功。cmd输入xelatex -v，若出现版本信息，则安装成功。
+  
+  
+    添加D:\programs\texlive\2023\bin\windows到环境变量PATH中。
+  
+
+
+vscode下载和安装
+
+
+  
+    安装latex workshop插件
+  
+  
+    设置- settings - 右上角open settings - 编辑settings.json，添加latex的相关配置
+
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Domanin-driven design</title>
     <link href="http://localhost:4000/posts/dev-ddd/" rel="alternate" type="text/html" title="Domanin-driven design" />
     <published>2023-06-29T14:44:00+08:00</published>
   
-    <updated>2023-06-29T14:44:00+08:00</updated>
+    <updated>2023-10-24T21:48:52+08:00</updated>
   
     <id>http://localhost:4000/posts/dev-ddd/</id>
     <content src="http://localhost:4000/posts/dev-ddd/" />
@@ -90,7 +153,7 @@ Bugs
     <link href="http://localhost:4000/posts/dev-redis/" rel="alternate" type="text/html" title="Redis" />
     <published>2023-06-25T22:32:00+08:00</published>
   
-    <updated>2023-06-25T22:32:00+08:00</updated>
+    <updated>2023-10-24T21:48:52+08:00</updated>
   
     <id>http://localhost:4000/posts/dev-redis/</id>
     <content src="http://localhost:4000/posts/dev-redis/" />
@@ -287,57 +350,6 @@ EX：过期时...
 
 
   对每个不同的实现都需要定义一个子类，导致子类个数增加。
-
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>DP-Behavioral Pattern-Strategy</title>
-    <link href="http://localhost:4000/posts/dp-behavioral-strategy/" rel="alternate" type="text/html" title="DP-Behavioral Pattern-Strategy" />
-    <published>2023-06-11T11:39:00+08:00</published>
-  
-    <updated>2023-06-13T16:50:18+08:00</updated>
-  
-    <id>http://localhost:4000/posts/dp-behavioral-strategy/</id>
-    <content src="http://localhost:4000/posts/dp-behavioral-strategy/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Design Pattern" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Strategy
-
-定义一系列算法，封装每个算法，并使它们可以互换。
-
-
-
-优
-
-  算法独立于使用它的客户端
-  策略可切换
-  易于扩展
-
-
-缺
-
-  客户端必须知道所有的策略类
 
 
     </summary>

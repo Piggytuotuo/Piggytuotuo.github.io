@@ -39,25 +39,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="DP-树形DP" />
+<meta property="og:title" content="Compile latex with vscode" />
 <meta name="author" content="Crystal Li" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="树形DP" />
-<meta property="og:description" content="树形DP" />
-<link rel="canonical" href="http://localhost:4000/posts/leetcode-dp-tree/" />
-<meta property="og:url" content="http://localhost:4000/posts/leetcode-dp-tree/" />
+<meta name="description" content="latex编译环境" />
+<meta property="og:description" content="latex编译环境" />
+<link rel="canonical" href="http://localhost:4000/posts/latex/" />
+<meta property="og:url" content="http://localhost:4000/posts/latex/" />
 <meta property="og:site_name" content="Piggytuotuo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-18T18:00:00+08:00" />
+<meta property="article:published_time" content="2023-10-24T16:16:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="DP-树形DP" />
+<meta property="twitter:title" content="Compile latex with vscode" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-04-19T13:52:48+08:00","datePublished":"2023-04-18T18:00:00+08:00","description":"树形DP","headline":"DP-树形DP","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/leetcode-dp-tree/"},"url":"http://localhost:4000/posts/leetcode-dp-tree/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-10-24T16:16:00+08:00","datePublished":"2023-10-24T16:16:00+08:00","description":"latex编译环境","headline":"Compile latex with vscode","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/latex/"},"url":"http://localhost:4000/posts/latex/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>DP-树形DP | Piggytuotuo
+  <title>Compile latex with vscode | Piggytuotuo
   </title>
 
   <!--
@@ -409,7 +409,7 @@
         
 
           
-            <span>DP-树形DP</span>
+            <span>Compile latex with vscode</span>
           
 
         
@@ -486,6 +486,91 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -499,6 +584,41 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -522,7 +642,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>DP-树形DP</h1>
+<h1 data-toc-skip>Compile latex with vscode</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -538,35 +658,15 @@
 
 
 <em class=""
-    data-ts="1681812000"
+    data-ts="1698135360"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Apr 18, 2023
+  Oct 24, 2023
 </em>
 
     </span>
 
     <!-- lastmod date -->
-    
-    <span>
-      Updated
-      <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681883568"
-    data-df="ll"
-    data-toggle="tooltip" data-placement="bottom">
-  Apr 19, 2023
-</em>
-
-    </span>
     
 
   
@@ -612,8 +712,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1576 words">
-  <em>8 min</em> read</span>
+  title="461 words">
+  <em>2 min</em> read</span>
 
     </div>
 
@@ -622,135 +722,36 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="树形dp">树形DP</h1>
+  <h2 id="latex编译环境"><span class="mr-2">latex编译环境</span><a href="#latex编译环境" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>数据之间存在<strong>树状</strong>关系，使用<strong>邻接表</strong>存储数据，实现方法是<strong>DFS</strong>.</p>
+<ul>
+  <li>下载TexLive镜像（Latex的安装编译包），附上<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">清华镜像网址</a></li>
+</ul>
 
-<p>框架：</p>
+<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com//blog-image/20231024163235.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com//blog-image/20231024163235.png" alt="20231024163235" class="lazyload" data-proofer-ignore></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre>void dfs(int v){
-    dp[v] = ...;
-    for(int u: G[v]){//遍历v的所有子节点
-        dfs(u); //确保子节点的值已经更新好
-        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>
+    <p>下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)</p>
+  </li>
+  <li>
+    <p>安装完成，检查安装是否成功。cmd输入xelatex -v，若出现版本信息，则安装成功。</p>
+  </li>
+  <li>
+    <p>添加D:\programs\texlive\2023\bin\windows到环境变量PATH中。</p>
+  </li>
+</ul>
 
-<h1 id="子树大小">子树大小</h1>
+<h2 id="vscode下载和安装"><span class="mr-2">vscode下载和安装</span><a href="#vscode下载和安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre>给定一棵有N个结点的树，根结点为结点1。对于i = 1 , 2 , … , N
-求以结点i为根的子树大小（即子树上结点的个数，包括根结点）。
+<ul>
+  <li>
+    <p>安装latex workshop插件</p>
+  </li>
+  <li>
+    <p>设置- settings - 右上角open settings - 编辑settings.json，添加latex的相关配置</p>
 
-输入：
-第一行输入N
-接下来N-1行，输入两个整数u, v, 代表u的父亲结点编号为v。
-输出：
-N个数，用空格分隔，第i个数代表以i为根的子树的大小。
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>使用**邻接表List<Integer>[]**存储树形结构，从根节点开始dfs，先更新根的子树的大小，然后更新根的大小.</Integer></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-</pre></td><td class="rouge-code"><pre>public class TreeDP {
-    //建立邻接表存储数据
-    public static List&lt;Integer&gt;[] tree;
-    //建立dp数组
-    public static int dp[];
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        tree = new LinkedList[n];
-        dp = new int[n];
-        //初始化
-        for(int i = 0; i &lt; n; i++) {
-            tree[i] = new LinkedList&lt;&gt;();
-        }
-        //读入n条边
-        for(int i = 0; i &lt; n - 1; i++) {
-            int u = sc.nextInt() - 1;
-            int v = sc.nextInt() - 1;
-            tree[v].add(u);
-        }
-        dfs(0);
-        for(int i = 0; i &lt; n; i++) {
-            System.out.print(dp[i] + " ");
-        }
-    }
-    
-    public static void dfs(int v) {
-        dp[v] = 1;
-        for(int u: tree[v]) {
-            dfs(u);
-            dp[v] += dp[u];
-        }
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
-
-<h1 id="没有boss的舞会">没有Boss的舞会</h1>
-
-<p>有N名职员，编号为1 … N，他们的关系就像一棵以老板为根的树，父节点就是子节点的直接上司。每个职员有一个快乐指数ri，
-   现在要召开一场舞会，使得没有职员和直接上司一起参会。主办方希望邀请一部分职员参会，使得所有参会职员的快乐指数总和最大，求这个最大值。</p>
-
-<p>设v为u的老板（父节点），v的选择和u的选择存在制约关系：若选v，则不能选u；若不选v，则u可选可不选。
-需要建立两个dp[]数组，分别保存<strong>选v的最优解</strong>和<strong>不选v的最优解</strong>。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -798,177 +799,194 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
 44
 45
 46
-</pre></td><td class="rouge-code"><pre>public class NoBoss {
-    static int[] r; //记录快乐值
-    static List&lt;Integer&gt;[] tree; ///邻接表
-    static int[] f; //选v的最优解
-    static int[] g; //不选v的最优解
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        r = new int[n];
-        f = new int[n];
-        g = new int[n];
-        tree = new LinkedList[n];
-        for(int i = 0; i &lt; n; i++) {
-            r[i] = sc.nextInt();
-            f[i] = r[i];
-            tree[i] = new LinkedList&lt;Integer&gt;();
-        }
-        //注意，需要找到根节点，没有上司的节点为根节点
-        int root = -1;
-        boolean[] notRoot = new boolean[n];
-        //u的父节点是v
-        for(int i = 0; i &lt; n - 1; i++) {
-            int u = sc.nextInt() - 1;
-            int v = sc.nextInt() - 1;
-            tree[v].add(u);
-            notRoot[u] = true;
-        }
-        for(int i = 0; i &lt; n; i++) {
-            if(notRoot[i] == false) {
-                root = i;
-                break;
-            }
-        }
-        dfs(root);
-    
-        System.out.println(Math.max(f[root], g[root]));
-    }
-    
-    static void dfs(int i) {
-        for(int u: tree[i]) {
-            dfs(u);
-            g[i] += Math.max(g[u], f[u]); //不选择i，u可选可不选
-            f[i] += g[u]; //选择i，不能选u 
-        }
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
-
-<h1 id="最多的食物">最多的食物</h1>
-
-<p>华子的2023实习的机试题目。需要读懂题意。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre>游戏的地图由N个方格组成，每个方格上至多2个传送门，通过传送门可将参与者传送至指定的其它方格。
-同时，每个方格上标注了三个数字:
-(1)第一个数字id:代表方格的编号，从0到N-1，每个方格各不相同
-(2)第二个数字parent-id:代表从编号为parent-id的方格可以通过传送门传送到当前方格(-1则表示没有任何方格可以通过传送门传送到此方格，这样的方格在地图中有且仅有一个); 
-(3)第三个数字value: 取值在[-100，100]的整数值，正整数代表参与者得到相应取值单位的食物，
-负整数代表失去相应数值单位的食物(参与者可能存在临时持有食物为负数的情况)，0则代表无变化。
-此外，地图设计时保证了参与者不可能到达相同的方格两次，并且至少有一个方格的value是正整数。 
-游戏开始后，参与者任意选择一个方格作为出发点，当遇到下列情况之一退出游戏: 
-(1)参与者当前所处的方格无传送门: (2) 参与者在任意方格上主动宣布退出游戏 请计算参与者退出游戏后，最多可以获得多少单位的食物。 
-</pre></td></tr></tbody></table></code></div></div>
-
-<p><strong>对于每一个根节点，首先计算其子节点可以获取的最大食物，根节点+子节点的最大值。</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-</pre></td><td class="rouge-code"><pre>public class MostFood {
-    static List&lt;Integer&gt;[] ls;//邻接表
-    static int max = -101;
-    static int[] value;
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        value = new int[N];
-        ls = new LinkedList[N];
-        for(int i = 0; i &lt; N; i++) {
-            ls[i] = new LinkedList&lt;Integer&gt;();
-        }
-        boolean[] notRoot = new boolean[N];
-        for(int i = 0; i &lt; N; i++) {
-            int id = sc.nextInt();
-            int pid = sc.nextInt();
-            if(pid != -1) {
-                notRoot[id] = true;
-            ls[pid].add(id);
-            }	
-            value[id] = sc.nextInt();
-        }
-        int root = 0;
-        for(int i = 0; i &lt; N; i++) {
-            if(notRoot[i] == false) {
-                root = i;
-                break;
-            }
-        }
-        dfs(root);
-        System.out.println(max);
-    }
-    
-    static void dfs(int i) {
-        //将value i更新为到i时能获得的最多食物
-        int gain = 0;
-        for(int u: ls[i]) {
-            dfs(u);
-            gain = Math.max(gain, value[u]);
-        }
-        if(gain &gt; 0) {
-            value[i] += gain;
-        }
-        max = Math.max(max, value[i]);
-    }
-}
-</pre></td></tr></tbody></table></code></div></div>
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+</pre></td><td class="rouge-code"><pre>  "latex-workshop.latex.autoBuild.run": "never",
+      "latex-workshop.showContextMenu": true,
+      "latex-workshop.intellisense.package.enabled": true,
+      "latex-workshop.message.error.show": false,
+      "latex-workshop.message.warning.show": false,
+      "latex-workshop.latex.tools": [
+          {
+              "name": "xelatex",
+              "command": "xelatex",
+              "args": [
+                  "-synctex=1",
+                  "-interaction=nonstopmode",
+                  "-file-line-error",
+                  "%DOCFILE%"
+              ]
+          },
+          {
+              "name": "pdflatex",
+              "command": "pdflatex",
+              "args": [
+                  "-synctex=1",
+                  "-interaction=nonstopmode",
+                  "-file-line-error",
+                  "%DOCFILE%"
+              ]
+          },
+          {
+              "name": "latexmk",
+              "command": "latexmk",
+              "args": [
+                  "-synctex=1",
+                  "-interaction=nonstopmode",
+                  "-file-line-error",
+                  "-pdf",
+                  "-outdir=%OUTDIR%",
+                  "%DOCFILE%"
+              ]
+          },
+          {
+              "name": "bibtex",
+              "command": "bibtex",
+              "args": [
+                  "%DOCFILE%"
+              ]
+          }
+      ],
+      "latex-workshop.latex.recipes": [
+          {
+              "name": "XeLaTeX",
+              "tools": [
+                  "xelatex"
+              ]
+          },
+          {
+              "name": "PDFLaTeX",
+              "tools": [
+                  "pdflatex"
+              ]
+          },
+          {
+              "name": "BibTeX",
+              "tools": [
+                  "bibtex"
+              ]
+          },
+          {
+              "name": "LaTeXmk",
+              "tools": [
+                  "latexmk"
+              ]
+          },
+          {
+              "name": "xelatex -&gt; bibtex -&gt; xelatex*2",
+              "tools": [
+                  "xelatex",
+                  "bibtex",
+                  "xelatex",
+                  "xelatex"
+              ]
+          },
+          {
+              "name": "pdflatex -&gt; bibtex -&gt; pdflatex*2",
+              "tools": [
+                  "pdflatex",
+                  "bibtex",
+                  "pdflatex",
+                  "pdflatex"
+              ]
+          },
+      ],
+      "latex-workshop.latex.clean.fileTypes": [
+          "*.aux",
+          "*.bbl",
+          "*.blg",
+          "*.idx",
+          "*.ind",
+          "*.lof",
+          "*.lot",
+          "*.out",
+          "*.toc",
+          "*.acn",
+          "*.acr",
+          "*.alg",
+          "*.glg",
+          "*.glo",
+          "*.gls",
+          "*.ist",
+          "*.fls",
+          "*.log",
+          "*.fdb_latexmk"
+      ],
+      "latex-workshop.latex.autoClean.run": "onFailed",
+      "latex-workshop.latex.recipe.default": "lastUsed",
+      "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>测试编译结果，出现编译问题看output，尝试重启vscode</p>
+  </li>
+</ul>
 
 </div>
 
@@ -979,7 +997,7 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/leetcode/'>LeetCode</a>
+      <a href='/categories/deep-learning/'>Deep Learning</a>
   </div>
   
 
@@ -988,8 +1006,8 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/leetcode/"
-          class="post-tag no-text-decoration" >LeetCode</a>
+      <a href="/tags/tools/"
+          class="post-tag no-text-decoration" >Tools</a>
       
   </div>
   
@@ -1024,19 +1042,19 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=DP-%E6%A0%91%E5%BD%A2DP%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fleetcode-dp-tree%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Compile%20latex%20with%20vscode%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flatex%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=DP-%E6%A0%91%E5%BD%A2DP%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fleetcode-dp-tree%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Compile%20latex%20with%20vscode%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flatex%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fleetcode-dp-tree%2F&text=DP-%E6%A0%91%E5%BD%A2DP%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Flatex%2F&text=Compile%20latex%20with%20vscode%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1305,6 +1323,14 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
 
 
 
+  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+    <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+    <nav id="toc"></nav>
+  </div>
+
+  <!-- toc.js will be loaded at medium priority -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script>
+
 
     
   </div>
@@ -1340,462 +1366,462 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1920,7 +1946,7 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
       
       
       <div class="card">
-        <a href="/posts/leetcode-backtrack/">
+        <a href="/posts/dev-git/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1932,13 +1958,60 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
 
 
 <em class="small"
-    data-ts="1681366200"
+    data-ts="1652424240"
+    data-df="ll"
+    >
+  May 13, 2022
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Git</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                关于Git
+Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
+
+Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。
+
+一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
+
+在规范的开发流程中，通常使用dev + main：
+
+  
+    mai...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dev-blog/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681371360"
     data-df="ll"
     >
   Apr 13, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>回溯-排列组合问题</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Build my blog with jekyll</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1947,22 +2020,17 @@ N个数，用空格分隔，第i个数代表以i为根的子树的大小。
 
 
 
-                引言
-跟着labuladong刷回溯题的记录。
+                ​
+github搭建博客的记录
 
-使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
+本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。
 
-回溯的框架
+我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy
 
-回溯属于暴力搜索，两个要点：路径 + 选择列表。
+Steps
+（如果没有nodejs先安装nodejs）
 
-res = []
-def backtrack(路径，选择列表):
-	if 满足结束条件：
-		res.add(路径)
-		return
-	...
+部署教程参考：https://github.com/cotes2020/jekyll-theme-chir...
               </p>
             </div>
           </div>
@@ -1972,7 +2040,7 @@ def backtrack(路径，选择列表):
       
       
       <div class="card">
-        <a href="/posts/leetcode-dp/">
+        <a href="/posts/dev-ddd/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1984,13 +2052,13 @@ def backtrack(路径，选择列表):
 
 
 <em class="small"
-    data-ts="1681476000"
+    data-ts="1688021040"
     data-df="ll"
     >
-  Apr 14, 2023
+  Jun 29, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Domanin-driven design</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1999,74 +2067,26 @@ def backtrack(路径，选择列表):
 
 
 
-                引言
-跟着labuladong刷动态规划题的记录。
+                领取驱动设计
 
-题型：求最值。
+在传统的mvc架构上做出改进。
 
-核心：穷举。
-
-三要素：重叠子问题、最优子结构、状态转移方程
-
-重叠子问题
-计算Fibonacci数列时，f(4) = f(3) + f(2), f(3) = f(2) + f(1), f(2)会重复计算两次，为一个重叠的子问题。
-
-若暴力递归，进行重复计算，时间复杂度为$O(2 ^ n)$;
-
-为了避免重复计算，引入备...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/leetcode-dp-bag/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+分为：
 
 
-
-
-
-<em class="small"
-    data-ts="1681801200"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-背包问题</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                背包问题
-
-属于动态规划的一类问题，需要明确状态和选择。
-
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
-
-01背包：
-
-每个物品只能装一次，选择装/不装。
-
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-int[][] dp = new int[N+1][M+1]
-//base case
-dp[0][...]...
+  
+    Adapater – VO
+Value Object展示用的数据，多为JSON对象 (yaml生成、resources定义)
+  
+  
+    Application – DTO
+Data transfer object
+  
+  
+    Domain – DO
+Domain Object (业务对象)
+  
+ ...
               </p>
             </div>
           </div>
@@ -2085,17 +2105,17 @@ dp[0][...]...
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/leetcode-dp-bag/" class="btn btn-outline-primary"
+  <a href="/posts/dev-ddd/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>DP-背包问题</p>
+    <p>Domanin-driven design</p>
   </a>
   
 
   
-  <a href="/posts/java-reflection/" class="btn btn-outline-primary"
+  <div class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>Java Reflection</p>
-  </a>
+    <p>-</p>
+  </div>
   
 
 </div>

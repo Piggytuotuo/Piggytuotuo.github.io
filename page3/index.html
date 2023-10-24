@@ -453,6 +453,73 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/dev-javaweb-bugs/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Java Web Bug记录
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Bug1
+
+Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
+
+
+背景：jsp中导入java包，并部署在tomcat运行时报错。
+
+原因：在jsp中没有找到相关的java类。
+
+解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifac...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1685774100"
+    data-df="ll"
+    >
+  Jun  3, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/dp-directory/">
         <div class="card-body">
           <h1 class="card-title">
@@ -1127,84 +1194,6 @@ AOP
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/dev-mysql/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Mysql
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              Windows上启动Mysql
-
-windows上安装了mysql，STEPS：
-
-1.在windows的服务中启动mysql服务
-
-
-
-2.右键查看mysql的安装目录
-
-3.管理员打开cmd，进入mysql的安装bin目录，执行
-
-
-
-
-
-或者在启动服务后，打开mysql command line。
-
-然后可以使用mysql workbench进行可视化操作~~
-
-
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1367,27 +1356,27 @@ windows上安装了mysql，STEPS：
         
         
         
+      <li><a href="/posts/dev-git/">Git</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-redis/">Redis</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-maven/">Maven</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->

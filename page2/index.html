@@ -453,6 +453,86 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/dp-behavioral-chain/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Behavioral Pattern-Chain of Responsibility
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Chain of Responsibility
+
+沿着责任链处理请求,直到有对象可以处理为止。
+
+
+
+应用
+JavaWeb中的FilterChain。
+定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。
+
+优
+
+
+  降低耦合
+  责任分担
+
+
+缺
+
+  不能保证每个请求一定被处理。
+  责任链过长，系统性能受影响。
+
+
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686454740"
+    data-df="ll"
+    >
+  Jun 11, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/dp-structural-flyweight/">
         <div class="card-body">
           <h1 class="card-title">
@@ -1141,73 +1221,6 @@ public class ProxyF...
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/dev-javaweb-bugs/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Java Web Bug记录
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              Bug1
-
-Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
-
-
-背景：jsp中导入java包，并部署在tomcat运行时报错。
-
-原因：在jsp中没有找到相关的java类。
-
-解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifac...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1685774100"
-    data-df="ll"
-    >
-  Jun  3, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1373,27 +1386,27 @@ Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
         
         
         
+      <li><a href="/posts/dev-git/">Git</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-redis/">Redis</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-maven/">Maven</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->

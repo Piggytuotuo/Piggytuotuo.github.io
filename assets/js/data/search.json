@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Compile latex with vscode",
+    "url": "/posts/latex/",
+    "categories": "Deep Learning",
+    "tags": "Tools",
+    "date": "2023-10-24 16:16:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "latex编译环境  下载TexLive镜像（Latex的安装编译包），附上清华镜像网址      下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)        安装完成，检查安装是否成功。cmd输入xelatex -v，若出现版本信息...",
+    "content": "latex编译环境  下载TexLive镜像（Latex的安装编译包），附上清华镜像网址      下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)        安装完成，检查安装是否成功。cmd输入xelatex -v，若出现版本信息，则安装成功。        添加D:\\programs\\texlive\\2023\\bin\\windows到环境变量PATH中。  vscode下载和安装      安装latex workshop插件        设置- settings - 右上角open settings - 编辑settings.json，添加latex的相关配置      \"latex-workshop.latex.autoBuild.run\": \"never\",      \"latex-workshop.showContextMenu\": true,      \"latex-workshop.intellisense.package.enabled\": true,      \"latex-workshop.message.error.show\": false,      \"latex-workshop.message.warning.show\": false,      \"latex-workshop.latex.tools\": [          {              \"name\": \"xelatex\",              \"command\": \"xelatex\",              \"args\": [                  \"-synctex=1\",                  \"-interaction=nonstopmode\",                  \"-file-line-error\",                  \"%DOCFILE%\"              ]          },          {              \"name\": \"pdflatex\",              \"command\": \"pdflatex\",              \"args\": [                  \"-synctex=1\",                  \"-interaction=nonstopmode\",                  \"-file-line-error\",                  \"%DOCFILE%\"              ]          },          {              \"name\": \"latexmk\",              \"command\": \"latexmk\",              \"args\": [                  \"-synctex=1\",                  \"-interaction=nonstopmode\",                  \"-file-line-error\",                  \"-pdf\",                  \"-outdir=%OUTDIR%\",                  \"%DOCFILE%\"              ]          },          {              \"name\": \"bibtex\",              \"command\": \"bibtex\",              \"args\": [                  \"%DOCFILE%\"              ]          }      ],      \"latex-workshop.latex.recipes\": [          {              \"name\": \"XeLaTeX\",              \"tools\": [                  \"xelatex\"              ]          },          {              \"name\": \"PDFLaTeX\",              \"tools\": [                  \"pdflatex\"              ]          },          {              \"name\": \"BibTeX\",              \"tools\": [                  \"bibtex\"              ]          },          {              \"name\": \"LaTeXmk\",              \"tools\": [                  \"latexmk\"              ]          },          {              \"name\": \"xelatex -&gt; bibtex -&gt; xelatex*2\",              \"tools\": [                  \"xelatex\",                  \"bibtex\",                  \"xelatex\",                  \"xelatex\"              ]          },          {              \"name\": \"pdflatex -&gt; bibtex -&gt; pdflatex*2\",              \"tools\": [                  \"pdflatex\",                  \"bibtex\",                  \"pdflatex\",                  \"pdflatex\"              ]          },      ],      \"latex-workshop.latex.clean.fileTypes\": [          \"*.aux\",          \"*.bbl\",          \"*.blg\",          \"*.idx\",          \"*.ind\",          \"*.lof\",          \"*.lot\",          \"*.out\",          \"*.toc\",          \"*.acn\",          \"*.acr\",          \"*.alg\",          \"*.glg\",          \"*.glo\",          \"*.gls\",          \"*.ist\",          \"*.fls\",          \"*.log\",          \"*.fdb_latexmk\"      ],      \"latex-workshop.latex.autoClean.run\": \"onFailed\",      \"latex-workshop.latex.recipe.default\": \"lastUsed\",      \"latex-workshop.view.pdf.internal.synctex.keybinding\": \"double-click\"            测试编译结果，出现编译问题看output，尝试重启vscode  "
+  },
+  
+  {
     "title": "Domanin-driven design",
     "url": "/posts/dev-ddd/",
     "categories": "Develop",

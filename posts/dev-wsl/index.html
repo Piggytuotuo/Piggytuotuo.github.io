@@ -1225,27 +1225,27 @@ Failed to connect to bus: Host is down</p>
         
         
         
+      <li><a href="/posts/dev-git/">Git</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-redis/">Redis</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-maven/">Maven</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2002,6 +2002,19 @@ Failed to connect to bus: Host is down</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2045,6 +2058,64 @@ Failed to connect to bus: Host is down</p>
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dev-springmvc/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686867000"
+    data-df="ll"
+    >
+  Jun 16, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>SpringMVC</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                定义
+
+是表述层框架。
+
+
+  Model：模型层
+  View ：视图层，展示数据
+  Controller：控制层，接收请求和响应浏览器
+
+
+特点
+
+
+  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。
+
+
+流程
+
+
+  配置Web.xml文件（注册SpringMVC）
+  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -2168,57 +2239,6 @@ windows上安装了mysql，STEPS：
 然后可以使用mysql workbench进行可视化操作~~
 
 
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dev-spring-annotation/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Spring-Annotation</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                常用注解
-
-
-  @Component : 普通组件
-  @Controller：控制层组件
-  @Service   ：业务层组件
-  @Repository：持久层组件（数据库）
-
-
-扫描包
-
-通过扫描的方式检测注解，根据注解操作。扫描包的配置：
-
-1
-&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/...
               </p>
             </div>
           </div>

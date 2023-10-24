@@ -1293,27 +1293,27 @@ String b=a.toString(8);
         
         
         
+      <li><a href="/posts/dev-git/">Git</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-redis/">Redis</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-maven/">Maven</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2057,6 +2057,19 @@ String b=a.toString(8);
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2113,64 +2126,6 @@ String b=a.toString(8);
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dp-structural-composite/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1686454740"
-    data-df="ll"
-    >
-  Jun 11, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Composite</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Composite
-
-将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。
-
-
-
-菜单
-
-场景
-
-出现树形结构的地方。
-
-优
-
-  
-    清楚定义分层次的复杂对象。
-  
-  
-    方便的增加树枝节点和叶子节点，符合开闭原则。
-  
-
-
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
     
       
       
@@ -2286,6 +2241,65 @@ String b=a.toString(8);
   
   
     外部状...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dp-behavioral-chain/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686454740"
+    data-df="ll"
+    >
+  Jun 11, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Chain of Responsibility</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Chain of Responsibility
+
+沿着责任链处理请求,直到有对象可以处理为止。
+
+
+
+应用
+JavaWeb中的FilterChain。
+定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。
+
+优
+
+
+  降低耦合
+  责任分担
+
+
+缺
+
+  不能保证每个请求一定被处理。
+  责任链过长，系统性能受影响。
+
+
               </p>
             </div>
           </div>
