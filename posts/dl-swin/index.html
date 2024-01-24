@@ -904,27 +904,27 @@
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1016,10 +1016,44 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1065,6 +1099,9 @@
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1634,6 +1671,58 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1650,19 +1739,11 @@
     
       
       
-        
-        
-        
-      
     
   
     
     
       
-      
-        
-        
-        
       
     
   
@@ -1685,7 +1766,7 @@
       
       
       <div class="card">
-        <a href="/posts/dev-springmvc/">
+        <a href="/posts/dl-bug-record/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1697,13 +1778,13 @@
 
 
 <em class="small"
-    data-ts="1686867000"
+    data-ts="1706076600"
     data-df="ll"
     >
-  Jun 16, 2023
+  Jan 24, 2024
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>SpringMVC</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>写深度学习代码遇到的张量被原地修改的问题</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1712,28 +1793,10 @@
 
 
 
-                定义
+                BUG1:
 
-是表述层框架。
-
-
-  Model：模型层
-  View ：视图层，展示数据
-  Controller：控制层，接收请求和响应浏览器
-
-
-特点
-
-
-  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。
-
-
-流程
-
-
-  配置Web.xml文件（注册SpringMVC）
-  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）
-...
+报错内容：
+RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [3, 48, 7, 7]] is at version 2; expected version 1...
               </p>
             </div>
           </div>
@@ -1743,7 +1806,7 @@
       
       
       <div class="card">
-        <a href="/posts/dp-behavioral-template/">
+        <a href="/posts/latex/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1755,13 +1818,13 @@
 
 
 <em class="small"
-    data-ts="1686454740"
+    data-ts="1698135360"
     data-df="ll"
     >
-  Jun 11, 2023
+  Oct 24, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Template Method</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Compile latex with vscode</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1770,91 +1833,76 @@
 
 
 
-                Template Method
-
-定义算法框架，将一些步骤的实现延迟到子类。
+                latex编译环境
 
 
-
-冲饮料
-
-冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。
+  下载TexLive镜像（Latex的安装编译包），附上清华镜像网址
 
 
 
-场景
 
 
   
-    算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。
+    下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)
   
   
-    需要通过子类决定父类算法中的某个步骤是否执行。
-  
+    安装完成，检查安装是否成功。cmd输入xelat...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dev-ddd/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
-优
+
+
+
+<em class="small"
+    data-ts="1688021040"
+    data-df="ll"
+    >
+  Jun 29, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Domanin-driven design</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                领取驱动设计
+
+在传统的mvc架构上做出改进。
+
+分为：
 
 
   
-    提高代码复用性。
+    Adapater – VO
+Value Object展示用的数据，多为JSON对象 (yaml生成、resources定义)
   
+  
+    Application – DTO
+Data transfer object
+  
+  
+    Domain – DO
+Domain Object (业务对象)
   
  ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dp-behavioral-strategy/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1686454740"
-    data-df="ll"
-    >
-  Jun 11, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Strategy</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Strategy
-
-定义一系列算法，封装每个算法，并使它们可以互换。
-
-
-
-优
-
-  算法独立于使用它的客户端
-  策略可切换
-  易于扩展
-
-
-缺
-
-  客户端必须知道所有的策略类
-
-
               </p>
             </div>
           </div>
@@ -1880,9 +1928,9 @@
   
 
   
-  <a href="/posts/dev-wsl/" class="btn btn-outline-primary"
+  <a href="/posts/dev-git/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</p>
+    <p>Git</p>
   </a>
   
 
@@ -1991,10 +2039,44 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2041,6 +2123,9 @@
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -2061,7 +2146,7 @@
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"

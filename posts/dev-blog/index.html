@@ -832,27 +832,27 @@ npm run build
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -944,10 +944,44 @@ npm run build
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -993,6 +1027,9 @@ npm run build
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1518,7 +1555,59 @@ npm run build
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1591,6 +1680,56 @@ npm run build
       
       
       <div class="card">
+        <a href="/posts/latex/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1698135360"
+    data-df="ll"
+    >
+  Oct 24, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Compile latex with vscode</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                latex编译环境
+
+
+  下载TexLive镜像（Latex的安装编译包），附上清华镜像网址
+
+
+
+
+
+  
+    下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)
+  
+  
+    安装完成，检查安装是否成功。cmd输入xelat...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/dev-git/">
           <div class="card-body">
             <!--
@@ -1603,10 +1742,10 @@ npm run build
 
 
 <em class="small"
-    data-ts="1683960240"
+    data-ts="1652424240"
     data-df="ll"
     >
-  May 13, 2023
+  May 13, 2022
 </em>
 
             <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Git</h3>
@@ -1638,7 +1777,7 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
       
       
       <div class="card">
-        <a href="/posts/dev-wsl/">
+        <a href="/posts/dev-ddd/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1650,13 +1789,13 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
 
 
 <em class="small"
-    data-ts="1678860600"
+    data-ts="1688021040"
     data-df="ll"
     >
-  Mar 15, 2023
+  Jun 29, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Domanin-driven design</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1665,106 +1804,26 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
 
 
 
-                
+                领取驱动设计
 
-方式一 vmware安装
+在传统的mvc架构上做出改进。
 
-安装vmware,下载ubuntu的iso文件
-
-ubuntu-releases安装包下载_开源镜像站-阿里云
-
-i386是32位 amd64是64位
+分为：
 
 
-
-方式二 wsl安装
-
-1. 在启动或关闭Windows功能中，打开以下两项，重启
-
-
-
- 2. powershell以管理员身份打开
-
-
-
-在mic store安装分发版也可
-
-查看已经安装的分发版
-
-
-...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dev-maven/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Maven</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Maven
-包管理工具，使用GAV坐标定位。
-
-
-  groupId：公司或组织的Id
-  artifactId:项目或项目中模块的id
-  version：版本号
-
-
-配置安装
-
-使用IDEA自带的mvn
-
-查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-...
+  
+    Adapater – VO
+Value Object展示用的数据，多为JSON对象 (yaml生成、resources定义)
+  
+  
+    Application – DTO
+Data transfer object
+  
+  
+    Domain – DO
+Domain Object (业务对象)
+  
+ ...
               </p>
             </div>
           </div>
@@ -1901,10 +1960,44 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1951,6 +2044,9 @@ i386是32位 amd64是64位
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -1971,7 +2067,7 @@ i386是32位 amd64是64位
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"

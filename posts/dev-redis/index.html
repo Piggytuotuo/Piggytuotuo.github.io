@@ -39,25 +39,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="DP-Behavioral Pattern-Strategy" />
+<meta property="og:title" content="Redis" />
 <meta name="author" content="Crystal Li" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Strategy" />
-<meta property="og:description" content="Strategy" />
-<link rel="canonical" href="http://localhost:4000/posts/dp-behavioral-strategy/" />
-<meta property="og:url" content="http://localhost:4000/posts/dp-behavioral-strategy/" />
+<meta name="description" content="Redis使用场景" />
+<meta property="og:description" content="Redis使用场景" />
+<link rel="canonical" href="http://localhost:4000/posts/dev-redis/" />
+<meta property="og:url" content="http://localhost:4000/posts/dev-redis/" />
 <meta property="og:site_name" content="Piggytuotuo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-06-11T11:39:00+08:00" />
+<meta property="article:published_time" content="2023-06-25T22:32:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="DP-Behavioral Pattern-Strategy" />
+<meta property="twitter:title" content="Redis" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-13T16:50:18+08:00","datePublished":"2023-06-11T11:39:00+08:00","description":"Strategy","headline":"DP-Behavioral Pattern-Strategy","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dp-behavioral-strategy/"},"url":"http://localhost:4000/posts/dp-behavioral-strategy/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-10-24T21:48:52+08:00","datePublished":"2023-06-25T22:32:00+08:00","description":"Redis使用场景","headline":"Redis","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-redis/"},"url":"http://localhost:4000/posts/dev-redis/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>DP-Behavioral Pattern-Strategy | Piggytuotuo
+  <title>Redis | Piggytuotuo
   </title>
 
   <!--
@@ -409,7 +409,7 @@
         
 
           
-            <span>DP-Behavioral Pattern-Strategy</span>
+            <span>Redis</span>
           
 
         
@@ -486,91 +486,6 @@
 
 
 
-  
-  
-
-  <!-- CDN URL -->
-  
-
-  <!-- Add image path -->
-  
-
-  
-    
-      
-      
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-      
-
-      
-
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-
-    
-
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
-    
-      
-    
-
-    <!-- Bypass the HTML-proofer test -->
-    
-
-    <!-- make sure the `<img>` is wrapped by `<a>` -->
-    
-
-    
-      <!-- create the image wrapper -->
-      
-    
-
-    <!-- combine -->
-    
-
-  
-
-  
-
-
 
 <!-- Add header for code snippets -->
 
@@ -629,6 +544,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -643,6 +570,41 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -654,7 +616,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>DP-Behavioral Pattern-Strategy</h1>
+<h1 data-toc-skip>Redis</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -670,10 +632,10 @@
 
 
 <em class=""
-    data-ts="1686454740"
+    data-ts="1687703520"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Jun 11, 2023
+  Jun 25, 2023
 </em>
 
     </span>
@@ -692,10 +654,10 @@
 
 
 <em class=""
-    data-ts="1686646218"
+    data-ts="1698155332"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Jun 13, 2023
+  Oct 24, 2023
 </em>
 
     </span>
@@ -744,7 +706,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="61 words">
+  title="272 words">
   <em>1 min</em> read</span>
 
     </div>
@@ -754,23 +716,57 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="strategy"><span class="mr-2">Strategy</span><a href="#strategy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h1 id="redis使用场景">Redis使用场景</h1>
 
-<p>定义一系列算法，封装每个算法，并使它们可以互换。</p>
+<h2 id="缓存"><span class="mr-2">缓存</span><a href="#缓存" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230613135929.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230613135929.png" alt="20230613135929" class="lazyload" data-proofer-ignore></a></p>
+<p>穿透：访问一个不存在的Key  -  布隆过滤器。</p>
 
-<h2 id="优"><span class="mr-2">优</span><a href="#优" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>算法独立于使用它的客户端</li>
-  <li>策略可切换</li>
-  <li>易于扩展</li>
-</ul>
+<div class="table-wrapper"><table>
+  <tbody>
+    <tr>
+      <td>击穿：热点数据过期 - 设置逻辑过期</td>
+      <td>互斥锁。</td>
+    </tr>
+  </tbody>
+</table></div>
 
-<h2 id="缺"><span class="mr-2">缺</span><a href="#缺" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<ul>
-  <li>客户端必须知道所有的策略类</li>
-</ul>
+<p>雪崩：大量热点数据同时过期  - 均匀设置过期时间。</p>
+
+<p>Redis服务器宕机 - Redis集群。</p>
+
+<h2 id="数据过期策略"><span class="mr-2">数据过期策略</span><a href="#数据过期策略" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>惰性删除 + 定期删除</p>
+
+<h2 id="数据淘汰策略"><span class="mr-2">数据淘汰策略</span><a href="#数据淘汰策略" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>分8种，结合业务选择。默认为noeviction，内存不足报错。</p>
+
+<p>LRU：最近最少使用。</p>
+
+<p>LFU：最少频率使用。</p>
+
+<h2 id="分布式锁"><span class="mr-2">分布式锁</span><a href="#分布式锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>synchronized锁只对单个JVM有效，因此集群情况下需要分布式锁。</p>
+
+<h4 id="获取锁"><span class="mr-2">获取锁</span><a href="#获取锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>SET lock_key unique_value NX EX 100
+lock_key： key键</p>
+
+<p>unique_value：客户端表示，区分不同客户端的锁操作</p>
+
+<p>NX：lock_key不存在时才操作</p>
+
+<p>EX：过期时间，避免因客户端异常无法释放锁</p>
+
+<h4 id="释放锁"><span class="mr-2">释放锁</span><a href="#释放锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>DEL key (释放锁需要先判断unique_value是否为加锁客户端)</p>
+
+<p>可见，解锁有两个操作，需要结束Lua脚本保证原子性。</p>
 
 </div>
 
@@ -781,7 +777,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/design-pattern/'>Design Pattern</a>
+      <a href='/categories/develop/'>Develop</a>
   </div>
   
 
@@ -790,8 +786,8 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/java/"
-          class="post-tag no-text-decoration" >Java</a>
+      <a href="/tags/redis/"
+          class="post-tag no-text-decoration" >Redis</a>
       
   </div>
   
@@ -826,19 +822,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=DP-Behavioral%20Pattern-Strategy%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdp-behavioral-strategy%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=Redis%20-%20Piggytuotuo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-redis%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=DP-Behavioral%20Pattern-Strategy%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdp-behavioral-strategy%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=Redis%20-%20Piggytuotuo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-redis%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdp-behavioral-strategy%2F&text=DP-Behavioral%20Pattern-Strategy%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fdev-redis%2F&text=Redis%20-%20Piggytuotuo" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1187,46 +1183,46 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1741,7 +1737,7 @@
       
       
       <div class="card">
-        <a href="/posts/java-codes/">
+        <a href="/posts/dev-git/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1753,13 +1749,13 @@
 
 
 <em class="small"
-    data-ts="1681366200"
+    data-ts="1652424240"
     data-df="ll"
     >
-  Apr 13, 2023
+  May 13, 2022
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java常用代码</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Git</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1768,18 +1764,17 @@
 
 
 
-                在线文档
-https://www.matools.com/api/java8
-从键盘输入
-Scanner sc =new Scanner(System.in);
-Integer a=sc.nextInt();
+                关于Git
+Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
 
+Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。
 
-int、Integer、Double
-int为基本数据类型，Integer为int对应的包装类。
-在范型中使用Integer
+一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
 
-HashMap&amp;lt;String,Integer&amp;...
+在规范的开发流程中，通常使用dev + main：
+
+  
+    mai...
               </p>
             </div>
           </div>
@@ -1789,7 +1784,7 @@ HashMap&amp;lt;String,Integer&amp;...
       
       
       <div class="card">
-        <a href="/posts/java-reflection/">
+        <a href="/posts/dev-wsl/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1801,13 +1796,13 @@ HashMap&amp;lt;String,Integer&amp;...
 
 
 <em class="small"
-    data-ts="1681922400"
+    data-ts="1678860600"
     data-df="ll"
     >
-  Apr 20, 2023
+  Mar 15, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java Reflection</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1816,21 +1811,34 @@ HashMap&amp;lt;String,Integer&amp;...
 
 
 
-                Java Reflection
+                
 
-一、定义
+方式一 vmware安装
 
-反射是Java被视为动态语言的关键，可以在运行时动态的获取对象所属的类，动态调用方法，包括私有的属性、方法、构造器。
+安装vmware,下载ubuntu的iso文件
 
-在设计框架时会用到大量反射。
+ubuntu-releases安装包下载_开源镜像站-阿里云
 
-框架 = 注解 + 反射 + 设计模式。
+i386是32位 amd64是64位
 
-通过反射，可以创造单例模式中类的多个对象。
 
-二、Class对象
 
-每个类都有一个Class对象/实例，包含了与类有关的信息。当编译一个新类时，会产生一...
+方式二 wsl安装
+
+1. 在启动或关闭Windows功能中，打开以下两项，重启
+
+
+
+ 2. powershell以管理员身份打开
+
+
+
+在mic store安装分发版也可
+
+查看已经安装的分发版
+
+
+...
               </p>
             </div>
           </div>
@@ -1840,7 +1848,7 @@ HashMap&amp;lt;String,Integer&amp;...
       
       
       <div class="card">
-        <a href="/posts/java-threads/">
+        <a href="/posts/dev-springmvc/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1852,13 +1860,13 @@ HashMap&amp;lt;String,Integer&amp;...
 
 
 <em class="small"
-    data-ts="1683808440"
+    data-ts="1686867000"
     data-df="ll"
     >
-  May 11, 2023
+  Jun 16, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java 多线程</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>SpringMVC</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1867,15 +1875,27 @@ HashMap&amp;lt;String,Integer&amp;...
 
 
 
-                实现并行完成多个任务。提高cpu的利用率。
+                定义
 
-三种实现方式
+是表述层框架。
 
-public class LearnThreads {
-    public static void main(String[] args) {
-        //1. 继承Thread类，实例化一个Thread对象
-        Thread mt = new MyThread();
-        mt.start();
+
+  Model：模型层
+  View ：视图层，展示数据
+  Controller：控制层，接收请求和响应浏览器
+
+
+特点
+
+
+  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。
+
+
+流程
+
+
+  配置Web.xml文件（注册SpringMVC）
+  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）
 ...
               </p>
             </div>
@@ -1895,16 +1915,16 @@ public class LearnThreads {
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/dp-behavioral-command/" class="btn btn-outline-primary"
+  <a href="/posts/dev-springmvc/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>DP-Behavioral Pattern-Command</p>
+    <p>SpringMVC</p>
   </a>
   
 
   
-  <a href="/posts/dp-behavioral-template/" class="btn btn-outline-primary"
+  <a href="/posts/dev-ddd/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>DP-Behavioral Pattern-Template Method</p>
+    <p>Domanin-driven design</p>
   </a>
   
 

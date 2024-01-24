@@ -453,6 +453,319 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/dp-structural-proxy-cglib/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Structural Pattern-Proxy-CGLib
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              动态代理-CGLIB代理
+
+1.具体实现类
+
+public class TrainStation {
+    public void sell(){
+        System.out.println(&quot;火车站卖票&quot;);
+    }
+}
+
+
+2.代理工厂类
+
+//代理对象是目标对象所属类别的子类
+//使用enhancer的create方法获取代理对象
+public class ProxyF...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1686129360"
+    data-df="ll"
+    >
+  Jun  7, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-javaweb-bugs/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Java Web Bug记录
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Bug1
+
+Only a type can be imported. com.xxx.xxx.XXX resolves to a package.
+
+
+背景：jsp中导入java包，并部署在tomcat运行时报错。
+
+原因：在jsp中没有找到相关的java类。
+
+解决：生成web项目的artifact时，还没有写java类，所以tomcat找不到。写了java类之后应该重新生成artifac...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1685774100"
+    data-df="ll"
+    >
+  Jun  3, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dp-directory/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Creational Pattern-Directory
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              类之间的关系
+
+
+  关联
+    
+      单向
+      双向
+      自关联
+    
+  
+  聚合 空心菱形
+  组合 实心菱形
+  依赖 虚线箭头
+  继承 空心三角
+  实现 虚线三角
+
+
+设计模式
+
+创建型
+
+
+  
+    单例
+  
+  工厂
+    
+      简单工厂
+      工厂方法
+      抽象工厂
+    
+  
+  
+    原型
+  
+ ...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1685588100"
+    data-df="ll"
+    >
+  Jun  1, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dp-creational-singleton/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-Creational Pattern-Singleton
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              单例Singleton
+
+私有构造函数 + 私有静态变量 + 公有静态函数。
+
+只能通公有静态函数返回唯一的私有静态变量。
+
+分为：
+
+
+  
+    饿汉式：类加载时就会创建对象。
+  
+  
+    懒汉式：类加载时不创建，首次使用时才创建。
+  
+
+
+饿汉式-静态变量
+
+直接实例化。
+优点：线程安全。缺点：不节约资源。
+
+private static Singleton uniqueI...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684651560"
+    data-df="ll"
+    >
+  May 21, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Design Pattern
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-diffnum/">
         <div class="card-body">
           <h1 class="card-title">
@@ -576,74 +889,6 @@ while(right &amp;lt; s.size()){
                 <span>
                   
                     LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-git/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Git
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              关于Git
-Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。
-
-Git仓库中的默认分支为main（之前为master），在Github或其他平台上创建仓库后，会创建一个默认的main分支。
-
-一般情况下，可以在远程创建一个空仓库，然后将本地的代码提交到远程分支中。
-
-在规范的开发流程中，通常使用dev + main：
-
-  
-    mai...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683960240"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
                 </span>
               
             </div>
@@ -951,232 +1196,6 @@ AOP
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/dev-spring-annotation/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Spring-Annotation
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              常用注解
-
-
-  @Component : 普通组件
-  @Controller：控制层组件
-  @Service   ：业务层组件
-  @Repository：持久层组件（数据库）
-
-
-扫描包
-
-通过扫描的方式检测注解，根据注解操作。扫描包的配置：
-
-&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/&amp;g...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-mysql/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Mysql
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              Windows上启动Mysql
-
-windows上安装了mysql，STEPS：
-
-1.在windows的服务中启动mysql服务
-
-
-
-2.右键查看mysql的安装目录
-
-3.管理员打开cmd，进入mysql的安装bin目录，执行
-
-
-
-
-
-或者在启动服务后，打开mysql command line。
-
-然后可以使用mysql workbench进行可视化操作~~
-
-
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-maven/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Maven
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              Maven
-包管理工具，使用GAV坐标定位。
-
-
-  groupId：公司或组织的Id
-  artifactId:项目或项目中模块的id
-  version：版本号
-
-
-配置安装
-
-使用IDEA自带的mvn
-
-查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。
-
-
-&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
-
-
-&amp;...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1339,27 +1358,27 @@ windows上安装了mysql，STEPS：
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1451,10 +1470,44 @@ windows上安装了mysql，STEPS：
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1500,6 +1553,9 @@ windows上安装了mysql，STEPS：
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1609,10 +1665,44 @@ windows上安装了mysql，STEPS：
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1659,6 +1749,9 @@ windows上安装了mysql，STEPS：
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -1679,7 +1772,7 @@ windows上安装了mysql，STEPS：
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"

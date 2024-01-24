@@ -48,11 +48,11 @@
 <meta property="og:url" content="http://localhost:4000/posts/dev-git/" />
 <meta property="og:site_name" content="Piggytuotuo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-05-13T14:44:00+08:00" />
+<meta property="article:published_time" content="2022-05-13T14:44:00+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Git" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-12T21:47:57+08:00","datePublished":"2023-05-13T14:44:00+08:00","description":"关于Git Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。","headline":"Git","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-git/"},"url":"http://localhost:4000/posts/dev-git/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-10-24T21:48:52+08:00","datePublished":"2022-05-13T14:44:00+08:00","description":"关于Git Git为版本管理工具，可以使用Git将代码提交到github、gitee等代码社区中，实现版本管理。","headline":"Git","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-git/"},"url":"http://localhost:4000/posts/dev-git/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -709,6 +709,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -750,10 +762,10 @@
 
 
 <em class=""
-    data-ts="1683960240"
+    data-ts="1652424240"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  May 13, 2023
+  May 13, 2022
 </em>
 
     </span>
@@ -772,10 +784,10 @@
 
 
 <em class=""
-    data-ts="1686577677"
+    data-ts="1698155332"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
-  Jun 12, 2023
+  Oct 24, 2023
 </em>
 
     </span>
@@ -824,8 +836,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="828 words">
-  <em>4 min</em> read</span>
+  title="947 words">
+  <em>5 min</em> read</span>
 
     </div>
 
@@ -1011,6 +1023,45 @@ git stash pop //将存储在栈中的修改放出
 git commit -m afterstash //提交暂存区的文件
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="git代理配置"><span class="mr-2">git代理配置</span><a href="#git代理配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>git push报错：
+Failed to connect to github.com port 443 after 21062 ms: Couldn’t connect to server</p>
+
+<p>解决：配置http代理</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>主机号：自己电脑有vpn，则自己的主机可以看作访问github的代理，即127.0.0.1。</p>
+
+<p>端口号：代理软件的端口。</p>
+
+<p>查看代理：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>git config --global --get http.proxy
+git config --global --get https.proxy
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>取消代理：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>git config --global --unset http.proxy
+git config --global --unset https.proxy
+</pre></td></tr></tbody></table></code></div></div>
+
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1132,27 +1183,27 @@ git commit -m afterstash //提交暂存区的文件
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1244,10 +1295,44 @@ git commit -m afterstash //提交暂存区的文件
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1293,6 +1378,9 @@ git commit -m afterstash //提交暂存区的文件
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1597,267 +1685,319 @@ git commit -m afterstash //提交暂存区的文件
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -1887,6 +2027,56 @@ git commit -m afterstash //提交暂存区的文件
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/latex/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1698135360"
+    data-df="ll"
+    >
+  Oct 24, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Compile latex with vscode</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                latex编译环境
+
+
+  下载TexLive镜像（Latex的安装编译包），附上清华镜像网址
+
+
+
+
+
+  
+    下载完成，iso文件右键-打开方式-windows资源管理器打开-以管理员身份运行install-tl-windows-根据弹出的框自定义安装(修改安装目录，因为用vscode编译所以取消安装tex前端)
+  
+  
+    安装完成，检查安装是否成功。cmd输入xelat...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1938,7 +2128,7 @@ Steps
       
       
       <div class="card">
-        <a href="/posts/dev-wsl/">
+        <a href="/posts/dev-ddd/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1950,13 +2140,13 @@ Steps
 
 
 <em class="small"
-    data-ts="1678860600"
+    data-ts="1688021040"
     data-df="ll"
     >
-  Mar 15, 2023
+  Jun 29, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Domanin-driven design</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1965,90 +2155,26 @@ Steps
 
 
 
-                
+                领取驱动设计
 
-方式一 vmware安装
+在传统的mvc架构上做出改进。
 
-安装vmware,下载ubuntu的iso文件
-
-ubuntu-releases安装包下载_开源镜像站-阿里云
-
-i386是32位 amd64是64位
+分为：
 
 
-
-方式二 wsl安装
-
-1. 在启动或关闭Windows功能中，打开以下两项，重启
-
-
-
- 2. powershell以管理员身份打开
-
-
-
-在mic store安装分发版也可
-
-查看已经安装的分发版
-
-
-...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dev-maven/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683958200"
-    data-df="ll"
-    >
-  May 13, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Maven</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Maven
-包管理工具，使用GAV坐标定位。
-
-
-  groupId：公司或组织的Id
-  artifactId:项目或项目中模块的id
-  version：版本号
-
-
-配置安装
-
-使用IDEA自带的mvn
-
-查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。
-
-
-&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
-
-
-&amp;...
+  
+    Adapater – VO
+Value Object展示用的数据，多为JSON对象 (yaml生成、resources定义)
+  
+  
+    Application – DTO
+Data transfer object
+  
+  
+    Domain – DO
+Domain Object (业务对象)
+  
+ ...
               </p>
             </div>
           </div>
@@ -2067,16 +2193,16 @@ i386是32位 amd64是64位
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/dev-spring-getbean/" class="btn btn-outline-primary"
+  <a href="/posts/dl-swin/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Spring-获取Bean的方式</p>
+    <p>跑Swin-Transformer-Object-Detection过程中遇到的坑及解决</p>
   </a>
   
 
   
-  <a href="/posts/leetcode-sldingwindows/" class="btn btn-outline-primary"
+  <a href="/posts/dev-wsl/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>Sliding Windows</p>
+    <p>WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</p>
   </a>
   
 
@@ -2185,10 +2311,44 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2235,6 +2395,9 @@ i386是32位 amd64是64位
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -2255,7 +2418,7 @@ i386是32位 amd64是64位
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"

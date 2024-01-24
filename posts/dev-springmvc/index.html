@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="SpringMVC" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-16T06:10:00+08:00","datePublished":"2023-06-16T06:10:00+08:00","description":"定义","headline":"SpringMVC","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-springmvc/"},"url":"http://localhost:4000/posts/dev-springmvc/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Crystal Li"},"dateModified":"2023-06-21T13:28:52+08:00","datePublished":"2023-06-16T06:10:00+08:00","description":"定义","headline":"SpringMVC","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/dev-springmvc/"},"url":"http://localhost:4000/posts/dev-springmvc/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -653,6 +653,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -704,6 +716,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1687325332"
+    data-df="ll"
+    data-toggle="tooltip" data-placement="bottom">
+  Jun 21, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -748,8 +780,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="330 words">
-  <em>1 min</em> read</span>
+  title="425 words">
+  <em>2 min</em> read</span>
 
     </div>
 
@@ -785,14 +817,43 @@
 
 <p>浏览器发送请求，若请求地址符合前端控制器的url-pattern，该请求就会被前端控制器DispatcherServlet处理。前端控制器会读取SpringMVC的核心配置文件，通过扫描组件找到控制器，将请求地址和控制器中@RequestMapping注解的value属性值进行匹配，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，该视图名称会被视图解析器解析，加上前缀和后缀组成视图的路径，通过Thymeleaf对视图进行渲染，最终转发到视图所对应页面。</p>
 
+<ul>
+  <li>url-pattern和@RequestMapping的value属性匹配</li>
+  <li>注解标识的控制器处理请求并返回视图</li>
+  <li>视图通过Thymeleaf解析和跳转</li>
+</ul>
+
 <p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230616172523.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com/blog-image/20230616172523.png" alt="20230616172523" class="lazyload" data-proofer-ignore></a></p>
 
 <h2 id="注解"><span class="mr-2">注解</span><a href="#注解" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>@RequestMapping(value = “/”)</li>
+  <li>@RequestMapping(“/”)</li>
 </ul>
 
 <p>浏览器访问该路径时，执行注解下的方法，方法返回需要跳转的视图名称，由视图解析器解析。</p>
+
+<p>指定请求方法</p>
+<ul>
+  <li>@GetMapping(“/”)</li>
+  <li>@PostMapping(“/”)</li>
+  <li>@PutMapping(“/”)</li>
+  <li>@DeteleMapping(“/”)</li>
+  <li>@PatchMapping(“/”) 对资源数据局部更新</li>
+</ul>
+
+<h2 id="域对象"><span class="mr-2">域对象</span><a href="#域对象" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>
+    <p>请求域：一次请求的开启到关闭</p>
+  </li>
+  <li>
+    <p>会话域：浏览器开启到关闭</p>
+  </li>
+  <li>
+    <p>应用域：服务器开启到关闭</p>
+  </li>
+</ul>
 
 
 </div>
@@ -916,27 +977,27 @@
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1028,10 +1089,44 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1077,6 +1172,9 @@
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1129,6 +1227,58 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1868,10 +2018,10 @@ windows上安装了mysql，STEPS：
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/dev-redis/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </div>
+    <p>Redis</p>
+  </a>
   
 
 </div>
@@ -1979,10 +2129,44 @@ windows上安装了mysql，STEPS：
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2029,6 +2213,9 @@ windows上安装了mysql，STEPS：
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -2049,7 +2236,7 @@ windows上安装了mysql，STEPS：
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"

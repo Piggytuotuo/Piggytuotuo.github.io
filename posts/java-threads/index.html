@@ -1410,27 +1410,27 @@ class MyCallable implements Callable&lt;Integer&gt;{
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1522,10 +1522,44 @@ class MyCallable implements Callable&lt;Integer&gt;{
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1571,6 +1605,9 @@ class MyCallable implements Callable&lt;Integer&gt;{
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1979,7 +2016,59 @@ class MyCallable implements Callable&lt;Integer&gt;{
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -2169,52 +2258,7 @@ class MyCallable implements Callable&lt;Integer&gt;{
       
       
       <div class="card">
-        <a href="/posts/dp-structural-decorator/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1686385260"
-    data-df="ll"
-    >
-  Jun 10, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Decorator</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Decorator
-
-为对象动态添加功能。
-
-
-
-
-
-
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/dp-structural-bridge/">
+        <a href="/posts/dp-structural-flyweight/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2232,7 +2276,7 @@ class MyCallable implements Callable&lt;Integer&gt;{
   Jun 11, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Bridge</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural-Flyweight Pattern-FlyWeight</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2241,19 +2285,32 @@ class MyCallable implements Callable&lt;Integer&gt;{
 
 
 
-                Bridge
+                Flyweight
 
-将抽象与实现分离开，使他们可以独立变化。
+通过共享技术来支持大量细粒度对象的复用。
+通过共享已经存在的对象来减少需要创建的对象数量。
 
-
-
-跨平台视频播放
-
+两种状态：
 
 
-场景
-类存在两个独立变化的维度，且这两个维度都需要扩展。
+  
+    内部状态：不随着环境改变的可共享状态。
+  
+  
+    外部状态：随着环境改变而改变的不可共享部分。
+  
 
+
+俄罗斯方块
+
+有很多不同形状的方块，希望通过共享减少对象的创建数量。
+
+
+  
+    内部状态： 形状
+  
+  
+    外部状...
               </p>
             </div>
           </div>
@@ -2263,7 +2320,7 @@ class MyCallable implements Callable&lt;Integer&gt;{
       
       
       <div class="card">
-        <a href="/posts/dp-structural-composite/">
+        <a href="/posts/dp-behavioral-chain/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2281,7 +2338,7 @@ class MyCallable implements Callable&lt;Integer&gt;{
   Jun 11, 2023
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Structural Pattern-Composite</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Chain of Responsibility</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2290,26 +2347,70 @@ class MyCallable implements Callable&lt;Integer&gt;{
 
 
 
-                Composite
+                Chain of Responsibility
 
-将对象组合成树形结构以表示他们之间的层次关系，允许用户以相同的方式处理单独对象和组合对象。
+沿着责任链处理请求,直到有对象可以处理为止。
 
 
 
-菜单
-
-场景
-
-出现树形结构的地方。
+应用
+JavaWeb中的FilterChain。
+定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。
 
 优
 
-  
-    清楚定义分层次的复杂对象。
-  
-  
-    方便的增加树枝节点和叶子节点，符合开闭原则。
-  
+
+  降低耦合
+  责任分担
+
+
+缺
+
+  不能保证每个请求一定被处理。
+  责任链过长，系统性能受影响。
+
+
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dp-behavioral-command/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686454740"
+    data-df="ll"
+    >
+  Jun 11, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Command</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Command
+
+优
+
+缺
 
 
               </p>
@@ -2448,10 +2549,44 @@ class MyCallable implements Callable&lt;Integer&gt;{
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2498,6 +2633,9 @@ class MyCallable implements Callable&lt;Integer&gt;{
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -2518,7 +2656,7 @@ class MyCallable implements Callable&lt;Integer&gt;{
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"

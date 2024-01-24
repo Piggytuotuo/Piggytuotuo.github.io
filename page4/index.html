@@ -453,6 +453,232 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/dev-spring-annotation/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-Annotation
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              常用注解
+
+
+  @Component : 普通组件
+  @Controller：控制层组件
+  @Service   ：业务层组件
+  @Repository：持久层组件（数据库）
+
+
+扫描包
+
+通过扫描的方式检测注解，根据注解操作。扫描包的配置：
+
+&amp;lt;context:component-scan base-package=&quot;com.atguigu.ioc.component&quot;/&amp;g...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-mysql/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Mysql
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Windows上启动Mysql
+
+windows上安装了mysql，STEPS：
+
+1.在windows的服务中启动mysql服务
+
+
+
+2.右键查看mysql的安装目录
+
+3.管理员打开cmd，进入mysql的安装bin目录，执行
+
+
+
+
+
+或者在启动服务后，打开mysql command line。
+
+然后可以使用mysql workbench进行可视化操作~~
+
+
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/dev-maven/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Maven
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Maven
+包管理工具，使用GAV坐标定位。
+
+
+  groupId：公司或组织的Id
+  artifactId:项目或项目中模块的id
+  version：版本号
+
+
+配置安装
+
+使用IDEA自带的mvn
+
+查看maven的信息，若没有settings.xml文件，自己创建一个，填写配置。
+
+
+&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+
+
+&amp;...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-tree/">
         <div class="card-body">
           <h1 class="card-title">
@@ -935,232 +1161,6 @@ dp[0][...]...
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/dev-blog/">
-        <div class="card-body">
-          <h1 class="card-title">
-            Build my blog with jekyll
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              ​
-github搭建博客的记录
-
-本地编译，生成静态文件传到github服务器, 使用的是jekyll提供的模板。
-
-我选的主题是https://github.com/cotes2020/jekyll-theme-chirpy
-
-Steps
-（如果没有nodejs先安装nodejs）
-
-部署教程参考：https://github.com/cotes2020/jekyll-theme-chir...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681371360"
-    data-df="ll"
-    >
-  Apr 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/leetcode-backtrack/">
-        <div class="card-body">
-          <h1 class="card-title">
-            回溯-排列组合问题
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              引言
-跟着labuladong刷回溯题的记录。
-
-使用【回溯法】解决【子集、排列】问题：
-分为【子集 元素无重复】 【子集 元素有重复】 【排列 元素无重复】 【排列 元素有重复】四类。
-
-回溯的框架
-
-回溯属于暴力搜索，两个要点：路径 + 选择列表。
-
-res = []
-def backtrack(路径，选择列表):
-	if 满足结束条件：
-		res.add(路径)
-		return
-	...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681366200"
-    data-df="ll"
-    >
-  Apr 13, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
-    <div class="card post-preview">
-      <a href="/posts/dev-wsl/">
-        <div class="card-body">
-          <h1 class="card-title">
-            WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              
-
-方式一 vmware安装
-
-安装vmware,下载ubuntu的iso文件
-
-ubuntu-releases安装包下载_开源镜像站-阿里云
-
-i386是32位 amd64是64位
-
-
-
-方式二 wsl安装
-
-1. 在启动或关闭Windows功能中，打开以下两项，重启
-
-
-
- 2. powershell以管理员身份打开
-
-
-
-在mic store安装分发版也可
-
-查看已经安装的分发版
-
-
-...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1678860600"
-    data-df="ll"
-    >
-  Mar 15, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    Develop
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1326,27 +1326,27 @@ i386是32位 amd64是64位
         
         
         
-      <li><a href="/posts/dev-spring-annotation/">Spring-Annotation</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
         
-      <li><a href="/posts/dp-structural-proxy-jdk/">DP-Structural Pattern-Proxy-JDK</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-wsl/">WSL创建ubuntu+mysql安装+redis安装+rabbitMQ安装</a></li>
+      <li><a href="/posts/dev-ddd/">Domanin-driven design</a></li>
       
         
         
         
-      <li><a href="/posts/dev-maven/">Maven</a></li>
+      <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
       
         
         
         
-      <li><a href="/posts/dp-behavioral-chain/">DP-Behavioral Pattern-Chain of Responsibility</a></li>
+      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1438,10 +1438,44 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1487,6 +1521,9 @@ i386是32位 amd64是64位
     
       
       <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
     
 
     </div>
@@ -1596,10 +1633,44 @@ i386是32位 amd64是64位
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1646,6 +1717,9 @@ i386是32位 amd64是64位
       
       <a class="post-tag" href="/tags/python/">Python</a>
     
+      
+      <a class="post-tag" href="/tags/redis/">Redis</a>
+    
 
     </div>
   </div>
@@ -1666,7 +1740,7 @@ i386是32位 amd64是64位
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2023
+          © 2024
           <a href="https://github.com/Piggytuotuo">Piggytuotuo</a>.
           
           <span data-toggle="tooltip" data-placement="top"
