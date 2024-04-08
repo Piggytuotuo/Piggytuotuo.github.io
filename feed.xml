@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-24T15:00:45+08:00</updated>
+  <updated>2024-04-08T16:06:05+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,69 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Go语言基础</title>
+    <link href="http://localhost:4000/posts/go/" rel="alternate" type="text/html" title="Go语言基础" />
+    <published>2024-04-08T14:10:00+08:00</published>
+  
+    <updated>2024-04-08T14:10:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/go/</id>
+    <content src="http://localhost:4000/posts/go/" />
+    <author>
+      <name>piggy</name>
+    </author>
+
+  
+    
+    <category term="Go" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Go Foundation
+
+
+  
+    环境变量
+
+     GOROOT golang安装的路径   D:\programs\Go 不需要设置
+ GOPATH 自己定义的工作空间，需要手动设置(在系统变量添加)
+    
+
+    Windows10设置GOPATH不生效的原因：
+
+     Go会在用户级环境变量中设置一个GOPATH，设置的全局变量被用户级的覆盖，删除用户级的即可。
+    
+
+    查看go相关环境变量：
+
+     go env
+    
+  
+  
+    go get下载库被墙Connection timeout
+
+     配置代理 go env -w GOPROXY=https://goproxy.cn
+    
+  
+  
+    go get下载的文件存储位置
+
+     go env 查看GO111MODULE变量（是否使用Go Mod...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -260,65 +323,6 @@ unique_value：客户端表示，区分不同客户端的锁操作
 NX：lock_key不存在时才操作
 
 EX：过期时...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>SpringMVC</title>
-    <link href="http://localhost:4000/posts/dev-springmvc/" rel="alternate" type="text/html" title="SpringMVC" />
-    <published>2023-06-16T06:10:00+08:00</published>
-  
-    <updated>2023-06-21T13:28:52+08:00</updated>
-  
-    <id>http://localhost:4000/posts/dev-springmvc/</id>
-    <content src="http://localhost:4000/posts/dev-springmvc/" />
-    <author>
-      <name>piggy</name>
-    </author>
-
-  
-    
-    <category term="Develop" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      定义
-
-是表述层框架。
-
-
-  Model：模型层
-  View ：视图层，展示数据
-  Controller：控制层，接收请求和响应浏览器
-
-
-特点
-
-
-  基于原生Servlet，提供DispatcherServlet对请求和响应进行统一处理。
-
-
-流程
-
-
-  配置Web.xml文件（注册SpringMVC）
-  配置SpringMVC.xml（扫描组件、Thymleaf视图解析器）
-
-
-流程
-
-浏览器发送请求，若请求地址符合前端控制器的url-pattern，该请求就会被前端控制器DispatcherServlet处理。前端控制器会读取SpringMVC的核心配置文件，通过扫描组件找到控制器，将请求地址和控制器中@RequestMapping注解的value属性值进行匹配，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，...
     </summary>
   
 
