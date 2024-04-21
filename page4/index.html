@@ -453,6 +453,84 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/dev-spring-beanlifrcycle/">
+        <div class="card-body">
+          <h1 class="card-title">
+            Spring-Bean的作用域、生命周期
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              Bean的作用域
+
+bean标签的scope属性设置。
+
+
+  singleton：单例，IOC容器初始化时创建。
+  
+    prototype：多个实例，获取Bean时创建。
+
+    
+      
+  
+  
+
+
+Bean的生命周期
+
+
+  bean 对象创建（调用无参构造器）
+  给 bean 对象设置属性（调用属性对应的 setter 方法）
+  bean 对象初始化之前操作（...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1683958200"
+    data-df="ll"
+    >
+  May 13, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Develop
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/dev-spring-aop-ioc/">
         <div class="card-body">
           <h1 class="card-title">
@@ -1086,80 +1164,6 @@ void dfs(int v){
     </div>
     <!-- .post-review -->
   
-    <div class="card post-preview">
-      <a href="/posts/leetcode-dp-bag/">
-        <div class="card-body">
-          <h1 class="card-title">
-            DP-背包问题
-          </h1>
-
-          <div class="card-text post-content">
-            <p>
-              
-
-
-
-
-
-              背包问题
-
-属于动态规划的一类问题，需要明确状态和选择。
-
-状态：背包的容量 和 可选择的物品；选择：装 和 不装
-
-01背包：
-
-每个物品只能装一次，选择装/不装。
-
-定义状态转移方程dp[i][w]：
-
-对于前i个物品，当前背包的容量是w时，可以获得的最大价值是dp[i][w]。
-
-int[][] dp = new int[N+1][M+1]
-//base case
-dp[0][...]...
-            </p>
-          </div>
-
-          <div class="post-meta text-muted d-flex">
-            <div class="mr-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1681801200"
-    data-df="ll"
-    >
-  Apr 18, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw"></i>
-                <span>
-                  
-                    LeetCode
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-      </a>
-    </div>
-    <!-- .post-review -->
-  
 </div>
 <!-- #post-list -->
 
@@ -1325,12 +1329,12 @@ dp[0][...]...
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-redis/">Redis</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
@@ -1457,30 +1461,6 @@ dp[0][...]...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1500,6 +1480,35 @@ dp[0][...]...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1530,6 +1539,49 @@ dp[0][...]...
     
     
     
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1567,6 +1619,9 @@ dp[0][...]...
     
       
       <a class="post-tag" href="/tags/redis/">Redis</a>
+    
+      
+      <a class="post-tag" href="/tags/test/">Test</a>
     
 
     </div>
@@ -1696,30 +1751,6 @@ dp[0][...]...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1739,6 +1770,35 @@ dp[0][...]...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1769,6 +1829,49 @@ dp[0][...]...
     
     
     
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1806,6 +1909,9 @@ dp[0][...]...
     
       
       <a class="post-tag" href="/tags/redis/">Redis</a>
+    
+      
+      <a class="post-tag" href="/tags/test/">Test</a>
     
 
     </div>

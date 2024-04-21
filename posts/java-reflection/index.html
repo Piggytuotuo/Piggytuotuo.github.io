@@ -921,12 +921,12 @@ System.out.print(name);
         
         
         
-      <li><a href="/posts/dev-git/">Git</a></li>
+      <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
         
         
-      <li><a href="/posts/dev-redis/">Redis</a></li>
+      <li><a href="/posts/dev-git/">Git</a></li>
       
         
         
@@ -1053,30 +1053,6 @@ System.out.print(name);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1096,6 +1072,35 @@ System.out.print(name);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1126,6 +1131,49 @@ System.out.print(name);
     
     
     
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1163,6 +1211,9 @@ System.out.print(name);
     
       
       <a class="post-tag" href="/tags/redis/">Redis</a>
+    
+      
+      <a class="post-tag" href="/tags/test/">Test</a>
     
 
     </div>
@@ -1215,6 +1266,19 @@ System.out.print(name);
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1826,65 +1890,6 @@ System.out.print(name);
       
       
       <div class="card">
-        <a href="/posts/dp-behavioral-chain/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1686454740"
-    data-df="ll"
-    >
-  Jun 11, 2023
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Chain of Responsibility</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Chain of Responsibility
-
-沿着责任链处理请求,直到有对象可以处理为止。
-
-
-
-应用
-JavaWeb中的FilterChain。
-定义多个Filter,默认以全类名为顺序执行，doFilter之前的代码顺序执行，之后的代码倒序执行。
-
-优
-
-
-  降低耦合
-  责任分担
-
-
-缺
-
-  不能保证每个请求一定被处理。
-  责任链过长，系统性能受影响。
-
-
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/dp-behavioral-command/">
           <div class="card-body">
             <!--
@@ -1973,6 +1978,73 @@ JavaWeb中的FilterChain。
   客户端必须知道所有的策略类
 
 
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/dp-behavioral-template/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686454740"
+    data-df="ll"
+    >
+  Jun 11, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DP-Behavioral Pattern-Template Method</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Template Method
+
+定义算法框架，将一些步骤的实现延迟到子类。
+
+
+
+冲饮料
+
+冲咖啡和冲茶都有类似的步骤，则相同的步骤可以复用，不同的在子类中实现。
+
+
+
+场景
+
+
+  
+    算法步骤固定。中间个别步骤易变，将易变步骤抽象出来，供子类实现。
+  
+  
+    需要通过子类决定父类算法中的某个步骤是否执行。
+  
+
+
+优
+
+
+  
+    提高代码复用性。
+  
+  
+ ...
               </p>
             </div>
           </div>
@@ -2129,30 +2201,6 @@ JavaWeb中的FilterChain。
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2172,6 +2220,35 @@ JavaWeb中的FilterChain。
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2202,6 +2279,49 @@ JavaWeb中的FilterChain。
     
     
     
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2239,6 +2359,9 @@ JavaWeb中的FilterChain。
     
       
       <a class="post-tag" href="/tags/redis/">Redis</a>
+    
+      
+      <a class="post-tag" href="/tags/test/">Test</a>
     
 
     </div>
