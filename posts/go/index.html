@@ -486,6 +486,159 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -508,6 +661,18 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -615,7 +780,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="253 words">
+  title="357 words">
   <em>1 min</em> read</span>
 
     </div>
@@ -695,6 +860,42 @@
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
 </ol>
+
+<h2 id="go-package"><span class="mr-2">Go Package</span><a href="#go-package" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>package（项目文件夹）:包含多个xx.go</p>
+
+<p>package main: 在main包中定义func main(){}，为程序的入口</p>
+
+<p>package xxx: 在其他包中定义函数，在main包中通过import调用，一般来说package xxx即为当前目录文件夹name</p>
+
+<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com//blog-image/20240422115944.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com//blog-image/20240422115944.png" alt="20240422115944" class="lazyload" data-proofer-ignore></a></p>
+
+<p>特殊情况：</p>
+
+<p>package main下的两个文件调用：</p>
+
+<p><a href="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com//blog-image/20240422120620.png" class="popup img-link "><img data-src="https://piggytuo-imagebed.oss-cn-hangzhou.aliyuncs.com//blog-image/20240422120620.png" alt="20240422120620" class="lazyload" data-proofer-ignore></a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>    package main
+    --main.go
+    --dup1.go
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>运行时：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>    go run .
+    go run main.go dup1.go
+</pre></td></tr></tbody></table></code></div></div>
 
 
 </div>

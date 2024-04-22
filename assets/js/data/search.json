@@ -31,7 +31,7 @@
 
     
     "snippet": "Go Foundation      环境变量     GOROOT golang安装的路径   D:\\programs\\Go 不需要设置 GOPATH 自己定义的工作空间，需要手动设置(在系统变量添加)        Windows10设置GOPATH不生效的原因：     Go会在用户级环境变量中设置一个GOPATH，设置的全局变量被用户级的覆盖，删除用户级的即可。        查看g...",
-    "content": "Go Foundation      环境变量     GOROOT golang安装的路径   D:\\programs\\Go 不需要设置 GOPATH 自己定义的工作空间，需要手动设置(在系统变量添加)        Windows10设置GOPATH不生效的原因：     Go会在用户级环境变量中设置一个GOPATH，设置的全局变量被用户级的覆盖，删除用户级的即可。        查看go相关环境变量：     go env            go get下载库被墙Connection timeout     配置代理 go env -w GOPROXY=https://goproxy.cn            go get下载的文件存储位置     go env 查看GO111MODULE变量（是否使用Go Module作为包管理工具） 如果为空或off，则在GOPATH/pkg目录下 如果为on，则在GOPATH/src目录下            go.mod作用    gomod为包管理工具，记录项目所有依赖包的仓库地址及版本号，每次构建编译根据地址和版本号拉取依赖包。    生成go.mod文件：         go mod init 项目名      "
+    "content": "Go Foundation      环境变量     GOROOT golang安装的路径   D:\\programs\\Go 不需要设置 GOPATH 自己定义的工作空间，需要手动设置(在系统变量添加)        Windows10设置GOPATH不生效的原因：     Go会在用户级环境变量中设置一个GOPATH，设置的全局变量被用户级的覆盖，删除用户级的即可。        查看go相关环境变量：     go env            go get下载库被墙Connection timeout     配置代理 go env -w GOPROXY=https://goproxy.cn            go get下载的文件存储位置     go env 查看GO111MODULE变量（是否使用Go Module作为包管理工具） 如果为空或off，则在GOPATH/pkg目录下 如果为on，则在GOPATH/src目录下            go.mod作用    gomod为包管理工具，记录项目所有依赖包的仓库地址及版本号，每次构建编译根据地址和版本号拉取依赖包。    生成go.mod文件：         go mod init 项目名      Go Packagepackage（项目文件夹）:包含多个xx.gopackage main: 在main包中定义func main(){}，为程序的入口package xxx: 在其他包中定义函数，在main包中通过import调用，一般来说package xxx即为当前目录文件夹name特殊情况：package main下的两个文件调用：    package main    --main.go    --dup1.go运行时：    go run .    go run main.go dup1.go"
   },
   
   {
