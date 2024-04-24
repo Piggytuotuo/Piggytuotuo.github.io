@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Piggytuotuo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-22T12:09:23+08:00</updated>
+  <updated>2024-04-24T15:57:57+08:00</updated>
   <author>
     <name>Piggytuotuo</name>
     <uri>http://localhost:4000/</uri>
@@ -101,7 +101,7 @@
     <link href="http://localhost:4000/posts/go/" rel="alternate" type="text/html" title="Go语言基础" />
     <published>2024-04-08T14:10:00+08:00</published>
   
-    <updated>2024-04-08T14:10:00+08:00</updated>
+    <updated>2024-04-22T12:10:05+08:00</updated>
   
     <id>http://localhost:4000/posts/go/</id>
     <content src="http://localhost:4000/posts/go/" />

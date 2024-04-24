@@ -547,7 +547,7 @@
   {
     "title": "Java 多线程",
     "url": "/posts/java-threads/",
-    "categories": "Java Concurrency",
+    "categories": "Java",
     "tags": "Java",
     "date": "2023-05-11 20:34:00 +0800",
     
@@ -613,6 +613,23 @@
   },
   
   {
+    "title": "不同语言的参数传递方式",
+    "url": "/posts/language-parameter-pass/",
+    "categories": "Language",
+    "tags": "Tools",
+    "date": "2023-04-24 12:12:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "内存中的堆和栈堆区：程序员动态分配（C++的malloc，java的new）栈区：编译器自动分配和释放类型静态类型： 变量定义时需要声明类型，变量类型在编译时就确定，运行时不能修改动态类型： 变量定义时不需要声明类型，变量类型在运行时确定，运行时可以修改C++、Go、Java、Python对比            C++      Go      Java      Python     ...",
+    "content": "内存中的堆和栈堆区：程序员动态分配（C++的malloc，java的new）栈区：编译器自动分配和释放类型静态类型： 变量定义时需要声明类型，变量类型在编译时就确定，运行时不能修改动态类型： 变量定义时不需要声明类型，变量类型在运行时确定，运行时可以修改C++、Go、Java、Python对比            C++      Go      Java      Python                  编译型      编译型      编译和解释      解释型              快速运行      快速      较慢      较慢              静态类型      静态类型      静态类型      动态类型              没有自动GC      自动GC      JVM自动GC      解释器自带GC              类对象      没有类对象      类对象      类对象              支持继承      不支持      支持继承      支持继承      传参C++：值传递和引用传递Go：值传递，传递引用的地址指针类型存储对象的地址，参数传递时传递地址的copy。举例：carObj为指向{黑,5}对象的指针，存储其地址。调用函数passValue时，car为指针对象，其接受carObj所存储的地址。因此，carObj和car指向同一个对象，该对象的改变对所有指针可见。Java：值传递，传递引用的地址Python：引用传递"
+  },
+  
+  {
     "title": "二分查找",
     "url": "/posts/leetcode-bs/",
     "categories": "LeetCode",
@@ -632,7 +649,7 @@
   {
     "title": "Java Reflection",
     "url": "/posts/java-reflection/",
-    "categories": "Java Foundation",
+    "categories": "Java",
     "tags": "Java",
     "date": "2023-04-20 00:40:00 +0800",
     
@@ -734,7 +751,7 @@
   {
     "title": "Java常用代码",
     "url": "/posts/java-codes/",
-    "categories": "Java Foundation",
+    "categories": "Java",
     "tags": "Java",
     "date": "2023-04-13 14:10:00 +0800",
     

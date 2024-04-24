@@ -452,6 +452,79 @@
 <div id="post-list">
   
     <div class="card post-preview">
+      <a href="/posts/leetcode-dp-tree/">
+        <div class="card-body">
+          <h1 class="card-title">
+            DP-树形DP
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
+
+
+
+
+
+              树形DP
+
+数据之间存在树状关系，使用邻接表存储数据，实现方法是DFS.
+
+框架：
+
+void dfs(int v){
+    dp[v] = ...;
+    for(int u: G[v]){//遍历v的所有子节点
+        dfs(u); //确保子节点的值已经更新好
+        update(u, v);//用子节点的dp值对当前节点的dp值铏更新
+    }
+}
+
+
+子树...
+            </p>
+          </div>
+
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1681812000"
+    data-df="ll"
+    >
+  Apr 18, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    LeetCode
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
       <a href="/posts/leetcode-dp-bag/">
         <div class="card-body">
           <h1 class="card-title">
@@ -1114,6 +1187,11 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
         
         
         
+      <li><a href="/posts/go/">Go语言基础</a></li>
+      
+        
+        
+        
       <li><a href="/posts/dev-redis/">Redis</a></li>
       
         
@@ -1130,11 +1208,6 @@ Git仓库中的默认分支为main（之前为master），在Github或其他平�
         
         
       <li><a href="/posts/dp-structural-proxy-cglib/">DP-Structural Pattern-Proxy-CGLib</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/dev-springmvc/">SpringMVC</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
